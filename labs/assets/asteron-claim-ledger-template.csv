@@ -1,0 +1,2 @@
+Claim_ID,Claim,Source_ID,Evidence,Confidence,Check,Reviewer_Note,Release_State
+CLM-001,<CLAIM>,<SOURCE_ID>,<EVIDENCE>,<HIGH-MEDIUM-LOW>,<VERIFIED-REVISE-HOLD>,<NOTE>,<STATE>

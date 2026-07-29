@@ -1,0 +1,21 @@
+Participant_ID,Department,Registration_Status,Attendance_Status,Training_Complete,Readiness_Score,Support_Tickets,Preferred_Session,Notes
+P001,Operations,Confirmed,Attended,Yes,88,0,AM,Ready for pilot
+P002,Sales,Confirmed,Attended,Yes,82,1,AM,Requested account example
+P003,Finance,Confirmed,Attended,Yes,91,0,PM,Ready for pilot
+P004,Human Resources,Confirmed,Absent,No,55,2,AM,Needs guided setup
+P005,Operations,Confirmed,Attended,Yes,76,1,PM,Requested checklist
+P006,Sales,Confirmed,Attended,Yes,85,0,AM,Ready for pilot
+P007,Finance,Confirmed,Attended,Yes,89,0,PM,Ready for pilot
+P008,Human Resources,Confirmed,Attended,No,68,1,AM,Training follow-up needed
+P009,Information Technology,Confirmed,Attended,Yes,94,0,AM,Support contact
+P010,Operations,Confirmed,Absent,No,61,2,PM,Needs access check
+P011,Sales,Confirmed,Attended,Yes,80,1,AM,Requested FAQ
+P012,Finance,Confirmed,Attended,Yes,87,0,PM,Ready for pilot
+P013,Human Resources,Confirmed,Attended,Yes,79,0,AM,Requested accessible deck
+P014,Information Technology,Confirmed,Attended,Yes,92,0,PM,Support contact
+P015,Operations,Confirmed,Attended,No,70,1,AM,Training follow-up needed
+P016,Sales,Confirmed,Attended,Yes,84,0,PM,Ready for pilot
+P017,Information Technology,Waitlist,Pending,No,72,0,AM,Waitlist
+P018,Human Resources,Waitlist,Pending,No,66,0,PM,Waitlist
+P019,Operations,Withdrawn,Pending,No,58,0,AM,Withdrawn
+P020,Sales,Withdrawn,Pending,No,64,0,PM,Withdrawn

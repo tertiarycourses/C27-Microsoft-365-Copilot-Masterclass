@@ -1,0 +1,54 @@
+C027 ASTERON CAPSTONE REJOIN PACK
+Version: v1.0
+Status: Trainer-validated practice fallback
+Purpose: Rejoin Lab 7 when an earlier practice artifact is incomplete or unavailable.
+Authority limit: This pack substitutes for lab practice continuity only. It is not evidence for a real project or organisational release.
+
+SOURCE REGISTER SUBSTITUTE
+- Pilot launch: 2026-08-18
+- Scope: 20 internal participants across five departments
+- FAQ: Nisha Rao, due 2026-08-11
+- Data export: Leon Wu, current due 2026-08-13; 2026-08-12 is superseded
+- External announcement: HOLD until privacy sign-off
+- Support clinic: proposed for 2026-08-19; room remains open
+
+WORD BRIEF SUBSTITUTE
+- Audience: Asteron department heads
+- Purpose: internal pilot coordination
+- Required position: confirmed facts above; no public announcement before privacy sign-off
+- Status: Approved for deck handoff in this simulation
+
+POWERPOINT DECK SUBSTITUTE
+- Exactly six slides: decision, scope, readiness dependencies, timeline and owners, risks and open question, next actions
+- Lab 3 readiness slide contains dependencies and status only, not numerical readiness measures
+- Status: Reviewed for internal presentation in this simulation
+
+EXCEL READINESS SUBSTITUTE
+- Confirmed participants: 16
+- Attended: 14; attendance rate 87.5% using confirmed registrations
+- Training complete: 12; completion rate 75.0% using confirmed registrations
+- Average readiness score: 80.0625 for confirmed participants
+- Support tickets: 9 for confirmed participants
+- High-priority participants: 4
+- Status: Approved for internal workflow lab in this simulation
+
+OUTLOOK SUBSTITUTE
+- Synthetic email history confirms the 2026-08-18 launch and privacy dependency
+- Draft must remain unsent
+- Status: HOLD pending recipient and purpose review
+
+TEAMS SUBSTITUTE
+- Nisha Rao — FAQ — 2026-08-11
+- Leon Wu — data export — 2026-08-13
+- Priya Menon — readiness dashboard — 2026-08-14 12:00
+- Farah Lim — privacy sign-off — 2026-08-15
+- Mei Tan — confirm support-clinic room — 2026-08-12
+- Support clinic remains proposed; room remains open
+- Status: Reviewed for internal coordination in this simulation
+
+REJOIN RECORD
+- In the manifest, identify each substituted artifact with Link = REJOIN-PACK-v1.0.
+- Set Source_Coverage = Trainer-validated practice fallback.
+- In the Copilot drafting step, reference this TXT file and name only the applicable substitute sections, such as WORD BRIEF SUBSTITUTE, EXCEL READINESS SUBSTITUTE or TEAMS SUBSTITUTE.
+- Name the learner as reviewer and record the review date.
+- Replace a substitute with the learner-created artifact when it passes its lab checkpoint.
