@@ -5,9 +5,9 @@ data_domainN.py) that drives the PPT, LP and LG:
 
   labs/lab-NN-<slug>/
     Lab-NN-Instructions.pdf   the same instructions + sample prompts as a PDF
-    sample-prompts.txt        copy-ready prompts
-    data/<workbook>.xlsx      synthetic mock data (from mock_data.py)
-    <extra files>             optional: e.g. skills/<name>/SKILL.md or a rules template (lab["extra_files"])
+    data/<workbook>.xlsx      synthetic water-pipe service data
+    data/templates/          learner starting templates
+    data/checkpoints/        clearly labelled rejoin examples
 
 plus labs/README.md as the index. Lab files can never drift out of alignment
 with the other artifacts.
@@ -256,7 +256,7 @@ def build_pdf(lab, topic, path):
     S.append(Paragraph("Sample Prompts", ST["h2"]))
     S.append(P(("Use the app labelled for each prompt (or adapt it). " if n in WEB_LABS else "Use these prompts in the Copilot pane (or adapt them). ")
                + "Name the table and columns, state the output, and "
-               "always verify the result. The same prompts are in sample-prompts.txt in this lab folder."))
+               "always verify the result. Use the linked prompts web page for one-click Copy buttons."))
     url = f"{C.PROMPTS_PAGE}#lab-{n}"
     S.append(Paragraph(f'<b>Copy-ready prompts:</b> <link href="{url}" color="#1F6FEB"><u>{escape(url)}</u></link>',
                        ST["body"]))
@@ -318,48 +318,35 @@ def fill_prompt_log(path, lab):
     wb.save(path)
 
 
-# Course-specific export: one source for PDF, README, TXT, prompt links and workbooks.
+# Export a simple two-item lab root: instruction PDF plus data/.
 from pathlib import Path
-import csv,json,html
-written=[];prompt_md=[f'# {C.TITLE} - Prompt Library\n', 'Each prompt states its app. Copy one block at a time. Provide the actual selected file or pasted verified evidence; another app chat is not shared context.\n']
-html_parts=['<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Northstar maintenance prompts</title><style>body{font:17px Arial;max-width:1000px;margin:40px auto;padding:20px;color:#111827}h1,h2{color:#0b3060}pre{white-space:pre-wrap;background:#eef4ff;padding:20px;border-radius:10px}button{padding:8px 18px;cursor:pointer}a{color:#1f6feb}</style><h1>Northstar maintenance prompt library</h1><p>C27 v2.0. Open this local HTML in a browser; Copy buttons use the clipboard when allowed. Otherwise select and copy the text.</p>']
+from build_prompts_page import build_page
+import csv
+written=[]
 for lab in labs:
- n=lab['num'];fname=folder_name(lab);folder=Path(LABS)/fname
- mock_data.build_lab_data(n,folder)
- if n==5:mock_data.workbook(folder/'templates/Northstar_Dashboard_Starter.xlsx',dashboard=True,blank=True)
- for rel,body,_ in lab.get('extra_files',[]):
-  p=folder/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(body)
- if n==6:
-  rows=[['WO-2026-0121','Woodlands Hub','HVAC','High','Assigned','Aisha Tan','2026-09-25','2026-09-29','',3,0,150,'Sandbox overdue test'],['WO-2026-0122','Woodlands Hub','Electrical','Medium','Closed','Ben Lim','2026-09-20','2026-09-30','2026-09-29',2,2,250,'Sandbox on-time test']]
-  with (folder/'data/Refresh_Test_Rows.csv').open('w',newline='') as f: w=csv.writer(f);w.writerow(mock_data.HEADERS);w.writerows(rows)
- for name,headers in [('Filter_Test_Log.csv',['Test','Site','Category','Status','Owner','Expected','Observed','Evidence']),('Slide_Evidence_Register.csv',['Slide','Claim','Value','Source','Scope','As_At','Limitation','Verified']),('Rehearsal_Log.csv',['Feedback','Evidence','Change','Retested']),('Final_Handoff_Checklist.csv',['Artifact','Filename_or_Link','Check','Actual_Result'])]:
-  with (folder/'templates'/name).open('w',newline='') as f:csv.writer(f).writerow(headers)
- text=[f'# Lab {n} - {lab["title"]}\n',f'**C27 | {C.VERSION} | Topic {lab["topic"]} | {lab["duration"]} minutes**\n',f'[Instruction PDF](Lab-{n:02d}-Instructions.pdf) · [Copy-ready prompts](sample-prompts.txt) · [Linked prompt library]({C.PROMPTS_PAGE}#lab-{n})\n','## Goal\n',lab['goal'],'\n## What you will build\n',lab['build'],'\n'+lab['desc'],'\n## Prerequisites\n']+['- '+p for p in lab['prerequisites']]+['\n## Files\n','- [Mock workbook](data/Northstar_Work_Orders.xlsx): raw 122-row input in Lab 1, clean 120-row input elsewhere.','- [Clean CSV reference](data/Northstar_Work_Orders.csv) and [expected controls](data/verified-controls.json).','- [Rejoin workbook](checkpoints/Northstar_Verified_Checkpoint.xlsx) and [snapshot](checkpoints/Northstar_Verified_Snapshot.docx).','- [Templates](templates/) for the brief, slide deck, evidence and handoff.','\n## Steps\n']
- prompt_md += [f'\n## Lab {n}\n',f'**{lab["title"]}** · [Lab folder](../../labs/{fname}/README.md)\n']
- html_parts += [f'<h2 id="lab-{n}">Lab {n}: {html.escape(lab["title"])}</h2>']
- log=[]
- for i,(instr,cmd) in enumerate(lab['steps'],1):
-  text += [f'### {i}. Step {i}\n',instr]
-  if cmd:
-   text+=['\n```text\n'+cmd+'\n```\n'];prompt_md += [f'### Step {i}\n','```text\n'+cmd+'\n```\n'];pid=f'p{n}_{i}';html_parts += [f'<h3>Step {i}</h3><button onclick="copyPrompt(\'{pid}\',this)">Copy</button><pre id="{pid}">{html.escape(cmd)}</pre>'];log.append((f'Step {i}',cmd.split(':',1)[0],cmd))
- for heading,body in [('Test it','\n'.join('- '+a+': '+b for a,b in lab['checks'])),('Checkpoint',lab['checkpoint']),('Troubleshooting','\n'.join('- '+a+': '+b for a,b in lab['troubleshooting'])),('Challenge',lab['challenge']),('Reflection',lab['reflection'])]:text += [f'\n## {heading}\n',body]
- text += [f'\n{C.LAB_NOTE}\n'];(folder/'README.md').write_text('\n'.join(text))
- (folder/'sample-prompts.txt').write_text(build_prompts_txt(lab))
- (folder/'prompts.md').write_text(f'# Lab {n} prompts\n\n'+ '\n\n'.join(f'## Step {i}\n\n```text\n{cmd}\n```' for i,(_instr,cmd) in enumerate(lab['steps'],1) if cmd))
- for x in [folder/'data/Northstar_Work_Orders.xlsx',folder/'checkpoints/Northstar_Verified_Checkpoint.xlsx']:
-  wb=load_workbook(x);ws=wb['Prompt_Log']
-  for row,values in enumerate(log,2):
-   for col,value in enumerate(values,1):ws.cell(row,col,value).alignment=Alignment(wrap_text=True,vertical='top')
-  ws.column_dimensions['C'].width=90;wb.save(x)
- build_pdf(lab,TOPICS[n//3] if False else TOPICS[lab['topic']],str(folder/pdf_name(lab)))
- written.append((n,fname,lab))
-root=Path(REPO);docs=root/'docs/prompts';docs.mkdir(parents=True,exist_ok=True)
-(docs/'README.md').write_text('\n'.join(prompt_md))
-html_parts+=['<script>async function copyPrompt(id,b){const s=document.getElementById(id).textContent;try{await navigator.clipboard.writeText(s);b.textContent="Copied"}catch(e){const range=document.createRange();range.selectNodeContents(document.getElementById(id));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);b.textContent="Select and copy"}}</script></html>'];(docs/'index.html').write_text('\n'.join(html_parts))
-R=[f'# {C.TITLE} - Eight Connected Maintenance Labs\n',f'One day, 7.5 instructional hours. {C.VERSION}, {C.VERSION_DATE}.\n','Northstar Facilities is fictional. Start with 122 raw export rows in Lab 1, clean to 120 unique work orders, and carry the checked 30 September 2026 baseline through the other labs. Two refresh-test rows are used only in a sandbox copy.\n',f'[Linked prompt library]({C.PROMPTS_PAGE}) · [Local copy-button prompt page](../docs/prompts/index.html)\n']
-for topic in C.TOPICS:
- R += [f'\n## Topic {topic["num"]}: {topic["title"]}\n']
- for n,fname,a in written:
-  if a['topic']==topic['num']: R += [f'### Lab {n}: {a["title"]}\n',a['desc'],f'\n**You build:** {a["build"]}\n',f'[Instructions](<./{fname}/README.md>) · [PDF](<./{fname}/Lab-{n:02d}-Instructions.pdf>) · [Prompts](<./{fname}/prompts.md>) · [Data](<./{fname}/data/>) · [Templates](<./{fname}/templates/>) · [Checkpoint](<./{fname}/checkpoints/>)\n']
-R += ['\n'+C.LAB_NOTE];(root/'labs/README.md').write_text('\n'.join(R))
-print(f'Saved {len(written)} lab folders with aligned PDFs, README, prompts, mock data, templates and checkpoints.')
+    n=lab['num'];fname=folder_name(lab);folder=Path(LABS)/fname
+    mock_data.build_lab_data(n,folder)
+    if n==5:mock_data.workbook(folder/'data/templates/Northstar_Dashboard_Starter.xlsx',dashboard=True,blank=True)
+    for rel,body,_ in lab.get('extra_files',[]):
+        p=folder/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(body)
+    if n==6:
+        rows=[['WO-2026-0121','Woodlands Hub','Leak Repair','High','Assigned','Aisha Tan','2026-09-25','2026-09-29','',3,0,150,'Sandbox overdue test'],['WO-2026-0122','Woodlands Hub','Valve Repair','Medium','Closed','Ben Lim','2026-09-20','2026-09-30','2026-09-29',2,2,250,'Sandbox on-time test']]
+        with (folder/'data/Refresh_Test_Rows.csv').open('w',newline='') as f:
+            w=csv.writer(f,lineterminator="\n");w.writerow(mock_data.HEADERS);w.writerows(rows)
+    for name,headers in [('Filter_Test_Log.csv',['Test','Site','Category','Status','Owner','Expected','Observed','Evidence']),('Slide_Evidence_Register.csv',['Slide','Claim','Value','Source','Scope','As_At','Limitation','Verified']),('Rehearsal_Log.csv',['Feedback','Evidence','Change','Retested']),('Final_Handoff_Checklist.csv',['Artifact','Filename_or_Link','Check','Actual_Result'])]:
+        with (folder/'data/templates'/name).open('w',newline='') as f:csv.writer(f,lineterminator="\n").writerow(headers)
+    log=[(f'Step {i}',cmd.split(':',1)[0],cmd) for i,(_,cmd) in enumerate(lab['steps'],1) if cmd]
+    for x in [folder/'data/Northstar_Work_Orders.xlsx',folder/'data/checkpoints/Northstar_Verified_Checkpoint.xlsx']:
+        wb=load_workbook(x);ws=wb['Prompt_Log']
+        for row,values in enumerate(log,2):
+            for col,value in enumerate(values,1):ws.cell(row,col,value).alignment=Alignment(wrap_text=True,vertical='top')
+        ws.column_dimensions['C'].width=90;wb.save(x)
+    build_pdf(lab,TOPICS[lab['topic']],str(folder/pdf_name(lab)))
+    written.append((n,fname,lab))
+build_page(labs)
+R=[f'# {C.TITLE} - Eight Connected Maintenance Labs\n',f'{C.VERSION} · {C.VERSION_DATE} · 7.5 instructional hours\n','Each lab folder contains only its instruction PDF and data/. Templates and rejoin checkpoints are inside data/. Copy one prompt at a time from the linked page and verify the result.\n',f'[Open the prompt page]({C.PROMPTS_PAGE})\n','| Lab | Instruction PDF | Prompts | Data |','|---|---|---|---|']
+for n,fname,a in written:
+    R.append(f'| {n}. {a["title"]} | [PDF]({fname}/Lab-{n:02d}-Instructions.pdf) | [Copy prompts]({C.PROMPTS_PAGE}#lab-{n}) | [data/]({fname}/data/) |')
+R+=['\n'+C.LAB_NOTE]
+(Path(REPO)/'labs/README.md').write_text('\n'.join(R)+'\n')
+print(f'Saved {len(written)} simple lab folders and a linked prompts page.')

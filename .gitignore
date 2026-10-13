@@ -13,3 +13,7 @@ __pycache__/
 .DS_Store
 ~$*
 .~lock.*#
+
+.playwright-mcp/
+output/playwright/
+_site/

@@ -14,7 +14,7 @@ from pptx.util import Inches,Pt
 from pptx.dml.color import RGBColor
 REPORT=datetime(2026,9,30)
 SITES=['Woodlands Hub','Jurong Depot','Tampines Centre','Paya Lebar Office','Changi Workshop']
-CATEGORIES=['HVAC','Electrical','Plumbing','Fire Safety','General Repair']
+CATEGORIES=['Leak Repair','Valve Repair','Pipe Replacement','Pump Service','Meter Service']
 STATUSES=['New','Assigned','In Progress','On Hold','Closed','Cancelled']
 TECHS=['Aisha Tan','Ben Lim','Chloe Goh','Daniel Lee','Elena Ong','Farid Rahman','Grace Ng','Hari Kumar']
 HEADERS=['Work_Order_ID','Site','Job_Category','Priority','Status','Assigned_To','Opened_Date','Due_Date','Closed_Date','Estimated_Hours','Actual_Hours','Cost_SGD','Description']
@@ -64,11 +64,11 @@ def add_dashboard(wb,ready=True):
  style(ws);ws.column_dimensions['A'].width=30;ws.column_dimensions['B'].width=24
  lists.sheet_state='hidden'
 def workbook(path,raw=False,dashboard=False,blank=False):
- wb=Workbook();ws=wb.active;ws.title='About_This_Data';ws.append(['Field','Value']);ws.append(['Company','Northstar Facilities - fictional']);ws.append(['Reporting date',REPORT]);ws.append(['Scope','120 Q3 2026 work orders, five sites. All identities and records are synthetic.']);ws.append(['Meaning','Cost is cumulative recorded cost of all statuses; not a budget or productivity claim.']);ws.append(['Rejoin','This input is a deterministic checkpoint, not proof of your Copilot output.'])
+ wb=Workbook();ws=wb.active;ws.title='About_This_Data';ws.append(['Field','Value']);ws.append(['Company','Northstar Water Services - fictional water-pipe maintenance and service company']);ws.append(['Reporting date',REPORT]);ws.append(['Scope','120 Q3 2026 work orders, five sites. All identities and records are synthetic.']);ws.append(['Meaning','Cost is cumulative recorded cost of all statuses; not a budget or productivity claim.']);ws.append(['Rejoin','This input is a deterministic checkpoint, not proof of your Copilot output.'])
  ws=wb.create_sheet('Work_Orders');ws.append(HEADERS)
  source=[list(r) for r in ROWS]
  if raw:
-  source[3][2]=' hvac ';source[12][2]='Fire safety ';source += [list(source[4]),list(source[19])]
+  source[3][2]=' Leak repair ';source[12][2]='Pump service ';source += [list(source[4]),list(source[19])]
  for r in source:ws.append(r)
  table(ws,'tblWorkOrders')
  ws=wb.create_sheet('Technicians');ws.append(['Technician','Primary_Category','Available_Hours_Week','Home_Site'])
@@ -124,23 +124,23 @@ def deck(path,checkpoint=False,count=8):
    data=CategoryChartData();data.categories=list(counts);data.add_series(label,list(counts.values()));chart=sh.shapes.add_chart(XL_CHART_TYPE.BAR_CLUSTERED,Inches(1),Inches(3.3),Inches(11),Inches(3.2),data).chart;chart.has_legend=False;chart.plots[0].has_data_labels=True;chart.plots[0].data_labels.position=XL_LABEL_POSITION.OUTSIDE_END;chart.category_axis.tick_labels.font.size=Pt(12);chart.value_axis.tick_labels.font.size=Pt(12);chart.series[0].format.fill.solid();chart.series[0].format.fill.fore_color.rgb=RGBColor.from_string('13A89E')
   elif checkpoint:
    tb=sh.shapes.add_textbox(Inches(.8),Inches(3.6),Inches(11.7),Inches(2));para=tb.text_frame.paragraphs[0];para.text=['Observation -> evidence -> proposed action -> decision','Keep status, site, category and owner scope consistent.','Validate constraints before confirming an operational change.','Static presentation: verified snapshot, not an automatic live link.'][i%4];para.font.size=Pt(27);para.font.bold=True;para.font.color.rgb=RGBColor.from_string('1F6FEB')
-  tb=sh.shapes.add_textbox(Inches(.8),Inches(6.8),Inches(11.7),Inches(.35));para=tb.text_frame.paragraphs[0];para.text=f'C27 v2.0 | Synthetic Northstar example | 2026-09-30 | All filters All | Slide{i+1}';para.font.size=Pt(10)
+  tb=sh.shapes.add_textbox(Inches(.8),Inches(6.8),Inches(11.7),Inches(.35));para=tb.text_frame.paragraphs[0];para.text=f'C27 v2.1 | Synthetic Northstar example | 2026-09-30 | All filters All | Slide{i+1}';para.font.size=Pt(10)
   sh.notes_slide.notes_text_frame.text=notes[i] if checkpoint else 'Provide the selected verified snapshot and replace scaffold content. Add source/date/scope notes; do not invent facts.'
  r.save(path)
 def build_lab_data(num,folder):
- root=Path(folder);data=root/'data';tmp=root/'templates';cp=root/'checkpoints'
+ root=Path(folder);data=root/'data';tmp=data/'templates';cp=data/'checkpoints'
  for p in [data,tmp,cp]:p.mkdir(parents=True,exist_ok=True)
  workbook(data/'Northstar_Work_Orders.xlsx',raw=(num==1),dashboard=(num>=6))
  workbook(cp/'Northstar_Verified_Checkpoint.xlsx',dashboard=(num>=5))
  with (data/'Northstar_Work_Orders.csv').open('w',newline='') as f:
-  w=csv.writer(f);w.writerow(HEADERS);w.writerows([[v.strftime('%Y-%m-%d') if isinstance(v,datetime) else v for v in r] for r in ROWS])
+  w=csv.writer(f,lineterminator="\n");w.writerow(HEADERS);w.writerows([[v.strftime('%Y-%m-%d') if isinstance(v,datetime) else v for v in r] for r in ROWS])
  (data/'verified-controls.json').write_text(json.dumps(EXPECTED,indent=2)+'\n')
- (data/'Northstar_Maintenance_Context.txt').write_text('Northstar Facilities is fictional. Reporting date: 2026-09-30. Work orders have statuses New, Assigned, In Progress, On Hold, Closed, Cancelled. Backlog excludes Closed and Cancelled. Overdue means backlog due before the reporting date. Unassigned jobs require a proposal, never an invented confirmed owner. Proposed actions need a manager decision. All sample data is synthetic.\n')
- with (tmp/'Evidence_Register.csv').open('w',newline='') as f:csv.writer(f).writerows([['Claim','Value','Source_File','Sheet_Table','Filter_Scope','As_At','Verified_By','Proposed_or_Observed']])
- with (tmp/'Assignment_Proposals.csv').open('w',newline='') as f:csv.writer(f).writerows([['Work_Order_ID','Current_Assigned_To','Proposed_Assigned_To','Category_Match','Capacity_Check','Reason','Manager_Decision']])
+ (data/'Northstar_Maintenance_Context.txt').write_text('Northstar Water Services is a fictional water-pipe maintenance and service company. Jobs cover leak repair, valve repair, pipe replacement, pump service and meter service. Reporting date: 2026-09-30. Work orders have statuses New, Assigned, In Progress, On Hold, Closed, Cancelled. Backlog excludes Closed and Cancelled. Overdue means backlog due before the reporting date. Unassigned jobs require a proposal, never an invented confirmed owner. Proposed actions need a manager decision. All sample data is synthetic.\n')
+ with (tmp/'Evidence_Register.csv').open('w',newline='') as f:csv.writer(f,lineterminator="\n").writerows([['Claim','Value','Source_File','Sheet_Table','Filter_Scope','As_At','Verified_By','Proposed_or_Observed']])
+ with (tmp/'Assignment_Proposals.csv').open('w',newline='') as f:csv.writer(f,lineterminator="\n").writerows([['Work_Order_ID','Current_Assigned_To','Proposed_Assigned_To','Category_Match','Capacity_Check','Reason','Manager_Decision']])
  doc(tmp/'Northstar_Operations_Brief_Template.docx','Northstar operations brief',[('Reporting scope','Record file, table, filters and reporting date.'),('Verified measures','Replace this paragraph with verified values and denominators.'),('Backlog and priority','Summarise evidence without guessing causal explanations.'),('Assignment proposals','Keep current assignment and proposed assignment separate.'),('Decision and open questions','Name the decision needed; use UNKNOWN for missing facts.')])
  doc(cp/'Northstar_Verified_Snapshot.docx','Northstar verified maintenance snapshot',[('Source and scope','Synthetic tblWorkOrders: 120 records; all filters All; 30 September 2026.'),('Verified controls',json.dumps(EXPECTED,indent=2)),('Interpretation','Values describe this fictional snapshot. Category mix is a count, not evidence of root cause. Proposals are unapproved.'),('Presentation outline','Portfolio; backlog; mix; SLA; capacity; actions; decision. Reconcile every figure against the dashboard before use.')])
- doc(tmp/'Northstar_Presentation_Brief_Template.docx','Northstar management presentation brief',[('Audience and decision','Audience: facilities management. Decision: prioritise a proposed backlog recovery plan; approvals UNKNOWN.'),('Slide evidence','For each of eight slides specify headline, figure, chart, scope and source.'),('Limitations','Snapshot date, synthetic data, N/A for zero denominators, no invented savings.'),('Narrative','Observation -> operational implication -> proposed action -> decision request.')])
+ doc(tmp/'Northstar_Presentation_Brief_Template.docx','Northstar management presentation brief',[('Audience and decision','Audience: water service operations management. Decision: prioritise a proposed backlog recovery plan; approvals UNKNOWN.'),('Slide evidence','For each of eight slides specify headline, figure, chart, scope and source.'),('Limitations','Snapshot date, synthetic data, N/A for zero denominators, no invented savings.'),('Narrative','Observation -> operational implication -> proposed action -> decision request.')])
  deck(tmp/'Northstar_Management_Deck_Template.pptx')
  if num==4:deck(cp/'Northstar_Initial_Update_Checkpoint.pptx',True,count=4)
  if num>=7:deck(cp/'Northstar_Management_Example.pptx',True)

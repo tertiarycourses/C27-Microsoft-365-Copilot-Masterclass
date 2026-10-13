@@ -202,7 +202,7 @@ def _lg_lab(a):
         h3("Reflection")
         p(a["reflection"])
     note(f"The lab folder labs/lab-{a['num']:02d}-*/ holds the instruction PDF with sample prompts, "
-         f"sample-prompts.txt and the mock-data workbook ({', '.join(a.get('data_files',[])) or 'none'})"
+         f"a data folder with templates, checkpoints and the mock-data workbook ({', '.join(a.get('data_files',[])) or 'none'})"
          + "".join(f", plus {rel} ({desc})" for rel,_t,desc in a.get("extra_files",[])) + ". "
          + getattr(C,"LAB_NOTE","Use only accounts and data you are authorised to use."))
     rule()

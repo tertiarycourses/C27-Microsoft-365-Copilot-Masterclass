@@ -1,6 +1,6 @@
 # Microsoft 365 Copilot Masterclass — Learner Guide
 
-**Course Code:** C27  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v2.0 · 13 October 2026**
+**Course Code:** C27  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v2.1 · 13 October 2026**
 
 ## Contents
 
@@ -45,9 +45,9 @@
 
 ## Introduction
 
-This masterclass follows Northstar Facilities from a dirty maintenance export to a reviewed management decision pack. Work-order IDs, categories, sites, current assignments and status definitions stay consistent across every app. The purpose is to make evidence travel accurately through the workflow, while using Copilot for drafting, analysis, reusable instructions and visual communication.
+This masterclass follows Northstar Water Services, a fictional water-pipe maintenance and service company, from a dirty service-work-order export to a reviewed management decision pack. Work-order IDs, categories, sites, current assignments and status definitions stay consistent across every app. The purpose is to make evidence travel accurately through the workflow, while using Copilot for drafting, analysis, reusable instructions and visual communication.
 
-Study each topic’s concepts before its two labs. Each lab has its own instruction PDF, identical Markdown steps, prompts, synthetic data, templates and a deterministic checkpoint. Carry your own verified outputs forward. A supplied checkpoint allows rejoining but is not evidence that you completed the earlier task. The detailed procedures are here and in labs; the slides teach concepts and show outcomes.
+Study each topic’s concepts before its two labs. Each lab has its own instruction PDF and a data folder containing synthetic inputs, templates and a deterministic checkpoint. Copy-ready prompts are on the linked web page. Carry your own verified outputs forward. A supplied checkpoint allows rejoining but is not evidence that you completed the earlier task. The detailed procedures are here and in labs; the slides teach concepts and show outcomes.
 
 
 ## Course Learning Outcomes
@@ -164,7 +164,7 @@ Learning outcome: LO1: integrate verified Word, Excel, PowerPoint and Outlook ou
 
 Goal: Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with reconciled counts, reporting scope and a source register.
 
-You are Northstar Facilities’ maintenance coordinator. A Q3 export contains repeated IDs and inconsistent category labels. You will clean a copy in Excel, reconcile its controls, and use the verified result to draft a Word operations brief. The same site, status and assignment definitions underpin every later report.
+You are Northstar Water Services’ maintenance coordinator. A Q3 export contains repeated IDs and inconsistent category labels. You will clean a copy in Excel, reconcile its controls, and use the verified result to draft a Word operations brief. The same site, status and assignment definitions underpin every later report.
 
 **What you'll build**
 
@@ -178,15 +178,21 @@ Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with recon
 
 **Step-by-step**
 
-1. Step 1 Copy data/Northstar_Work_Orders.xlsx to your OneDrive work-c027 folder as Northstar_Clean_Work_Orders.xlsx. Open it in Excel, set Formulas > Calculation Options > Automatic, and read About_This_Data and Control. The workbook is the deliberately dirty 122-row input; the supplied CSV is a clean reference and must not replace the cleaning exercise. Open Copilot from Home > Copilot.
-2. Step 2 Use Chat only to inspect the named table before making changes. Record row count and the two exact repeated IDs. A Work_Order_ID is the row grain; do not count repeated export records twice.
+1. Copy data/Northstar_Work_Orders.xlsx to your OneDrive work-c027 folder as Northstar_Clean_Work_Orders.xlsx. Open it in Excel, set Formulas > Calculation Options > Automatic, and read About_This_Data and Control. The workbook is the deliberately dirty 122-row input; the supplied CSV is a clean reference and must not replace the cleaning exercise. Open Copilot from Home > Copilot.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Read About_This_Data and Control for Northstar Water Services. Explain what one water-pipe service work order represents, the reporting date, the five job categories and how current owners differ from proposed owners. Do not edit or infer customer impacts.
+   ```
+
+2. Use Chat only to inspect the named table before making changes. Record row count and the two exact repeated IDs. A Work_Order_ID is the row grain; do not count repeated export records twice.
 
    ```text
    EXCEL - CHAT ONLY:
    Inspect tblWorkOrders. Report row count, duplicate Work_Order_ID values, category spelling variants and missing Assigned_To. Do not edit. Treat 2026-09-30 as the fixed reporting date.
    ```
 
-3. Step 3 Choose Plan if available. Read the proposed cleaning plan before using Allow editing. The duplicates are exact repeated export records: keep one per ID. Trim and standardise category labels to HVAC, Electrical, Plumbing, Fire Safety, General Repair; preserve missing owners and all unique source values. Save a copy of the raw sheet before the change.
+3. Choose Plan if available. Read the proposed cleaning plan before using Allow editing. The duplicates are exact repeated export records: keep one per ID. Trim and standardise category labels to Leak Repair, Valve Repair, Pipe Replacement, Pump Service, Meter Service; preserve missing owners and all unique source values. Save a copy of the raw sheet before the change.
 
    ```text
    EXCEL - PLAN:
@@ -196,21 +202,27 @@ Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with recon
    Apply the reviewed plan. Keep one identical record per repeated ID. Do not guess missing owners. Reconcile the cleaned table against Control.
    ```
 
-4. Step 4 Add a Checks sheet or use the supplied one. Ask for formulas, then inspect the table and formulas yourself. Overdue excludes Closed and Cancelled and uses strictly earlier than the fixed date, so a due-today job is not overdue. Copy verified values to templates/Evidence_Register.csv.
+4. Add a Checks sheet or use the supplied one. Ask for formulas, then inspect the table and formulas yourself. Overdue excludes Closed and Cancelled and uses strictly earlier than the fixed date, so a due-today job is not overdue. Copy verified values to data/templates/Evidence_Register.csv.
 
    ```text
    EXCEL - ALLOW EDITING:
    In Checks calculate total rows, closed, cancelled, backlog, overdue backlog, unassigned backlog and total Cost_SGD for tblWorkOrders. Use Control!B2 as reporting date. Define backlog as Status neither Closed nor Cancelled. Add the identity total = closed + cancelled + backlog. Do not change source data.
    ```
 
-5. Step 5 Open templates/Northstar_Operations_Brief_Template.docx in Word and save as Northstar_Operations_Brief.docx in OneDrive. In Copilot select the verified source file using Reference a file or /. If Word cannot use the workbook, copy your verified evidence table plus data/Northstar_Maintenance_Context.txt into the document and select that text; do not imply Word reads the Excel chat.
+5. Open data/templates/Northstar_Operations_Brief_Template.docx in Word and save as Northstar_Operations_Brief.docx in OneDrive. In Copilot select the verified source file using Reference a file or /. If Word cannot use the workbook, copy your verified evidence table plus data/Northstar_Maintenance_Context.txt into the document and select that text; do not imply Word reads the Excel chat.
 
    ```text
    WORD COPILOT:
    Draft a one-page Northstar operations brief from the verified evidence supplied here. Include reporting scope/date, backlog and overdue findings, current assignment issues, proposed next actions and open questions. Keep observed facts separate from proposals. Preserve numbers and definitions. Use UNKNOWN for causes, approvals or capacity decisions not evidenced.
    ```
 
-6. Step 6 Compare every number and work-order ID in the Word brief to Checks and the evidence register. Add the OneDrive source link and all-filters scope. Log the Word prompt manually in Excel Prompt_Log because Excel cannot access the Word conversation. Save the cleaned workbook and brief for Lab 2.
+6. Compare every number and work-order ID in the Word brief to Checks and the evidence register. Add the OneDrive source link and all-filters scope. Log the Word prompt manually in Excel Prompt_Log because Excel cannot access the Word conversation. Save the cleaned workbook and brief for Lab 2.
+
+   ```text
+   WORD COPILOT:
+   Audit this Northstar Water Services operations brief against the verified evidence table I supply. Return a discrepancy list for counts, cost, reporting scope, overdue definition and assignment claims. Identify missing source links as UNKNOWN. Do not change facts or approve work.
+   ```
+
 
 **Sample prompts**
 
@@ -230,7 +242,7 @@ Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with recon
 
 **Checkpoint and rejoin point**
 
-If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
@@ -248,7 +260,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-01-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-01-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -342,24 +354,36 @@ Northstar_Initial_Update.pptx, an unsent Outlook draft and Northstar_Cross_App_E
 
 **Step-by-step**
 
-1. Step 1 Open your Lab 1 Word brief and cleaned workbook. If needed use this lab’s verified checkpoint and snapshot, clearly recording rejoin. Read data/Northstar_Email_Thread.txt. It asks for a portfolio update, not authorisation to reassign technicians.
-2. Step 2 Open templates/Northstar_Management_Deck_Template.pptx in PowerPoint and save as Northstar_Initial_Update.pptx. For this initial update use four slides by keeping the first four layout slides and deleting the remaining unused template slides. Open Copilot and select your Word brief with Reference a file; if the command is unavailable, paste the reviewed brief into the prompt.
+1. Open your Lab 1 Word brief and cleaned workbook. If needed use this lab’s verified checkpoint and snapshot, clearly recording rejoin. Read data/Northstar_Email_Thread.txt. It asks for a portfolio update, not authorisation to reassign technicians.
+
+   ```text
+   WORD COPILOT:
+   From this selected verified Northstar Water Services operations brief, extract a handoff table with reporting date, filter scope, total, closed, cancelled, backlog, overdue, unassigned backlog and recorded cost. Separate facts, proposed next actions and open decisions. Keep every value traceable to the supplied brief.
+   ```
+
+2. Open data/templates/Northstar_Management_Deck_Template.pptx in PowerPoint and save as Northstar_Initial_Update.pptx. For this initial update use four slides by keeping the first four layout slides and deleting the remaining unused template slides. Open Copilot and select your Word brief with Reference a file; if the command is unavailable, paste the reviewed brief into the prompt.
 
    ```text
    POWERPOINT COPILOT:
    Using this verified Northstar Word brief, create a four-slide initial update: scope and portfolio; backlog and overdue work; current assignments and proposed actions; decision required. Use the existing white/navy/blue design. Preserve all verified metrics. Add source/date notes. Do not invent completed work, savings or approved reassignment.
    ```
 
-3. Step 3 Review all four slides. Check status definitions, units and date, and correct any invented claim. Save a reconciled CSV using templates/Evidence_Register.csv: one row per claim and a source link. This is the bridge between app outputs; app chats are not automatically shared.
-4. Step 4 In Outlook create a new training draft addressed to operations.manager@example.invalid with subject DRAFT - Northstar maintenance update - review required. Do not send. Paste the synthetic thread into the draft or use it as quoted context; Copilot summarises the supplied text, not a real mailbox thread. Open Copilot > Draft with Copilot; UI names may differ.
+3. Review all four slides. Check status definitions, units and date, and correct any invented claim. Save a reconciled CSV using data/templates/Evidence_Register.csv: one row per claim and a source link. This is the bridge between app outputs; app chats are not automatically shared.
+
+   ```text
+   POWERPOINT COPILOT:
+   Audit these four Northstar Water Services slides against the selected verified operations brief. For each numeric claim give the source, date and scope; flag unsupported service-restoration, safety, customer-impact or approval claims. Propose corrections without changing the checked values.
+   ```
+
+4. In Outlook create a new training draft addressed to operations.manager@example.invalid with subject DRAFT - Northstar maintenance update - review required. Do not send. Paste the synthetic thread into the draft or use it as quoted context; Copilot summarises the supplied text, not a real mailbox thread. Open Copilot > Draft with Copilot; UI names may differ.
 
    ```text
    OUTLOOK COPILOT:
    Draft a concise reply to the synthetic thread quoted below, using the verified Northstar brief and these checked metrics. State the 30 September 2026 scope, backlog/overdue findings, proposed next actions and the decision requested. Explain that assignments are unapproved proposals. Do not claim the attachments have been sent. Keep as a draft.
    ```
 
-5. Step 5 If your Outlook offers reference attachments, attach the verified Word brief and choose it as context. Otherwise paste the reviewed metrics into the drafting prompt. Replace any placeholder summary with exact checked values; inspect recipients, subject, tone and attachment names. Save only the draft and a local TXT copy of its reviewed body.
-6. Step 6 Ask Word Copilot to compare your pasted slide/email summaries with the brief, then perform the same comparison yourself. Add the cross-app prompt log entries manually. Keep all four source links with the reconciliation record; any mismatch must be fixed before the skill labs.
+5. If your Outlook offers reference attachments, attach the verified Word brief and choose it as context. Otherwise paste the reviewed metrics into the drafting prompt. Replace any placeholder summary with exact checked values; inspect recipients, subject, tone and attachment names. Save only the draft and a local TXT copy of its reviewed body.
+6. Ask Word Copilot to compare your pasted slide/email summaries with the brief, then perform the same comparison yourself. Add the cross-app prompt log entries manually. Keep all four source links with the reconciliation record; any mismatch must be fixed before the skill labs.
 
    ```text
    WORD COPILOT:
@@ -384,7 +408,7 @@ Northstar_Initial_Update.pptx, an unsent Outlook draft and Northstar_Cross_App_E
 
 **Checkpoint and rejoin point**
 
-If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
@@ -402,7 +426,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-02-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-02-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -519,31 +543,43 @@ A reviewed maintenance-reporting/SKILL.md v1, a smoke-test record, and a native-
 
 **Step-by-step**
 
-1. Step 1 Read templates/maintenance-reporting/SKILL.md and data/Northstar_Maintenance_Context.txt. Open Microsoft 365 Copilot at https://copilot.cloud.microsoft in your assigned account. Provide the skill requirements as prompt context. Do not upload private work data.
+1. Read data/templates/maintenance-reporting/SKILL.md and data/Northstar_Maintenance_Context.txt. Open Microsoft 365 Copilot at https://copilot.cloud.microsoft in your assigned account. Provide the skill requirements as prompt context. Do not upload private work data.
 
    ```text
    MICROSOFT 365 COPILOT WEB:
    Write a complete SKILL.md for maintenance-reporting. Require YAML name and description, input table or verified Word snapshot, report date and filter scope. Define backlog, overdue and on-time closed rate. Preserve IDs/status/current owners. Put assignment suggestions in a separate proposals sheet. Support Excel outputs and PowerPoint storytelling with source notes, existing white/navy/blue style, no invented facts and safe reruns. Never send email or approve assignments. Ask for missing inputs. Return the entire Markdown file.
    ```
 
-2. Step 2 Copy the complete returned file into a plain text editor, save UTF-8 as SKILL.md in a folder named maintenance-reporting, not SKILL.md.txt. Check the opening --- name/description --- block. Compare every definition and boundary with the supplied template. Edit missing instructions and retain your own version as v1 in templates or work-c027.
-3. Step 3 Open data/Northstar_Work_Orders.xlsx in Excel and save a working copy first. Then open Copilot > ... > Manage skills (or Manage plugins & skills) > Custom skills > Create OneDrive folder (if needed) > Open skills folder. Put the maintenance-reporting folder containing SKILL.md inside that app-created folder. Return to Custom skills and select Refresh. Enable the skill and verify the exact name; do not guess the OneDrive folder path.
-4. Step 4 In that Lab 3 workbook invoke the skill from Add work content > Choose skills (or Choose plugins & skills) or @mention. Inspect the proposed plan before editing; keep the source table unchanged. Save the result as Northstar_Skill_Smoke_Test.xlsx. If the Excel skills menu is absent, paste the complete reviewed SKILL.md as instructions before the test prompt, omit @mention, and record Manual practice - native skill unavailable.
+2. Copy the complete returned file into a plain text editor, save UTF-8 as SKILL.md in a folder named maintenance-reporting, not SKILL.md.txt. Check the opening --- name/description --- block. Compare every definition and boundary with the supplied template. Edit missing instructions and retain your own version at work-c027/maintenance-reporting-v1/SKILL.md.
+
+   ```text
+   MICROSOFT 365 COPILOT WEB:
+   Review this supplied maintenance-reporting SKILL.md for Northstar Water Services. Check YAML name/description, required source/date/scope, backlog and overdue definitions, source preservation, assignment proposal boundaries, app-specific context and safe reruns. Return exact corrections and then the complete revised file; do not invent missing data.
+   ```
+
+3. Open data/Northstar_Work_Orders.xlsx in Excel and save a working copy first. Then open Copilot > ... > Manage skills (or Manage plugins & skills) > Custom skills > Create OneDrive folder (if needed) > Open skills folder. Put the maintenance-reporting folder containing SKILL.md inside that app-created folder. Return to Custom skills and select Refresh. Enable the skill and verify the exact name; do not guess the OneDrive folder path.
+4. In that Lab 3 workbook invoke the skill from Add work content > Choose skills (or Choose plugins & skills) or @mention. Inspect the proposed plan before editing; keep the source table unchanged. Save the result as Northstar_Skill_Smoke_Test.xlsx. If the Excel skills menu is absent, paste the complete reviewed SKILL.md as instructions before the test prompt, omit @mention, and record Manual practice - native skill unavailable.
 
    ```text
    EXCEL - CHAT ONLY:
    @maintenance-reporting Explain the reporting definitions for tblWorkOrders at 2026-09-30, all filters All. State which sheets you may change, how missing owners are handled, and what you need before producing a PowerPoint update. Do not edit yet.
    ```
 
-5. Step 5 Open PowerPoint template > Copilot > + > Choose skills > Manage skills > Add skill. Upload your SKILL.md or paste it in Add skill as supported; verify it appears and is enabled. Alternatively use Manage skills > Custom skills > Open skills folder and copy the correctly named folder there. The PowerPoint location is app-created; installing in Excel alone is not proof it is available in PowerPoint.
-6. Step 6 Run a PowerPoint smoke test with the verified snapshot selected as a file reference. Record the actual app name, selected skill name and response. If a skills menu is absent, paste the complete reviewed skill as instructions alongside the snapshot and mark Manual practice - native skill unavailable. Do not claim a native invocation.
+5. Open PowerPoint template > Copilot > + > Choose skills > Manage skills > Add skill. Upload your SKILL.md or paste it in Add skill as supported; verify it appears and is enabled. Alternatively use Manage skills > Custom skills > Open skills folder and copy the correctly named folder there. The PowerPoint location is app-created; installing in Excel alone is not proof it is available in PowerPoint.
+6. Run a PowerPoint smoke test with the verified snapshot selected as a file reference. Record the actual app name, selected skill name and response. If a skills menu is absent, paste the complete reviewed skill as instructions alongside the snapshot and mark Manual practice - native skill unavailable. Do not claim a native invocation.
 
    ```text
    POWERPOINT COPILOT:
    @maintenance-reporting Using the selected Northstar_Verified_Snapshot.docx, propose an eight-slide maintenance report outline. Explain how every claim will be grounded and which actions remain proposals. Keep the reporting date and scope visible; do not edit slides yet.
    ```
 
-7. Step 7 Log the web authoring prompt and PowerPoint test manually in workbook Prompt_Log. For Excel log the actual response and your check. Keep the v1 file and test notes for Lab 4; no app can automatically read the other app’s chat.
+7. Log the web authoring prompt and PowerPoint test manually in workbook Prompt_Log. For Excel log the actual response and your check. Keep the v1 file and test notes for Lab 4; no app can automatically read the other app’s chat.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Using only the web and PowerPoint smoke-test responses I paste here and this workbook test response, prepare a Prompt_Log comparison. Record the app, source, scope, actual behaviour and my verification. Leave missing responses UNKNOWN. Do not claim access to another app chat or a successful test without evidence.
+   ```
+
 
 **Sample prompts**
 
@@ -562,7 +598,7 @@ A reviewed maintenance-reporting/SKILL.md v1, a smoke-test record, and a native-
 
 **Checkpoint and rejoin point**
 
-If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
@@ -580,7 +616,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-03-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus templates/maintenance-reporting/SKILL.md (Complete custom maintenance skill template). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-03-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus data/templates/maintenance-reporting/SKILL.md (Complete custom maintenance skill template). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -674,8 +710,8 @@ Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, N
 
 **Step-by-step**
 
-1. Step 1 Copy the Lab 3 reviewed SKILL.md to your output folder and retain v1. Open this lab’s clean workbook or your Lab 1 cleaned workbook. Save as Northstar_Skill_Report.xlsx. Read Technicians: primary category and available hours are synthetic planning inputs, not approvals. Check that your skill is enabled in Excel.
-2. Step 2 Invoke the skill in Plan or Chat only, review its proposed output boundaries, then allow editing. Inspect the resulting formulas and charts. Summary counts must reconcile to Control, and the source table must remain 120 unique records.
+1. Copy the Lab 3 reviewed SKILL.md to your output folder and retain v1. Open this lab’s clean workbook or your Lab 1 cleaned workbook. Save as Northstar_Skill_Report.xlsx. Read Technicians: primary category and available hours are synthetic planning inputs, not approvals. Check that your skill is enabled in Excel.
+2. Invoke the skill in Plan or Chat only, review its proposed output boundaries, then allow editing. Inspect the resulting formulas and charts. Summary counts must reconcile to Control, and the source table must remain 120 unique records.
 
    ```text
    EXCEL - PLAN:
@@ -685,15 +721,21 @@ Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, N
    Apply that reviewed summary plan. Add Assignment_Proposals for unassigned backlog only. Use tblTechnicians primary category and available hours as planning inputs; show category/capacity checks, current owner and proposed owner separately. Leave manager decision UNKNOWN. Do not change Assigned_To.
    ```
 
-3. Step 3 Check the unassigned backlog count against Control. A technician with the same category may still lack usable capacity: use available hours minus known proposed hours, flag conflicts, and do not convert a suggestion into confirmed assignment. Export your verified summary into the Word snapshot template, preserving measures and date.
-4. Step 4 Open the four-slide initial update from Lab 2, or use checkpoints/Northstar_Initial_Update_Checkpoint.pptx, a four-slide rejoin example explicitly labelled as a checkpoint. Save as Northstar_Skill_Update.pptx. Select the reviewed snapshot in PowerPoint and invoke your installed skill.
+3. Check the unassigned backlog count against Control. A technician with the same category may still lack usable capacity: use available hours minus known proposed hours, flag conflicts, and do not convert a suggestion into confirmed assignment. Export your verified summary into the Word snapshot template, preserving measures and date.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   @maintenance-reporting Review Assignment_Proposals against tblWorkOrders and tblTechnicians. Check each suggested owner has the matching water-service job category, capacity limitations are visible and original Assigned_To values are unchanged. Leave manager approval UNKNOWN; do not assign or schedule a technician.
+   ```
+
+4. Open the four-slide initial update from Lab 2, or use data/checkpoints/Northstar_Initial_Update_Checkpoint.pptx, a four-slide rejoin example explicitly labelled as a checkpoint. Save as Northstar_Skill_Update.pptx. Select the reviewed snapshot in PowerPoint and invoke your installed skill.
 
    ```text
    POWERPOINT COPILOT:
    @maintenance-reporting Improve this existing initial maintenance update from the selected verified snapshot. Retain four slides and accurate values; strengthen claim headlines, simplify text, improve source notes and use the current design. Do not duplicate slides or imply live links to Excel. Label suggested reassignment as proposed.
    ```
 
-5. Step 5 Create a new EMPTY workbook with no table, open a fresh Copilot chat and run a missing-input test for a different reporting period with no source selected. A proper skill asks for source/date/scope rather than inventing metrics. If it guesses, record the failure and revise the skill’s input guard. Return to Northstar_Skill_Report.xlsx and Save As Northstar_Skill_Rerun_Test.xlsx. Run the second summary request in this copy of the report workbook, not in the empty workbook; only named outputs may be replaced after review, with no duplicated source or output sheets. Compare a before/after copy of Work_Orders sorted by Work_Order_ID for status, owner, dates and cost; every original source value must match.
+5. Create a new EMPTY workbook with no table, open a fresh Copilot chat and run a missing-input test for a different reporting period with no source selected. A proper skill asks for source/date/scope rather than inventing metrics. If it guesses, record the failure and revise the skill’s input guard. Return to Northstar_Skill_Report.xlsx and Save As Northstar_Skill_Rerun_Test.xlsx. Run the second summary request in this copy of the report workbook, not in the empty workbook; only named outputs may be replaced after review, with no duplicated source or output sheets. Compare a before/after copy of Work_Orders sorted by Work_Order_ID for status, owner, dates and cost; every original source value must match.
 
    ```text
    EXCEL - CHAT ONLY:
@@ -703,7 +745,13 @@ Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, N
    @maintenance-reporting Rebuild the existing Maintenance_Summary for the same table, date and scope. Describe what will be replaced, ask before replacement and keep source/unrelated sheets. Do not duplicate outputs.
    ```
 
-6. Step 6 In a plain text editor improve SKILL.md: require an input guard, category/capacity evidence, source provenance per claim and a clear rerun rule. Retain YAML name maintenance-reporting and add a body version note v2. Re-upload/Refresh in BOTH Excel and PowerPoint. Record actual before/after changes, or already present - retained for safeguards that your v1 already contains. Do not fabricate differences. Rerun the smoke tests and compare values. If using the manual route, replace the pasted instructions in both apps.
+6. In a plain text editor improve SKILL.md: require an input guard, category/capacity evidence, source provenance per claim and a clear rerun rule. Retain YAML name maintenance-reporting and add a body version note v2. Re-upload/Refresh in BOTH Excel and PowerPoint. Record actual before/after changes, or already present - retained for safeguards that your v1 already contains. Do not fabricate differences. Rerun the smoke tests and compare values. If using the manual route, replace the pasted instructions in both apps.
+
+   ```text
+   MICROSOFT 365 COPILOT WEB:
+   Improve this supplied maintenance-reporting skill to v2 using only my actual smoke-test and rerun findings pasted here. Add explicit missing-input and no-duplicate-output guards. Keep Excel source and current owners protected. Return the complete revised SKILL.md and a short before/after change log; do not fabricate test evidence.
+   ```
+
 
 **Sample prompts**
 
@@ -722,7 +770,7 @@ Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, N
 
 **Checkpoint and rejoin point**
 
-If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
@@ -740,7 +788,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-04-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus templates/maintenance-reporting/SKILL.md (Complete custom maintenance skill template). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-04-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus data/templates/maintenance-reporting/SKILL.md (Complete custom maintenance skill template). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -856,30 +904,42 @@ Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three l
 
 **Step-by-step**
 
-1. Step 1 Open templates/Northstar_Dashboard_Starter.xlsx and save as Northstar_Dashboard.xlsx in OneDrive. If continuing your own workbook, copy its CLEAN tblWorkOrders into the starter, keeping exact headers and table name; do not create a second table. The starter has a labelled blank Dashboard and four selection cells B2:B5, initially All.
-2. Step 2 Read Control and confirm the fixed reporting date. Ask for a visual plan before edits. Keep source, Checks and Prompt_Log separate from the Dashboard view. A dashboard is a decision interface: each visual should answer a maintenance question rather than decorate the page.
+1. Open data/templates/Northstar_Dashboard_Starter.xlsx and save as Northstar_Dashboard.xlsx in OneDrive. If continuing your own workbook, copy its CLEAN tblWorkOrders into the starter, keeping exact headers and table name; do not create a second table. The starter has a labelled blank Dashboard and four selection cells B2:B5, initially All.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Inspect this Northstar Water Services dashboard starter. Confirm tblWorkOrders, 120 unique IDs, reporting date 2026-09-30 and selection cells B2:B5 initially All. Explain which source and control sheets must remain intact. Report discrepancies before any edits.
+   ```
+
+2. Read Control and confirm the fixed reporting date. Ask for a visual plan before edits. Keep source, Checks and Prompt_Log separate from the Dashboard view. A dashboard is a decision interface: each visual should answer a maintenance question rather than decorate the page.
 
    ```text
    EXCEL - PLAN:
    Plan Dashboard for Northstar maintenance at 2026-09-30. Use selection cells B2:B5 for Site, Job_Category, Status, Assigned_To, all initially All. Reserve B7 total orders, B8 backlog, B9 overdue backlog, B10 closed, B11 on-time closure rate, B12 Cost_SGD. Place three charts for status, category and site with labels, units and scope. Preserve source data.
    ```
 
-3. Step 3 Ask Copilot to insert formulas for the six measures using structured table references. For now all selectors are All; in Lab 6 the same formulas must honour the four filters. Verify the denominator and use N/A, not 0%, if no Closed rows remain.
+3. Ask Copilot to insert formulas for the six measures using structured table references. For now all selectors are All; in Lab 6 the same formulas must honour the four filters. Verify the denominator and use N/A, not 0%, if no Closed rows remain.
 
    ```text
    EXCEL - ALLOW EDITING:
    Build the planned six KPI formulas from tblWorkOrders. Backlog excludes Closed/Cancelled. Overdue also requires Due_Date < Control!B2. On-time rate counts Closed_Date <= Due_Date among Closed rows only, and shows N/A when none. Recorded cost sums Cost_SGD of all included statuses. Link to table columns, never a fixed 120-row range. Keep source data unchanged.
    ```
 
-4. Step 4 Add formula-backed chart summaries for the six statuses, five categories and five sites. Use bar/column charts: category and site are nominal groups; a line chart would imply an order that is not present. Label count axes and avoid 3-D effects. Ask the skill for consistent style if available.
+4. Add formula-backed chart summaries for the six statuses, five categories and five sites. Use bar/column charts: category and site are nominal groups; a line chart would imply an order that is not present. Label count axes and avoid 3-D effects. Ask the skill for consistent style if available.
 
    ```text
    EXCEL - ALLOW EDITING:
    Create three editable bar or column charts using formula-backed summaries: work-order count by Status, by Job_Category and by Site. Each summary must reconcile to the total selected orders. Use white background, navy titles, blue/teal accents, readable labels and a visible reporting date. Do not use category counts as evidence of causes or use colour alone for status.
    ```
 
-5. Step 5 In Checks confirm sum of each chart’s categories equals 120 with All filters. Compare six KPIs to Control and record the on-time numerator/denominator. Add templates/Evidence_Register.csv entries for each chart and metric. If Copilot has used hard-coded numbers, replace them with formulas before Lab 6.
-6. Step 6 Create a measure dictionary on a new Measures sheet: metric, business definition, formula, source fields, date rule, scope and limitation. Ask Copilot to explain formulas, then read one overdue example and one closed example from the source table yourself. Save the baseline dashboard with all filters All.
+5. In Checks confirm sum of each chart’s categories equals 120 with All filters. Compare six KPIs to Control and record the on-time numerator/denominator. Add data/templates/Evidence_Register.csv entries for each chart and metric. If Copilot has used hard-coded numbers, replace them with formulas before Lab 6.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Reconcile the Northstar Water Services dashboard with Control at All selections. Compare all six KPIs and totals of the Status, Job_Category and Site charts. Flag hard-coded values, fixed row ranges, inconsistent scopes and any interpretation that treats job-category frequency as a cause. Do not edit.
+   ```
+
+6. Create a measure dictionary on a new Measures sheet: metric, business definition, formula, source fields, date rule, scope and limitation. Ask Copilot to explain formulas, then read one overdue example and one closed example from the source table yourself. Save the baseline dashboard with all filters All.
 
    ```text
    EXCEL - CHAT ONLY:
@@ -905,7 +965,7 @@ Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three l
 
 **Checkpoint and rejoin point**
 
-If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
@@ -923,7 +983,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-05-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-05-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -1016,8 +1076,14 @@ Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refr
 
 **Step-by-step**
 
-1. Step 1 Open your Lab 5 baseline dashboard. Rejoin using checkpoints/Northstar_Verified_Checkpoint.xlsx only if needed; record that it is an example formula dashboard. Set all four selections B2:B5 to All and confirm 120. Save baseline before creating any refresh-test copy.
-2. Step 2 Use Data > Data Validation > Allow List to set dropdowns on B2 Site, B3 Job_Category, B4 Status and B5 Assigned_To. Include All plus the source values, using Filter_Lists if supplied. Ask Copilot to apply all four selections to EVERY KPI and chart summary. A selection of All bypasses only that filter; selected dimensions combine with AND.
+1. Open your Lab 5 baseline dashboard. Rejoin using data/checkpoints/Northstar_Verified_Checkpoint.xlsx only if needed; record that it is an example formula dashboard. Set all four selections B2:B5 to All and confirm 120. Save baseline before creating any refresh-test copy.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Before testing filters, report the baseline Northstar Water Services dashboard source, date and scope. Confirm 120 unique work orders and all four selectors All. Identify the baseline file that must remain untouched when making the refresh-test copy.
+   ```
+
+2. Use Data > Data Validation > Allow List to set dropdowns on B2 Site, B3 Job_Category, B4 Status and B5 Assigned_To. Include All plus the source values, using Filter_Lists if supplied. Ask Copilot to apply all four selections to EVERY KPI and chart summary. A selection of All bypasses only that filter; selected dimensions combine with AND.
 
    ```text
    EXCEL - PLAN:
@@ -1027,23 +1093,35 @@ Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refr
    Apply the reviewed filter plan and dropdown lists. Keep existing source rows and chart positions. Show the selected scope beside the reporting date and make all charts recalculate from the same selected rows.
    ```
 
-3. Step 3 Choose Woodlands Hub in B2 and leave other selectors All. Filter the source table to the same site and compare rows, backlog, overdue and cost. Use Data > Clear on source table afterwards; dashboard selectors and source AutoFilter are distinct mechanisms. Record evidence in templates/Filter_Test_Log.csv.
+3. Choose Woodlands Hub in B2 and leave other selectors All. Filter the source table to the same site and compare rows, backlog, overdue and cost. Use Data > Clear on source table afterwards; dashboard selectors and source AutoFilter are distinct mechanisms. Record evidence in data/templates/Filter_Test_Log.csv.
 
    ```text
    EXCEL - CHAT ONLY:
    For the dashboard selection Site = Woodlands Hub and all other dimensions All, list the expected six KPI values from tblWorkOrders and verify each chart sum matches the selected total. Do not infer that filtering the worksheet automatically changes formula measures.
    ```
 
-4. Step 4 Set Status to New with other selectors All. Confirm zero closed -> N/A. Then set Site = Woodlands Hub, Job_Category = HVAC, Assigned_To = Daniel Lee, Status = All, a combination with no rows; total, backlog, overdue, closed and cost must be 0 and rate N/A. Reset all four to All and verify baseline controls. Optional: create PivotTables from one tblWorkOrders source, insert slicers, and use Slicer > Report Connections for every PivotTable; unconnected KPI cells are a defect.
-5. Step 5 Save a COPY as Northstar_Dashboard_Refresh_Test.xlsx. In the last row of tblWorkOrders press Tab to append, then enter the two rows from data/Refresh_Test_Rows.csv with real Excel dates (YYYY-MM-DD). WO-2026-0121 is Assigned, due 2026-09-29 and cost 150; WO-2026-0122 is Closed on time and cost 250. No existing IDs are edited.
-6. Step 6 Recalculate with all selections All. If using PivotTables also Data > Refresh All and inspect source extent. Verify total122, closed49, backlog61, overdue baseline+1, cost baseline+400 and on-time numerator baseline+1 over49. If formulas do not expand, fix structured references/table extent. Keep this sandbox copy as refresh evidence; do not use its figures in the baseline presentation.
+4. Set Status to New with other selectors All. Confirm zero closed -> N/A. Then set Site = Woodlands Hub, Job_Category = Leak Repair, Assigned_To = Daniel Lee, Status = All, a combination with no rows; total, backlog, overdue, closed and cost must be 0 and rate N/A. Reset all four to All and verify baseline controls. Optional: create PivotTables from one tblWorkOrders source, insert slicers, and use Slicer > Report Connections for every PivotTable; unconnected KPI cells are a defect.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Check two dashboard edge cases without changing source data: Status New with other selectors All; then Site Woodlands Hub, Job_Category Leak Repair, Assigned_To Daniel Lee, Status All. Verify zero closed gives N/A and no selected rows gives zero count/cost with N/A rate. Show how all charts follow the same selection. Restore all selectors to All.
+   ```
+
+5. Save a COPY as Northstar_Dashboard_Refresh_Test.xlsx. In the last row of tblWorkOrders press Tab to append, then enter the two rows from data/Refresh_Test_Rows.csv with real Excel dates (YYYY-MM-DD). WO-2026-0121 is Assigned, due 2026-09-29 and cost 150; WO-2026-0122 is Closed on time and cost 250. No existing IDs are edited.
+6. Recalculate with all selections All. If using PivotTables also Data > Refresh All and inspect source extent. Verify total122, closed49, backlog61, overdue baseline+1, cost baseline+400 and on-time numerator baseline+1 over49. If formulas do not expand, fix structured references/table extent. Keep this sandbox copy as refresh evidence; do not use its figures in the baseline presentation.
 
    ```text
    EXCEL - CHAT ONLY:
    Verify the sandbox append test for the two new work orders. Reconcile total 122, closed 49, backlog 61, overdue increased by 1, cost increased by S$400 and on-time numerator increased by 1. Confirm no original source record changed and all three charts total 122 with All selections. Compare original IDs, statuses, owners, dates and costs to the saved baseline; all original 120 rows must match.
    ```
 
-7. Step 7 Return to the untouched 120-row Northstar_Dashboard.xlsx. Set selectors All and record a frozen evidence snapshot dated 2026-09-30 for Lab 7. Copy templates/Northstar_Operations_Brief_Template.docx to Northstar_Verified_Snapshot.docx in Word and insert the reviewed summary and chart values. Save chart images if needed with right-click chart > Save as Picture; the slide copy will be a static snapshot, not a live dashboard.
+7. Return to the untouched 120-row Northstar_Dashboard.xlsx. Set selectors All and record a frozen evidence snapshot dated 2026-09-30 for Lab 7. Copy data/templates/Northstar_Operations_Brief_Template.docx to Northstar_Verified_Snapshot.docx in Word and insert the reviewed summary and chart values. Save chart images if needed with right-click chart > Save as Picture; the slide copy will be a static snapshot, not a live dashboard.
+
+   ```text
+   WORD COPILOT:
+   Using only the verified baseline dashboard evidence I paste here, prepare the frozen Northstar Water Services presentation snapshot. Include reporting date, All scope, 120-row baseline, six KPIs, chart values, source workbook link and limitations. Exclude the 122-row sandbox. Keep proposed priorities separate from observed facts.
+   ```
+
 
 **Sample prompts**
 
@@ -1064,7 +1142,7 @@ Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refr
 
 **Checkpoint and rejoin point**
 
-If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
@@ -1082,7 +1160,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-06-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-06-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -1201,24 +1279,42 @@ Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-b
 
 **Step-by-step**
 
-1. Step 1 Open the untouched baseline Northstar_Dashboard.xlsx from Lab 6; confirm All selectors, total120 and report date2026-09-30. Do not use the 122-row sandbox. If needed use this lab’s checkpoint and record rejoin. Copy verified metric/chart values to templates/Slide_Evidence_Register.csv with source sheet/table, scope and date.
-2. Step 2 Open templates/Northstar_Presentation_Brief_Template.docx in Word. Add the verified summary and chart values plus the OneDrive workbook link. Save as Northstar_Presentation_Brief.docx. Copilot must see selected files or pasted evidence; the link alone and the Excel conversation do not guarantee accessible context.
+1. Open the untouched baseline Northstar_Dashboard.xlsx from Lab 6; confirm All selectors, total120 and report date2026-09-30. Do not use the 122-row sandbox. If needed use this lab’s checkpoint and record rejoin. Copy verified metric/chart values to data/templates/Slide_Evidence_Register.csv with source sheet/table, scope and date.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   For the untouched 120-row Northstar Water Services baseline dashboard at 2026-09-30, All selectors, return a presentation evidence table: six KPIs, backlog by site, status and job-category counts, unassigned backlog and relevant source references. Do not use the refresh-test copy or infer service disruption, safety risk, causes or savings.
+   ```
+
+2. Open data/templates/Northstar_Presentation_Brief_Template.docx in Word. Add the verified summary and chart values plus the OneDrive workbook link. Save as Northstar_Presentation_Brief.docx. Copilot must see selected files or pasted evidence; the link alone and the Excel conversation do not guarantee accessible context.
 
    ```text
    WORD COPILOT:
    Using this verified 120-row Northstar maintenance snapshot, draft an eight-slide management presentation brief. For each slide give one claim headline, supporting measure/chart, source/date/scope, limitation and speaker note. Structure: overview, portfolio, site backlog, status/category mix, SLA/overdue, assignment/capacity, proposed actions/trade-offs, decision/next review. Do not invent causes, savings, approval or future dates; use UNKNOWN when absent.
    ```
 
-3. Step 3 Review the brief against source values. A bar showing counts by site is not a severity index; if you want backlog by site, count only nonterminal statuses. Correct any misleading headline and fill the slide evidence register. Suggested actions must cite a finding and say proposed.
-4. Step 4 Open the supplied PowerPoint template, save as Northstar_Management_Draft.pptx and open Copilot. Choose Create presentation from file if offered, or reference the Word brief while editing the existing deck. Select your reviewed OneDrive Word brief; direct workbook-to-deck creation is not assumed. Invoke @maintenance-reporting if available.
+3. Review the brief against source values. A bar showing counts by site is not a severity index; if you want backlog by site, count only nonterminal statuses. Correct any misleading headline and fill the slide evidence register. Suggested actions must cite a finding and say proposed.
+
+   ```text
+   WORD COPILOT:
+   Review this eight-slide Northstar Water Services brief against the supplied baseline evidence. Check each headline has a supporting value, correct units, source/date/scope and an explicit limitation. Rewrite unsupported claims as questions or proposed actions. Do not change verified figures or invent approvals.
+   ```
+
+4. Open the supplied PowerPoint template, save as Northstar_Management_Draft.pptx and open Copilot. Choose Create presentation from file if offered, or reference the Word brief while editing the existing deck. Select your reviewed OneDrive Word brief; direct workbook-to-deck creation is not assumed. Invoke @maintenance-reporting if available.
 
    ```text
    POWERPOINT COPILOT:
    @maintenance-reporting Create or update an eight-slide management presentation from the selected Northstar_Presentation_Brief.docx. Follow the existing white/navy/blue template. One evidence-based message per slide, short visible text, charts or tables for numerical evidence, source/as-at/scope in notes, and a final decision request. Keep values exact, and label all next actions as proposed. Do not add extra slides or invented facts.
    ```
 
-5. Step 5 Replace approximate or invented charts with your reviewed Excel charts: copy chart in Excel, then PowerPoint Home > Paste > Paste Special > Microsoft Excel Chart Object for an editable embedded chart when supported; otherwise paste a static image and label it snapshot. Embedded copies and images do not automatically follow the original workbook. Use direct verified values if a chart object is unsupported.
-6. Step 6 Inspect all eight slides and notes. Check chart title, axis, unit, status definition, date and scope. Each numeric headline must match one register row. Confirm the deck uses baseline120, not refresh122. Save for Lab 8; do not represent the draft as an approved plan.
+5. Replace approximate or invented charts with your reviewed Excel charts: copy chart in Excel, then PowerPoint Home > Paste > Paste Special > Microsoft Excel Chart Object for an editable embedded chart when supported; otherwise paste a static image and label it snapshot. Embedded copies and images do not automatically follow the original workbook. Use direct verified values if a chart object is unsupported.
+6. Inspect all eight slides and notes. Check chart title, axis, unit, status definition, date and scope. Each numeric headline must match one register row. Confirm the deck uses baseline120, not refresh122. Save for Lab 8; do not represent the draft as an approved plan.
+
+   ```text
+   POWERPOINT COPILOT:
+   Audit the eight-slide Northstar Water Services management draft against the selected presentation brief and evidence register. Confirm baseline 120, source notes, chart labels and units, correct backlog exclusions and proposed-action wording. List needed corrections and preserve slide count; do not claim Excel charts update automatically.
+   ```
+
 
 **Sample prompts**
 
@@ -1237,7 +1333,7 @@ Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-b
 
 **Checkpoint and rejoin point**
 
-If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
@@ -1255,7 +1351,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-07-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-07-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -1348,31 +1444,43 @@ Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register
 
 **Step-by-step**
 
-1. Step 1 Open your Lab 7 draft and save as Northstar_Management_Final.pptx. Rejoin only if necessary using checkpoints/Northstar_Management_Example.pptx and snapshot; review and adapt its supplied example charts and narrative against the verified snapshot. Open the same reviewed brief in the file picker; confirm native skill or label manual practice.
-2. Step 2 Ask the skill to audit before editing. It should report crowded slides, weak evidence, missing labels and inconsistent scope. Review the list yourself against the evidence register; styling changes must never change values.
+1. Open your Lab 7 draft and save as Northstar_Management_Final.pptx. Rejoin only if necessary using data/checkpoints/Northstar_Management_Example.pptx and snapshot; review and adapt its supplied example charts and narrative against the verified snapshot. Open the same reviewed brief in the file picker; confirm native skill or label manual practice.
+2. Ask the skill to audit before editing. It should report crowded slides, weak evidence, missing labels and inconsistent scope. Review the list yourself against the evidence register; styling changes must never change values.
 
    ```text
    POWERPOINT COPILOT:
    @maintenance-reporting Audit this eight-slide deck against the selected verified Northstar brief. List inaccurate figures, ambiguous units, date/scope omissions, unsupported causal or approval wording, dense text and weak hierarchy. Propose corrections; do not change values or source facts.
    ```
 
-3. Step 3 Apply only the reviewed corrections. Keep white/navy/blue with teal highlights, one main message, readable labels, consistent chart formats and source notes. Ask for concise speaker notes; check that notes do not introduce new numbers or promise assignment approvals.
+3. Apply only the reviewed corrections. Keep white/navy/blue with teal highlights, one main message, readable labels, consistent chart formats and source notes. Ask for concise speaker notes; check that notes do not introduce new numbers or promise assignment approvals.
 
    ```text
    POWERPOINT COPILOT:
    @maintenance-reporting Apply the reviewed design and wording corrections to the existing eight slides. Improve hierarchy and whitespace, make titles claim-led, retain accurate figures and charts, and add 45-second speaker notes per slide. Separate observed findings from proposed actions and end with the decision requested. Preserve the baseline date/scope; do not duplicate slides.
    ```
 
-4. Step 4 Use Slide Show to inspect at presentation size. Run a five-minute rehearsal with a partner or PowerPoint Rehearse with Coach if available. Ask the partner to identify the reporting date, highest-priority evidence and decision requested. Record one actual change in templates/Rehearsal_Log.csv; do not fabricate feedback.
-5. Step 5 Export File > Export or Save As > PDF. Open the PDF and verify eight pages, readable charts and all visible values. Compare PPTX, PDF, Word brief and dashboard against the evidence register. Keep the source workbook with All filters and the archived refresh-test copy separately.
-6. Step 6 Open Outlook and create a draft to operations.manager@example.invalid. Provide the reviewed brief and the actual OneDrive links to the dashboard/deck. Ask Copilot to draft a handoff email; it may not invent shared links or claim a sent attachment. Keep the email unsent and save a local reviewed TXT copy.
+4. Use Slide Show to inspect at presentation size. Run a five-minute rehearsal with a partner or PowerPoint Rehearse with Coach if available. Ask the partner to identify the reporting date, highest-priority evidence and decision requested. Record one actual change in data/templates/Rehearsal_Log.csv; do not fabricate feedback.
+
+   ```text
+   POWERPOINT COPILOT:
+   Using only this Northstar Water Services decision deck, propose three rehearsal questions a service operations manager could ask about overdue jobs, technician capacity and proposed priorities. Suggest where the existing evidence supports an answer and where it remains UNKNOWN. Do not invent partner feedback or alter the evidence.
+   ```
+
+5. Export File > Export or Save As > PDF. Open the PDF and verify eight pages, readable charts and all visible values. Compare PPTX, PDF, Word brief and dashboard against the evidence register. Keep the source workbook with All filters and the archived refresh-test copy separately.
+6. Open Outlook and create a draft to operations.manager@example.invalid. Provide the reviewed brief and the actual OneDrive links to the dashboard/deck. Ask Copilot to draft a handoff email; it may not invent shared links or claim a sent attachment. Keep the email unsent and save a local reviewed TXT copy.
 
    ```text
    OUTLOOK COPILOT:
    Draft a short Northstar management handoff email using this verified brief and the links I provide. State the 30 September 2026 baseline scope, headline findings, proposed actions and decision required. Explain that the PowerPoint/PDF is a static snapshot while the Excel dashboard is interactive. Leave missing links UNKNOWN. Do not claim approval or send the draft.
    ```
 
-7. Step 7 Complete templates/Final_Handoff_Checklist.csv: workbook source and controls, working filters, sandbox refresh proof, skillv2 installation/manual record, eight-slide PPTX/PDF, reviewed notes, evidence register and unsent draft. Record the exact filenames and your actual checks. Save the final pack in work-c027.
+7. Complete data/templates/Final_Handoff_Checklist.csv: workbook source and controls, working filters, sandbox refresh proof, skillv2 installation/manual record, eight-slide PPTX/PDF, reviewed notes, evidence register and unsent draft. Record the exact filenames and your actual checks. Save the final pack in work-c027.
+
+   ```text
+   WORD COPILOT:
+   Review the final Northstar Water Services handoff evidence I supply: baseline workbook, refresh-test record, skill v2, eight-slide deck and PDF, brief, source register and unsent email draft. Return a completeness checklist with verified evidence and missing items UNKNOWN. Confirm every artifact uses the same baseline date/scope; never claim approval, submission or sending.
+   ```
+
 
 **Sample prompts**
 
@@ -1392,7 +1500,7 @@ Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register
 
 **Checkpoint and rejoin point**
 
-If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
@@ -1410,7 +1518,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-08-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-08-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 

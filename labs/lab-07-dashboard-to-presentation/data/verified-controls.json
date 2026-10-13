@@ -16,10 +16,10 @@
     "Changi Workshop": 24
   },
   "category_counts": {
-    "HVAC": 24,
-    "Electrical": 24,
-    "Plumbing": 24,
-    "Fire Safety": 24,
-    "General Repair": 24
+    "Leak Repair": 24,
+    "Valve Repair": 24,
+    "Pipe Replacement": 24,
+    "Pump Service": 24,
+    "Meter Service": 24
   }
 }

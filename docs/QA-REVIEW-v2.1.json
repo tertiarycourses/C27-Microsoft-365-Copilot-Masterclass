@@ -1,0 +1,59 @@
+{
+  "course": "C27",
+  "version": "v2.1",
+  "theme": "Northstar Water Services: fictional water-pipe maintenance and service company",
+  "instructional_minutes": 450,
+  "guided_lab_minutes": 340,
+  "concept_demo_minutes": 80,
+  "briefing_recap_minutes": 30,
+  "lab_tabs": 8,
+  "copy_prompt_count": 47,
+  "copy_counts_by_lab": [
+    7,
+    5,
+    5,
+    7,
+    6,
+    7,
+    5,
+    5
+  ],
+  "lab_folder_items": [
+    "data/",
+    "Lab-NN-Instructions.pdf"
+  ],
+  "browser": {
+    "all_47_real_clipboard_copies_match_prompt_text_without_app_mode_headers": true,
+    "all_eight_tab_routes_show_only_selected_lab": true,
+    "mobile_viewport_px": 390,
+    "mobile_document_width_px": 390,
+    "full_steps_expanded": true
+  },
+  "fresh_formula_recalculation_scopes": [
+    "all",
+    "site",
+    "empty",
+    "zero_closed",
+    "refresh"
+  ],
+  "independent_lab_review": "PASS",
+  "private_material_in_release": false,
+  "drive_preview": {
+    "existing_course_root_id_verified": true,
+    "existing_Activities_id_preserved": true,
+    "retired_files_archived_without_deletion": true
+  },
+  "independent_courseware_review": "PASS",
+  "visual_qa": {
+    "all_lab_pdf_pages": 25,
+    "learner_guide_pages_reviewed": 31,
+    "lesson_plan_pages_reviewed": 5,
+    "representative_trainer_slide_pages": 21,
+    "unresolved_defects": 0
+  },
+  "slides": 110,
+  "concept_slides": 52,
+  "numbered_lab_steps": 51,
+  "learner_guide_pages": 54,
+  "all_reference_paths_current": true
+}

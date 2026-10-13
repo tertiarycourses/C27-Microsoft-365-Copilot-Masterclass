@@ -13,7 +13,7 @@ def add_visuals(n,g):
  if n==1:
   call('flow_h','The Northstar Maintenance Evidence Chain',['Excel: clean and check','Word: operations brief','PowerPoint: decision story','Outlook: reviewed draft'],kicker='CONNECTED USE CASE',color=g['BLUE'])
   s=frame('A Work Order Has State, Scope and Ownership','EDITABLE DATA MODEL')
-  cards=[('ID','WO-2026-0003'),('Site','Woodlands Hub'),('Category','HVAC'),('Status','In Progress'),('Owner','Chloe Goh')]
+  cards=[('ID','WO-2026-0003'),('Site','Woodlands Hub'),('Category','Leak Repair'),('Status','In Progress'),('Owner','Chloe Goh')]
   for i,(k,v) in enumerate(cards):
    x=.85+(i%3)*4;y=2+(i//3)*1.6;call('rect',s,Inches(x),Inches(y),Inches(3.7),Inches(1.25),g['LIGHT']);text(s,x+.15,y+.1,3.4,.3,k,18,True);text(s,x+.15,y+.5,3.4,.6,v,23)
   text(s,.95,5.7,11.3,.5,'Current owner is evidence. Proposed owner is a separate planning output.',21);finish(s)

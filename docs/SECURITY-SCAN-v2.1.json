@@ -1,0 +1,6 @@
+{
+  "result": "PASS",
+  "files_scanned": 200,
+  "secrets_detected": 0,
+  "private_tree_in_release": false
+}
