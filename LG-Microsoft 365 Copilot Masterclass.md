@@ -1,6 +1,6 @@
 # Microsoft 365 Copilot Masterclass — Learner Guide
 
-**Course Code:** C27  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v2.1 · 13 October 2026**
+**Course Code:** C27  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v2.2 · 14 October 2026**
 
 ## Contents
 
@@ -15,29 +15,35 @@
   - [Outlook Drafting and Operational Decisions](#outlook-drafting-and-operational-decisions)
   - [Lab 2 · Word to PowerPoint and Outlook — Create the Cross-App Maintenance Update](#lab-2--word-to-powerpoint-and-outlook--create-the-cross-app-maintenance-update)
   - [Topic 1 Recap - Mapped to Learning Outcomes](#topic-1-recap---mapped-to-learning-outcomes)
-- [Topic 2 — Create Skills for Microsoft 365 Copilot](#topic-2--create-skills-for-microsoft-365-copilot)
+- [Topic 2 — Personalisation, .Rules and Skills for Excel](#topic-2--personalisation-rules-and-skills-for-excel)
+  - [Account Personalisation and Specific Requests](#account-personalisation-and-specific-requests)
+  - [Lab 3 · Personalisation — Personalise Copilot in Excel for Consistent Service Reports](#lab-3--personalisation--personalise-copilot-in-excel-for-consistent-service-reports)
+  - [Visible Workbook .Rules and Formula Results](#visible-workbook-rules-and-formula-results)
+  - [Lab 4 · Workbook .Rules — Create and Test Workbook .Rules for Water Service Reporting](#lab-4--workbook-rules--create-and-test-workbook-rules-for-water-service-reporting)
+  - [Pareto Skill: Counts, Sorting and Cumulative Share](#pareto-skill-counts-sorting-and-cumulative-share)
+  - [Lab 5 · Custom Pareto Chart Skill — Create a Custom Pareto Chart Skill and Apply It](#lab-5--custom-pareto-chart-skill--create-a-custom-pareto-chart-skill-and-apply-it)
   - [Skills, Prompts and Workbook Rules](#skills-prompts-and-workbook-rules)
   - [Custom Skill Discovery in Each App](#custom-skill-discovery-in-each-app)
-  - [Lab 3 · Author SKILL.md — Create a Custom Maintenance Reporting Skill](#lab-3--author-skillmd--create-a-custom-maintenance-reporting-skill)
   - [Repeatability and Safe Skill Reruns](#repeatability-and-safe-skill-reruns)
   - [Assignment Proposals and Capacity Evidence](#assignment-proposals-and-capacity-evidence)
-  - [Lab 4 · Repeatable reporting — Use and Improve the Skill in Excel and PowerPoint](#lab-4--repeatable-reporting--use-and-improve-the-skill-in-excel-and-powerpoint)
+  - [Lab 6 · Reporting Skill — Create, Use and Improve the Maintenance Reporting Skill](#lab-6--reporting-skill--create-use-and-improve-the-maintenance-reporting-skill)
   - [Topic 2 Recap - Mapped to Learning Outcomes](#topic-2-recap---mapped-to-learning-outcomes)
-- [Topic 3 — Create an Interactive Dashboard with Excel Copilot](#topic-3--create-an-interactive-dashboard-with-excel-copilot)
+- [Topic 3 — Interactive Dashboards with Custom Skills](#topic-3--interactive-dashboards-with-custom-skills)
+  - [Custom Dashboard Skill as a Reusable Contract](#custom-dashboard-skill-as-a-reusable-contract)
   - [Dashboard Measures and Denominators](#dashboard-measures-and-denominators)
   - [Visual Dashboard Design for Maintenance](#visual-dashboard-design-for-maintenance)
-  - [Lab 5 · Design and build — Build Maintenance Dashboard Measures and Charts](#lab-5--design-and-build--build-maintenance-dashboard-measures-and-charts)
+  - [Lab 7 · Custom Dashboard Skill — Create and Apply a Custom Interactive Dashboard Skill](#lab-7--custom-dashboard-skill--create-and-apply-a-custom-interactive-dashboard-skill)
   - [One Filter Scope for Every Visual](#one-filter-scope-for-every-visual)
   - [Refresh Tests and Static Snapshots](#refresh-tests-and-static-snapshots)
-  - [Lab 6 · Filters and refresh — Make the Dashboard Interactive and Prove Refresh](#lab-6--filters-and-refresh--make-the-dashboard-interactive-and-prove-refresh)
+  - [Lab 8 · Interactive Filters and Refresh — Use the Dashboard Skill for Filters, Refresh and Safe Reruns](#lab-8--interactive-filters-and-refresh--use-the-dashboard-skill-for-filters-refresh-and-safe-reruns)
   - [Topic 3 Recap - Mapped to Learning Outcomes](#topic-3-recap---mapped-to-learning-outcomes)
 - [Topic 4 — Create a Professional Presentation with PowerPoint Copilot](#topic-4--create-a-professional-presentation-with-powerpoint-copilot)
   - [From Dashboard Evidence to a Decision Story](#from-dashboard-evidence-to-a-decision-story)
   - [Charts, Templates and Source Provenance](#charts-templates-and-source-provenance)
-  - [Lab 7 · Dashboard to presentation — Turn Dashboard Evidence into a Management Story](#lab-7--dashboard-to-presentation--turn-dashboard-evidence-into-a-management-story)
+  - [Lab 9 · Dashboard to presentation — Turn Dashboard Evidence into a Management Story](#lab-9--dashboard-to-presentation--turn-dashboard-evidence-into-a-management-story)
   - [Professional Refinement and Rehearsal](#professional-refinement-and-rehearsal)
   - [Reviewed Handoff and Artifact Lifecycle](#reviewed-handoff-and-artifact-lifecycle)
-  - [Lab 8 · Professional handoff — Refine and Present the Maintenance Decision Deck](#lab-8--professional-handoff--refine-and-present-the-maintenance-decision-deck)
+  - [Lab 10 · Professional handoff — Refine and Present the Maintenance Decision Deck](#lab-10--professional-handoff--refine-and-present-the-maintenance-decision-deck)
   - [Topic 4 Recap - Mapped to Learning Outcomes](#topic-4-recap---mapped-to-learning-outcomes)
 - [Next Steps](#next-steps)
 - [Glossary](#glossary)
@@ -47,14 +53,14 @@
 
 This masterclass follows Northstar Water Services, a fictional water-pipe maintenance and service company, from a dirty service-work-order export to a reviewed management decision pack. Work-order IDs, categories, sites, current assignments and status definitions stay consistent across every app. The purpose is to make evidence travel accurately through the workflow, while using Copilot for drafting, analysis, reusable instructions and visual communication.
 
-Study each topic’s concepts before its two labs. Each lab has its own instruction PDF and a data folder containing synthetic inputs, templates and a deterministic checkpoint. Copy-ready prompts are on the linked web page. Carry your own verified outputs forward. A supplied checkpoint allows rejoining but is not evidence that you completed the earlier task. The detailed procedures are here and in labs; the slides teach concepts and show outcomes.
+Study each topic’s concepts before its connected labs. Topic 2 has four labs; the other topics have two each. Each lab has its own instruction PDF and a data folder containing synthetic inputs, templates and a deterministic checkpoint. Copy-ready prompts are on the linked web page. Carry your own verified outputs forward. A supplied checkpoint allows rejoining but is not evidence that you completed the earlier task. The detailed procedures are here and in labs; the slides teach concepts and show outcomes.
 
 
 ## Course Learning Outcomes
 
 - LO1: Integrate Word, Excel, PowerPoint and Outlook Copilot in a coherent maintenance workflow with explicit source grounding and verified prompts.
-- LO2: Create, install, apply and improve a custom maintenance-reporting skill in Excel and PowerPoint, preserving source records and testing reruns.
-- LO3: Create an interactive maintenance dashboard with verified measures, common filter scope, meaningful charts and a demonstrated refresh test.
+- LO2: Distinguish account Personalisation, workbook .Rules and reusable Skills; configure, create, apply and verify Pareto and maintenance-reporting Skills using water-service evidence.
+- LO3: Create and apply a custom interactive-dashboard Skill with verified measures, shared filter scope, editable charts and controlled refresh and rerun tests.
 - LO4: Continue from the dashboard to a professional management presentation, with evidence-based headlines, source notes, rehearsal and a reviewed handoff draft.
 
 
@@ -162,7 +168,7 @@ An exact duplicated export row changes counts and cost without representing new 
 
 Learning outcome: LO1: integrate verified Word, Excel, PowerPoint and Outlook outputs.
 
-Goal: Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with reconciled counts, reporting scope and a source register.
+Goal: You are Northstar Water Services’ maintenance coordinator. A Q3 export contains repeated IDs and inconsistent category labels. You will clean a copy in Excel, reconcile its controls, and use the verified result to draft a Word operations brief. The same site, status and assignment definitions underpin every later report.
 
 You are Northstar Water Services’ maintenance coordinator. A Q3 export contains repeated IDs and inconsistent category labels. You will clean a copy in Excel, reconcile its controls, and use the verified result to draft a Word operations brief. The same site, status and assignment definitions underpin every later report.
 
@@ -228,8 +234,8 @@ Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with recon
 
 | Purpose | Prompt |
 |---|---|
-| Excel | Count unique work-order IDs and reconcile backlog using the fixed reporting date. |
-| Word | Draft an operations brief from the checked evidence; label proposals and unknowns. |
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
 
 **Test it**
 
@@ -337,7 +343,7 @@ An apparently routine update can accidentally promise technician reassignment or
 
 Learning outcome: LO1: integrate verified Word, Excel, PowerPoint and Outlook outputs.
 
-Goal: Northstar_Initial_Update.pptx, an unsent Outlook draft and Northstar_Cross_App_Evidence.csv with Excel, Word, PowerPoint and Outlook figures reconciled.
+Goal: Continue the verified operations brief from Lab 1. You will turn it into an initial PowerPoint update, then prepare an Outlook reply to a synthetic maintenance thread. You will test how grounding differs between an attached file, a chat transcript and a reviewed summary, and reconcile the same facts across all four apps.
 
 Continue the verified operations brief from Lab 1. You will turn it into an initial PowerPoint update, then prepare an Outlook reply to a synthetic maintenance thread. You will test how grounding differs between an attached file, a chat transcript and a reviewed summary, and reconcile the same facts across all four apps.
 
@@ -395,8 +401,8 @@ Northstar_Initial_Update.pptx, an unsent Outlook draft and Northstar_Cross_App_E
 
 | Purpose | Prompt |
 |---|---|
-| PowerPoint | Turn the reviewed brief into a four-slide update with source/date notes. |
-| Outlook | Draft the maintenance reply from the same checked values; keep it unsent. |
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
 
 **Test it**
 
@@ -443,18 +449,434 @@ Use this checkpoint to explain what you can now do and identify any lab evidence
 ---
 
 
-## Topic 2 — Create Skills for Microsoft 365 Copilot
+## Topic 2 — Personalisation, .Rules and Skills for Excel
 
-A reusable method for Excel and PowerPoint
+Account preferences, workbook conventions and reusable methods
 
 **Key concepts**
 
-- SKILL.md — Matching folder/name and reusable instructions.
-- Discovery — Install and verify separately in each app.
-- Repeatability — Input guards and controlled reruns.
-- Proposals — Preserve source owners and evidence boundaries.
+- Personalisation — Account preferences across workbooks; task-specific overrides.
+- .Rules — Visible column-A instructions travel with the workbook.
+- Pareto Skill — Create, install and apply verified contribution analysis.
+- Reporting Skill — Excel and PowerPoint use with input and rerun checks.
 
-Concepts for Lab 3: Skills, Prompts and Workbook Rules, Custom Skill Discovery in Each App.
+Concepts for Lab 3: Account Personalisation and Specific Requests.
+
+
+### Account Personalisation and Specific Requests
+
+Excel Copilot Personalisation stores account-level preferences for display, writing style and formula conventions. Saved preferences apply to subsequent prompts across workbooks and devices using that account. They are not stored in or shared with a workbook. A specific task instruction can supersede a preference for that task.
+
+Consistent S$ display and short explanations reduce repetitive requests without changing numeric values. Preferences must not replace the workbook’s business definitions. A private before-state note lets learners restore their previous account settings after the controlled exercise.
+
+**How it works**
+
+- Choose recurring display preferences.
+- Save them to the account.
+- Compare two workbook outputs.
+- Test a specific request and restore.
+
+**Worked example**
+
+- A value of 35827.5 can display as S$35,827.50 or S$35,827.5000.
+- Changing a number format does not change its numeric value.
+- Another user opening the file does not receive your account preferences.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| The preference applies to many reports on your account. | The instruction is a workbook-specific business rule or source change. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-personalization
+
+---
+
+
+### Lab 3 · Personalisation — Personalise Copilot in Excel for Consistent Service Reports
+
+Learning outcome: LO2: distinguish account Personalisation, workbook .Rules and reusable Skills; configure, apply and verify each using water-service evidence..
+
+Goal: Configure temporary account-level display and explanation preferences, test them in two copies of the same verified Northstar workbook, and distinguish preferences from workbook-specific definitions. A task-specific prompt can supersede Personalisation. Restore your previous settings after the exercise.
+
+Configure temporary account-level display and explanation preferences, test them in two copies of the same verified Northstar workbook, and distinguish preferences from workbook-specific definitions. A task-specific prompt can supersede Personalisation. Restore your previous settings after the exercise.
+
+**What you'll build**
+
+Northstar_Personalisation_Test.xlsx, a two-workbook preference comparison and a private note confirming settings restored.   (Tools: Microsoft 365 Copilot in Excel · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+
+**Step-by-step**
+
+1. Open this lab’s clean data/Northstar_Work_Orders.xlsx and save working copies as Northstar_Personalisation_Test.xlsx and Northstar_Preferences_Copy.xlsx in work-c027. Confirm 120 unique IDs, reporting date 2026-09-30 and cost S$35,827.50. Neither copy needs a .Rules sheet or an installed Skill for this test.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Inspect tblWorkOrders and Control for Northstar Water Services. State the clean row count, reporting date and recorded cost. Explain why display preferences should not change source values or reporting definitions. Do not edit.
+   ```
+
+2. In Copilot select Settings (...) > Personalization. Keep your existing settings in a private local note, then temporarily use the four lines in data/Personalisation_Preferences.txt: S$ two decimals, DD-MMM-YYYY, structured references and short explanations. Select Save. Preferences apply to your account on subsequent prompts; they are not stored in or shared with the workbook.
+3. In the first working copy request a small output using your saved preferences. Review the plan before allowing editing. Confirm the date displays 30-Sep-2026 in both copies. Inspect the formulas and number formats in the new Preference_Check sheet; do not accept rounded or rewritten source values.
+
+   ```text
+   EXCEL - PLAN:
+   Plan a Preference_Check sheet showing Control!B2 reporting date, total work orders and recorded Cost_SGD from tblWorkOrders for Northstar Water Services. Use my saved display and explanation preferences. Preserve Work_Orders, IDs, owners and exact values.
+
+   EXCEL - ALLOW EDITING:
+   Apply the reviewed Preference_Check plan with structured-reference formulas. Show a short explanation first and leave the source unchanged.
+   ```
+
+4. Open the second copy using the same signed-in account and a new Copilot chat. Do not repeat the preference text in this request. Compare both output displays and formula references; record actual behaviour in data/templates/Customisation_Test_Log.csv. A missed preference is a finding to clarify, not proof of a guaranteed rule.
+
+   ```text
+   EXCEL - ALLOW EDITING:
+   In this second Northstar workbook, create Preference_Check with formula-backed Control!B2 reporting date, total work orders and recorded Cost_SGD. Follow my saved preferences, preserve source records and explain the result briefly.
+   ```
+
+5. Return to the first workbook. Test a specific task instruction that changes only the result display to four decimal places. Verify S$35,827.5000 displays while the numeric value remains 35827.5. Record the comparison; do not alter the saved account settings or source.
+
+   ```text
+   EXCEL - ALLOW EDITING:
+   For this task only, display the recorded cost result in Preference_Check with four decimal places. Keep its formula and exact numeric value unchanged. Do not modify source cells or my saved preferences.
+   ```
+
+6. Explain the scope distinction, log the prompts and your observed checks, then return to Settings (...) > Personalization, restore your previous preferences and Save. Keep the restoration note private; do not upload personal account settings to the shared course folder.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Explain which choices in this exercise belong to my account, which belong to this Northstar workbook and which apply only to one prompt. Use the results I actually observed. Do not claim my preferences are shared with another person or added to the workbook.
+   ```
+
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Source controls | Both copies retain120 unique IDs, original owners/statuses and exact cost 35827.50. |
+| Display check | Saved S$ two-decimal/date/explanation preferences are checked in two workbooks; observed misses are recorded. |
+| Specific request | The output can show35,827.5000 without changing its value or the saved preferences. |
+| Restoration | Previous account preferences restored; private baseline note stays outside public courseware. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-03-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+Concepts for Lab 4: Visible Workbook .Rules and Formula Results.
+
+
+### Visible Workbook .Rules and Formula Results
+
+A visible worksheet named exactly .Rules, including the dot, supplies workbook-specific Copilot instructions in column A. Use one idea per cell and English for fully supported behaviour. The sheet travels with a copied workbook. Rules provide guidance for Copilot; they do not enforce formulas, permissions or security controls.
+
+The workbook can carry stable scope, status, cost-display and preservation instructions alongside the source. A formula cell may supply a reporting-date instruction: Copilot reads its recalculated result on the next request. That does not automatically recalculate or update every AI-created output.
+
+**How it works**
+
+- Name the visible sheet exactly .Rules.
+- Place one instruction per column-A cell.
+- Recalculate a formula-driven rule.
+- Check the next output and copied workbook.
+
+**Worked example**
+
+- The date rule returns Reporting date: 2026-09-30 from Control!B2.
+- Hidden .Rules is not used; keep the final sheet visible.
+- No universal precedence among rules, preferences and Skills is assumed.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| Conventions belong to this workbook and should travel with it. | You need a security boundary or are assuming hidden rules apply. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-rules
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-personalization
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills
+
+---
+
+
+### Lab 4 · Workbook .Rules — Create and Test Workbook .Rules for Water Service Reporting
+
+Learning outcome: LO2: distinguish account Personalisation, workbook .Rules and reusable Skills; configure, apply and verify each using water-service evidence..
+
+Goal: Turn Northstar’s workbook conventions into a visible .Rules worksheet. Keep one rule per cell in column A, include a formula-driven reporting-date rule, test the output, and verify that the sheet travels with a copied workbook. A .Rules sheet is guidance for Copilot, not Excel formula enforcement or a security boundary.
+
+Turn Northstar’s workbook conventions into a visible .Rules worksheet. Keep one rule per cell in column A, include a formula-driven reporting-date rule, test the output, and verify that the sheet travels with a copied workbook. A .Rules sheet is guidance for Copilot, not Excel formula enforcement or a security boundary.
+
+**What you'll build**
+
+Northstar_Rules_Workbook.xlsx with visible .Rules column A, a checked Rules_Test output and a copied-workbook sharing check.   (Tools: Microsoft 365 Copilot in Excel · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+- Lab 3 scope comparison; verified Lab1 clean source or supplied checkpoint.
+
+**Step-by-step**
+
+1. Open the clean workbook, save as Northstar_Rules_Workbook.xlsx and inspect Control. In Copilot use Add work content > Create workbook rules if offered; otherwise insert a sheet manually and rename it exactly .Rules, including the leading dot. Keep it visible. Rules are fully supported only in English.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Inspect this Northstar workbook. Identify the source table, fixed reporting date, status vocabulary and current owners. List workbook-specific conventions that belong in .Rules rather than account Personalisation. Do not edit.
+   ```
+
+2. Open data/Northstar_Workbook_Rules.txt. Copy its lines into .Rules column A with one heading or rule per cell; no data in other columns is required for recognition. Check source preservation, backlog/overdue/rate definitions, S$ display, colours, scope and controlled replacements.
+
+   ```text
+   EXCEL - PLAN:
+   Review the visible .Rules column A for this Northstar workbook. Identify ambiguous instructions or conflicts with the actual source and Control. Propose concise corrections, keeping one idea per cell. Do not edit the source or invent precedence between rules, preferences and Skills.
+   ```
+
+3. After reviewing any correction, update only .Rules. Add a formula in the next empty column-A cell: ="Reporting date: "&TEXT(Control!B2,"yyyy-mm-dd"). Recalculate and confirm it displays Reporting date:2026-09-30. Copilot reads the formula result on the next prompt; this does not rewrite dashboard values by itself.
+
+   ```text
+   EXCEL - ALLOW EDITING:
+   Apply only my reviewed .Rules corrections. Keep the sheet visible, one instruction per column-A cell, and retain the reporting-date formula. Preserve source data, Control and unrelated sheets.
+   ```
+
+4. Request a Rules_Test summary without restating the formatting rules. Check counts against Control, source references, displayed date/scope, S$ units and proposal wording. The known baseline is120 total,60 backlog,50 overdue and 30/48 on-time Closed.
+
+   ```text
+   EXCEL - ALLOW EDITING:
+   Create Rules_Test for Northstar Water Services from tblWorkOrders using the visible workbook .Rules. Include total, backlog, overdue, on-time Closed rate and recorded cost with formula/source evidence. Show date and All scope. Keep source owners and values unchanged.
+   ```
+
+5. Save As Northstar_Rules_Shared_Copy.xlsx. Open the copy and confirm .Rules is still present and visible in column A; you have not exported your account preferences. If testing a hidden sheet, use only a sandbox copy, hide .Rules, record that hidden rules are not used, then unhide before continuing. Do not claim native rule use when the feature is unavailable.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   In this copied Northstar workbook, identify the visible .Rules instructions and reporting-date formula result. Explain which guidance travels with the workbook and which account preferences do not. Verify Rules_Test against Control without changing records.
+   ```
+
+6. Record the sheet name, visibility, column, formula result, actual output checks and copied-workbook check in data/templates/Customisation_Test_Log.csv. Carry the rules-enabled workbook forward. If a prompt, Skill and rule disagree, ask for clarification and verify the output; no universal precedence is assumed.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Compare Personalisation, .Rules and a reusable Skill for Northstar reporting. Place currency preferences, this workbook’s backlog/date rules and the repeatable Pareto workflow in the right scope. Identify conflicts requiring clarification and the checks a person still must perform.
+   ```
+
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Recognition | Exactly .Rules; visible worksheet; instructions in column A, one idea per cell. |
+| Formula rule | Reporting-date formula recalculates and displays2026-09-30; no source values changed. |
+| Output controls | 120 total;60 backlog;50 overdue;30/48 on-time;S$35,827.50 at All scope. |
+| Workbook copy | Visible .Rules travels with the copy; account preferences are not exported. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-04-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+Concepts for Lab 5: Pareto Skill: Counts, Sorting and Cumulative Share.
+
+
+### Pareto Skill: Counts, Sorting and Cumulative Share
+
+A Pareto contribution chart orders category counts from largest to smallest and adds a cumulative-percentage line. The population here is overdue backlog, not all work orders: nonterminal statuses with Due_Date strictly before the reporting date. Alphabetical tie sorting keeps equal counts in a repeatable order.
+
+The Skill turns a recurring grouping-and-charting method into reusable instructions. Counts and cumulative formulas must reconcile to the same eligible source rows. A right-hand percentage axis from zero to 100% prevents interpreting the line as another count series. Category concentration describes contribution rather than establishing root cause.
+
+**How it works**
+
+- Define source, population, date and grouping.
+- Count and sort with stable ties.
+- Calculate cumulative count / eligible total.
+- Build and verify an editable dual-axis chart.
+
+**Worked example**
+
+- Pump 18; Meter 12; Leak 8; Valve 8; Pipe 4: total 50.
+- Cumulative percentages are 36%, 60%, 76%, 92%, 100%.
+- Four of five categories first reach 80%; do not force an 80/20 conclusion.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| The count population and grouping are defined and auditable. | Categories are being called causes or zero-total shares treated as measured 0%. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills
+
+---
+
+
+### Lab 5 · Custom Pareto Chart Skill — Create a Custom Pareto Chart Skill and Apply It
+
+Learning outcome: LO2: distinguish account Personalisation, workbook .Rules and reusable Skills; configure, apply and verify each using water-service evidence..
+
+Goal: Author water-service-pareto/SKILL.md with Copilot, install it in Excel and apply it to the same overdue work-order queue. Build a descending count chart plus cumulative-percentage line, then check a controlled rerun and a second grouping. Contribution analysis does not establish root cause or force an 80/20 split.
+
+Author water-service-pareto/SKILL.md with Copilot, install it in Excel and apply it to the same overdue work-order queue. Build a descending count chart plus cumulative-percentage line, then check a controlled rerun and a second grouping. Contribution analysis does not establish root cause or force an 80/20 split.
+
+**What you'll build**
+
+water-service-pareto/SKILL.md, Northstar_Pareto.xlsx with Pareto_Job_Category and Pareto_Site, and a verified rerun record.   (Tools: Excel Copilot · Microsoft 365 Copilot web · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+- Lab 4 visible .Rules and clean source; assigned Excel Skill feature checked.
+
+**Step-by-step**
+
+1. Open your rules-enabled workbook from Lab 4 or this lab’s clean rules-enabled data/Northstar_Work_Orders.xlsx. Save as Northstar_Pareto.xlsx. Read data/Pareto_Expected_Controls.json and the supplied Skill template before drafting your own file. Work only with synthetic data.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   For tblWorkOrders at Control!B2, All sites, count overdue backlog by Job_Category: Status neither Closed nor Cancelled and Due_Date strictly before the reporting date. Show category counts and total before charting. Preserve all records.
+   ```
+
+2. In Microsoft 365 Copilot on the web at https://copilot.cloud.microsoft, provide this self-contained specification. Copy the complete response into a plain-text editor and save UTF-8 SKILL.md inside a matching water-service-pareto folder. Compare it to data/templates/water-service-pareto/SKILL.md. If short of time, use the reviewed supplied file and record that choice.
+
+   ```text
+   MICROSOFT 365 COPILOT WEB:
+   Write a complete SKILL.md named water-service-pareto for a recurring water-pipe service report. Require YAML name and description, actual source table, reporting date, scope, count metric and grouping column. Source tblWorkOrders has Work_Order_ID, Job_Category, Site, Status and Due_Date. Overdue backlog excludes Closed/Cancelled and has Due_Date before the supplied date. Read visible workbook .Rules; preserve source IDs/statuses/owners and unrelated sheets. Count by grouping, sort count descending then label alphabetically for ties, and create formula-backed count, cumulative count, share and cumulative percentage. Build an editable combo chart: count columns and cumulative line on a 0%-100% right axis. Output only Pareto_<grouping column>; ask before replacing the matching output, rerun without duplicates, and leave zero-total percentages N/A. Verify counts, stable ties and final 100%; do not infer causes or force 80/20. Return the entire file.
+   ```
+
+3. In Excel use Copilot Settings (...) > Manage plugins & skills > Custom skills > Create OneDrive folder if needed > Open skills folder. Copy water-service-pareto/SKILL.md into that app-created location, Refresh and enable it. Verify the name using Choose plugins & skills or @mention. If unavailable, paste the complete reviewed Skill before each request, remove @water-service-pareto and record Manual practice - native Skill unavailable. Log web authoring manually.
+4. Request a plan before building. Confirm the eligible total 50 and the five ordered category counts. After review, apply the Skill. Inspect Pareto_Job_Category, formulas, axes and source preservation; copying a static image does not meet the editable-chart goal.
+
+   ```text
+   EXCEL - PLAN:
+   @water-service-pareto Plan an overdue-backlog Pareto Chart by Job_Category from tblWorkOrders at 2026-09-30, All sites. Follow visible .Rules. Explain summary formulas, descending counts, alphabetical ties, cumulative percentages and the named output to create. Do not edit yet.
+
+   EXCEL - ALLOW EDITING:
+   @water-service-pareto Apply the reviewed Job_Category Pareto plan. Create Pareto_Job_Category with a formula-backed summary and editable count-column/cumulative-percent-line combo chart. Keep source data and unrelated sheets unchanged.
+   ```
+
+5. Check counts against the supplied controls. Verify cumulative percentages 36%,60%,76%,92%,100% and two equal8-count categories in alphabetical order. The first four categories reach at least80%; do not call this proof that20% of categories cause80% of failures. If combo chart UI is absent, select the summary and use Insert > Combo > Custom Combination: Count clustered column, Cumulative_Percent line on secondary axis, right bounds 0 and 1; label both axes. Record a missing feature honestly.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Verify Pareto_Job_Category against eligible source rows. Check total 50, descending counts, alphabetical tie order, cumulative percentages 36/60/76/92/100%, final 100% and labelled dual axes. State which category set first reaches 80%, and why this is contribution rather than a causal diagnosis.
+   ```
+
+6. Save a sandbox copy, rerun the same grouping after approving replacement of only Pareto_Job_Category, and compare source IDs/statuses/owners and sheet/chart counts. Then apply the Skill to Site to produce a distinct Pareto_Site output. Keep both reviewed summaries for later decision evidence.
+
+   ```text
+   EXCEL - PLAN:
+   @water-service-pareto Refresh the existing Pareto_Job_Category for the same source, date and All scope. Identify exactly what will be replaced and ask before replacement. Preserve every unrelated sheet and do not duplicate charts.
+
+   EXCEL - ALLOW EDITING:
+   @water-service-pareto After the approved category rerun, create a separate overdue-backlog Pareto_Site for the same source/date/scope. Preserve Pareto_Job_Category and reconcile the new summary to 50 overdue orders.
+   ```
+
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Eligible population | Overdue backlog50; no Closed or Cancelled records included. |
+| Category counts | Pump Service=18; Meter Service=12; Leak Repair=8; Valve Repair=8; Pipe Replacement=4 |
+| Cumulative percentages | 36%,60%,76%,92%,100%; Leak Repair precedes Valve Repair in the8-count tie. |
+| Chart and rerun | Editable columns plus cumulative line; right axis0%-100%; matching output replaced only after review, without duplicates. |
+| Source and interpretation | 120 original records preserved; Site grouping also totals50; no invented root cause. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-05-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus data/templates/water-service-pareto/SKILL.md (Reviewed Pareto Skill fallback). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+Concepts for Lab 6: Skills, Prompts and Workbook Rules, Custom Skill Discovery in Each App, Repeatability and Safe Skill Reruns, Assignment Proposals and Capacity Evidence.
 
 
 ### Skills, Prompts and Workbook Rules
@@ -523,106 +945,6 @@ Folder-name/frontmatter mismatches, an extra .txt extension, unavailable licence
 ---
 
 
-### Lab 3 · Author SKILL.md — Create a Custom Maintenance Reporting Skill
-
-Learning outcome: LO2: create and improve a reusable maintenance skill in Excel and PowerPoint.
-
-Goal: A reviewed maintenance-reporting/SKILL.md v1, a smoke-test record, and a native-skill or explicitly labelled manual-practice route for each app.
-
-Capture the maintenance definitions and reporting style as one custom skill. You will ask Microsoft 365 Copilot on the web to write SKILL.md, compare it with a supplied complete template, install it in each app’s own supported skills location, and perform a small smoke test. A skill is reusable instructions, while a prompt is one request and workbook rules govern one file.
-
-**What you'll build**
-
-A reviewed maintenance-reporting/SKILL.md v1, a smoke-test record, and a native-skill or explicitly labelled manual-practice route for each app.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
-
-**Prerequisites**
-
-- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
-- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
-- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
-
-**Step-by-step**
-
-1. Read data/templates/maintenance-reporting/SKILL.md and data/Northstar_Maintenance_Context.txt. Open Microsoft 365 Copilot at https://copilot.cloud.microsoft in your assigned account. Provide the skill requirements as prompt context. Do not upload private work data.
-
-   ```text
-   MICROSOFT 365 COPILOT WEB:
-   Write a complete SKILL.md for maintenance-reporting. Require YAML name and description, input table or verified Word snapshot, report date and filter scope. Define backlog, overdue and on-time closed rate. Preserve IDs/status/current owners. Put assignment suggestions in a separate proposals sheet. Support Excel outputs and PowerPoint storytelling with source notes, existing white/navy/blue style, no invented facts and safe reruns. Never send email or approve assignments. Ask for missing inputs. Return the entire Markdown file.
-   ```
-
-2. Copy the complete returned file into a plain text editor, save UTF-8 as SKILL.md in a folder named maintenance-reporting, not SKILL.md.txt. Check the opening --- name/description --- block. Compare every definition and boundary with the supplied template. Edit missing instructions and retain your own version at work-c027/maintenance-reporting-v1/SKILL.md.
-
-   ```text
-   MICROSOFT 365 COPILOT WEB:
-   Review this supplied maintenance-reporting SKILL.md for Northstar Water Services. Check YAML name/description, required source/date/scope, backlog and overdue definitions, source preservation, assignment proposal boundaries, app-specific context and safe reruns. Return exact corrections and then the complete revised file; do not invent missing data.
-   ```
-
-3. Open data/Northstar_Work_Orders.xlsx in Excel and save a working copy first. Then open Copilot > ... > Manage skills (or Manage plugins & skills) > Custom skills > Create OneDrive folder (if needed) > Open skills folder. Put the maintenance-reporting folder containing SKILL.md inside that app-created folder. Return to Custom skills and select Refresh. Enable the skill and verify the exact name; do not guess the OneDrive folder path.
-4. In that Lab 3 workbook invoke the skill from Add work content > Choose skills (or Choose plugins & skills) or @mention. Inspect the proposed plan before editing; keep the source table unchanged. Save the result as Northstar_Skill_Smoke_Test.xlsx. If the Excel skills menu is absent, paste the complete reviewed SKILL.md as instructions before the test prompt, omit @mention, and record Manual practice - native skill unavailable.
-
-   ```text
-   EXCEL - CHAT ONLY:
-   @maintenance-reporting Explain the reporting definitions for tblWorkOrders at 2026-09-30, all filters All. State which sheets you may change, how missing owners are handled, and what you need before producing a PowerPoint update. Do not edit yet.
-   ```
-
-5. Open PowerPoint template > Copilot > + > Choose skills > Manage skills > Add skill. Upload your SKILL.md or paste it in Add skill as supported; verify it appears and is enabled. Alternatively use Manage skills > Custom skills > Open skills folder and copy the correctly named folder there. The PowerPoint location is app-created; installing in Excel alone is not proof it is available in PowerPoint.
-6. Run a PowerPoint smoke test with the verified snapshot selected as a file reference. Record the actual app name, selected skill name and response. If a skills menu is absent, paste the complete reviewed skill as instructions alongside the snapshot and mark Manual practice - native skill unavailable. Do not claim a native invocation.
-
-   ```text
-   POWERPOINT COPILOT:
-   @maintenance-reporting Using the selected Northstar_Verified_Snapshot.docx, propose an eight-slide maintenance report outline. Explain how every claim will be grounded and which actions remain proposals. Keep the reporting date and scope visible; do not edit slides yet.
-   ```
-
-7. Log the web authoring prompt and PowerPoint test manually in workbook Prompt_Log. For Excel log the actual response and your check. Keep the v1 file and test notes for Lab 4; no app can automatically read the other app’s chat.
-
-   ```text
-   EXCEL - CHAT ONLY:
-   Using only the web and PowerPoint smoke-test responses I paste here and this workbook test response, prepare a Prompt_Log comparison. Record the app, source, scope, actual behaviour and my verification. Leave missing responses UNKNOWN. Do not claim access to another app chat or a successful test without evidence.
-   ```
-
-
-**Sample prompts**
-
-| Purpose | Prompt |
-|---|---|
-| Web Copilot | Write complete maintenance-reporting SKILL.md with input guards and reporting definitions. |
-| Excel / PowerPoint | @maintenance-reporting Explain your inputs and output boundaries before making changes. |
-
-**Test it**
-
-| Check | Expected result |
-|---|---|
-| Skill format | maintenance-reporting folder; matching name in YAML; nonempty description; UTF-8 SKILL.md. |
-| Metric controls | Backlog excludes two terminal statuses; due-today not overdue; zero closed -> N/A. |
-| Installation evidence | Excel and PowerPoint names verified separately, or manual route honestly recorded. |
-
-**Checkpoint and rejoin point**
-
-If you fell behind, use data/checkpoints/Northstar_Verified_Checkpoint.xlsx and data/checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
-
-**Troubleshooting**
-
-| If this happens | Fix |
-|---|---|
-| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
-| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
-| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
-
-**Challenge**
-
-Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
-
-**Reflection**
-
-Which evidence proves the output is correct, and which decision still needs a person?
-
-> **Note:** The lab folder labs/lab-03-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus data/templates/maintenance-reporting/SKILL.md (Complete custom maintenance skill template). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
-
----
-
-Concepts for Lab 4: Repeatability and Safe Skill Reruns, Assignment Proposals and Capacity Evidence.
-
-
 ### Repeatability and Safe Skill Reruns
 
 Repeatability means the same verified inputs and method yield equivalent business measures and a controlled output structure. A safe rerun preserves source IDs, statuses, assignments and unrelated sheets. It creates or replaces only explicitly named outputs after review. The concept is similar to idempotence: rerunning should not append duplicate summaries, inflate totals or silently destroy a learner’s unrelated work.
@@ -689,29 +1011,33 @@ The same skill can improve Excel analysis and PowerPoint wording by preserving t
 ---
 
 
-### Lab 4 · Repeatable reporting — Use and Improve the Skill in Excel and PowerPoint
+### Lab 6 · Reporting Skill — Create, Use and Improve the Maintenance Reporting Skill
 
-Learning outcome: LO2: create and improve a reusable maintenance skill in Excel and PowerPoint.
+Learning outcome: LO2: distinguish account Personalisation, workbook .Rules and reusable Skills; configure, apply and verify each using water-service evidence..
 
-Goal: Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, Northstar_Skill_Update.pptx, SKILL.md v2 and a before/after improvement log.
+Goal: Reuse the Skill-authoring and installation method from Lab 5 to create maintenance-reporting. Apply it in Excel and PowerPoint, test missing inputs and a controlled rerun, then refine v2 using actual evidence. The supplied reviewed template supports rejoining; it is not proof of native execution.
 
-Use the Lab 3 skill to create a verified summary and improve the initial PowerPoint update. Then deliberately test missing inputs and a rerun, tighten the skill to v2, and compare before/after evidence. The target is consistent reporting, not a longer prompt or an unsupported promise of autonomous approval.
+Reuse the Skill-authoring and installation method from Lab 5 to create maintenance-reporting. Apply it in Excel and PowerPoint, test missing inputs and a controlled rerun, then refine v2 using actual evidence. The supplied reviewed template supports rejoining; it is not proof of native execution.
 
 **What you'll build**
 
-Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, Northstar_Skill_Update.pptx, SKILL.md v2 and a before/after improvement log.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, Northstar_Skill_Update.pptx, SKILL.md v2 and a before/after improvement log.   (Tools: Excel and PowerPoint Copilot · Microsoft 365 Copilot web · OneDrive.)
 
 **Prerequisites**
 
-- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
-- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
-- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
-- Lab 3 skill v1 and test record; Lab 2 update, or named supplied checkpoints.
+- Labs 1–2 verified brief and four-slide update; Lab 5 Skill-authoring method.
 
 **Step-by-step**
 
-1. Copy the Lab 3 reviewed SKILL.md to your output folder and retain v1. Open this lab’s clean workbook or your Lab 1 cleaned workbook. Save as Northstar_Skill_Report.xlsx. Read Technicians: primary category and available hours are synthetic planning inputs, not approvals. Check that your skill is enabled in Excel.
-2. Invoke the skill in Plan or Chat only, review its proposed output boundaries, then allow editing. Inspect the resulting formulas and charts. Summary counts must reconcile to Control, and the source table must remain 120 unique records.
+1. Use Microsoft 365 Copilot on the web to draft maintenance-reporting/SKILL.md from the complete specification below. Review it against data/templates/maintenance-reporting/SKILL.md, save the complete file as v1 in work-c027, then install it using the same Excel app-created custom Skills folder and Refresh route practised in Lab5. If a native Skill menu is missing, use the full reviewed file as pasted instructions, remove @mention and label the route manual.
+
+   ```text
+   MICROSOFT 365 COPILOT WEB:
+   Write complete maintenance-reporting SKILL.md with YAML name/description. Require actual tblWorkOrders or a verified Word snapshot, report date and filter scope. Respect visible .Rules. Define backlog, overdue and Closed-only on-time rate. Preserve IDs/statuses/current owners; keep assignment proposals separate and approvals UNKNOWN. Create a verified Excel summary and improve a supplied four- or eight-slide PowerPoint report from selected evidence. Ask for missing inputs and before replacing only named outputs; rerun without duplicates or source changes. Keep the existing design and source/date notes. Never send email or approve assignments. Return the entire file.
+   ```
+
+2. Copy the Lab 6 reviewed SKILL.md to your output folder and retain v1. Open this lab’s clean workbook or your Lab 1 cleaned workbook. Save as Northstar_Skill_Report.xlsx. Read Technicians: primary category and available hours are synthetic planning inputs, not approvals. Check that your skill is enabled in Excel.
+3. Invoke the skill in Plan or Chat only, review its proposed output boundaries, then allow editing. Inspect the resulting formulas and charts. Summary counts must reconcile to Control, and the source table must remain 120 unique records.
 
    ```text
    EXCEL - PLAN:
@@ -721,21 +1047,21 @@ Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, N
    Apply that reviewed summary plan. Add Assignment_Proposals for unassigned backlog only. Use tblTechnicians primary category and available hours as planning inputs; show category/capacity checks, current owner and proposed owner separately. Leave manager decision UNKNOWN. Do not change Assigned_To.
    ```
 
-3. Check the unassigned backlog count against Control. A technician with the same category may still lack usable capacity: use available hours minus known proposed hours, flag conflicts, and do not convert a suggestion into confirmed assignment. Export your verified summary into the Word snapshot template, preserving measures and date.
+4. Check the unassigned backlog count against Control. A technician with the same category may still lack usable capacity: use available hours minus known proposed hours, flag conflicts, and do not convert a suggestion into confirmed assignment. Export your verified summary into the Word snapshot template, preserving measures and date.
 
    ```text
    EXCEL - CHAT ONLY:
    @maintenance-reporting Review Assignment_Proposals against tblWorkOrders and tblTechnicians. Check each suggested owner has the matching water-service job category, capacity limitations are visible and original Assigned_To values are unchanged. Leave manager approval UNKNOWN; do not assign or schedule a technician.
    ```
 
-4. Open the four-slide initial update from Lab 2, or use data/checkpoints/Northstar_Initial_Update_Checkpoint.pptx, a four-slide rejoin example explicitly labelled as a checkpoint. Save as Northstar_Skill_Update.pptx. Select the reviewed snapshot in PowerPoint and invoke your installed skill.
+5. In PowerPoint select the reviewed Word snapshot and open the four-slide update from Lab2 or data/checkpoints/Northstar_Initial_Update_Checkpoint.pptx. Use Copilot > + > Choose skills > Manage skills > Add skill to upload the reviewed maintenance-reporting file, or use the app’s own supported Skills folder. Verify it in PowerPoint separately from Excel. If missing, paste the complete reviewed Skill plus snapshot as manual instructions and remove @mention. Apply the following refinement after review.
 
    ```text
    POWERPOINT COPILOT:
-   @maintenance-reporting Improve this existing initial maintenance update from the selected verified snapshot. Retain four slides and accurate values; strengthen claim headlines, simplify text, improve source notes and use the current design. Do not duplicate slides or imply live links to Excel. Label suggested reassignment as proposed.
+   @maintenance-reporting Improve this existing four-slide Northstar update from the selected verified Word snapshot. Preserve slide count, all values and source/date/scope notes; use clear claim headlines and the existing design. Keep assignment suggestions explicitly proposed and do not assume access to Excel chat.
    ```
 
-5. Create a new EMPTY workbook with no table, open a fresh Copilot chat and run a missing-input test for a different reporting period with no source selected. A proper skill asks for source/date/scope rather than inventing metrics. If it guesses, record the failure and revise the skill’s input guard. Return to Northstar_Skill_Report.xlsx and Save As Northstar_Skill_Rerun_Test.xlsx. Run the second summary request in this copy of the report workbook, not in the empty workbook; only named outputs may be replaced after review, with no duplicated source or output sheets. Compare a before/after copy of Work_Orders sorted by Work_Order_ID for status, owner, dates and cost; every original source value must match.
+6. Create a new EMPTY workbook with no table, open a fresh Copilot chat and run a missing-input test for a different reporting period with no source selected. A proper skill asks for source/date/scope rather than inventing metrics. If it guesses, record the failure and revise the skill’s input guard. Return to Northstar_Skill_Report.xlsx and Save As Northstar_Skill_Rerun_Test.xlsx. Run the second summary request in this copy of the report workbook, not in the empty workbook; only named outputs may be replaced after review, with no duplicated source or output sheets. Compare a before/after copy of Work_Orders sorted by Work_Order_ID for status, owner, dates and cost; every original source value must match.
 
    ```text
    EXCEL - CHAT ONLY:
@@ -745,7 +1071,7 @@ Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, N
    @maintenance-reporting Rebuild the existing Maintenance_Summary for the same table, date and scope. Describe what will be replaced, ask before replacement and keep source/unrelated sheets. Do not duplicate outputs.
    ```
 
-6. In a plain text editor improve SKILL.md: require an input guard, category/capacity evidence, source provenance per claim and a clear rerun rule. Retain YAML name maintenance-reporting and add a body version note v2. Re-upload/Refresh in BOTH Excel and PowerPoint. Record actual before/after changes, or already present - retained for safeguards that your v1 already contains. Do not fabricate differences. Rerun the smoke tests and compare values. If using the manual route, replace the pasted instructions in both apps.
+7. In a plain text editor improve SKILL.md: require an input guard, category/capacity evidence, source provenance per claim and a clear rerun rule. Retain YAML name maintenance-reporting and add a body version note v2. Re-upload/Refresh in BOTH Excel and PowerPoint. Record actual before/after changes, or already present - retained for safeguards that your v1 already contains. Do not fabricate differences. Rerun the smoke tests and compare values. If using the manual route, replace the pasted instructions in both apps.
 
    ```text
    MICROSOFT 365 COPILOT WEB:
@@ -757,8 +1083,8 @@ Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, N
 
 | Purpose | Prompt |
 |---|---|
-| Excel | @maintenance-reporting Build the verified summary and separate assignment proposals. |
-| PowerPoint | @maintenance-reporting Improve the existing four-slide update; preserve facts and count. |
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
 
 **Test it**
 
@@ -788,7 +1114,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-04-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus data/templates/maintenance-reporting/SKILL.md (Complete custom maintenance skill template). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-06-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus data/templates/maintenance-reporting/SKILL.md (Reviewed reporting Skill fallback). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -799,15 +1125,15 @@ Use this checkpoint to explain what you can now do and identify any lab evidence
 
 | Learning outcome | Evidence from this topic |
 |---|---|
-| LO2 | Skill authoring, discovery, use and revision proven. |
+| LO2 | Personalisation, .Rules, Pareto and reporting Skills tested. |
 | Verify | Preserved source plus missing-input and rerun tests. |
 
 ---
 
 
-## Topic 3 — Create an Interactive Dashboard with Excel Copilot
+## Topic 3 — Interactive Dashboards with Custom Skills
 
-From definitions to filters and refresh evidence
+Create the Skill, build the dashboard and prove interactions
 
 **Key concepts**
 
@@ -816,7 +1142,40 @@ From definitions to filters and refresh evidence
 - Interactions — One filter scope for every chart and KPI.
 - Refresh — Known deltas in an isolated test copy.
 
-Concepts for Lab 5: Dashboard Measures and Denominators, Visual Dashboard Design for Maintenance.
+Concepts for Lab 7: Custom Dashboard Skill as a Reusable Contract, Dashboard Measures and Denominators, Visual Dashboard Design for Maintenance.
+
+
+### Custom Dashboard Skill as a Reusable Contract
+
+water-service-dashboard is a separate custom Skill whose instructions define inputs, six KPI formulas, four shared filter selectors, three editable charts and controlled output boundaries. Visible .Rules carries workbook conventions. The request still supplies the actual source, fixed date and chosen scope. Installing another reporting Skill does not install this dashboard method.
+
+A reusable contract makes every KPI and chart obey the same AND filter logic and allows a safe refresh using table references. Input and replacement guards protect the source and existing Pareto evidence. Rerun evidence includes sheet/chart inventory and source checks, not just a claim that the Skill ran successfully.
+
+**How it works**
+
+- Author and review the complete SKILL.md.
+- Install and verify the dashboard name.
+- Invoke a plan and build the reviewed output.
+- Test common filters, append refresh and reruns.
+
+**Worked example**
+
+- Dashboard B2:B5 select site, category, status and owner.
+- B7:B12 and all chart summaries use the identical selected rows.
+- A 122-row sandbox is separate from the untouched 120-row baseline.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| A recurring dashboard needs consistent measures and review guards. | Tenant Skill access or source preservation is being assumed. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills
+- https://support.microsoft.com/en-us/excel/create-and-share-a-dashboard-with-excel-and-microsoft-groups
+
+---
 
 
 ### Dashboard Measures and Denominators
@@ -883,17 +1242,17 @@ Consistent chart scales, short labels, whitespace and limited accents help a man
 ---
 
 
-### Lab 5 · Design and build — Build Maintenance Dashboard Measures and Charts
+### Lab 7 · Custom Dashboard Skill — Create and Apply a Custom Interactive Dashboard Skill
 
 Learning outcome: LO3: build and validate an interactive Excel maintenance dashboard.
 
-Goal: Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three labelled charts and a measure dictionary ready for Lab 6 filters.
+Goal: Create water-service-dashboard/SKILL.md for the Northstar maintenance workflow, install it in Excel, then invoke it to plan and build an interactive dashboard. Six KPIs and three charts share four filter selections. Workbook .Rules supplies scope, display and review constraints; the Skill supplies the repeatable method.
 
-Use Excel Copilot to plan a maintenance dashboard for operations managers. Define the measures before designing the charts, then build source-linked KPI cards and a status, category and site chart. You will distinguish stock measures such as current backlog from flows such as closures, and avoid calling category frequency a root cause.
+Create water-service-dashboard/SKILL.md for the Northstar maintenance workflow, install it in Excel, then invoke it to plan and build an interactive dashboard. Six KPIs and three charts share four filter selections. Workbook .Rules supplies scope, display and review constraints; the Skill supplies the repeatable method.
 
 **What you'll build**
 
-Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three labelled charts and a measure dictionary ready for Lab 6 filters.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three labelled charts and a measure dictionary ready for Lab 8 filters.   (Tools: Excel Copilot · Microsoft 365 Copilot web · OneDrive.)
 
 **Prerequisites**
 
@@ -904,46 +1263,54 @@ Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three l
 
 **Step-by-step**
 
-1. Open data/templates/Northstar_Dashboard_Starter.xlsx and save as Northstar_Dashboard.xlsx in OneDrive. If continuing your own workbook, copy its CLEAN tblWorkOrders into the starter, keeping exact headers and table name; do not create a second table. The starter has a labelled blank Dashboard and four selection cells B2:B5, initially All.
+1. Open the synthetic source and data/templates/water-service-dashboard/SKILL.md. In Microsoft 365 Copilot on the web draft the full reusable Skill from this specification. Save it inside a matching water-service-dashboard folder and review every guard/measure before installation. Log the web prompt manually.
+
+   ```text
+   MICROSOFT 365 COPILOT WEB:
+   Write complete water-service-dashboard SKILL.md with YAML name/description. Require actual tblWorkOrders and report date in Control!B2; read visible .Rules. Preserve source IDs/statuses/owners, Technicians, Control, .Rules, Prompt_Log, Pareto_* and unrelated sheets. Plan first and ask before replacing only named dashboard outputs; rerun without duplicated charts. Dashboard B2:B5 select Site, Job_Category, Status, Assigned_To with All bypasses and AND logic. B7 total, B8 backlog excluding Closed/Cancelled, B9 backlog Due_Date before Control!B2, B10 Closed, B11 on-time Closed_Date<=Due_Date among Closed only with N/A if none, B12 recorded Cost_SGD across selected statuses. Create three formula-backed editable status/category/site charts sharing the exact filter scope. Use structured references, not fixed120-row ranges, and white/navy/blue/teal workbook design. Baseline check at 2026-09-30 All:120 total,48 Closed,12 Cancelled,60 backlog,50 overdue,30/48 on-time,35827.50 cost. Verify site/no-Closed/no-row tests, source preservation and a separate two-row append sandbox with 122 total,49 Closed,61 backlog,51 overdue,31/49 on-time and 36227.50 cost. These are snapshot tests, not universal future figures. Ask for missing inputs; never approve assignments, infer causes/savings or send email. Return the entire file.
+   ```
+
+2. Use Excel Settings (...) > Manage plugins & skills > Custom skills > Open skills folder (Create OneDrive folder if needed). Copy the reviewed water-service-dashboard folder into that app-created location, Refresh, enable and verify its exact name in Choose plugins & skills. If unavailable, paste the entire reviewed Skill before each prompt, remove @water-service-dashboard and record Manual practice - native Skill unavailable. Installing maintenance-reporting or water-service-pareto does not install this distinct Skill.
+3. Open data/templates/Northstar_Dashboard_Starter.xlsx and save as Northstar_Dashboard.xlsx in OneDrive. If continuing your own workbook, copy its CLEAN tblWorkOrders into the starter, keeping exact headers and table name; do not create a second table. The starter has a labelled blank Dashboard and four selection cells B2:B5, initially All.
 
    ```text
    EXCEL - CHAT ONLY:
-   Inspect this Northstar Water Services dashboard starter. Confirm tblWorkOrders, 120 unique IDs, reporting date 2026-09-30 and selection cells B2:B5 initially All. Explain which source and control sheets must remain intact. Report discrepancies before any edits.
+   @water-service-dashboard Inspect this Northstar Water Services dashboard starter. Confirm tblWorkOrders, 120 unique IDs, reporting date 2026-09-30 and selection cells B2:B5 initially All. Explain which source and control sheets must remain intact. Report discrepancies before any edits.
    ```
 
-2. Read Control and confirm the fixed reporting date. Ask for a visual plan before edits. Keep source, Checks and Prompt_Log separate from the Dashboard view. A dashboard is a decision interface: each visual should answer a maintenance question rather than decorate the page.
+4. Read Control and confirm the fixed reporting date. Ask for a visual plan before edits. Keep source, Checks and Prompt_Log separate from the Dashboard view. A dashboard is a decision interface: each visual should answer a maintenance question rather than decorate the page.
 
    ```text
    EXCEL - PLAN:
-   Plan Dashboard for Northstar maintenance at 2026-09-30. Use selection cells B2:B5 for Site, Job_Category, Status, Assigned_To, all initially All. Reserve B7 total orders, B8 backlog, B9 overdue backlog, B10 closed, B11 on-time closure rate, B12 Cost_SGD. Place three charts for status, category and site with labels, units and scope. Preserve source data.
+   @water-service-dashboard Plan Dashboard for Northstar maintenance at 2026-09-30. Use selection cells B2:B5 for Site, Job_Category, Status, Assigned_To, all initially All. Reserve B7 total orders, B8 backlog, B9 overdue backlog, B10 closed, B11 on-time closure rate, B12 Cost_SGD. Place three charts for status, category and site with labels, units and scope. Preserve source data.
    ```
 
-3. Ask Copilot to insert formulas for the six measures using structured table references. For now all selectors are All; in Lab 6 the same formulas must honour the four filters. Verify the denominator and use N/A, not 0%, if no Closed rows remain.
+5. Ask Copilot to insert formulas for the six measures using structured table references. For now all selectors are All; in Lab 8 the same formulas must honour the four filters. Verify the denominator and use N/A, not 0%, if no Closed rows remain.
 
    ```text
    EXCEL - ALLOW EDITING:
-   Build the planned six KPI formulas from tblWorkOrders. Backlog excludes Closed/Cancelled. Overdue also requires Due_Date < Control!B2. On-time rate counts Closed_Date <= Due_Date among Closed rows only, and shows N/A when none. Recorded cost sums Cost_SGD of all included statuses. Link to table columns, never a fixed 120-row range. Keep source data unchanged.
+   @water-service-dashboard Build the planned six KPI formulas from tblWorkOrders. Backlog excludes Closed/Cancelled. Overdue also requires Due_Date < Control!B2. On-time rate counts Closed_Date <= Due_Date among Closed rows only, and shows N/A when none. Recorded cost sums Cost_SGD of all included statuses. Link to table columns, never a fixed 120-row range. Keep source data unchanged.
    ```
 
-4. Add formula-backed chart summaries for the six statuses, five categories and five sites. Use bar/column charts: category and site are nominal groups; a line chart would imply an order that is not present. Label count axes and avoid 3-D effects. Ask the skill for consistent style if available.
+6. Add formula-backed chart summaries for the six statuses, five categories and five sites. Use bar/column charts: category and site are nominal groups; a line chart would imply an order that is not present. Label count axes and avoid 3-D effects. Ask the skill for consistent style if available.
 
    ```text
    EXCEL - ALLOW EDITING:
-   Create three editable bar or column charts using formula-backed summaries: work-order count by Status, by Job_Category and by Site. Each summary must reconcile to the total selected orders. Use white background, navy titles, blue/teal accents, readable labels and a visible reporting date. Do not use category counts as evidence of causes or use colour alone for status.
+   @water-service-dashboard Create three editable bar or column charts using formula-backed summaries: work-order count by Status, by Job_Category and by Site. Each summary must reconcile to the total selected orders. Use white background, navy titles, blue/teal accents, readable labels and a visible reporting date. Do not use category counts as evidence of causes or use colour alone for status.
    ```
 
-5. In Checks confirm sum of each chart’s categories equals 120 with All filters. Compare six KPIs to Control and record the on-time numerator/denominator. Add data/templates/Evidence_Register.csv entries for each chart and metric. If Copilot has used hard-coded numbers, replace them with formulas before Lab 6.
+7. In Checks confirm sum of each chart’s categories equals 120 with All filters. Compare six KPIs to Control and record the on-time numerator/denominator. Add data/templates/Evidence_Register.csv entries for each chart and metric. If Copilot has used hard-coded numbers, replace them with formulas before Lab 8.
 
    ```text
    EXCEL - CHAT ONLY:
-   Reconcile the Northstar Water Services dashboard with Control at All selections. Compare all six KPIs and totals of the Status, Job_Category and Site charts. Flag hard-coded values, fixed row ranges, inconsistent scopes and any interpretation that treats job-category frequency as a cause. Do not edit.
+   @water-service-dashboard Reconcile the Northstar Water Services dashboard with Control at All selections. Compare all six KPIs and totals of the Status, Job_Category and Site charts. Flag hard-coded values, fixed row ranges, inconsistent scopes and any interpretation that treats job-category frequency as a cause. Do not edit.
    ```
 
-6. Create a measure dictionary on a new Measures sheet: metric, business definition, formula, source fields, date rule, scope and limitation. Ask Copilot to explain formulas, then read one overdue example and one closed example from the source table yourself. Save the baseline dashboard with all filters All.
+8. Create a measure dictionary on a new Measures sheet: metric, business definition, formula, source fields, date rule, scope and limitation. Ask Copilot to explain formulas, then read one overdue example and one closed example from the source table yourself. Save the baseline dashboard with all filters All.
 
    ```text
    EXCEL - CHAT ONLY:
-   Explain each Dashboard measure in plain English, including terminal statuses, strict overdue date rule, closed-only SLA denominator and meaning of recorded cost. Give one source-row example for overdue and one for on-time closure; cite Work_Order_ID. Do not guess a root cause or financial saving.
+   @water-service-dashboard Explain each Dashboard measure in plain English, including terminal statuses, strict overdue date rule, closed-only SLA denominator and meaning of recorded cost. Give one source-row example for overdue and one for on-time closure; cite Work_Order_ID. Do not guess a root cause or financial saving.
    ```
 
 
@@ -951,8 +1318,8 @@ Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three l
 
 | Purpose | Prompt |
 |---|---|
-| Excel | Plan six dashboard measures and three charts from tblWorkOrders; preserve source data. |
-| Excel | Explain the closed-only SLA denominator and verify it against source rows. |
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
 
 **Test it**
 
@@ -983,11 +1350,11 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-05-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-07-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus data/templates/water-service-dashboard/SKILL.md (Reviewed interactive dashboard Skill fallback). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
-Concepts for Lab 6: One Filter Scope for Every Visual, Refresh Tests and Static Snapshots.
+Concepts for Lab 8: One Filter Scope for Every Visual, Refresh Tests and Static Snapshots.
 
 
 ### One Filter Scope for Every Visual
@@ -1055,56 +1422,57 @@ A correct dashboard today may fail after the next export if formulas reference a
 ---
 
 
-### Lab 6 · Filters and refresh — Make the Dashboard Interactive and Prove Refresh
+### Lab 8 · Interactive Filters and Refresh — Use the Dashboard Skill for Filters, Refresh and Safe Reruns
 
 Learning outcome: LO3: build and validate an interactive Excel maintenance dashboard.
 
-Goal: Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refresh_Test.xlsx, filter evidence and a verified baseline snapshot for PowerPoint.
+Goal: Continue Lab 7 by making four dropdown selectors control every KPI and chart. Test a single site, a zero-denominator selection and a combined category/owner filter. Then append two synthetic work orders in a sandbox copy and prove the dashboard expands. Optional PivotTable slicers use one source and shared connections; the portable dropdown route is the required working dashboard.
 
-Continue Lab 5 by making four dropdown selectors control every KPI and chart. Test a single site, a zero-denominator selection and a combined category/owner filter. Then append two synthetic work orders in a sandbox copy and prove the dashboard expands. Optional PivotTable slicers use one source and shared connections; the portable dropdown route is the required working dashboard.
+Continue Lab 7 by making four dropdown selectors control every KPI and chart. Test a single site, a zero-denominator selection and a combined category/owner filter. Then append two synthetic work orders in a sandbox copy and prove the dashboard expands. Optional PivotTable slicers use one source and shared connections; the portable dropdown route is the required working dashboard.
 
 **What you'll build**
 
-Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refresh_Test.xlsx, filter evidence and a verified baseline snapshot for PowerPoint.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refresh_Test.xlsx, filter evidence and a verified baseline snapshot for PowerPoint.   (Tools: Excel Copilot · Microsoft 365 Copilot web · OneDrive.)
 
 **Prerequisites**
 
 - Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
 - Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
 - Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
-- Lab 5 dashboard or supplied formula checkpoint.
+- Lab 7 dashboard or supplied formula checkpoint.
+- Lab 7 reviewed water-service-dashboard Skill installed or explicitly labelled manual route.
 
 **Step-by-step**
 
-1. Open your Lab 5 baseline dashboard. Rejoin using data/checkpoints/Northstar_Verified_Checkpoint.xlsx only if needed; record that it is an example formula dashboard. Set all four selections B2:B5 to All and confirm 120. Save baseline before creating any refresh-test copy.
+1. Open your Lab 7 baseline dashboard. Rejoin using data/checkpoints/Northstar_Verified_Checkpoint.xlsx only if needed; record that it is an example formula dashboard. Set all four selections B2:B5 to All and confirm 120. Save baseline before creating any refresh-test copy.
 
    ```text
    EXCEL - CHAT ONLY:
-   Before testing filters, report the baseline Northstar Water Services dashboard source, date and scope. Confirm 120 unique work orders and all four selectors All. Identify the baseline file that must remain untouched when making the refresh-test copy.
+   @water-service-dashboard Before testing filters, report the baseline Northstar Water Services dashboard source, date and scope. Confirm 120 unique work orders and all four selectors All. Identify the baseline file that must remain untouched when making the refresh-test copy.
    ```
 
 2. Use Data > Data Validation > Allow List to set dropdowns on B2 Site, B3 Job_Category, B4 Status and B5 Assigned_To. Include All plus the source values, using Filter_Lists if supplied. Ask Copilot to apply all four selections to EVERY KPI and chart summary. A selection of All bypasses only that filter; selected dimensions combine with AND.
 
    ```text
    EXCEL - PLAN:
-   Make Dashboard B2:B5 control all six KPIs and three chart summaries with AND logic. All bypasses its dimension. Use COUNTIFS/SUMIFS or SUMPRODUCT with structured table references. Blank owner means unassigned and must not disappear from All. Keep N/A for no closed jobs.
+   @water-service-dashboard Make Dashboard B2:B5 control all six KPIs and three chart summaries with AND logic. All bypasses its dimension. Use COUNTIFS/SUMIFS or SUMPRODUCT with structured table references. Blank owner means unassigned and must not disappear from All. Keep N/A for no closed jobs.
 
    EXCEL - ALLOW EDITING:
-   Apply the reviewed filter plan and dropdown lists. Keep existing source rows and chart positions. Show the selected scope beside the reporting date and make all charts recalculate from the same selected rows.
+   @water-service-dashboard Apply the reviewed filter plan and dropdown lists. Keep existing source rows and chart positions. Show the selected scope beside the reporting date and make all charts recalculate from the same selected rows.
    ```
 
 3. Choose Woodlands Hub in B2 and leave other selectors All. Filter the source table to the same site and compare rows, backlog, overdue and cost. Use Data > Clear on source table afterwards; dashboard selectors and source AutoFilter are distinct mechanisms. Record evidence in data/templates/Filter_Test_Log.csv.
 
    ```text
    EXCEL - CHAT ONLY:
-   For the dashboard selection Site = Woodlands Hub and all other dimensions All, list the expected six KPI values from tblWorkOrders and verify each chart sum matches the selected total. Do not infer that filtering the worksheet automatically changes formula measures.
+   @water-service-dashboard For the dashboard selection Site = Woodlands Hub and all other dimensions All, list the expected six KPI values from tblWorkOrders and verify each chart sum matches the selected total. Do not infer that filtering the worksheet automatically changes formula measures.
    ```
 
 4. Set Status to New with other selectors All. Confirm zero closed -> N/A. Then set Site = Woodlands Hub, Job_Category = Leak Repair, Assigned_To = Daniel Lee, Status = All, a combination with no rows; total, backlog, overdue, closed and cost must be 0 and rate N/A. Reset all four to All and verify baseline controls. Optional: create PivotTables from one tblWorkOrders source, insert slicers, and use Slicer > Report Connections for every PivotTable; unconnected KPI cells are a defect.
 
    ```text
    EXCEL - CHAT ONLY:
-   Check two dashboard edge cases without changing source data: Status New with other selectors All; then Site Woodlands Hub, Job_Category Leak Repair, Assigned_To Daniel Lee, Status All. Verify zero closed gives N/A and no selected rows gives zero count/cost with N/A rate. Show how all charts follow the same selection. Restore all selectors to All.
+   @water-service-dashboard Check two dashboard edge cases without changing source data: Status New with other selectors All; then Site Woodlands Hub, Job_Category Leak Repair, Assigned_To Daniel Lee, Status All. Verify zero closed gives N/A and no selected rows gives zero count/cost with N/A rate. Show how all charts follow the same selection. Restore all selectors to All.
    ```
 
 5. Save a COPY as Northstar_Dashboard_Refresh_Test.xlsx. In the last row of tblWorkOrders press Tab to append, then enter the two rows from data/Refresh_Test_Rows.csv with real Excel dates (YYYY-MM-DD). WO-2026-0121 is Assigned, due 2026-09-29 and cost 150; WO-2026-0122 is Closed on time and cost 250. No existing IDs are edited.
@@ -1112,10 +1480,20 @@ Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refr
 
    ```text
    EXCEL - CHAT ONLY:
-   Verify the sandbox append test for the two new work orders. Reconcile total 122, closed 49, backlog 61, overdue increased by 1, cost increased by S$400 and on-time numerator increased by 1. Confirm no original source record changed and all three charts total 122 with All selections. Compare original IDs, statuses, owners, dates and costs to the saved baseline; all original 120 rows must match.
+   @water-service-dashboard Verify the sandbox append test for the two new work orders. Reconcile total 122, closed 49, backlog 61, overdue increased by 1, cost increased by S$400 and on-time numerator increased by 1. Confirm no original source record changed and all three charts total 122 with All selections. Compare original IDs, statuses, owners, dates and costs to the saved baseline; all original 120 rows must match.
    ```
 
-7. Return to the untouched 120-row Northstar_Dashboard.xlsx. Set selectors All and record a frozen evidence snapshot dated 2026-09-30 for Lab 7. Copy data/templates/Northstar_Operations_Brief_Template.docx to Northstar_Verified_Snapshot.docx in Word and insert the reviewed summary and chart values. Save chart images if needed with right-click chart > Save as Picture; the slide copy will be a static snapshot, not a live dashboard.
+7. In the sandbox workbook request a controlled Skill rerun after the append. Review the named replacement areas, then approve only those areas. Verify one dashboard, three charts, original 120 source rows unchanged and both legitimate new rows retained. Keep the 120-row baseline separate for Lab 9.
+
+   ```text
+   EXCEL - PLAN:
+   @water-service-dashboard Refresh the existing dashboard for the sandbox 122-row table and same reporting date. Preserve all original source records, both new rows, .Rules, Pareto_* and unrelated sheets. Identify named output replacements and ask before editing; keep one dashboard and three charts.
+
+   EXCEL - ALLOW EDITING:
+   @water-service-dashboard Apply only the reviewed sandbox dashboard rerun. Retain the chosen source/date and make every KPI and chart follow the four filters; reconcile 122 total,61 backlog,51 overdue,49 Closed,31/49 on-time and S$36,227.50. Do not alter the untouched baseline workbook.
+   ```
+
+8. Return to the untouched 120-row Northstar_Dashboard.xlsx. Set selectors All and record a frozen evidence snapshot dated 2026-09-30 for Lab 9. Copy data/templates/Northstar_Operations_Brief_Template.docx to Northstar_Verified_Snapshot.docx in Word and insert the reviewed summary and chart values. Save chart images if needed with right-click chart > Save as Picture; the slide copy will be a static snapshot, not a live dashboard.
 
    ```text
    WORD COPILOT:
@@ -1127,8 +1505,8 @@ Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refr
 
 | Purpose | Prompt |
 |---|---|
-| Excel | Apply Site, Category, Status and Owner selections to every KPI and chart. |
-| Excel | Verify the sandbox append adds 2 orders and S$400 without changing original records. |
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
 
 **Test it**
 
@@ -1160,7 +1538,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-06-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-08-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus data/templates/water-service-dashboard/SKILL.md (Reviewed dashboard Skill for reruns). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -1188,7 +1566,7 @@ Continue the dashboard into a decision pack
 - Refinement — Hierarchy, notes and actual rehearsal feedback.
 - Handoff — Reconciled pack and unsent communication.
 
-Concepts for Lab 7: From Dashboard Evidence to a Decision Story, Charts, Templates and Source Provenance.
+Concepts for Lab 9: From Dashboard Evidence to a Decision Story, Charts, Templates and Source Provenance.
 
 
 ### From Dashboard Evidence to a Decision Story
@@ -1258,11 +1636,11 @@ Approximate AI-generated charts can contradict source values while looking plaus
 ---
 
 
-### Lab 7 · Dashboard to presentation — Turn Dashboard Evidence into a Management Story
+### Lab 9 · Dashboard to presentation — Turn Dashboard Evidence into a Management Story
 
 Learning outcome: LO4: turn verified dashboard evidence into a professional management presentation.
 
-Goal: Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-by-slide evidence register tied to the 120-row dashboard snapshot.
+Goal: Continue the baseline dashboard from Topic 3. Build a slide evidence register and a Word presentation brief before asking PowerPoint Copilot for an eight-slide management deck. The story connects work-order status, site backlog, service delivery and assignment proposals to a specific decision; it does not introduce unsupported savings or causes.
 
 Continue the baseline dashboard from Topic 3. Build a slide evidence register and a Word presentation brief before asking PowerPoint Copilot for an eight-slide management deck. The story connects work-order status, site backlog, service delivery and assignment proposals to a specific decision; it does not introduce unsupported savings or causes.
 
@@ -1275,11 +1653,11 @@ Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-b
 - Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
 - Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
 - Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
-- Verified Lab 6 baseline dashboard and frozen evidence snapshot.
+- Verified Lab 8 baseline dashboard and frozen evidence snapshot.
 
 **Step-by-step**
 
-1. Open the untouched baseline Northstar_Dashboard.xlsx from Lab 6; confirm All selectors, total120 and report date2026-09-30. Do not use the 122-row sandbox. If needed use this lab’s checkpoint and record rejoin. Copy verified metric/chart values to data/templates/Slide_Evidence_Register.csv with source sheet/table, scope and date.
+1. Open the untouched baseline Northstar_Dashboard.xlsx from Lab 8; confirm All selectors, total120 and report date2026-09-30. Do not use the 122-row sandbox. If needed use this lab’s checkpoint and record rejoin. Copy verified metric/chart values to data/templates/Slide_Evidence_Register.csv with source sheet/table, scope and date.
 
    ```text
    EXCEL - CHAT ONLY:
@@ -1308,7 +1686,7 @@ Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-b
    ```
 
 5. Replace approximate or invented charts with your reviewed Excel charts: copy chart in Excel, then PowerPoint Home > Paste > Paste Special > Microsoft Excel Chart Object for an editable embedded chart when supported; otherwise paste a static image and label it snapshot. Embedded copies and images do not automatically follow the original workbook. Use direct verified values if a chart object is unsupported.
-6. Inspect all eight slides and notes. Check chart title, axis, unit, status definition, date and scope. Each numeric headline must match one register row. Confirm the deck uses baseline120, not refresh122. Save for Lab 8; do not represent the draft as an approved plan.
+6. Inspect all eight slides and notes. Check chart title, axis, unit, status definition, date and scope. Each numeric headline must match one register row. Confirm the deck uses baseline120, not refresh122. Save for Lab 10; do not represent the draft as an approved plan.
 
    ```text
    POWERPOINT COPILOT:
@@ -1320,14 +1698,14 @@ Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-b
 
 | Purpose | Prompt |
 |---|---|
-| Word | Create an eight-slide brief with one checked claim, source and limitation per slide. |
-| PowerPoint | @maintenance-reporting Build the management deck from the reviewed Word evidence. |
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
 
 **Test it**
 
 | Check | Expected result |
 |---|---|
-| Evidence continuity | Every deck figure maps to the 120-row Lab 6 baseline and slide evidence register. |
+| Evidence continuity | Every deck figure maps to the 120-row Lab 8 baseline and slide evidence register. |
 | Eight-slide narrative | Observation -> implication -> proposed action -> decision; no invented cause/savings. |
 | Chart semantics | Backlog charts exclude Closed/Cancelled; embedded/image copies labelled snapshot. |
 
@@ -1351,11 +1729,11 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-07-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-09-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
-Concepts for Lab 8: Professional Refinement and Rehearsal, Reviewed Handoff and Artifact Lifecycle.
+Concepts for Lab 10: Professional Refinement and Rehearsal, Reviewed Handoff and Artifact Lifecycle.
 
 
 ### Professional Refinement and Rehearsal
@@ -1423,11 +1801,11 @@ Updating one artifact without the others creates inconsistent communication. Rec
 ---
 
 
-### Lab 8 · Professional handoff — Refine and Present the Maintenance Decision Deck
+### Lab 10 · Professional handoff — Refine and Present the Maintenance Decision Deck
 
 Learning outcome: LO4: turn verified dashboard evidence into a professional management presentation.
 
-Goal: Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register and unsent Outlook handoff draft with accurate artifact links.
+Goal: Refine the management deck using the same custom skill and reviewed dashboard evidence. Improve hierarchy, consistency and speaker notes, test the story in a short rehearsal, and prepare a reviewed Outlook handoff draft. The final pack preserves the distinction between a static presentation snapshot, a refreshable dashboard and a manager’s unmade decision.
 
 Refine the management deck using the same custom skill and reviewed dashboard evidence. Improve hierarchy, consistency and speaker notes, test the story in a short rehearsal, and prepare a reviewed Outlook handoff draft. The final pack preserves the distinction between a static presentation snapshot, a refreshable dashboard and a manager’s unmade decision.
 
@@ -1440,11 +1818,11 @@ Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register
 - Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
 - Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
 - Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
-- Lab 7 management draft, reviewed presentation brief and evidence register.
+- Lab 9 management draft, reviewed presentation brief and evidence register.
 
 **Step-by-step**
 
-1. Open your Lab 7 draft and save as Northstar_Management_Final.pptx. Rejoin only if necessary using data/checkpoints/Northstar_Management_Example.pptx and snapshot; review and adapt its supplied example charts and narrative against the verified snapshot. Open the same reviewed brief in the file picker; confirm native skill or label manual practice.
+1. Open your Lab 9 draft and save as Northstar_Management_Final.pptx. Rejoin only if necessary using data/checkpoints/Northstar_Management_Example.pptx and snapshot; review and adapt its supplied example charts and narrative against the verified snapshot. Open the same reviewed brief in the file picker; confirm native skill or label manual practice.
 2. Ask the skill to audit before editing. It should report crowded slides, weak evidence, missing labels and inconsistent scope. Review the list yourself against the evidence register; styling changes must never change values.
 
    ```text
@@ -1486,8 +1864,8 @@ Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register
 
 | Purpose | Prompt |
 |---|---|
-| PowerPoint | @maintenance-reporting Audit and refine the eight-slide deck without changing values. |
-| Outlook | Draft the handoff with real supplied links and the static-snapshot limitation. |
+| Scope | State actual source, report date and selected scope before acting. |
+| Verify | Explain the source/formula checks and preserve unknowns and original records. |
 
 **Test it**
 
@@ -1518,7 +1896,7 @@ Repeat the task for one different site and explain how the filter scope changes 
 
 Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The lab folder labs/lab-08-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+> **Note:** The lab folder labs/lab-10-*/ holds the instruction PDF with sample prompts, a data folder with templates, checkpoints and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Water Services is a fictional water-pipe maintenance and service company. All service hubs, staff and work orders are synthetic. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
@@ -1545,6 +1923,9 @@ Use this checkpoint to explain what you can now do and identify any lab evidence
 
 ## Glossary
 
+- **Personalisation** — Account-level Copilot preferences; not embedded in a workbook.
+- **.Rules** — Visible workbook sheet with column-A instructions for Copilot.
+- **Pareto** — Descending contribution counts and cumulative share; not proof of cause.
 - **Grounding** — Supplying accessible evidence for the current request.
 - **Backlog** — Selected work with Status neither Closed nor Cancelled.
 - **Overdue** — Backlog due strictly before the fixed reporting date.

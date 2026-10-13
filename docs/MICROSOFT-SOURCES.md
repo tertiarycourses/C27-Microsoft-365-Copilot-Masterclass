@@ -11,3 +11,11 @@ Checked 13 October 2026. Course instructions summarise capabilities; feature vis
 - [Slicer filtering](https://support.microsoft.com/en-us/excel/get-started/use-slicers-to-filter-data): same-source PivotTables and explicit connections.
 
 Course design choices: a fixed synthetic reporting date, a reviewed Word bridge for dashboard-to-presentation grounding, dropdown/formula interactions as the portable primary dashboard route, optional connected PivotTable slicers, and manually logged cross-app chats. Native tenant skill execution must be checked in class; generated checkpoints are deterministic examples.
+
+## v2.2 Excel customisation verification — 14 October 2026
+
+- [Copilot in Excel Personalisation](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-personalization): account preferences across workbooks; specific requests can supersede them.
+- [Copilot in Excel .Rules](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-rules): exact visible sheet name, column A, one idea per cell, recalculated formula results and English support.
+- [Copilot in Excel Skills](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills): app-created OneDrive location, matching folder/frontmatter, Refresh and explicit invocation.
+
+Native tenant execution is a learner/trainer test; generated checkpoints demonstrate deterministic calculations only.

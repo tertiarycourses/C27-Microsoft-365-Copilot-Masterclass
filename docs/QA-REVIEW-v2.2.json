@@ -1,0 +1,32 @@
+{
+  "course": "C27",
+  "version": "v2.2",
+  "status": "PASS",
+  "reviewer": "Independent non-wsq-courseware-qa agent",
+  "rendered_review": {
+    "lab_pdf_pages": 34,
+    "lesson_plan_pages": 5,
+    "learner_guide_pages_reviewed": 32,
+    "slides_reviewed": 68
+  },
+  "all_10_lab_roots_simple": true,
+  "copy_prompts": 65,
+  "instructional_minutes": 450,
+  "prohibited_scan_clean": true,
+  "pareto_counts": [
+    18,
+    12,
+    8,
+    8,
+    4
+  ],
+  "pareto_cumulative_percent": [
+    36,
+    60,
+    76,
+    92,
+    100
+  ],
+  "blockers": [],
+  "native_tenant_execution_claimed": false
+}

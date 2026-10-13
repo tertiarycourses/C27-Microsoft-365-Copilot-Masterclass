@@ -4,11 +4,11 @@ Use one coherent facilities-maintenance scenario to connect Word, Excel, PowerPo
 
 | Course detail | Information |
 |---|---|
-| Course code | `C27` |
+| Course code | `C27` (catalogue display: `C027`) |
 | Programme | Non-WSQ commercial short course |
 | Duration | 1 day, 7.5 instructional hours |
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html) |
-| Current package | v2.1, 13 October 2026; 8 connected labs |
+| Current package | v2.2, 14 October 2026; 10 connected labs |
 
 ![Lab Prompts page](screenshot.png)
 
@@ -21,40 +21,44 @@ The workbook starts with 122 export rows and is cleaned to 120 unique work order
 ## Learning outcomes
 
 - Integrate Word, Excel, PowerPoint and Outlook Copilot in a coherent maintenance workflow with explicit source grounding and verified prompts.
-- Create, install, apply and improve a custom maintenance-reporting skill in Excel and PowerPoint, preserving source records and testing reruns.
-- Create an interactive maintenance dashboard with verified measures, common filter scope, meaningful charts and a demonstrated refresh test.
+- Distinguish account Personalisation, workbook .Rules and reusable Skills; configure, create, apply and verify Pareto and maintenance-reporting Skills using water-service evidence.
+- Create and apply a custom interactive-dashboard Skill with verified measures, shared filter scope, editable charts and controlled refresh and rerun tests.
 - Continue from the dashboard to a professional management presentation, with evidence-based headlines, source notes, rehearsal and a reviewed handoff draft.
 
 ## Topics covered
 
-1. **Fundamentals of Microsoft 365 Copilot** - One verified maintenance workflow across four apps.
-2. **Create Skills for Microsoft 365 Copilot** - A reusable method for Excel and PowerPoint.
-3. **Create an Interactive Dashboard with Excel Copilot** - From definitions to filters and refresh evidence.
-4. **Create a Professional Presentation with PowerPoint Copilot** - Continue the dashboard into a decision pack.
+1. **Fundamentals of Microsoft 365 Copilot** — One verified maintenance workflow across four apps.
+2. **Personalisation, .Rules and Skills for Excel** — Account preferences, workbook conventions and reusable methods.
+3. **Interactive Dashboards with Custom Skills** — Create the Skill, build the dashboard and prove interactions.
+4. **Create a Professional Presentation with PowerPoint Copilot** — Continue the dashboard into a decision pack.
 
 ## Labs
 
-Every lab folder contains its instruction PDF and a `data/` folder. Templates and checkpoints are inside `data/`. The [Lab Prompts page](https://tertiarycourses.github.io/C27-Microsoft-365-Copilot-Masterclass/prompts/) provides one-click Copy buttons and direct links to each instruction PDF. Detailed procedures belong in the labs and Learner Guide.
+Every lab folder contains its instruction PDF and a `data/` folder. Templates, Skills and checkpoints are inside `data/`. The [Lab Prompts page](https://tertiarycourses.github.io/C27-Microsoft-365-Copilot-Masterclass/prompts/) has menu tabs for all 10 labs, detailed steps, multiple Copy prompts per lab and instruction PDF links. Copy includes only the prompt; the app/mode label stays on the page.
 
 | Lab | Practical outcome |
 |---|---|
 | [1. Prepare Work Orders and Draft the Operations Brief](labs/lab-01-excel-to-word/Lab-01-Instructions.pdf) | Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with reconciled counts, reporting scope and a source register. |
 | [2. Create the Cross-App Maintenance Update](labs/lab-02-word-to-powerpoint-and-outlook/Lab-02-Instructions.pdf) | Northstar_Initial_Update.pptx, an unsent Outlook draft and Northstar_Cross_App_Evidence.csv with Excel, Word, PowerPoint and Outlook figures reconciled. |
-| [3. Create a Custom Maintenance Reporting Skill](labs/lab-03-author-skill-md/Lab-03-Instructions.pdf) | A reviewed maintenance-reporting/SKILL.md v1, a smoke-test record, and a native-skill or explicitly labelled manual-practice route for each app. |
-| [4. Use and Improve the Skill in Excel and PowerPoint](labs/lab-04-repeatable-reporting/Lab-04-Instructions.pdf) | Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, Northstar_Skill_Update.pptx, SKILL.md v2 and a before/after improvement log. |
-| [5. Build Maintenance Dashboard Measures and Charts](labs/lab-05-design-and-build/Lab-05-Instructions.pdf) | Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three labelled charts and a measure dictionary ready for Lab 6 filters. |
-| [6. Make the Dashboard Interactive and Prove Refresh](labs/lab-06-filters-and-refresh/Lab-06-Instructions.pdf) | Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refresh_Test.xlsx, filter evidence and a verified baseline snapshot for PowerPoint. |
-| [7. Turn Dashboard Evidence into a Management Story](labs/lab-07-dashboard-to-presentation/Lab-07-Instructions.pdf) | Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-by-slide evidence register tied to the 120-row dashboard snapshot. |
-| [8. Refine and Present the Maintenance Decision Deck](labs/lab-08-professional-handoff/Lab-08-Instructions.pdf) | Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register and unsent Outlook handoff draft with accurate artifact links. |
+| [3. Personalise Copilot in Excel for Consistent Service Reports](labs/lab-03-personalisation/Lab-03-Instructions.pdf) | Northstar_Personalisation_Test.xlsx, a two-workbook preference comparison and a private note confirming settings restored. |
+| [4. Create and Test Workbook .Rules for Water Service Reporting](labs/lab-04-workbook-rules/Lab-04-Instructions.pdf) | Northstar_Rules_Workbook.xlsx with visible .Rules column A, a checked Rules_Test output and a copied-workbook sharing check. |
+| [5. Create a Custom Pareto Chart Skill and Apply It](labs/lab-05-custom-pareto-chart-skill/Lab-05-Instructions.pdf) | water-service-pareto/SKILL.md, Northstar_Pareto.xlsx with Pareto_Job_Category and Pareto_Site, and a verified rerun record. |
+| [6. Create, Use and Improve the Maintenance Reporting Skill](labs/lab-06-reporting-skill/Lab-06-Instructions.pdf) | Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, Northstar_Skill_Update.pptx, SKILL.md v2 and a before/after improvement log. |
+| [7. Create and Apply a Custom Interactive Dashboard Skill](labs/lab-07-custom-dashboard-skill/Lab-07-Instructions.pdf) | Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three labelled charts and a measure dictionary ready for Lab 8 filters. |
+| [8. Use the Dashboard Skill for Filters, Refresh and Safe Reruns](labs/lab-08-interactive-filters-and-refresh/Lab-08-Instructions.pdf) | Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refresh_Test.xlsx, filter evidence and a verified baseline snapshot for PowerPoint. |
+| [9. Turn Dashboard Evidence into a Management Story](labs/lab-09-dashboard-to-presentation/Lab-09-Instructions.pdf) | Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-by-slide evidence register tied to the 120-row dashboard snapshot. |
+| [10. Refine and Present the Maintenance Decision Deck](labs/lab-10-professional-handoff/Lab-10-Instructions.pdf) | Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register and unsent Outlook handoff draft with accurate artifact links. |
+
+The one-day schedule contains 380 minutes of guided labs, 50 minutes of demonstrations and 20 minutes of briefing/recap: **450 instructional minutes**, plus lunch and two tea breaks, 09:30–18:30.
 
 ## Public package
 
 The slide deck follows the C34 Copilot for Excel design: charcoal covers, cream content slides, Cambria/Calibri typography, coloured cards and editable diagrams/charts. Fine-grained procedures are in the guides and labs.
 
-- Trainer slides: [PowerPoint](<courseware/Microsoft 365 Copilot Masterclass-v2.1.pptx>) · [PDF](<courseware/Microsoft 365 Copilot Masterclass-v2.1.pdf>).
+- Trainer slides: [PowerPoint](<courseware/Microsoft 365 Copilot Masterclass-v2.2.pptx>) · [PDF](<courseware/Microsoft 365 Copilot Masterclass-v2.2.pdf>).
 - Lesson Plan: [Word](<courseware/LP-Microsoft 365 Copilot Masterclass.docx>) · [PDF](<courseware/LP-Microsoft 365 Copilot Masterclass.pdf>).
 - Learner Guide: [Word](<courseware/LG-Microsoft 365 Copilot Masterclass.docx>) · [PDF](<courseware/LG-Microsoft 365 Copilot Masterclass.pdf>) · [Markdown](<LG-Microsoft 365 Copilot Masterclass.md>).
-- [Eight lab folders](labs/README.md) with instruction PDFs, data and templates.
+- [Ten lab folders](labs/README.md) with instruction PDFs, data and templates.
 - [Lab Prompts — live Copy buttons and instruction PDFs](https://tertiarycourses.github.io/C27-Microsoft-365-Copilot-Masterclass/prompts/) · [Markdown prompt library](docs/prompts/README.md).
 
 ## Usage and checkpoints
@@ -65,7 +69,7 @@ Download the full lab folders. Carry your own verified outputs forward; supplied
 
 ## Distribution boundary
 
-Current slides, guides, Lesson Plan, labs and build sources are public courseware. `assessment/` and `reference/` remain private. Credentials, environments, dependencies and superseded archives are excluded. This non-WSQ course has no formal assessment package. Never replace synthetic inputs with real learner, employee or maintenance records in the public repository.
+Current slides, guides, Lesson Plan, labs and learner Skill templates are public courseware. Build tooling stays local. `assessment/` and `reference/` remain private. Credentials, environments, dependencies and superseded archives are excluded. This non-WSQ course has no formal assessment package. Never replace synthetic inputs with real learner, employee or maintenance records in the public repository.
 
 ## Prompt page maintenance
 
