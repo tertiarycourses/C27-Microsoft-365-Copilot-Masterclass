@@ -1,0 +1,287 @@
+{
+  "course": "C27",
+  "catalogue_display_code": "C027",
+  "version": "v2.2",
+  "date": "14 October 2026",
+  "central_theme": "Northstar Water Services - fictional water-pipe maintenance and service company",
+  "instructional_minutes": 450,
+  "guided_lab_minutes": 380,
+  "demonstration_minutes": 50,
+  "briefing_recap_minutes": 20,
+  "slides": 132,
+  "learner_guide_pages": 66,
+  "lesson_plan_pages": 5,
+  "labs": 10,
+  "numbered_lab_steps": 66,
+  "copy_prompts": 65,
+  "copy_counts_by_lab": [
+    7,
+    5,
+    6,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    5
+  ],
+  "copy_includes_app_or_mode_labels": false,
+  "lab_roots_contain_only_instruction_pdf_and_data_folder": true,
+  "drive_root": "1PC_frUHV-j0fXyRuqscU-AdKvZZNXNOb",
+  "activities_id_preserved": "1ji5EnCwf2U0LD39-JzoCSMB_Rmx3bDTX",
+  "current_artifacts_anonymously_downloaded_and_sha256_verified": 228,
+  "previous_drive_files_preserved_by_id_and_md5": 380,
+  "retired_folder_shells_archived_and_read_back": 6,
+  "drive_folder_results": {
+    "Trainer Slides": {
+      "uploaded": 1,
+      "archived": 1
+    },
+    "Learner Slides": {
+      "uploaded": 1,
+      "archived": 1
+    },
+    "Learner Guide": {
+      "uploaded": 2,
+      "archived": 2
+    },
+    "Lesson Plan": {
+      "uploaded": 2,
+      "archived": 2
+    },
+    "Activities": {
+      "uploaded": 200,
+      "archived": 130,
+      "unchanged": 22
+    }
+  },
+  "main_artifact_links": [
+    {
+      "path": "courseware/Microsoft 365 Copilot Masterclass-v2.2.pptx",
+      "id": "1Lfw0Xpv2wM1X8kpY46Frb2VFC4J5l_Zn",
+      "sha256": "d12a0899a1c74a87bcb57ebb01efb33a77ceaf6f65d7e096f1a7b8f5fa64fe2c",
+      "verified": true,
+      "anonymous_http": 200,
+      "viewer_link": "https://drive.google.com/file/d/1Lfw0Xpv2wM1X8kpY46Frb2VFC4J5l_Zn/view"
+    },
+    {
+      "path": "courseware/Microsoft 365 Copilot Masterclass-v2.2.pdf",
+      "id": "1wUEVShzRfF_Facc3Ye1Txt9H5BvMBWKb",
+      "sha256": "85ddb9e6b1dc9696dc58807950b01fe73e755777af7b23419d3e73b0be94a45e",
+      "verified": true,
+      "anonymous_http": 200,
+      "viewer_link": "https://drive.google.com/file/d/1wUEVShzRfF_Facc3Ye1Txt9H5BvMBWKb/view"
+    },
+    {
+      "path": "courseware/LG-Microsoft 365 Copilot Masterclass.docx",
+      "id": "1Ikuo4EVo8NiUaVtatMnh-YQ3QWbtizUS",
+      "sha256": "5fb3a27680d1a1036fdacee070b7e0a185f271d0f689469aa6a02843d789f78a",
+      "verified": true,
+      "anonymous_http": 200,
+      "viewer_link": "https://drive.google.com/file/d/1Ikuo4EVo8NiUaVtatMnh-YQ3QWbtizUS/view"
+    },
+    {
+      "path": "courseware/LG-Microsoft 365 Copilot Masterclass.pdf",
+      "id": "1_SlqKlooJBJCwMJvgBQy0iKle-U5vfU4",
+      "sha256": "dcb06ba49e787fbb7b8f504ad82f8de5c78d3c2238e5cee53063088e7b6d637b",
+      "verified": true,
+      "anonymous_http": 200,
+      "viewer_link": "https://drive.google.com/file/d/1_SlqKlooJBJCwMJvgBQy0iKle-U5vfU4/view"
+    },
+    {
+      "path": "courseware/LP-Microsoft 365 Copilot Masterclass.docx",
+      "id": "1SUG0ysHkEF3l-RoWBIcmSpwQ9KbU29nd",
+      "sha256": "fa83389e178ec4bdb1a522e9cbbee61ec953d429b5bcf417071aa72595ab55e7",
+      "verified": true,
+      "anonymous_http": 200,
+      "viewer_link": "https://drive.google.com/file/d/1SUG0ysHkEF3l-RoWBIcmSpwQ9KbU29nd/view"
+    },
+    {
+      "path": "courseware/LP-Microsoft 365 Copilot Masterclass.pdf",
+      "id": "1KI5XEP6osp_ubrRayLHR0boCIWSLL2n4",
+      "sha256": "ac7b1eff70bba87ed309f0578de8d2fdfa57d8871eeed1d49e3a70987d45c8bd",
+      "verified": true,
+      "anonymous_http": 200,
+      "viewer_link": "https://drive.google.com/file/d/1KI5XEP6osp_ubrRayLHR0boCIWSLL2n4/view"
+    }
+  ],
+  "courseware_link_readback": {
+    "trainer_slides_url": "https://drive.google.com/file/d/1Lfw0Xpv2wM1X8kpY46Frb2VFC4J5l_Zn/view?usp=sharing",
+    "learner_slides_url": "https://drive.google.com/file/d/1wUEVShzRfF_Facc3Ye1Txt9H5BvMBWKb/view?usp=sharing",
+    "lesson_plan_url": "https://drive.google.com/file/d/1KI5XEP6osp_ubrRayLHR0boCIWSLL2n4/view?usp=sharing",
+    "learner_guide_url": "https://drive.google.com/file/d/1_SlqKlooJBJCwMJvgBQy0iKle-U5vfU4/view?usp=sharing",
+    "lab_url": "https://drive.google.com/drive/folders/1ji5EnCwf2U0LD39-JzoCSMB_Rmx3bDTX",
+    "courseware_link": "https://drive.google.com/drive/folders/1PC_frUHV-j0fXyRuqscU-AdKvZZNXNOb"
+  },
+  "all_six_managed_links_read_back": true,
+  "unrelated_courseware_and_catalogue_data_preserved": true,
+  "independent_courseware_qa": "PASS",
+  "independent_lab_review": "PASS",
+  "private_assessment_reference_credentials_build_tools_published": false,
+  "native_copilot_execution_claimed": false,
+  "released_artifacts_commit": "0c11931c1a90dc10c688c9d18e2fec9329a8e0a3",
+  "pages": {
+    "page_live_and_matches_source": true,
+    "pdf_and_workbook_links": [
+      {
+        "path": "labs/lab-01-excel-to-word/Lab-01-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-01-excel-to-word/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-02-word-to-powerpoint-and-outlook/Lab-02-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-02-word-to-powerpoint-and-outlook/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-03-personalisation/Lab-03-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-03-personalisation/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-04-workbook-rules/Lab-04-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-04-workbook-rules/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-05-custom-pareto-chart-skill/Lab-05-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-05-custom-pareto-chart-skill/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-06-reporting-skill/Lab-06-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-06-reporting-skill/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-07-custom-dashboard-skill/Lab-07-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-07-custom-dashboard-skill/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-08-interactive-filters-and-refresh/Lab-08-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-08-interactive-filters-and-refresh/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-09-dashboard-to-presentation/Lab-09-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-09-dashboard-to-presentation/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-10-professional-handoff/Lab-10-Instructions.pdf",
+        "http": 200,
+        "sha256_verified": true
+      },
+      {
+        "path": "labs/lab-10-professional-handoff/data/Northstar_Work_Orders.xlsx",
+        "http": 200,
+        "sha256_verified": true
+      }
+    ],
+    "browser_clipboard": {
+      "all_65_buttons_exact": true,
+      "all_10_hash_tabs_work": true,
+      "copied_app_labels": false,
+      "mobile_width": 390,
+      "document_width": 390
+    },
+    "deployed_commit": "0c11931c1a90dc10c688c9d18e2fec9329a8e0a3",
+    "workflow_run": "https://github.com/tertiarycourses/C27-Microsoft-365-Copilot-Masterclass/actions/runs/38432452851"
+  },
+  "github_about": {
+    "description": "Non-WSQ C27: one-day Microsoft 365 Copilot Masterclass with 10 connected water-service labs covering Personalisation, .Rules, Pareto Skills and interactive dashboards.",
+    "hasDiscussionsEnabled": true,
+    "homepageUrl": "https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html",
+    "repositoryTopics": [
+      {
+        "name": "courseware"
+      },
+      {
+        "name": "hands-on-labs"
+      },
+      {
+        "name": "microsoft-365"
+      },
+      {
+        "name": "microsoft-copilot"
+      },
+      {
+        "name": "tertiary-courses"
+      },
+      {
+        "name": "excel"
+      },
+      {
+        "name": "maintenance"
+      },
+      {
+        "name": "non-wsq"
+      },
+      {
+        "name": "powerpoint"
+      },
+      {
+        "name": "c27"
+      },
+      {
+        "name": "water-maintenance"
+      },
+      {
+        "name": "custom-skills"
+      },
+      {
+        "name": "interactive-dashboard"
+      },
+      {
+        "name": "pareto"
+      }
+    ]
+  }
+}
