@@ -14,3 +14,5 @@ Independent non-WSQ courseware and technical-lab reviews completed 13 October 20
 Resolved findings: scalar total formula in All scope; unreachable empty selector test; skill output whitelist and slide-count conflict; missing-input/source transition; inconsistent description category; truncated slide explanation; multi-page contents-page shift; generic presentation checkpoints; cosmetic spacing. Header finding withdrawn: every lab PDF states Lab N of 8.
 
 Native Copilot tenant execution is not claimed. The trainer checks licence and tenant access before class; unavailable features use explicitly labelled manual practice.
+
+Targeted final review verified the original v1.0 date against Git source: 29 July 2026. Updated LP/LG passed container, version-control, layout and all 43 contents-entry checks. Their final uploaded bytes were rechecked before the LMS update.

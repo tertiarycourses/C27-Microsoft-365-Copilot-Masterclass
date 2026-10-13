@@ -8,7 +8,7 @@ VERSION='v2.0';VERSION_DATE='13 October 2026'
 ORG='Tertiary Infotech Academy Pte Ltd';UEN='UEN: 201200696W'
 TRAINER='Assigned Tertiary Infotech Academy Trainer';DAYS=1;DAY_MINUTES=480;INSTRUCTIONAL_MINUTES=450
 MODE='Instructor-led, hands-on practical labs';DAILY_TIMING='9:30 am - 6:30 pm (1-hour lunch; two 15-minute tea breaks; 7.5 instructional hours)';DARK_THEME=False
-VERSION_HISTORY=[('1.0','30 September 2026','Previous Asteron cross-app scenario; retained in archive.','Tertiary Infotech Academy'),('2.0',VERSION_DATE,'Four maintenance topics; eight connected labs, custom Excel/PowerPoint skills, interactive dashboard and management presentation; C34 design.','Tertiary Infotech Academy')]
+VERSION_HISTORY=[('1.0','29 July 2026','Previous Asteron cross-app scenario; retained in archive.','Tertiary Infotech Academy'),('2.0',VERSION_DATE,'Four maintenance topics; eight connected labs, custom Excel/PowerPoint skills, interactive dashboard and management presentation; C34 design.','Tertiary Infotech Academy')]
 LEARNING_OUTCOMES=[
 'LO1: Integrate Word, Excel, PowerPoint and Outlook Copilot in a coherent maintenance workflow with explicit source grounding and verified prompts.',
 'LO2: Create, install, apply and improve a custom maintenance-reporting skill in Excel and PowerPoint, preserving source records and testing reruns.',

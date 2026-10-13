@@ -1,0 +1,25 @@
+{
+  "course": "C27",
+  "version": "v2.0",
+  "date": "13 October 2026",
+  "slides": 110,
+  "labs": 8,
+  "learner_guide_pages": 51,
+  "lesson_plan_pages": 5,
+  "drive_root": "1PC_frUHV-j0fXyRuqscU-AdKvZZNXNOb",
+  "current_files_anonymously_downloaded_and_hash_verified": 182,
+  "archived_files_hash_verified": 38,
+  "courseware_link_readback": {
+    "trainer_slides_url": "https://drive.google.com/file/d/1FS5MEZxtWoj_idte1xqNRZnMxCdNSu4e/view?usp=sharing",
+    "learner_slides_url": "https://drive.google.com/file/d/1Hyzuv0bmuDQHqw3cxn1MC1DDIzIULPUa/view?usp=sharing",
+    "lesson_plan_url": "https://drive.google.com/file/d/15HyOjwR1cXmALti4w75MkVh1IafjBc4H/view?usp=sharing",
+    "learner_guide_url": "https://drive.google.com/file/d/16Aun73D23qdECH7gvHTHjhhZbjdRVOTf/view?usp=sharing",
+    "lab_url": "https://drive.google.com/drive/folders/1ji5EnCwf2U0LD39-JzoCSMB_Rmx3bDTX"
+  },
+  "all_five_links_current": true,
+  "unrelated_courseware_and_full_catalogue_data_preserved": true,
+  "private_assessment_reference_and_credentials_published": false,
+  "transport": "Connected Drive API after rclone shared-client quota error; source/destination parents verified; no deletes",
+  "native_copilot_tenant_execution": "Not claimed; documented native skills access checked by trainer, manual practice labelled when unavailable",
+  "qa": "Independent courseware and lab reviews passed; final43TOCentries correct; actual dashboard formula recalculation passed"
+}
