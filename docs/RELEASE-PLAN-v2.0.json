@@ -1,0 +1,18 @@
+{
+  "course": "C27",
+  "version": "v2.0",
+  "root": "1PC_frUHV-j0fXyRuqscU-AdKvZZNXNOb",
+  "archive_courseware_files": 6,
+  "archive_superseded_lab_files": 32,
+  "upload_current_courseware_files": 6,
+  "upload_current_lab_files": 176,
+  "preserve": [
+    "Brochure",
+    "Trainer Resources",
+    "existing archive content",
+    "existing Activities folder ID"
+  ],
+  "transport": "Connected Google Drive API after rclone shared-client quota errors; original archive/upload plan and folder IDs preserved",
+  "no_delete": true,
+  "qa_gate": "independent final signoff before write"
+}

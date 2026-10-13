@@ -1,1364 +1,1447 @@
 # Microsoft 365 Copilot Masterclass — Learner Guide
 
-**Course Code:** C027  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v1.0 · 29 July 2026**
+**Course Code:** C27  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v2.0 · 13 October 2026**
 
 ## Contents
 
 - [Introduction](#introduction)
 - [Course Learning Outcomes](#course-learning-outcomes)
 - [Before You Start — Preparation](#before-you-start--preparation)
-- [Topic 01 — Getting Started with Microsoft 365 Copilot  (First half · 3 connected labs)](#topic-01--getting-started-with-microsoft-365-copilot--first-half--3-connected-labs)
-  - [Introduction to Microsoft 365 Copilot and How It Works](#introduction-to-microsoft-365-copilot-and-how-it-works)
-  - [Writing Effective Prompts for Better Results](#writing-effective-prompts-for-better-results)
-  - [Researching and Summarising with Copilot Chat](#researching-and-summarising-with-copilot-chat)
-  - [Drafting, Rewriting and Summarising Documents in Word](#drafting-rewriting-and-summarising-documents-in-word)
-  - [Generating and Refining Presentations in PowerPoint](#generating-and-refining-presentations-in-powerpoint)
-  - [Lab 1 — Research the Asteron Launch and Build a Verified Source Register](#lab-1--research-the-asteron-launch-and-build-a-verified-source-register)
-  - [Lab 2 — Draft and Approve the Asteron Launch Brief in Word](#lab-2--draft-and-approve-the-asteron-launch-brief-in-word)
-  - [Lab 3 — Generate and Refine the Asteron Decision Deck in PowerPoint](#lab-3--generate-and-refine-the-asteron-decision-deck-in-powerpoint)
-  - [Topic 01 Recap - Mapped to Learning Outcomes](#topic-01-recap---mapped-to-learning-outcomes)
-- [Topic 02 — Copilot Across Your Everyday Work Apps  (Second half · 5 connected labs)](#topic-02--copilot-across-your-everyday-work-apps--second-half--5-connected-labs)
-  - [Analysing Data and Generating Formulas in Excel](#analysing-data-and-generating-formulas-in-excel)
-  - [Drafting Emails and Summarising Threads in Outlook](#drafting-emails-and-summarising-threads-in-outlook)
-  - [Meeting Recaps and Action Items in Teams](#meeting-recaps-and-action-items-in-teams)
-  - [Building End-to-End Copilot Workflows Across Apps](#building-end-to-end-copilot-workflows-across-apps)
-  - [Responsible AI, Data Privacy and Best Practices](#responsible-ai-data-privacy-and-best-practices)
-  - [Lab 4 — Analyse Pilot Readiness and Verify Copilot Formulas in Excel](#lab-4--analyse-pilot-readiness-and-verify-copilot-formulas-in-excel)
-  - [Lab 5 — Summarise the Launch Thread and Prepare a Reviewed Outlook Draft](#lab-5--summarise-the-launch-thread-and-prepare-a-reviewed-outlook-draft)
-  - [Lab 6 — Validate a Teams Recap and Create the Action Register](#lab-6--validate-a-teams-recap-and-create-the-action-register)
-  - [Lab 7 — Assemble and Reconcile the Cross-App Coordination Pack](#lab-7--assemble-and-reconcile-the-cross-app-coordination-pack)
-  - [Lab 8 — Run the Responsible-Use and Privacy Release Gate](#lab-8--run-the-responsible-use-and-privacy-release-gate)
-  - [Topic 02 Recap - Mapped to Learning Outcomes](#topic-02-recap---mapped-to-learning-outcomes)
-- [Wrap-Up - The Complete C027 Workflow](#wrap-up---the-complete-c027-workflow)
+- [Topic 1 — Fundamentals of Microsoft 365 Copilot](#topic-1--fundamentals-of-microsoft-365-copilot)
+  - [Grounding Across Microsoft 365](#grounding-across-microsoft-365)
+  - [Work-Order Grain and Reporting Measures](#work-order-grain-and-reporting-measures)
+  - [Lab 1 · Excel to Word — Prepare Work Orders and Draft the Operations Brief](#lab-1--excel-to-word--prepare-work-orders-and-draft-the-operations-brief)
+  - [Prompts and Verified App Handoffs](#prompts-and-verified-app-handoffs)
+  - [Outlook Drafting and Operational Decisions](#outlook-drafting-and-operational-decisions)
+  - [Lab 2 · Word to PowerPoint and Outlook — Create the Cross-App Maintenance Update](#lab-2--word-to-powerpoint-and-outlook--create-the-cross-app-maintenance-update)
+  - [Topic 1 Recap - Mapped to Learning Outcomes](#topic-1-recap---mapped-to-learning-outcomes)
+- [Topic 2 — Create Skills for Microsoft 365 Copilot](#topic-2--create-skills-for-microsoft-365-copilot)
+  - [Skills, Prompts and Workbook Rules](#skills-prompts-and-workbook-rules)
+  - [Custom Skill Discovery in Each App](#custom-skill-discovery-in-each-app)
+  - [Lab 3 · Author SKILL.md — Create a Custom Maintenance Reporting Skill](#lab-3--author-skillmd--create-a-custom-maintenance-reporting-skill)
+  - [Repeatability and Safe Skill Reruns](#repeatability-and-safe-skill-reruns)
+  - [Assignment Proposals and Capacity Evidence](#assignment-proposals-and-capacity-evidence)
+  - [Lab 4 · Repeatable reporting — Use and Improve the Skill in Excel and PowerPoint](#lab-4--repeatable-reporting--use-and-improve-the-skill-in-excel-and-powerpoint)
+  - [Topic 2 Recap - Mapped to Learning Outcomes](#topic-2-recap---mapped-to-learning-outcomes)
+- [Topic 3 — Create an Interactive Dashboard with Excel Copilot](#topic-3--create-an-interactive-dashboard-with-excel-copilot)
+  - [Dashboard Measures and Denominators](#dashboard-measures-and-denominators)
+  - [Visual Dashboard Design for Maintenance](#visual-dashboard-design-for-maintenance)
+  - [Lab 5 · Design and build — Build Maintenance Dashboard Measures and Charts](#lab-5--design-and-build--build-maintenance-dashboard-measures-and-charts)
+  - [One Filter Scope for Every Visual](#one-filter-scope-for-every-visual)
+  - [Refresh Tests and Static Snapshots](#refresh-tests-and-static-snapshots)
+  - [Lab 6 · Filters and refresh — Make the Dashboard Interactive and Prove Refresh](#lab-6--filters-and-refresh--make-the-dashboard-interactive-and-prove-refresh)
+  - [Topic 3 Recap - Mapped to Learning Outcomes](#topic-3-recap---mapped-to-learning-outcomes)
+- [Topic 4 — Create a Professional Presentation with PowerPoint Copilot](#topic-4--create-a-professional-presentation-with-powerpoint-copilot)
+  - [From Dashboard Evidence to a Decision Story](#from-dashboard-evidence-to-a-decision-story)
+  - [Charts, Templates and Source Provenance](#charts-templates-and-source-provenance)
+  - [Lab 7 · Dashboard to presentation — Turn Dashboard Evidence into a Management Story](#lab-7--dashboard-to-presentation--turn-dashboard-evidence-into-a-management-story)
+  - [Professional Refinement and Rehearsal](#professional-refinement-and-rehearsal)
+  - [Reviewed Handoff and Artifact Lifecycle](#reviewed-handoff-and-artifact-lifecycle)
+  - [Lab 8 · Professional handoff — Refine and Present the Maintenance Decision Deck](#lab-8--professional-handoff--refine-and-present-the-maintenance-decision-deck)
+  - [Topic 4 Recap - Mapped to Learning Outcomes](#topic-4-recap---mapped-to-learning-outcomes)
 - [Next Steps](#next-steps)
 - [Glossary](#glossary)
 
 
 ## Introduction
 
-This Learner Guide accompanies Microsoft 365 Copilot Masterclass (C027). It follows the same two-topic sequence, eight connected labs, four learning outcomes and synthetic Asteron Services scenario as the slide deck, Lesson Plan and standalone lab files.
+This masterclass follows Northstar Facilities from a dirty maintenance export to a reviewed management decision pack. Work-order IDs, categories, sites, current assignments and status definitions stay consistent across every app. The purpose is to make evidence travel accurately through the workflow, while using Copilot for drafting, analysis, reusable instructions and visual communication.
 
-Use the guide as a self-contained study text before, during and after class. Each concept explains what the capability is, why it matters, how it works, a worked example and when to use or avoid it. The labs then apply the concepts across Chat, Word, PowerPoint, Excel, Outlook and Teams. Copilot output remains a proposal until its sources, facts, audience, permissions and consequences are reviewed.
+Study each topic’s concepts before its two labs. Each lab has its own instruction PDF, identical Markdown steps, prompts, synthetic data, templates and a deterministic checkpoint. Carry your own verified outputs forward. A supplied checkpoint allows rejoining but is not evidence that you completed the earlier task. The detailed procedures are here and in labs; the slides teach concepts and show outcomes.
 
 
 ## Course Learning Outcomes
 
-- LO1: Explain how Microsoft 365 Copilot grounds responses, apply a structured prompt method and verify a source-backed research summary in Copilot Chat.
-- LO2: Draft, rewrite and validate a business document in Word, then generate and refine a presentation in PowerPoint from the approved document.
-- LO3: Analyse a bounded dataset and generate formulas in Excel, then summarise a synthetic email thread and prepare a reviewed response in Outlook.
-- LO4: Produce a Teams meeting recap and action register, connect outputs across Microsoft 365 apps, and apply responsible-use, privacy and human-review controls.
+- LO1: Integrate Word, Excel, PowerPoint and Outlook Copilot in a coherent maintenance workflow with explicit source grounding and verified prompts.
+- LO2: Create, install, apply and improve a custom maintenance-reporting skill in Excel and PowerPoint, preserving source records and testing reruns.
+- LO3: Create an interactive maintenance dashboard with verified measures, common filter scope, meaningful charts and a demonstrated refresh test.
+- LO4: Continue from the dashboard to a professional management presentation, with evidence-based headlines, source notes, rehearsal and a reviewed handoff draft.
 
 
 ## Before You Start — Preparation
 
 **What you need**
 
-- A Windows or Mac laptop with a current supported browser and Microsoft 365 apps or their web equivalents.
-- An eligible Microsoft 365 account with the Copilot experiences enabled by the organisation or subscription.
-- Access to Copilot Chat, Word, PowerPoint, Excel, Outlook and Teams; feature names can vary by licence and update channel.
-- A downloaded copy of this repository with the labs/assets folder intact.
-- Permission to use only the supplied synthetic Asteron Services material during class.
+- Assigned Microsoft 365 account with Copilot in Word, Excel, PowerPoint and Outlook; licence and tenant settings checked before class.
+- Excel desktop Windows or Mac recommended; current apps, English display language for Excel custom skills, assigned OneDrive and AutoSave.
+- Complete lab folder downloads and a personal work-c027 output folder; all sample data is synthetic.
+- Copilot skills access in both Excel and PowerPoint. If unavailable, the lab supplies a clearly labelled manual-instruction practice route.
 
 **Verify your setup**
 
-Sign in at microsoft365.com and record which Copilot entry points are visible. Open labs/assets/asteron-source-register-template.csv and confirm it has the eight required headers. Create a work-c027 folder in an approved OneDrive location. If an app capability is unavailable, use Copilot Chat with the supplied source file and record the limitation; do not invent a result.
-
-```bash
-Expected local structure:
-C027---Microsoft-365-Copilot-Masterclass/
-  labs/assets/
-  work-c027/
-```
+Open one workbook and one Word/PowerPoint template; find each Copilot button. Confirm that the app can select the intended OneDrive reference file. Use the app-created custom skills folder rather than guessing a path. Keep Formulas > Calculation Options > Automatic. Never paste account passwords into a prompt.
 
 **Conventions used in every lab**
 
-- All Asteron names, messages, meeting content and numbers are synthetic training material.
-- Text between <ANGLE_BRACKETS> is a placeholder to replace; never paste a password, token or secret.
-- VERIFIED means traced to a governing source; REVISE means a correctable gap; HOLD means unresolved or unsafe to release.
-- Dates use yyyy-mm-dd, currency uses S$, percentages include the stated denominator and every action has one owner.
-- Save the prompt, source, proposal, verification and human release decision together.
+- App-labelled prompts run in the named app; a prompt in one app is not automatically visible to another.
+- Use Chat only for inspection, Plan for reviewed proposals, and Allow editing for authorised workbook changes when these modes are available.
+- Log Word, Outlook, PowerPoint and web prompts manually in Prompt_Log.
+- All comparisons use the same source table, reporting date and filter scope. Missing values remain UNKNOWN; zero closed denominator is N/A.
 
 
-## Topic 01 — Getting Started with Microsoft 365 Copilot  (First half · 3 connected labs)
+## Topic 1 — Fundamentals of Microsoft 365 Copilot
 
-How Copilot works · effective prompts · Copilot Chat research · Word drafting and rewriting · PowerPoint generation and refinement
+One verified maintenance workflow across four apps
 
 **Key concepts**
 
-- Orchestration and grounding — Copilot combines the instruction, permitted work context and app capability before a model proposes a response.
-- G-C-S-E prompts — State Goal, Context, Source and Expectations so the task, evidence boundary and output contract are visible.
-- Source-backed research — Treat generated summaries as claims to trace, compare and approve rather than as automatic truth.
-- Word review loop — Draft, inspect, rewrite a bounded selection, compare against the brief and approve the document.
-- Document-to-deck handoff — Use an approved Word file as the PowerPoint source, then check structure, facts, visuals and speaker notes.
-- Availability awareness — Licensing, organisational policy, platform and update channel can change which Copilot controls are visible.
+- Grounding — Select actual sources in every app.
+- Work orders — IDs, status, category, site and current assignment.
+- Prompts — Goal, context, source and expectations.
+- Handoffs — Reconcile Word, Excel, slides and draft email.
+
+Concepts for Lab 1: Grounding Across Microsoft 365, Work-Order Grain and Reporting Measures.
 
 
-### Introduction to Microsoft 365 Copilot and How It Works
+### Grounding Across Microsoft 365
 
-Microsoft 365 Copilot is an AI-powered work assistant integrated with Microsoft 365 apps. For a signed-in user it can combine the prompt, permitted organisational context from Microsoft Graph, optional web grounding and the capabilities of the current app. The large language model proposes an output; Microsoft 365 then returns it to the user for review.
+Grounding gives an AI request the specific evidence it should use. A work-grounded Copilot experience can use permitted organisational content; a file-grounded request uses selected files or supplied text. Neither makes an inaccessible file available merely because its local path is typed into a prompt. Word, Excel, PowerPoint and Outlook have different current-document and file-reference experiences. Treat each app handoff as a new grounding task.
 
-A useful response depends on both the instruction and the information available to ground it. Copilot does not receive unlimited visibility into a tenant: it works within the signed-in user's permissions. Weak source access can produce an incomplete answer, while excessive sharing can expose information that the user was already allowed to find.
+A maintenance figure can be correct in Excel yet become wrong in an email when the source, reporting date or filter scope changes. Explicit grounding prevents unsupported owner assignments, stale reporting periods and invented approvals from entering the pack. A Copilot response is a draft or hypothesis until the underlying evidence has been checked.
 
 **How it works**
 
-- The user states a task in Copilot Chat or inside a Microsoft 365 app.
-- Copilot interprets the instruction and retrieves permitted context from named files, current app content, work data or the web when enabled.
-- The model generates a proposal; the app presents the response, citations, draft or editable change for human inspection.
-- The user checks source coverage, accuracy, tone, permissions and downstream consequences before keeping or sharing it.
+- Identify the authoritative work-order table.
+- Provide goal, context, source and expected output.
+- Review against the named evidence.
+- Pass a verified snapshot to the next app.
 
 **Worked example**
 
-- An operations coordinator asks for a launch summary using an approved brief and a decision log.
-- Copilot grounds the response only in files the coordinator can access and returns a draft with source references.
-- The coordinator notices one missing decision, adds the correct source and regenerates before approving the summary.
+- Excel analyses tblWorkOrders; Word receives the checked summary.
+- PowerPoint receives the reviewed Word brief; Outlook receives the same checked values.
+- An Excel chat transcript is not an automatic PowerPoint data source.
 
 **Decision guide**
 
 | Use when | Avoid when |
 |---|---|
-| The task and evidence boundary are clear, the user has legitimate access and a person can review the output. | The task would disclose information to an unintended audience or relies on content the user should not access. |
-| A draft, summary, comparison or first-pass structure will accelerate work without removing accountability. | An unchecked output would trigger a high-impact financial, legal, safety, employment or customer decision. |
-
-**Practitioner quality lens**
-
-- Permission: Confirm the signed-in identity and whether every referenced source is appropriate for the task.
-- Grounding: Name the source and distinguish retrieved evidence from generated connective language.
-- Review: Check the response against the original files before accepting, editing or sharing it.
+| The source is accessible and the output has an explicit audience. | The prompt assumes access to another app chat or local path. |
 
 **Authoritative references**
 
-- https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture
-- https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview
-- https://support.microsoft.com/en-US/Microsoft-365-Copilot/how-copilot-chat-works-in-microsoft-365-apps
+- https://support.microsoft.com/en-us/microsoft-365-copilot/file-formats-supported-by-microsoft-365-copilot
+- https://support.microsoft.com/en-gb/word/copilot/draft-and-add-content-with-copilot-in-word
 
 ---
 
 
-### Writing Effective Prompts for Better Results
+### Work-Order Grain and Reporting Measures
 
-A prompt is the instruction and context supplied to Copilot. The C027 method uses four elements: Goal states the outcome; Context explains the audience and situation; Source sets the evidence boundary; Expectations define format, tone, constraints and review criteria. A clear goal is essential, while the other elements reduce ambiguity and improve control.
+A row represents one work order, identified by Work_Order_ID. Site, job category, priority, status and current assignment are dimensions used to group or filter records. Measures are defined calculations. The source is a snapshot at 30 September 2026: current backlog excludes Closed and Cancelled; overdue backlog also has a Due_Date before that date. Closed orders are counted separately from jobs still in the queue.
 
-Vague prompts shift important choices to the model. A visible prompt contract makes it easier to compare the result with what was requested, identify missing evidence and refine only the weak element. Effective prompting is iterative: ask, inspect, point to the gap and follow up.
+An exact duplicated export row changes counts and cost without representing new work. Normalising a category spelling must not change the business meaning or assign a missing owner. Named Excel tables and structured references let formulas expand when legitimate new rows are appended. Preserve the raw export so a cleaning decision can be traced.
 
 **How it works**
 
-- Goal: use one action verb and name the decision, artifact or change required.
-- Context: state the audience, business situation, time period, terminology and intended use.
-- Source: name the files, thread, meeting, table or approved web sources to use and any sources to exclude.
-- Expectations: specify structure, length, tone, units, citation needs, uncertainty labels and acceptance checks.
-- Review the response, then use a focused follow-up instead of restarting with another vague prompt.
+- Define one ID per work order.
+- Find exact repeated export records.
+- Standardise labels without inventing facts.
+- Reconcile cleaned counts and cost.
 
 **Worked example**
 
-- Goal: create a one-page launch brief for department heads.
-- Context: the Asteron client portal pilot begins on 18 August and leaders need decisions, owners and risks.
-- Source: use only Project_Brief and Decision_Log; do not add market facts.
-- Expectations: five headings, concise professional tone, ISO dates, a source note for every decision and an Open Questions section.
+- 122 raw rows contain 120 distinct work-order IDs.
+- Total = Closed + Cancelled + Backlog after exact duplicate removal.
+- Due on 30 September is not overdue at the 30 September snapshot.
 
 **Decision guide**
 
 | Use when | Avoid when |
 |---|---|
-| The task has a definable output and the user can name a trustworthy evidence boundary. | The user cannot explain the intended decision or determine which source should govern the answer. |
-| The first response is close but needs a controlled change to scope, format, tone or source coverage. | The prompt contains credentials, secrets or unnecessary sensitive personal information. |
-
-**Practitioner quality lens**
-
-- Specific: One task, one audience and one intended use.
-- Grounded: Named sources and explicit exclusions.
-- Verifiable: Acceptance checks that a reviewer can apply without guessing.
+| You have consistent IDs and a fixed reporting date. | Duplicate IDs contain conflicting records or reporting scope is unknown. |
 
 **Authoritative references**
 
-- https://support.microsoft.com/en-US/Microsoft-365-Copilot/get-started-writing-prompts-in-microsoft-365-copilot
-- https://learn.microsoft.com/en-us/training/modules/get-ready-work-microsoft-365-copilot/
+- https://support.microsoft.com/en-us/excel/create-and-share-a-dashboard-with-excel-and-microsoft-groups
 
 ---
 
 
-### Researching and Summarising with Copilot Chat
+### Lab 1 · Excel to Word — Prepare Work Orders and Draft the Operations Brief
 
-Copilot Chat is a conversational workspace for asking questions, researching and synthesising information. Depending on the signed-in account, licence and organisational settings, it may use web information, explicitly referenced files and broader work context. The response can include citations or source links that help the user trace statements back to evidence.
+Learning outcome: LO1: integrate verified Word, Excel, PowerPoint and Outlook outputs.
 
-Research becomes faster when Copilot can compare several permitted sources with explicit authority labels, but synthesis can hide contradictions, missing dates or weak evidence. A source register and claim ledger keep the research auditable: every important claim is recorded with its source, confidence and unresolved question.
+Goal: Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with reconciled counts, reporting scope and a source register.
+
+You are Northstar Facilities’ maintenance coordinator. A Q3 export contains repeated IDs and inconsistent category labels. You will clean a copy in Excel, reconcile its controls, and use the verified result to draft a Word operations brief. The same site, status and assignment definitions underpin every later report.
+
+**What you'll build**
+
+Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with reconciled counts, reporting scope and a source register.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+
+**Step-by-step**
+
+1. Step 1 Copy data/Northstar_Work_Orders.xlsx to your OneDrive work-c027 folder as Northstar_Clean_Work_Orders.xlsx. Open it in Excel, set Formulas > Calculation Options > Automatic, and read About_This_Data and Control. The workbook is the deliberately dirty 122-row input; the supplied CSV is a clean reference and must not replace the cleaning exercise. Open Copilot from Home > Copilot.
+2. Step 2 Use Chat only to inspect the named table before making changes. Record row count and the two exact repeated IDs. A Work_Order_ID is the row grain; do not count repeated export records twice.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Inspect tblWorkOrders. Report row count, duplicate Work_Order_ID values, category spelling variants and missing Assigned_To. Do not edit. Treat 2026-09-30 as the fixed reporting date.
+   ```
+
+3. Step 3 Choose Plan if available. Read the proposed cleaning plan before using Allow editing. The duplicates are exact repeated export records: keep one per ID. Trim and standardise category labels to HVAC, Electrical, Plumbing, Fire Safety, General Repair; preserve missing owners and all unique source values. Save a copy of the raw sheet before the change.
+
+   ```text
+   EXCEL - PLAN:
+   Plan to retain an untouched Raw_Export copy, remove only exact duplicate records by Work_Order_ID, and standardise category spelling in tblWorkOrders. Keep dates, statuses and assignments. Ask if two records with one ID differ.
+
+   EXCEL - ALLOW EDITING:
+   Apply the reviewed plan. Keep one identical record per repeated ID. Do not guess missing owners. Reconcile the cleaned table against Control.
+   ```
+
+4. Step 4 Add a Checks sheet or use the supplied one. Ask for formulas, then inspect the table and formulas yourself. Overdue excludes Closed and Cancelled and uses strictly earlier than the fixed date, so a due-today job is not overdue. Copy verified values to templates/Evidence_Register.csv.
+
+   ```text
+   EXCEL - ALLOW EDITING:
+   In Checks calculate total rows, closed, cancelled, backlog, overdue backlog, unassigned backlog and total Cost_SGD for tblWorkOrders. Use Control!B2 as reporting date. Define backlog as Status neither Closed nor Cancelled. Add the identity total = closed + cancelled + backlog. Do not change source data.
+   ```
+
+5. Step 5 Open templates/Northstar_Operations_Brief_Template.docx in Word and save as Northstar_Operations_Brief.docx in OneDrive. In Copilot select the verified source file using Reference a file or /. If Word cannot use the workbook, copy your verified evidence table plus data/Northstar_Maintenance_Context.txt into the document and select that text; do not imply Word reads the Excel chat.
+
+   ```text
+   WORD COPILOT:
+   Draft a one-page Northstar operations brief from the verified evidence supplied here. Include reporting scope/date, backlog and overdue findings, current assignment issues, proposed next actions and open questions. Keep observed facts separate from proposals. Preserve numbers and definitions. Use UNKNOWN for causes, approvals or capacity decisions not evidenced.
+   ```
+
+6. Step 6 Compare every number and work-order ID in the Word brief to Checks and the evidence register. Add the OneDrive source link and all-filters scope. Log the Word prompt manually in Excel Prompt_Log because Excel cannot access the Word conversation. Save the cleaned workbook and brief for Lab 2.
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| Excel | Count unique work-order IDs and reconcile backlog using the fixed reporting date. |
+| Word | Draft an operations brief from the checked evidence; label proposals and unknowns. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Clean table | 120 unique Work_Order_ID rows; five canonical job categories. |
+| Portfolio identity | 120 = 48 Closed + 12 Cancelled + 60 backlog. |
+| Evidence handoff | Overdue 50; unassigned backlog 6; total cost S$35,827.50. Word agrees with Excel. |
+| No guessed owner | Blank assignments remain blank; proposals labelled unapproved. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-01-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+Concepts for Lab 2: Prompts and Verified App Handoffs, Outlook Drafting and Operational Decisions.
+
+
+### Prompts and Verified App Handoffs
+
+A useful prompt combines the intended goal, operational context, named source and output expectations. The handoff object is a verified artifact, such as a Word brief with a checked metric table and source links. It is not an assumption that another app can remember the preceding conversation. For maintenance, expectations should specify exact dates, status vocabulary, current versus proposed assignments and missing-value behaviour.
+
+The same number may have different meaning when a chart counts all work orders while an email calls it open backlog. A cross-app evidence register records the claim, value, source table, filter scope and date. This provides a small reproducible contract for each output and lets a reviewer identify a mismatch before it becomes a management decision.
 
 **How it works**
 
-- Define the research question and decide whether the boundary is work sources, web sources or both.
-- Attach or reference only the permitted source pack, preserve each file's authority and status, and ask for a source-by-source inventory before synthesis.
-- Request claims in a table with source, evidence, uncertainty and follow-up needed.
-- Open the referenced material, compare quotations and numbers, and mark each claim Verified, Revise or Hold.
-- Save the approved summary and source register for the next app rather than relying on chat history alone.
+- Write the goal and audience.
+- Attach or select the actual source.
+- Specify definitions and missing-value behaviour.
+- Reconcile the returned claims.
 
 **Worked example**
 
-- Copilot compares the Asteron project brief, stakeholder notes and decision log.
-- It correctly identifies the launch date but assigns the wrong owner because two notes use similar role titles.
-- The learner opens both sources, corrects the owner and records the unresolved training-room capacity question.
+- Goal: draft a maintenance update for the operations manager.
+- Source: reviewed Northstar operations brief, all filters All, 30 September.
+- Expectation: label assignment suggestions as proposals and leave unknown approvals UNKNOWN.
 
 **Decision guide**
 
 | Use when | Avoid when |
 |---|---|
-| Several accessible sources must be summarised, compared or turned into questions for a reviewer. | The answer would depend on inaccessible, outdated or unapproved evidence that cannot be checked. |
-| A human can inspect the cited sources and keep a durable record of the approved findings. | The user plans to paste the generated text directly into a public deliverable without source review. |
-
-**Practitioner quality lens**
-
-- Coverage: List which sources were used, missing and excluded.
-- Traceability: Link every material claim, date, number and owner to its governing source.
-- Uncertainty: Preserve contradictions and open questions instead of smoothing them away.
+| A reviewed brief can be selected or its checked text pasted. | Only an unverified summary is available. |
 
 **Authoritative references**
 
-- https://support.microsoft.com/en-us/microsoft-365-copilot/frequently-asked-questions-about-microsoft-365-copilot-chat
-- https://support.microsoft.com/en-us/onedrive/summarize-your-files-with-copilot
+- https://support.microsoft.com/en-gb/word/copilot/draft-and-add-content-with-copilot-in-word
+- https://support.microsoft.com/en-us/powerpoint/copilot/add-a-slide-from-a-file-with-copilot-in-powerpoint
+- https://support.microsoft.com/en-us/microsoft-365-copilot/file-formats-supported-by-microsoft-365-copilot
 
 ---
 
 
-### Drafting, Rewriting and Summarising Documents in Word
+### Outlook Drafting and Operational Decisions
 
-Copilot in Word can create a draft from a prompt or referenced file, rewrite selected text, summarise a document and answer questions about its contents. Chat-only work can stay in the pane, while editing actions propose changes in the document. The user keeps control by reviewing the preview, retaining accurate wording and rejecting unsupported additions.
+Copilot can help structure a draft email from supplied context. A synthetic text thread is quoted context, not a live Outlook conversation; the course explicitly uses it that way. The writer remains responsible for recipients, claims, attachments, tone and the distinction between a proposed action and an approved instruction. Saving a draft does not send it or authorise a work-order change.
 
-Word turns research into a governed business artifact. A good workflow separates the approved facts from the generated expression: the brief controls scope, the source pack controls content, the style guide controls voice and a release checklist controls whether the document is ready to hand off.
+An apparently routine update can accidentally promise technician reassignment or imply that a manager approved a recovery plan. Current assignment is recorded data; proposed assignment is a separate planning output. Available hours are one input to planning, not evidence of approval or guaranteed productivity. The final email should request the decision rather than claim it has happened.
 
 **How it works**
 
-- Start from a saved Word file and state audience, purpose, length, structure and named source files.
-- Generate a first draft, then compare every heading, date, owner, number and commitment with the source register.
-- Select only the weak passage and request a bounded rewrite that preserves meaning and defined terms.
-- Use comments or a review table to record Keep, Change or Remove decisions.
-- Save an approved version before another app uses the document as a source.
+- Provide the synthetic thread and checked facts.
+- Draft a concise update.
+- Review recipients, facts and action wording.
+- Save the unsent draft and evidence.
 
 **Worked example**
 
-- The learner creates an Asteron launch brief of no more than two pages from a supported verified-claims TXT export.
-- A rewrite makes the risks more concise but accidentally changes 'pilot group' to 'all customers'.
-- The learner rejects that change, restores the approved scope and marks the file Approved for deck handoff.
+- Current owner blank; proposed owner Aisha remains unapproved.
+- A draft addressed to example.invalid is a training artifact.
+- The handoff says decision requested, not decision approved.
 
 **Decision guide**
 
 | Use when | Avoid when |
 |---|---|
-| A document needs a structured first draft, a bounded tone change or a source-based summary. | The source brief is unresolved or the requested rewrite could alter a binding commitment without review. |
-| The owner can review proposed changes and maintain version history in OneDrive or SharePoint. | The document contains material the signed-in account is not authorised to process with the feature. |
-
-**Practitioner quality lens**
-
-- Fidelity: Preserve approved meaning, scope, dates, owners and defined terms.
-- Audience: Use the reader's decisions and questions to shape structure and tone.
-- Release: Approve a named version before it becomes the source for another artifact.
+| You can check the evidence and review the draft before use. | The task would imply a real approval or send without review. |
 
 **Authoritative references**
 
-- https://support.microsoft.com/en-us/word/welcome-to-copilot-in-word
-- https://support.microsoft.com/en-us/office/create-a-summary-of-your-document-with-copilot-in-word
+- https://support.microsoft.com/en-us/microsoft-365-copilot/file-formats-supported-by-microsoft-365-copilot
 
 ---
 
 
-### Generating and Refining Presentations in PowerPoint
+### Lab 2 · Word to PowerPoint and Outlook — Create the Cross-App Maintenance Update
 
-Copilot in PowerPoint can draft a presentation from a prompt or an existing Word or PDF file, create or refine slide text, add a slide grounded in a referenced file, and summarise a deck. The generated presentation remains a draft: layout, facts, sequence, visuals, accessibility and speaker notes still require expert review.
+Learning outcome: LO1: integrate verified Word, Excel, PowerPoint and Outlook outputs.
 
-A document-to-deck workflow can preserve the approved narrative while reducing assembly time. However, a slide is not a paragraph pasted onto a canvas. Each slide needs one message, visible evidence and a role in the story; decorative images must not imply facts that the source does not support.
+Goal: Northstar_Initial_Update.pptx, an unsent Outlook draft and Northstar_Cross_App_Evidence.csv with Excel, Word, PowerPoint and Outlook figures reconciled.
+
+Continue the verified operations brief from Lab 1. You will turn it into an initial PowerPoint update, then prepare an Outlook reply to a synthetic maintenance thread. You will test how grounding differs between an attached file, a chat transcript and a reviewed summary, and reconcile the same facts across all four apps.
+
+**What you'll build**
+
+Northstar_Initial_Update.pptx, an unsent Outlook draft and Northstar_Cross_App_Evidence.csv with Excel, Word, PowerPoint and Outlook figures reconciled.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+- Verified Lab 1 workbook and Word brief, or supplied checkpoint and snapshot.
+
+**Step-by-step**
+
+1. Step 1 Open your Lab 1 Word brief and cleaned workbook. If needed use this lab’s verified checkpoint and snapshot, clearly recording rejoin. Read data/Northstar_Email_Thread.txt. It asks for a portfolio update, not authorisation to reassign technicians.
+2. Step 2 Open templates/Northstar_Management_Deck_Template.pptx in PowerPoint and save as Northstar_Initial_Update.pptx. For this initial update use four slides by keeping the first four layout slides and deleting the remaining unused template slides. Open Copilot and select your Word brief with Reference a file; if the command is unavailable, paste the reviewed brief into the prompt.
+
+   ```text
+   POWERPOINT COPILOT:
+   Using this verified Northstar Word brief, create a four-slide initial update: scope and portfolio; backlog and overdue work; current assignments and proposed actions; decision required. Use the existing white/navy/blue design. Preserve all verified metrics. Add source/date notes. Do not invent completed work, savings or approved reassignment.
+   ```
+
+3. Step 3 Review all four slides. Check status definitions, units and date, and correct any invented claim. Save a reconciled CSV using templates/Evidence_Register.csv: one row per claim and a source link. This is the bridge between app outputs; app chats are not automatically shared.
+4. Step 4 In Outlook create a new training draft addressed to operations.manager@example.invalid with subject DRAFT - Northstar maintenance update - review required. Do not send. Paste the synthetic thread into the draft or use it as quoted context; Copilot summarises the supplied text, not a real mailbox thread. Open Copilot > Draft with Copilot; UI names may differ.
+
+   ```text
+   OUTLOOK COPILOT:
+   Draft a concise reply to the synthetic thread quoted below, using the verified Northstar brief and these checked metrics. State the 30 September 2026 scope, backlog/overdue findings, proposed next actions and the decision requested. Explain that assignments are unapproved proposals. Do not claim the attachments have been sent. Keep as a draft.
+   ```
+
+5. Step 5 If your Outlook offers reference attachments, attach the verified Word brief and choose it as context. Otherwise paste the reviewed metrics into the drafting prompt. Replace any placeholder summary with exact checked values; inspect recipients, subject, tone and attachment names. Save only the draft and a local TXT copy of its reviewed body.
+6. Step 6 Ask Word Copilot to compare your pasted slide/email summaries with the brief, then perform the same comparison yourself. Add the cross-app prompt log entries manually. Keep all four source links with the reconciliation record; any mismatch must be fixed before the skill labs.
+
+   ```text
+   WORD COPILOT:
+   Compare these pasted PowerPoint and Outlook summaries with this verified Word brief. List inconsistent figures, status definitions, dates, owner claims or approved-action wording. Do not resolve a conflict by guessing. Return a discrepancy table with source and correction needed.
+   ```
+
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| PowerPoint | Turn the reviewed brief into a four-slide update with source/date notes. |
+| Outlook | Draft the maintenance reply from the same checked values; keep it unsent. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Four apps | Excel Checks, Word brief, four-slide update and unsent Outlook draft share the same date and values. |
+| Cross-app grounding | Named file or pasted verified evidence is provided in each app; no assumed shared chat. |
+| Draft boundary | example.invalid recipient; nothing sent and no assignment approved. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-02-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+
+### Topic 1 Recap - Mapped to Learning Outcomes
+
+Use this checkpoint to explain what you can now do and identify any lab evidence you still need to repair.
+
+| Learning outcome | Evidence from this topic |
+|---|---|
+| LO1 | Same work-order evidence across four apps. |
+| Verify | 120 clean IDs and reconciled brief/update/draft. |
+
+---
+
+
+## Topic 2 — Create Skills for Microsoft 365 Copilot
+
+A reusable method for Excel and PowerPoint
+
+**Key concepts**
+
+- SKILL.md — Matching folder/name and reusable instructions.
+- Discovery — Install and verify separately in each app.
+- Repeatability — Input guards and controlled reruns.
+- Proposals — Preserve source owners and evidence boundaries.
+
+Concepts for Lab 3: Skills, Prompts and Workbook Rules, Custom Skill Discovery in Each App.
+
+
+### Skills, Prompts and Workbook Rules
+
+A prompt is one request. A custom skill is a reusable set of instructions that tells Copilot when and how to perform a recurring task. SKILL.md contains required YAML name and description followed by the instructions. Each skill needs its own folder with a matching name. Workbook-specific rules describe constraints for one workbook; a skill can carry the same maintenance process across repeated reports and supported apps.
+
+The skill makes stable definitions and review boundaries reusable: backlog excludes two terminal statuses, overdue uses a fixed date, missing owners stay missing and output reruns do not duplicate sheets. It does not supply absent work-order data or turn an unsupported app feature into an available one. Skill availability must be verified separately in the app where it will run.
 
 **How it works**
 
-- Approve and save the source document in OneDrive or SharePoint before starting the presentation.
-- Ask for a bounded slide count, named audience, decision-oriented sequence and required sections.
-- Compare slide titles, claims, dates, owners and numbers with the Word source and source register.
-- Refine one slide at a time, replacing generic text and inappropriate imagery with accurate content.
-- Check reading order, alt text, contrast, speaker notes and the final call to action before sharing.
+- Identify a recurring task.
+- Separate stable rules from current inputs.
+- Write name, description and instructions.
+- Install, invoke and inspect the result.
 
 **Worked example**
 
-- Copilot creates a six-slide Asteron launch deck from the approved Word brief.
-- The generated risks slide omits the training dependency and uses a generic image unrelated to the pilot.
-- The learner restores the missing risk, replaces the image with a simple milestone diagram and adds source notes.
+- maintenance-reporting contains definitions and output boundaries.
+- Each request still supplies this month’s source, date and scope.
+- Native skill use and pasted manual instructions are recorded differently.
 
 **Decision guide**
 
 | Use when | Avoid when |
 |---|---|
-| A stable source document already contains the approved narrative and the deck needs a fast first structure. | The source file is unapproved, contradictory or too long to support a focused presentation. |
-| The presenter can edit the result, check accessibility and rehearse the final story. | A generated image or slide could be mistaken for real operational evidence. |
+| The same reporting method recurs and can be tested. | Inputs or desired behaviour are still undefined. |
 
-**Practitioner quality lens**
+**Authoritative references**
 
-- Story: One audience, one decision path and one message per slide.
-- Evidence: Every factual slide traces to the approved source; visuals do not fabricate proof.
-- Accessibility: Readable contrast, concise text, logical reading order and useful alternative text.
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills
+- https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills
+
+---
+
+
+### Custom Skill Discovery in Each App
+
+Excel uses its Manage plugins & skills interface and an app-created OneDrive skills folder. PowerPoint uses Choose skills and Manage skills with an Add skill/upload route or its own custom skills folder. The app UI resolves the supported folder; a guessed universal path is unreliable. Refresh and enable the skill, then verify the exact name in each app before invoking it by @mention or the menu.
+
+Folder-name/frontmatter mismatches, an extra .txt extension, unavailable licence features and disabled skills can all prevent discovery. A web Copilot authoring conversation can produce the complete Markdown text, but the learner still saves, installs and tests it. Excel cannot log the web chat automatically. Clear installation evidence prevents confusing a manually pasted policy with a native reusable skill.
+
+**How it works**
+
+- Save complete UTF-8 SKILL.md.
+- Use the app-created skills location.
+- Refresh and verify the matching name.
+- Run and record a smoke test.
+
+**Worked example**
+
+- Folder maintenance-reporting matches YAML name maintenance-reporting.
+- Excel and PowerPoint both show the skill before native invocation.
+- If a menu is absent, manual practice is labelled feature unavailable.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| The app exposes its supported skill installation controls. | A missing menu is being treated as successful installation. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills
+- https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills
+
+---
+
+
+### Lab 3 · Author SKILL.md — Create a Custom Maintenance Reporting Skill
+
+Learning outcome: LO2: create and improve a reusable maintenance skill in Excel and PowerPoint.
+
+Goal: A reviewed maintenance-reporting/SKILL.md v1, a smoke-test record, and a native-skill or explicitly labelled manual-practice route for each app.
+
+Capture the maintenance definitions and reporting style as one custom skill. You will ask Microsoft 365 Copilot on the web to write SKILL.md, compare it with a supplied complete template, install it in each app’s own supported skills location, and perform a small smoke test. A skill is reusable instructions, while a prompt is one request and workbook rules govern one file.
+
+**What you'll build**
+
+A reviewed maintenance-reporting/SKILL.md v1, a smoke-test record, and a native-skill or explicitly labelled manual-practice route for each app.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+
+**Step-by-step**
+
+1. Step 1 Read templates/maintenance-reporting/SKILL.md and data/Northstar_Maintenance_Context.txt. Open Microsoft 365 Copilot at https://copilot.cloud.microsoft in your assigned account. Provide the skill requirements as prompt context. Do not upload private work data.
+
+   ```text
+   MICROSOFT 365 COPILOT WEB:
+   Write a complete SKILL.md for maintenance-reporting. Require YAML name and description, input table or verified Word snapshot, report date and filter scope. Define backlog, overdue and on-time closed rate. Preserve IDs/status/current owners. Put assignment suggestions in a separate proposals sheet. Support Excel outputs and PowerPoint storytelling with source notes, existing white/navy/blue style, no invented facts and safe reruns. Never send email or approve assignments. Ask for missing inputs. Return the entire Markdown file.
+   ```
+
+2. Step 2 Copy the complete returned file into a plain text editor, save UTF-8 as SKILL.md in a folder named maintenance-reporting, not SKILL.md.txt. Check the opening --- name/description --- block. Compare every definition and boundary with the supplied template. Edit missing instructions and retain your own version as v1 in templates or work-c027.
+3. Step 3 Open data/Northstar_Work_Orders.xlsx in Excel and save a working copy first. Then open Copilot > ... > Manage skills (or Manage plugins & skills) > Custom skills > Create OneDrive folder (if needed) > Open skills folder. Put the maintenance-reporting folder containing SKILL.md inside that app-created folder. Return to Custom skills and select Refresh. Enable the skill and verify the exact name; do not guess the OneDrive folder path.
+4. Step 4 In that Lab 3 workbook invoke the skill from Add work content > Choose skills (or Choose plugins & skills) or @mention. Inspect the proposed plan before editing; keep the source table unchanged. Save the result as Northstar_Skill_Smoke_Test.xlsx. If the Excel skills menu is absent, paste the complete reviewed SKILL.md as instructions before the test prompt, omit @mention, and record Manual practice - native skill unavailable.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   @maintenance-reporting Explain the reporting definitions for tblWorkOrders at 2026-09-30, all filters All. State which sheets you may change, how missing owners are handled, and what you need before producing a PowerPoint update. Do not edit yet.
+   ```
+
+5. Step 5 Open PowerPoint template > Copilot > + > Choose skills > Manage skills > Add skill. Upload your SKILL.md or paste it in Add skill as supported; verify it appears and is enabled. Alternatively use Manage skills > Custom skills > Open skills folder and copy the correctly named folder there. The PowerPoint location is app-created; installing in Excel alone is not proof it is available in PowerPoint.
+6. Step 6 Run a PowerPoint smoke test with the verified snapshot selected as a file reference. Record the actual app name, selected skill name and response. If a skills menu is absent, paste the complete reviewed skill as instructions alongside the snapshot and mark Manual practice - native skill unavailable. Do not claim a native invocation.
+
+   ```text
+   POWERPOINT COPILOT:
+   @maintenance-reporting Using the selected Northstar_Verified_Snapshot.docx, propose an eight-slide maintenance report outline. Explain how every claim will be grounded and which actions remain proposals. Keep the reporting date and scope visible; do not edit slides yet.
+   ```
+
+7. Step 7 Log the web authoring prompt and PowerPoint test manually in workbook Prompt_Log. For Excel log the actual response and your check. Keep the v1 file and test notes for Lab 4; no app can automatically read the other app’s chat.
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| Web Copilot | Write complete maintenance-reporting SKILL.md with input guards and reporting definitions. |
+| Excel / PowerPoint | @maintenance-reporting Explain your inputs and output boundaries before making changes. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Skill format | maintenance-reporting folder; matching name in YAML; nonempty description; UTF-8 SKILL.md. |
+| Metric controls | Backlog excludes two terminal statuses; due-today not overdue; zero closed -> N/A. |
+| Installation evidence | Excel and PowerPoint names verified separately, or manual route honestly recorded. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-03-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus templates/maintenance-reporting/SKILL.md (Complete custom maintenance skill template). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+Concepts for Lab 4: Repeatability and Safe Skill Reruns, Assignment Proposals and Capacity Evidence.
+
+
+### Repeatability and Safe Skill Reruns
+
+Repeatability means the same verified inputs and method yield equivalent business measures and a controlled output structure. A safe rerun preserves source IDs, statuses, assignments and unrelated sheets. It creates or replaces only explicitly named outputs after review. The concept is similar to idempotence: rerunning should not append duplicate summaries, inflate totals or silently destroy a learner’s unrelated work.
+
+Reporting skills may be used every week or month, so uncontrolled output accumulation quickly creates conflicting summaries. An input guard asks for missing data; a replacement guard identifies the output to change. Test those guards using a copy and compare row count, sums, sheet inventory and output measures before and after, rather than relying on Copilot saying it was careful.
+
+**How it works**
+
+- Capture the source fingerprint and outputs.
+- Request a reviewed rerun plan.
+- Replace only named output areas.
+- Compare source and measures again.
+
+**Worked example**
+
+- 120 source IDs remain 120 after rerunning Maintenance_Summary.
+- Missing report date causes a clarification request, not invented numbers.
+- A second output sheet is a defect when replacement was requested.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| Named output boundaries and reconciliation checks exist. | The skill can overwrite source rows or unrelated sheets. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills
+- https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills
+
+---
+
+
+### Assignment Proposals and Capacity Evidence
+
+Assignment planning combines the work category, existing owner, estimated hours, technician primary category and available hours. These inputs help generate a proposal; they do not prove complete operational suitability, approved schedules or safety authorisation. Keep Current_Assigned_To separate from Proposed_Assigned_To and use an explicit manager-decision field. Missing evidence is UNKNOWN, not a confident allocation.
+
+The same skill can improve Excel analysis and PowerPoint wording by preserving this boundary. Excel shows category/capacity checks and assumptions in a proposals sheet; PowerPoint explains the findings and requests a decision. A polished visual must not conceal uncertain capacity or make the proposed owner look like the current owner.
+
+**How it works**
+
+- Identify unassigned backlog.
+- Compare category and available hours.
+- Record the proposal and assumptions.
+- Request the manager decision.
+
+**Worked example**
+
+- Unassigned work is counted only within nonterminal statuses.
+- Available hours minus proposed effort is a planning check.
+- The source Assigned_To stays unchanged until a real authorised operational update.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| A manager can review the proposal and missing constraints. | The report claims automatic approval or verified safety qualification. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills
+- https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills
+
+---
+
+
+### Lab 4 · Repeatable reporting — Use and Improve the Skill in Excel and PowerPoint
+
+Learning outcome: LO2: create and improve a reusable maintenance skill in Excel and PowerPoint.
+
+Goal: Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, Northstar_Skill_Update.pptx, SKILL.md v2 and a before/after improvement log.
+
+Use the Lab 3 skill to create a verified summary and improve the initial PowerPoint update. Then deliberately test missing inputs and a rerun, tighten the skill to v2, and compare before/after evidence. The target is consistent reporting, not a longer prompt or an unsupported promise of autonomous approval.
+
+**What you'll build**
+
+Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, Northstar_Skill_Update.pptx, SKILL.md v2 and a before/after improvement log.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+- Lab 3 skill v1 and test record; Lab 2 update, or named supplied checkpoints.
+
+**Step-by-step**
+
+1. Step 1 Copy the Lab 3 reviewed SKILL.md to your output folder and retain v1. Open this lab’s clean workbook or your Lab 1 cleaned workbook. Save as Northstar_Skill_Report.xlsx. Read Technicians: primary category and available hours are synthetic planning inputs, not approvals. Check that your skill is enabled in Excel.
+2. Step 2 Invoke the skill in Plan or Chat only, review its proposed output boundaries, then allow editing. Inspect the resulting formulas and charts. Summary counts must reconcile to Control, and the source table must remain 120 unique records.
+
+   ```text
+   EXCEL - PLAN:
+   @maintenance-reporting Build Maintenance_Summary for tblWorkOrders at 2026-09-30 with all filters All. Include total, closed, cancelled, backlog, overdue, on-time closed rate and recorded cost; show formulas and source scope. Plan first. Preserve source records.
+
+   EXCEL - ALLOW EDITING:
+   Apply that reviewed summary plan. Add Assignment_Proposals for unassigned backlog only. Use tblTechnicians primary category and available hours as planning inputs; show category/capacity checks, current owner and proposed owner separately. Leave manager decision UNKNOWN. Do not change Assigned_To.
+   ```
+
+3. Step 3 Check the unassigned backlog count against Control. A technician with the same category may still lack usable capacity: use available hours minus known proposed hours, flag conflicts, and do not convert a suggestion into confirmed assignment. Export your verified summary into the Word snapshot template, preserving measures and date.
+4. Step 4 Open the four-slide initial update from Lab 2, or use checkpoints/Northstar_Initial_Update_Checkpoint.pptx, a four-slide rejoin example explicitly labelled as a checkpoint. Save as Northstar_Skill_Update.pptx. Select the reviewed snapshot in PowerPoint and invoke your installed skill.
+
+   ```text
+   POWERPOINT COPILOT:
+   @maintenance-reporting Improve this existing initial maintenance update from the selected verified snapshot. Retain four slides and accurate values; strengthen claim headlines, simplify text, improve source notes and use the current design. Do not duplicate slides or imply live links to Excel. Label suggested reassignment as proposed.
+   ```
+
+5. Step 5 Create a new EMPTY workbook with no table, open a fresh Copilot chat and run a missing-input test for a different reporting period with no source selected. A proper skill asks for source/date/scope rather than inventing metrics. If it guesses, record the failure and revise the skill’s input guard. Return to Northstar_Skill_Report.xlsx and Save As Northstar_Skill_Rerun_Test.xlsx. Run the second summary request in this copy of the report workbook, not in the empty workbook; only named outputs may be replaced after review, with no duplicated source or output sheets. Compare a before/after copy of Work_Orders sorted by Work_Order_ID for status, owner, dates and cost; every original source value must match.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   @maintenance-reporting Prepare my next maintenance report. I need a DIFFERENT reporting period from the course example and have not supplied any source, date or scope. This empty workbook contains no work orders. Tell me what you need; do not invent data.
+
+   EXCEL - PLAN:
+   @maintenance-reporting Rebuild the existing Maintenance_Summary for the same table, date and scope. Describe what will be replaced, ask before replacement and keep source/unrelated sheets. Do not duplicate outputs.
+   ```
+
+6. Step 6 In a plain text editor improve SKILL.md: require an input guard, category/capacity evidence, source provenance per claim and a clear rerun rule. Retain YAML name maintenance-reporting and add a body version note v2. Re-upload/Refresh in BOTH Excel and PowerPoint. Record actual before/after changes, or already present - retained for safeguards that your v1 already contains. Do not fabricate differences. Rerun the smoke tests and compare values. If using the manual route, replace the pasted instructions in both apps.
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| Excel | @maintenance-reporting Build the verified summary and separate assignment proposals. |
+| PowerPoint | @maintenance-reporting Improve the existing four-slide update; preserve facts and count. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Source preserved | 120 unique orders; current owner/status unchanged. |
+| Skill outputs | Backlog 60; overdue 50; on-time closed 30/48; cost S$35,827.50. |
+| Improvement evidence | Input guard and rerun tested; v1/v2 retained; PowerPoint four-slide output accurate. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-04-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx), plus templates/maintenance-reporting/SKILL.md (Complete custom maintenance skill template). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+
+### Topic 2 Recap - Mapped to Learning Outcomes
+
+Use this checkpoint to explain what you can now do and identify any lab evidence you still need to repair.
+
+| Learning outcome | Evidence from this topic |
+|---|---|
+| LO2 | Skill authoring, discovery, use and revision proven. |
+| Verify | Preserved source plus missing-input and rerun tests. |
+
+---
+
+
+## Topic 3 — Create an Interactive Dashboard with Excel Copilot
+
+From definitions to filters and refresh evidence
+
+**Key concepts**
+
+- Measures — Counts, backlog, overdue, on-time rate and cost.
+- Visuals — Choose charts by maintenance question.
+- Interactions — One filter scope for every chart and KPI.
+- Refresh — Known deltas in an isolated test copy.
+
+Concepts for Lab 5: Dashboard Measures and Denominators, Visual Dashboard Design for Maintenance.
+
+
+### Dashboard Measures and Denominators
+
+A dashboard measure needs a business definition, numerator, denominator where relevant, date rule and filter scope. Total orders describes the selected portfolio. Backlog is the selected nonterminal work. Overdue is a subset of backlog. On-time closure rate describes Closed rows only: closed on or before their due date divided by Closed rows. Recorded cost sums selected Cost_SGD; it is not a budget variance or inferred savings.
+
+Changing the denominator can make an attractive rate meaningless. If the selected data contains no Closed rows, the on-time rate is N/A because it is undefined; a displayed 0% would falsely suggest failed delivery. A Measures dictionary and independent control sheet make the definitions inspectable. A fixed reporting date gives reproducible comparisons, while TODAY would change the snapshot over time.
+
+**How it works**
+
+- Define source fields and scope.
+- Compute count and denominator.
+- Handle empty selections explicitly.
+- Reconcile against controls.
+
+**Worked example**
+
+- Closed-only rate is different from closed/total completion share.
+- A due-today backlog item is not overdue under a strict before-date rule.
+- All selected status/chart counts reconcile to total selected work orders.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| Measures have agreed definitions and evidence. | A zero denominator is being represented as a measured 0%. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/create-and-share-a-dashboard-with-excel-and-microsoft-groups
+
+---
+
+
+### Visual Dashboard Design for Maintenance
+
+A dashboard should make an operational decision easier. KPI cards summarise magnitude; bar charts compare sites, categories or status counts. Labels, units and source/date context define what each visual means. Site backlog and total orders by site answer different questions and must have different names. Use a line chart for a genuine ordered time series, not unordered site names.
+
+Consistent chart scales, short labels, whitespace and limited accents help a manager compare the work queue quickly. Colour alone is insufficient to distinguish statuses. A category count is evidence of frequency, not a causal diagnosis; a busy site is not necessarily performing badly. Choose the visual based on the question and include the limitation that prevents overinterpretation.
+
+**How it works**
+
+- Name the maintenance decision.
+- Choose the measure and comparison.
+- Use an appropriate labelled chart.
+- Check meaning and readability.
+
+**Worked example**
+
+- Status count chart shows the portfolio mix.
+- Site backlog chart excludes Closed and Cancelled.
+- A category count does not establish the root cause of overdue jobs.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| The visual has a clear audience and question. | Decorative charts hide an ambiguous metric. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/create-and-share-a-dashboard-with-excel-and-microsoft-groups
+
+---
+
+
+### Lab 5 · Design and build — Build Maintenance Dashboard Measures and Charts
+
+Learning outcome: LO3: build and validate an interactive Excel maintenance dashboard.
+
+Goal: Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three labelled charts and a measure dictionary ready for Lab 6 filters.
+
+Use Excel Copilot to plan a maintenance dashboard for operations managers. Define the measures before designing the charts, then build source-linked KPI cards and a status, category and site chart. You will distinguish stock measures such as current backlog from flows such as closures, and avoid calling category frequency a root cause.
+
+**What you'll build**
+
+Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three labelled charts and a measure dictionary ready for Lab 6 filters.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+- Verified clean table from earlier labs or supplied clean checkpoint.
+
+**Step-by-step**
+
+1. Step 1 Open templates/Northstar_Dashboard_Starter.xlsx and save as Northstar_Dashboard.xlsx in OneDrive. If continuing your own workbook, copy its CLEAN tblWorkOrders into the starter, keeping exact headers and table name; do not create a second table. The starter has a labelled blank Dashboard and four selection cells B2:B5, initially All.
+2. Step 2 Read Control and confirm the fixed reporting date. Ask for a visual plan before edits. Keep source, Checks and Prompt_Log separate from the Dashboard view. A dashboard is a decision interface: each visual should answer a maintenance question rather than decorate the page.
+
+   ```text
+   EXCEL - PLAN:
+   Plan Dashboard for Northstar maintenance at 2026-09-30. Use selection cells B2:B5 for Site, Job_Category, Status, Assigned_To, all initially All. Reserve B7 total orders, B8 backlog, B9 overdue backlog, B10 closed, B11 on-time closure rate, B12 Cost_SGD. Place three charts for status, category and site with labels, units and scope. Preserve source data.
+   ```
+
+3. Step 3 Ask Copilot to insert formulas for the six measures using structured table references. For now all selectors are All; in Lab 6 the same formulas must honour the four filters. Verify the denominator and use N/A, not 0%, if no Closed rows remain.
+
+   ```text
+   EXCEL - ALLOW EDITING:
+   Build the planned six KPI formulas from tblWorkOrders. Backlog excludes Closed/Cancelled. Overdue also requires Due_Date < Control!B2. On-time rate counts Closed_Date <= Due_Date among Closed rows only, and shows N/A when none. Recorded cost sums Cost_SGD of all included statuses. Link to table columns, never a fixed 120-row range. Keep source data unchanged.
+   ```
+
+4. Step 4 Add formula-backed chart summaries for the six statuses, five categories and five sites. Use bar/column charts: category and site are nominal groups; a line chart would imply an order that is not present. Label count axes and avoid 3-D effects. Ask the skill for consistent style if available.
+
+   ```text
+   EXCEL - ALLOW EDITING:
+   Create three editable bar or column charts using formula-backed summaries: work-order count by Status, by Job_Category and by Site. Each summary must reconcile to the total selected orders. Use white background, navy titles, blue/teal accents, readable labels and a visible reporting date. Do not use category counts as evidence of causes or use colour alone for status.
+   ```
+
+5. Step 5 In Checks confirm sum of each chart’s categories equals 120 with All filters. Compare six KPIs to Control and record the on-time numerator/denominator. Add templates/Evidence_Register.csv entries for each chart and metric. If Copilot has used hard-coded numbers, replace them with formulas before Lab 6.
+6. Step 6 Create a measure dictionary on a new Measures sheet: metric, business definition, formula, source fields, date rule, scope and limitation. Ask Copilot to explain formulas, then read one overdue example and one closed example from the source table yourself. Save the baseline dashboard with all filters All.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Explain each Dashboard measure in plain English, including terminal statuses, strict overdue date rule, closed-only SLA denominator and meaning of recorded cost. Give one source-row example for overdue and one for on-time closure; cite Work_Order_ID. Do not guess a root cause or financial saving.
+   ```
+
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| Excel | Plan six dashboard measures and three charts from tblWorkOrders; preserve source data. |
+| Excel | Explain the closed-only SLA denominator and verify it against source rows. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Baseline | Total 120; backlog 60; overdue 50; closed 48. |
+| SLA and cost | 30/48 = 62.5%; S$35,827.50. |
+| Chart reconciliation | Three count summaries each total 120; formulas reference tblWorkOrders. |
+| Decision design | Measures dictionary and source/date visible; no unsupported cause claims. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-05-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+Concepts for Lab 6: One Filter Scope for Every Visual, Refresh Tests and Static Snapshots.
+
+
+### One Filter Scope for Every Visual
+
+Interactive means a learner-controlled selection changes the evidence shown. This course’s portable route uses four dropdowns and formula measures with AND logic. All bypasses one dimension only. Every KPI and chart uses the same selected rows. Optional slicers filter connected PivotTables; they do not automatically alter unrelated formulas or every table on the sheet. PivotTables sharing a slicer need the same source.
+
+A dashboard can appear interactive while only one chart changes. Test a single-site selection, a combined category/owner selection and an empty selection. Check the displayed scope and compare every chart total with the selected total. Worksheet AutoFilter and formula-selector filters are different mechanisms; hiding source rows does not prove that formulas have changed scope.
+
+**How it works**
+
+- Define the selector cells.
+- Apply the same AND mask everywhere.
+- Test each control and edge case.
+- Reconcile selected chart and KPI totals.
+
+**Worked example**
+
+- Woodlands Hub plus All in other selectors isolates that site.
+- Status New gives zero Closed and N/A closure rate.
+- A slicer must connect to every intended PivotTable.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| All output calculations follow the same scope. | A selector only changes a decorative title or one chart. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/get-started/use-slicers-to-filter-data
+- https://support.microsoft.com/en-us/excel/create-and-share-a-dashboard-with-excel-and-microsoft-groups
+
+---
+
+
+### Refresh Tests and Static Snapshots
+
+A refresh test deliberately introduces known new records and verifies the expected delta. Table references should expand when rows are appended; PivotTables additionally need a refresh and valid source extent. The course adds two rows in a sandbox copy so the live baseline remains 120 rows. A Word/PDF/PowerPoint snapshot freezes evidence and does not automatically update when the Excel dashboard changes.
+
+A correct dashboard today may fail after the next export if formulas reference a fixed cell range. Known delta testing reveals that failure. Preserving a separate baseline prevents a test record from contaminating the management pack. A snapshot should record source, as-at date, filters and version so its claims remain interpretable after the workbook is refreshed.
+
+**How it works**
+
+- Save an isolated sandbox copy.
+- Append known unique test rows.
+- Recalculate and verify expected deltas.
+- Handoff the untouched baseline.
+
+**Worked example**
+
+- Two test rows increase total by2 and recorded cost byS$400.
+- Only one new row adds to backlog/overdue; the other adds to on-time Closed.
+- The final deck uses the untouched 120-row baseline, not the test copy.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| A predictable change can be checked independently. | Test rows are being mixed into the report without disclosure. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/excel/create-and-share-a-dashboard-with-excel-and-microsoft-groups
+
+---
+
+
+### Lab 6 · Filters and refresh — Make the Dashboard Interactive and Prove Refresh
+
+Learning outcome: LO3: build and validate an interactive Excel maintenance dashboard.
+
+Goal: Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refresh_Test.xlsx, filter evidence and a verified baseline snapshot for PowerPoint.
+
+Continue Lab 5 by making four dropdown selectors control every KPI and chart. Test a single site, a zero-denominator selection and a combined category/owner filter. Then append two synthetic work orders in a sandbox copy and prove the dashboard expands. Optional PivotTable slicers use one source and shared connections; the portable dropdown route is the required working dashboard.
+
+**What you'll build**
+
+Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refresh_Test.xlsx, filter evidence and a verified baseline snapshot for PowerPoint.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
+
+**Prerequisites**
+
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+- Lab 5 dashboard or supplied formula checkpoint.
+
+**Step-by-step**
+
+1. Step 1 Open your Lab 5 baseline dashboard. Rejoin using checkpoints/Northstar_Verified_Checkpoint.xlsx only if needed; record that it is an example formula dashboard. Set all four selections B2:B5 to All and confirm 120. Save baseline before creating any refresh-test copy.
+2. Step 2 Use Data > Data Validation > Allow List to set dropdowns on B2 Site, B3 Job_Category, B4 Status and B5 Assigned_To. Include All plus the source values, using Filter_Lists if supplied. Ask Copilot to apply all four selections to EVERY KPI and chart summary. A selection of All bypasses only that filter; selected dimensions combine with AND.
+
+   ```text
+   EXCEL - PLAN:
+   Make Dashboard B2:B5 control all six KPIs and three chart summaries with AND logic. All bypasses its dimension. Use COUNTIFS/SUMIFS or SUMPRODUCT with structured table references. Blank owner means unassigned and must not disappear from All. Keep N/A for no closed jobs.
+
+   EXCEL - ALLOW EDITING:
+   Apply the reviewed filter plan and dropdown lists. Keep existing source rows and chart positions. Show the selected scope beside the reporting date and make all charts recalculate from the same selected rows.
+   ```
+
+3. Step 3 Choose Woodlands Hub in B2 and leave other selectors All. Filter the source table to the same site and compare rows, backlog, overdue and cost. Use Data > Clear on source table afterwards; dashboard selectors and source AutoFilter are distinct mechanisms. Record evidence in templates/Filter_Test_Log.csv.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   For the dashboard selection Site = Woodlands Hub and all other dimensions All, list the expected six KPI values from tblWorkOrders and verify each chart sum matches the selected total. Do not infer that filtering the worksheet automatically changes formula measures.
+   ```
+
+4. Step 4 Set Status to New with other selectors All. Confirm zero closed -> N/A. Then set Site = Woodlands Hub, Job_Category = HVAC, Assigned_To = Daniel Lee, Status = All, a combination with no rows; total, backlog, overdue, closed and cost must be 0 and rate N/A. Reset all four to All and verify baseline controls. Optional: create PivotTables from one tblWorkOrders source, insert slicers, and use Slicer > Report Connections for every PivotTable; unconnected KPI cells are a defect.
+5. Step 5 Save a COPY as Northstar_Dashboard_Refresh_Test.xlsx. In the last row of tblWorkOrders press Tab to append, then enter the two rows from data/Refresh_Test_Rows.csv with real Excel dates (YYYY-MM-DD). WO-2026-0121 is Assigned, due 2026-09-29 and cost 150; WO-2026-0122 is Closed on time and cost 250. No existing IDs are edited.
+6. Step 6 Recalculate with all selections All. If using PivotTables also Data > Refresh All and inspect source extent. Verify total122, closed49, backlog61, overdue baseline+1, cost baseline+400 and on-time numerator baseline+1 over49. If formulas do not expand, fix structured references/table extent. Keep this sandbox copy as refresh evidence; do not use its figures in the baseline presentation.
+
+   ```text
+   EXCEL - CHAT ONLY:
+   Verify the sandbox append test for the two new work orders. Reconcile total 122, closed 49, backlog 61, overdue increased by 1, cost increased by S$400 and on-time numerator increased by 1. Confirm no original source record changed and all three charts total 122 with All selections. Compare original IDs, statuses, owners, dates and costs to the saved baseline; all original 120 rows must match.
+   ```
+
+7. Step 7 Return to the untouched 120-row Northstar_Dashboard.xlsx. Set selectors All and record a frozen evidence snapshot dated 2026-09-30 for Lab 7. Copy templates/Northstar_Operations_Brief_Template.docx to Northstar_Verified_Snapshot.docx in Word and insert the reviewed summary and chart values. Save chart images if needed with right-click chart > Save as Picture; the slide copy will be a static snapshot, not a live dashboard.
+
+**Sample prompts**
+
+| Purpose | Prompt |
+|---|---|
+| Excel | Apply Site, Category, Status and Owner selections to every KPI and chart. |
+| Excel | Verify the sandbox append adds 2 orders and S$400 without changing original records. |
+
+**Test it**
+
+| Check | Expected result |
+|---|---|
+| Woodlands control | Total 24; backlog 8; overdue 7; closed 16; cost S$6,668.50; on-time 10/16. |
+| Interactive scope | Changing any of four filters affects all six KPI measures and all chart counts. |
+| Edge case | No Closed -> N/A; no rows -> zero count/cost and N/A rate. |
+| Refresh sandbox | 122 total;49 closed;61 backlog;51 overdue;S$36,227.50;31/49 on-time. |
+| Handoff baseline | Return to 120-row untouched baseline; date and All scope recorded. |
+
+**Checkpoint and rejoin point**
+
+If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
+
+**Troubleshooting**
+
+| If this happens | Fix |
+|---|---|
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
+
+**Challenge**
+
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
+
+**Reflection**
+
+Which evidence proves the output is correct, and which decision still needs a person?
+
+> **Note:** The lab folder labs/lab-06-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+
+### Topic 3 Recap - Mapped to Learning Outcomes
+
+Use this checkpoint to explain what you can now do and identify any lab evidence you still need to repair.
+
+| Learning outcome | Evidence from this topic |
+|---|---|
+| LO3 | Six measures and three charts share four filters. |
+| Verify | Baseline controls and known refresh deltas. |
+
+---
+
+
+## Topic 4 — Create a Professional Presentation with PowerPoint Copilot
+
+Continue the dashboard into a decision pack
+
+**Key concepts**
+
+- Evidence story — Observation, implication, action and decision.
+- Charts — Reviewed values, provenance and snapshot date.
+- Refinement — Hierarchy, notes and actual rehearsal feedback.
+- Handoff — Reconciled pack and unsent communication.
+
+Concepts for Lab 7: From Dashboard Evidence to a Decision Story, Charts, Templates and Source Provenance.
+
+
+### From Dashboard Evidence to a Decision Story
+
+A management presentation transforms evidence into a sequence of observations, implications, proposed actions and a decision request. Each slide needs one defensible headline and a register entry linking the claim to its measure, source, reporting date and filter scope. A chart contains data; the headline interprets it. That interpretation must stay within what the data supports.
+
+Copilot can accelerate outlines and drafting, but a persuasive invented conclusion is still wrong. Before generating the deck, use Word to organise an eight-slide brief with a supporting chart and limitation for each claim. This explicit bridge makes the Excel-to-PowerPoint handoff reliable and avoids assuming a workbook can be used by every presentation-generation mode.
+
+**How it works**
+
+- Freeze the verified dashboard snapshot.
+- Register each proposed claim.
+- Write a reviewed Word brief.
+- Generate and reconcile the deck.
+
+**Worked example**
+
+- Backlog by site supports prioritisation, not a proven cause.
+- Available-hours evidence supports a capacity discussion, not confirmed allocation.
+- The final slide asks management to decide on a proposed plan.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| Every headline has a checked measure and clear scope. | The story introduces savings, causes or approvals absent from evidence. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-gb/word/copilot/draft-and-add-content-with-copilot-in-word
+- https://support.microsoft.com/en-us/powerpoint/copilot/add-a-slide-from-a-file-with-copilot-in-powerpoint
+- https://support.microsoft.com/en-us/microsoft-365-copilot/file-formats-supported-by-microsoft-365-copilot
+
+---
+
+
+### Charts, Templates and Source Provenance
+
+A template supplies slide layouts, typography and colours; it does not supply correct facts. PowerPoint Copilot can draft slides from selected supported files. Reviewed Word briefs are a reliable narrative input for this course. Excel charts may be embedded for editing or pasted as images; both are copies of a reporting state unless a separate supported link is deliberately configured and tested.
+
+Approximate AI-generated charts can contradict source values while looking plausible. Replace them with reviewed charts or verified tables and keep source/date notes. Distinguish all-work-order counts from backlog-only counts. A professional presentation uses consistent units and chart semantics, not just a consistent palette.
+
+**How it works**
+
+- Select the reviewed brief.
+- Apply the existing template.
+- Insert verified charts or tables.
+- Record source and snapshot scope.
+
+**Worked example**
+
+- An editable embedded chart remains a copy rather than a tested live link.
+- An image is labelled as a snapshot at 30 September.
+- All eight slides use one reviewed baseline.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| The chart object or image can be verified against the register. | A visual is assumed accurate because Copilot produced it. |
 
 **Authoritative references**
 
 - https://support.microsoft.com/en-us/powerpoint/copilot/add-a-slide-from-a-file-with-copilot-in-powerpoint
-- https://support.microsoft.com/en-us/powerpoint/frequently-asked-questions-about-copilot-in-powerpoint
-- https://support.microsoft.com/en-us/microsoft-365-copilot/prepare-your-presentation-with-microsoft-365-copilot
+- https://support.microsoft.com/en-us/microsoft-365-copilot/file-formats-supported-by-microsoft-365-copilot
 
 ---
 
 
-### Lab 1 — Research the Asteron Launch and Build a Verified Source Register
+### Lab 7 · Dashboard to presentation — Turn Dashboard Evidence into a Management Story
 
-Learning outcome: LO1: use G-C-S-E to research a bounded source pack in Copilot Chat, trace material claims to evidence and record unresolved questions.
+Learning outcome: LO4: turn verified dashboard evidence into a professional management presentation.
 
-Goal: Create a source register and verified claim ledger that can safely govern the Word brief and every later Asteron artifact.
+Goal: Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-by-slide evidence register tied to the 120-row dashboard snapshot.
 
-You will inspect three synthetic Asteron source files, register their purpose and status, then ask Copilot Chat to synthesise the launch facts. You will open the sources, verify dates, owners, decisions and open questions, and keep unsupported statements out of the approved ledger.
+Continue the baseline dashboard from Topic 3. Build a slide evidence register and a Word presentation brief before asking PowerPoint Copilot for an eight-slide management deck. The story connects work-order status, site backlog, service delivery and assignment proposals to a specific decision; it does not introduce unsupported savings or causes.
 
 **What you'll build**
 
-work-c027/C027-Asteron-Source-Register.xlsx with Sources, Claim_Ledger and Review_Log tables, plus work-c027/C027-Asteron-Verified-Claims.txt and a Reviewed release record   (Tools: Microsoft 365 Copilot Chat · Excel · asteron-project-brief.md · asteron-decision-log.csv · asteron-stakeholder-notes.md.)
+Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-by-slide evidence register tied to the 120-row dashboard snapshot.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
 
 **Prerequisites**
 
-- Download the repository and keep every file in labs/assets together.
-- Sign in to an eligible Microsoft 365 account and open Copilot Chat.
-- Create work-c027 in an approved OneDrive location; use only the supplied synthetic Asteron sources.
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+- Verified Lab 6 baseline dashboard and frozen evidence snapshot.
 
 **Step-by-step**
 
-1. Open labs/assets/asteron-project-brief.md, asteron-decision-log.csv and asteron-stakeholder-notes.md. For each file, note its title, owner, effective date, purpose, governing facts and limitations. Do not ask Copilot to summarise the files yet.
+1. Step 1 Open the untouched baseline Northstar_Dashboard.xlsx from Lab 6; confirm All selectors, total120 and report date2026-09-30. Do not use the 122-row sandbox. If needed use this lab’s checkpoint and record rejoin. Copy verified metric/chart values to templates/Slide_Evidence_Register.csv with source sheet/table, scope and date.
+2. Step 2 Open templates/Northstar_Presentation_Brief_Template.docx in Word. Add the verified summary and chart values plus the OneDrive workbook link. Save as Northstar_Presentation_Brief.docx. Copilot must see selected files or pasted evidence; the link alone and the Excel conversation do not guarantee accessible context.
 
-   ```bash
-   Required pre-read questions:
-1. Which source governs the launch date?
-2. Which source governs named decisions and owners?
-3. Which notes are observations rather than approved decisions?
-4. Which question remains unresolved?
+   ```text
+   WORD COPILOT:
+   Using this verified 120-row Northstar maintenance snapshot, draft an eight-slide management presentation brief. For each slide give one claim headline, supporting measure/chart, source/date/scope, limitation and speaker note. Structure: overview, portfolio, site backlog, status/category mix, SLA/overdue, assignment/capacity, proposed actions/trade-offs, decision/next review. Do not invent causes, savings, approval or future dates; use UNKNOWN when absent.
    ```
 
-2. Open labs/assets/asteron-source-register-template.csv in Excel and save it as work-c027/C027-Asteron-Source-Register.xlsx. Rename the first sheet Sources, format the data as table tblSources and enter one row per source. Add a second sheet named Claim_Ledger and copy in the headers from asteron-claim-ledger-template.csv as table tblClaims. Add a third sheet named Review_Log and copy asteron-review-log-template.csv as table tblReviewLog.
+3. Step 3 Review the brief against source values. A bar showing counts by site is not a severity index; if you want backlog by site, count only nonterminal statuses. Correct any misleading headline and fill the slide evidence register. Suggested actions must cite a finding and say proposed.
+4. Step 4 Open the supplied PowerPoint template, save as Northstar_Management_Draft.pptx and open Copilot. Choose Create presentation from file if offered, or reference the Word brief while editing the existing deck. Select your reviewed OneDrive Word brief; direct workbook-to-deck creation is not assumed. Invoke @maintenance-reporting if available.
 
-   ```bash
-   Required tables:
-tblSources: Source_ID | File | Owner | Effective_Date | Purpose | Governs | Limitation | Status
-tblClaims: Claim_ID | Claim | Source_ID | Evidence | Confidence | Check | Reviewer_Note | Release_State
-tblReviewLog: Artifact | Prompt | Sources_Used | Source_Coverage | Reviewer | Review_Date | Open_Question | Release_State | Next_Use
+   ```text
+   POWERPOINT COPILOT:
+   @maintenance-reporting Create or update an eight-slide management presentation from the selected Northstar_Presentation_Brief.docx. Follow the existing white/navy/blue template. One evidence-based message per slide, short visible text, charts or tables for numerical evidence, source/as-at/scope in notes, and a final decision request. Keep values exact, and label all next actions as proposed. Do not add extra slides or invented facts.
    ```
 
-3. Attach or reference only the three files in the permitted source pack in Copilot Chat. Submit the G-C-S-E prompt below. If your experience cannot reference all three files, process one file at a time and record that limitation in Sources; do not imply that an unavailable source was used. Preserve each source's true authority and status; stakeholder notes remain working observations, not decisions.
+5. Step 5 Replace approximate or invented charts with your reviewed Excel charts: copy chart in Excel, then PowerPoint Home > Paste > Paste Special > Microsoft Excel Chart Object for an editable embedded chart when supported; otherwise paste a static image and label it snapshot. Embedded copies and images do not automatically follow the original workbook. Use direct verified values if a chart object is unsupported.
+6. Step 6 Inspect all eight slides and notes. Check chart title, axis, unit, status definition, date and scope. Each numeric headline must match one register row. Confirm the deck uses baseline120, not refresh122. Save for Lab 8; do not represent the draft as an approved plan.
 
-   ```bash
-   GOAL: Build a claim ledger for the Asteron client portal pilot launch.
-CONTEXT: Department heads need confirmed dates, owners, decisions, dependencies and open questions.
-SOURCE: Use only the attached project brief, decision log and stakeholder notes. Name the Source_ID for every row.
-EXPECTATIONS: Return Claim_ID | Claim | Source_ID | Evidence | Confidence | Check. Use ISO dates. Do not turn a proposal into a decision. Mark contradictions and missing evidence as HOLD. Do not add web facts.
-   ```
+**Sample prompts**
 
-4. Copy the proposed rows into tblClaims. Open the governing source for each material date, number, owner and decision. Set Check to VERIFIED only when the source supports the statement. Use REVISE for a correctable wording issue and HOLD for an unresolved or unsupported statement.
-
-   ```bash
-   Material checks:
-Launch date = 2026-08-18
-Pilot scope = 20 internal participants across five departments
-FAQ owner = Nisha Rao, due 2026-08-11
-Data export owner = Leon Wu, current due date 2026-08-13
-External announcement = not released before privacy sign-off
-Support clinic date and room = proposed, not confirmed
-   ```
-
-5. Complete one row in tblReviewLog with the exact prompt, sources actually used, coverage, reviewer name, review date, remaining open question, release state and next use. Export only VERIFIED claim rows as plain text to work-c027/C027-Asteron-Verified-Claims.txt, including Claim_ID, Claim, Source_ID and Evidence. A source-supported claim may be explicitly labelled Confirmed, Proposed or Open; exclude all unsupported HOLD rows. Save the workbook and link both outputs in your work-c027 notes.
-
-   ```bash
-   Release record:
-Artifact: C027-Asteron-Source-Register.xlsx
-State: Reviewed
-Open question: Is the 2026-08-19 support clinic room confirmed?
-Next use: governing source for Lab 2 Word brief
-   ```
-
+| Purpose | Prompt |
+|---|---|
+| Word | Create an eight-slide brief with one checked claim, source and limitation per slide. |
+| PowerPoint | @maintenance-reporting Build the management deck from the reviewed Word evidence. |
 
 **Test it**
 
-tblSources must contain exactly three permitted sources with their true authority/status and no web source. tblClaims must include the six material checks with Source_ID and evidence. The 2026-08-13 data-export date must supersede 2026-08-12, and the support clinic must remain proposed. Every unsupported statement must be REVISE or HOLD. tblReviewLog must contain every required review field, and the TXT export must contain only VERIFIED claims, including source-supported Proposed/Open items with those labels and no unsupported HOLD rows. The final release state must be Reviewed, not Approved, because one room question remains open.
+| Check | Expected result |
+|---|---|
+| Evidence continuity | Every deck figure maps to the 120-row Lab 6 baseline and slide evidence register. |
+| Eight-slide narrative | Observation -> implication -> proposed action -> decision; no invented cause/savings. |
+| Chart semantics | Backlog charts exclude Closed/Cancelled; embedded/image copies labelled snapshot. |
 
 **Checkpoint and rejoin point**
 
-Save the source register and verified-claims TXT in work-c027. Lab 2 references the supported TXT export and preserves the open support-clinic question. If you need to rejoin, use labs/assets/asteron-expected-facts.md to rebuild the ledger and TXT export.
+If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
 | If this happens | Fix |
 |---|---|
-| Copilot cannot reference one or more local files. | Save the files to an approved OneDrive location or process them one at a time. Record the actual source coverage and merge the ledgers manually; never claim a missing file was reviewed. |
-| A generated claim has no traceable source. | Set Release_State to HOLD, add 'No governing evidence found' and exclude the claim from the Word brief. |
-| Copilot treats the earlier 2026-08-12 export date as current. | Open the decision log, use the latest dated decision and record 2026-08-13 as current while noting the superseded date. |
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
 
 **Challenge**
 
-Ask Copilot to return a contradiction matrix by Source_ID. Verify it manually and explain why the latest dated statement is not automatically authoritative unless the source is allowed to govern that fact.
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
 
 **Reflection**
 
-Which prompt element made it easiest to detect an unsupported or superseded claim, and why?
+Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The complete lab and its support-file references are in labs/lab-01-*.md. Use only the supplied synthetic Asteron Services data or information you are authorised to process. Do not paste credentials, confidential business material or unnecessary personal data into Copilot.
+> **Note:** The lab folder labs/lab-07-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
+
+---
+
+Concepts for Lab 8: Professional Refinement and Rehearsal, Reviewed Handoff and Artifact Lifecycle.
+
+
+### Professional Refinement and Rehearsal
+
+Refinement improves the clarity of the existing evidence without changing its meaning. Claim-led titles, short visible text, readable axes, consistent chart styles and concise speaker notes help an audience understand the maintenance decision. Rehearsal tests whether the audience can identify the reporting scope, the key finding and the decision required. It produces observed feedback, not a fabricated checklist completion.
+
+A well-designed deck can still fail when the speaker’s notes contain different numbers or a proposal is spoken as an approved action. Review notes as part of the evidence pack and inspect the exported PDF at presentation size. Exporting can alter layout or font rendering, so the PDF must be opened and checked rather than assumed identical to the source.
+
+**How it works**
+
+- Audit the draft against evidence.
+- Apply reviewed design changes.
+- Rehearse and record actual feedback.
+- Inspect PPTX and exported PDF.
+
+**Worked example**
+
+- One message per slide; chart labels remain readable.
+- A 45-second note explains evidence and limitation.
+- Partner feedback leads to one recorded revision.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| The message and decision can be understood quickly. | Polish hides an unsupported claim or unreadable chart. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills
 
 ---
 
 
-### Lab 2 — Draft and Approve the Asteron Launch Brief in Word
+### Reviewed Handoff and Artifact Lifecycle
 
-Learning outcome: LO2: draft a source-grounded business document in Word, apply a bounded rewrite and validate the final version against the source register and audience brief.
+The final pack contains an interactive Excel dashboard, a fixed reporting brief, a static PowerPoint/PDF snapshot, the custom skill and a reviewed communication draft. These artifacts have different lifecycles. The dashboard may refresh; the skill defines a method; the presentation records a dated claim set. Link each file accurately and preserve the evidence register so a later reader knows what was reviewed.
 
-Goal: Produce an approved launch brief of no more than two pages whose facts, open questions and call to action agree with the verified source register.
+Updating one artifact without the others creates inconsistent communication. Reconcile the final pack and explicitly state that actions remain proposed and the email remains a draft. Versioned source and archived superseded artifacts let the team revisit an earlier report without confusing it with the current one. A missing link is UNKNOWN until an actual accessible link is supplied.
 
-You will create a Word document for Asteron department heads, use the supported verified-claims TXT export as the Copilot reference, then review the generated draft against the source register and project brief line by line. You will use Copilot to rewrite one selected passage without changing scope, commitments or unresolved items.
+**How it works**
+
+- Reconcile final artifacts.
+- Record actual filenames and links.
+- Review the handoff draft.
+- Preserve the dated snapshot and skill.
+
+**Worked example**
+
+- PowerPoint and PDF both show eight slides/pages from the same baseline.
+- Outlook does not claim a missing attachment was sent.
+- The next update reruns the method with new verified inputs.
+
+**Decision guide**
+
+| Use when | Avoid when |
+|---|---|
+| Current versions and review evidence are explicit. | A refreshed dashboard is assumed to rewrite an old presentation. |
+
+**Authoritative references**
+
+- https://support.microsoft.com/en-us/microsoft-365-copilot/file-formats-supported-by-microsoft-365-copilot
+- https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills
+
+---
+
+
+### Lab 8 · Professional handoff — Refine and Present the Maintenance Decision Deck
+
+Learning outcome: LO4: turn verified dashboard evidence into a professional management presentation.
+
+Goal: Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register and unsent Outlook handoff draft with accurate artifact links.
+
+Refine the management deck using the same custom skill and reviewed dashboard evidence. Improve hierarchy, consistency and speaker notes, test the story in a short rehearsal, and prepare a reviewed Outlook handoff draft. The final pack preserves the distinction between a static presentation snapshot, a refreshable dashboard and a manager’s unmade decision.
 
 **What you'll build**
 
-work-c027/C027-Asteron-Launch-Brief-v1.0.docx with five required sections, source notes, an Open Questions box and an Approved for deck handoff record   (Tools: Word for Microsoft 365 · Copilot in Word · C027-Asteron-Verified-Claims.txt · C027-Asteron-Source-Register.xlsx.)
+Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register and unsent Outlook handoff draft with accurate artifact links.   (Tools: Microsoft 365 Copilot · Excel · Word · PowerPoint · Outlook · OneDrive.)
 
 **Prerequisites**
 
-- Completed Lab 1 workbook and C027-Asteron-Verified-Claims.txt export.
-- Open labs/assets/asteron-word-brief-spec.md and labs/assets/asteron-style-guide.md.
-- Keep the support-clinic room as an open question; no source approves it.
-- For this simulation, the learner is the document owner and supplies the owner review; trainer feedback may supplement it.
+- Microsoft 365 account with Copilot available in Word, Excel, PowerPoint and Outlook. Availability depends on the assigned licence and tenant settings; confirm access with the trainer before class.
+- Desktop Excel on Windows or Mac is recommended; save working copies to your assigned OneDrive course folder with AutoSave on. Do not overwrite the supplied input.
+- Download this whole lab folder. All files are synthetic; work-c027 is your own learner output folder.
+- Lab 7 management draft, reviewed presentation brief and evidence register.
 
 **Step-by-step**
 
-1. Create a blank Word document in work-c027 and save it as C027-Asteron-Launch-Brief-v1.0.docx. Add a title, document owner, version, date and a status line set to Draft. Insert the five required headings from the brief specification before generating any body text.
+1. Step 1 Open your Lab 7 draft and save as Northstar_Management_Final.pptx. Rejoin only if necessary using checkpoints/Northstar_Management_Example.pptx and snapshot; review and adapt its supplied example charts and narrative against the verified snapshot. Open the same reviewed brief in the file picker; confirm native skill or label manual practice.
+2. Step 2 Ask the skill to audit before editing. It should report crowded slides, weak evidence, missing labels and inconsistent scope. Review the list yourself against the evidence register; styling changes must never change values.
 
-   ```bash
-   Required headings:
-1. Purpose and Audience
-2. Confirmed Launch Position
-3. Readiness and Dependencies
-4. Decisions and Owners
-5. Open Questions and Next Actions
+   ```text
+   POWERPOINT COPILOT:
+   @maintenance-reporting Audit this eight-slide deck against the selected verified Northstar brief. List inaccurate figures, ambiguous units, date/scope omissions, unsupported causal or approval wording, dense text and weak hierarchy. Propose corrections; do not change values or source facts.
    ```
 
-2. Open Copilot in Word and reference C027-Asteron-Verified-Claims.txt from Lab 1. Submit the prompt below. Word's referenced drafting accepts this supported TXT handoff; do not cite the Excel workbook as if Copilot in Word read it. Use the workbook and project brief for the manual source review in Step 3.
+3. Step 3 Apply only the reviewed corrections. Keep white/navy/blue with teal highlights, one main message, readable labels, consistent chart formats and source notes. Ask for concise speaker notes; check that notes do not introduce new numbers or promise assignment approvals.
 
-   ```bash
-   GOAL: Draft an Asteron client portal pilot launch brief of no more than two pages.
-CONTEXT: Department heads need the confirmed position, named owners and decisions needed before 2026-08-18.
-SOURCE: Use only the referenced C027-Asteron-Verified-Claims.txt export. Preserve items explicitly labelled Proposed or Open; the export contains no unsupported HOLD rows.
-EXPECTATIONS: Use the five existing headings, concise professional language, bullets for owners, ISO dates, and source notes in [Source_ID] form. Do not add market claims or present proposals as confirmed.
+   ```text
+   POWERPOINT COPILOT:
+   @maintenance-reporting Apply the reviewed design and wording corrections to the existing eight slides. Improve hierarchy and whitespace, make titles claim-led, retain accurate figures and charts, and add 45-second speaker notes per slide. Separate observed findings from proposed actions and end with the decision requested. Preserve the baseline date/scope; do not duplicate slides.
    ```
 
-3. Review the draft against the source register. Highlight every date, number, owner and commitment. Add a Word comment containing the governing Source_ID, then set the review decision to Keep, Change or Remove. Correct any unsupported language before continuing.
+4. Step 4 Use Slide Show to inspect at presentation size. Run a five-minute rehearsal with a partner or PowerPoint Rehearse with Coach if available. Ask the partner to identify the reporting date, highest-priority evidence and decision requested. Record one actual change in templates/Rehearsal_Log.csv; do not fabricate feedback.
+5. Step 5 Export File > Export or Save As > PDF. Open the PDF and verify eight pages, readable charts and all visible values. Compare PPTX, PDF, Word brief and dashboard against the evidence register. Keep the source workbook with All filters and the archived refresh-test copy separately.
+6. Step 6 Open Outlook and create a draft to operations.manager@example.invalid. Provide the reviewed brief and the actual OneDrive links to the dashboard/deck. Ask Copilot to draft a handoff email; it may not invent shared links or claim a sent attachment. Keep the email unsent and save a local reviewed TXT copy.
 
-   ```bash
-   Required trace points:
-2026-08-18 launch date
-20 internal participants
-five departments
-Nisha Rao / FAQ / 2026-08-11
-Leon Wu / export / 2026-08-13
-privacy sign-off before external announcement
+   ```text
+   OUTLOOK COPILOT:
+   Draft a short Northstar management handoff email using this verified brief and the links I provide. State the 30 September 2026 baseline scope, headline findings, proposed actions and decision required. Explain that the PowerPoint/PDF is a static snapshot while the Excel dashboard is interactive. Leave missing links UNKNOWN. Do not claim approval or send the draft.
    ```
 
-4. Select the Readiness and Dependencies section only. Ask Copilot to make it more concise for senior leaders while preserving every fact and the distinction between confirmed and proposed. Compare the before and after text and reject any change to scope, date, owner or status.
+7. Step 7 Complete templates/Final_Handoff_Checklist.csv: workbook source and controls, working filters, sandbox refresh proof, skillv2 installation/manual record, eight-slide PPTX/PDF, reviewed notes, evidence register and unsent draft. Record the exact filenames and your actual checks. Save the final pack in work-c027.
 
-   ```bash
-   Rewrite this selected section to no more than 90 words for department heads. Preserve all dates, owners, scope and status labels exactly. Keep the support clinic room as an open question. Do not introduce new commitments.
-   ```
+**Sample prompts**
 
-5. Insert a two-column release table at the end with Check and Result. Complete Source fidelity, Audience fit, Scope, Open questions, Privacy, Accessibility and Owner approval. As the lab document owner, enter your name and review date for Owner approval. Change the document status to Approved for deck handoff only when all required checks are complete; this is a simulated workflow state, not organisational approval. Save and close the file.
-
-   ```bash
-   Release states:
-APPROVED = evidence and audience checks complete
-REVISE = correctable content or format gap
-HOLD = unsupported fact, unsafe disclosure or unresolved release decision
-   ```
-
+| Purpose | Prompt |
+|---|---|
+| PowerPoint | @maintenance-reporting Audit and refine the eight-slide deck without changing values. |
+| Outlook | Draft the handoff with real supplied links and the static-snapshot limitation. |
 
 **Test it**
 
-The Word file must contain exactly the five required headings and remain within two pages including the release table. Every material date, number, owner and commitment must trace to a Source_ID. The launch date must be 2026-08-18, the data export 2026-08-13 and the support-clinic room must remain open. The title block must show v1.0 and Approved for deck handoff.
+| Check | Expected result |
+|---|---|
+| Presentation integrity | Eight slides and eight PDF pages; visible figures agree with verified register. |
+| Professional delivery | Readable chart labels, consistent design, evidence-specific notes and actual rehearsal improvement. |
+| Final continuity | Baseline dashboard, brief, deck and unsent draft agree; static snapshot stated. |
+| Decision boundary | No real email sent or work order reassigned; proposed actions remain proposed. |
 
 **Checkpoint and rejoin point**
 
-Save the approved Word brief in work-c027. Lab 3 uses this exact version as the governing PowerPoint source. If the status is REVISE or HOLD, correct the document before continuing.
+If you fell behind, use checkpoints/Northstar_Verified_Checkpoint.xlsx and checkpoints/Northstar_Verified_Snapshot.docx. Record checkpoint used in Prompt_Log; then perform this lab, rather than claiming the checkpoint as your output.
 
 **Troubleshooting**
 
 | If this happens | Fix |
 |---|---|
-| Copilot changes a confirmed fact during rewrite. | Reject the rewrite, narrow the selected text and state which terms, dates and statuses must remain exact. |
-| The document is longer than two pages. | Remove duplication, convert owner details to a compact table and shorten explanation without removing evidence or open questions. |
-| A source note points to the wrong file. | Return to tblClaims, identify the governing Source_ID and correct both the note and any affected wording. |
+| Copilot cannot find the source | Use the app file picker to select the actual OneDrive file. A typed local path or a different app chat is not shared context. If needed copy only the verified snapshot into the current app. |
+| A total disagrees with Control | Clear dashboard filters to All, check table extent and duplicate IDs, recalculate, then compare definitions and reporting date. Reconcile before continuing. |
+| The named feature is missing | Confirm the correct assigned account, English display language and app version. Use the stated manual practice route; record feature unavailable. This is not evidence that a native skill ran. |
 
 **Challenge**
 
-Ask Copilot in Chat-only mode to pressure-test the brief from a department head's perspective. Add only questions that expose a genuine evidence gap; do not let speculative questions become new facts.
+Repeat the task for one different site and explain how the filter scope changes the result. Keep the original verified output.
 
 **Reflection**
 
-What is the difference between improving a sentence and changing the commitment expressed by that sentence?
+Which evidence proves the output is correct, and which decision still needs a person?
 
-> **Note:** The complete lab and its support-file references are in labs/lab-02-*.md. Use only the supplied synthetic Asteron Services data or information you are authorised to process. Do not paste credentials, confidential business material or unnecessary personal data into Copilot.
+> **Note:** The lab folder labs/lab-08-*/ holds the instruction PDF with sample prompts, sample-prompts.txt and the mock-data workbook (data/Northstar_Work_Orders.xlsx). Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.
 
 ---
 
 
-### Lab 3 — Generate and Refine the Asteron Decision Deck in PowerPoint
-
-Learning outcome: LO2: generate a presentation from an approved Word source, refine the narrative and verify facts, visuals, accessibility and speaker notes before use.
-
-Goal: Create a concise six-slide decision deck that preserves the approved Word brief and makes the remaining decision visible without inventing evidence.
-
-You will use the approved Lab 2 Word brief to generate a PowerPoint draft for department heads. You will compare every factual slide with the source, replace generic or misleading content, refine one slide from a referenced file and complete an accessibility and release check.
-
-**What you'll build**
-
-work-c027/C027-Asteron-Decision-Deck-v1.0.pptx with six decision-oriented slides, concise speaker notes, source notes and a Reviewed for internal presentation status   (Tools: PowerPoint for Microsoft 365 · Copilot in PowerPoint · C027-Asteron-Launch-Brief-v1.0.docx.)
-
-**Prerequisites**
-
-- Lab 2 Word brief is saved in OneDrive and marked Approved for deck handoff.
-- Open labs/assets/asteron-deck-spec.md and keep the Lab 1 source register available.
-- Use only synthetic Asteron files and approved built-in or licensed visual assets.
-
-**Step-by-step**
-
-1. Open PowerPoint, start a new presentation and use Copilot to create a presentation from C027-Asteron-Launch-Brief-v1.0.docx. Request exactly six slides for department heads. Save the result immediately as work-c027/C027-Asteron-Decision-Deck-v1.0.pptx.
-
-   ```bash
-   Create a six-slide internal decision presentation from the referenced approved Word brief. Use concise titles, one message per slide and speaker notes. Do not add facts not present in the source.
-   ```
-
-2. Compare the generated structure with the deck specification. Rename, reorder, add or remove slides until the sequence is exactly: decision, scope, readiness, timeline, risks and next actions. Keep the support-clinic room visibly unresolved. Because verified numerical readiness measures are not created until Lab 4, slide 3 must show dependencies and status only; add no readiness numbers in this lab.
-
-   ```bash
-   Required sequence:
-1. Decision needed
-2. Pilot scope
-3. Readiness snapshot
-4. Timeline and owners
-5. Risks and open question
-6. Next actions
-   ```
-
-3. For slides 2-6, compare every date, number, owner and status with the Word brief and source register. Add a small source note in the speaker notes using Source_ID values. Remove or rewrite any content that cannot be traced.
-
-   ```bash
-   Required facts:
-20 internal participants · five departments · 2026-08-18 launch
-Nisha Rao / 2026-08-11 · Leon Wu / 2026-08-13
-external announcement waits for privacy sign-off
-support clinic room remains open
-   ```
-
-4. Refine slide 4 by asking Copilot to rewrite the existing timeline. If Copilot creates a new timeline slide, move it into position 4 and delete the superseded slide so the deck remains exactly six slides. Keep four milestones only. Replace decorative imagery that could be mistaken for real Asteron evidence with a simple editable timeline or icon-based process.
-
-   ```bash
-   Create a four-milestone timeline from the referenced brief: FAQ due 2026-08-11; data export due 2026-08-13; privacy sign-off before external announcement; pilot launch 2026-08-18. Do not add a confirmed support-clinic milestone.
-   ```
-
-5. Run Review > Check Accessibility in PowerPoint. Resolve each fixable issue and record the Accessibility Checker result, including any accepted limitation, in the final notes. Then confirm a single message per slide, readable text, strong contrast, logical reading order, meaningful alternative text, concise speaker notes and no unsupported image. In the file properties or final notes, record status Reviewed for internal presentation, reviewer and date.
-
-   ```bash
-   Release check:
-Story | Facts | Visual evidence | Accessibility | Speaker notes | Audience | Reviewer | State
-   ```
-
-
-**Test it**
-
-The deck must contain exactly six slides in the required sequence. All repeated facts must match the approved Word brief, slide 3 must show dependencies/status without numerical readiness measures, slide 4 must contain only the four approved milestones, and no visual may imply real customer evidence. Each factual slide must have a Source_ID note. The final notes must record the Accessibility Checker result, and the final state must be Reviewed for internal presentation.
-
-**Checkpoint and rejoin point**
-
-Save and close the six-slide deck. Labs 7 and 8 will check it against the other app outputs. Keep the approved Word brief unchanged as the governing narrative source.
-
-**Troubleshooting**
-
-| If this happens | Fix |
-|---|---|
-| Create from file is unavailable or the Word file is not listed. | Confirm the file is saved to OneDrive, the correct account is active and Copilot is enabled. If necessary, create the six-slide structure manually and use Copilot to draft one slide at a time from the brief. |
-| Copilot creates more or fewer than six slides. | Keep only the required sequence and merge duplicate content. Do not add slides merely to preserve generated text. |
-| A generated image is irrelevant or misleading. | Remove it and use an editable shape, icon or timeline that communicates structure without pretending to be evidence. |
-
-**Challenge**
-
-Use Copilot to propose two alternative titles for slide 1: one neutral and one action-oriented. Choose the title that best reflects the actual decision without overstating urgency or certainty.
-
-**Reflection**
-
-Which part of the Word brief required the greatest transformation to work as a slide, and what had to remain unchanged?
-
-> **Note:** The complete lab and its support-file references are in labs/lab-03-*.md. Use only the supplied synthetic Asteron Services data or information you are authorised to process. Do not paste credentials, confidential business material or unnecessary personal data into Copilot.
-
----
-
-
-### Topic 01 Recap - Mapped to Learning Outcomes
+### Topic 4 Recap - Mapped to Learning Outcomes
 
 Use this checkpoint to explain what you can now do and identify any lab evidence you still need to repair.
 
 | Learning outcome | Evidence from this topic |
 |---|---|
-| LO1 - Ground and Prompt | Distinguish prompt instructions from grounding sources, use Goal-Context-Source-Expectations, and trace every factual statement in a Copilot Chat summary to an approved source. |
-| LO2 - Write and Present | Use Word to draft and rewrite against an audience brief, approve the document before handoff, and use that approved file as the source for a concise PowerPoint presentation. |
-
----
-
-
-## Topic 02 — Copilot Across Your Everyday Work Apps  (Second half · 5 connected labs)
-
-Excel analysis and formulas · Outlook email work · Teams recaps · end-to-end app workflows · responsible AI and data privacy
-
-**Key concepts**
-
-- Bounded Excel analysis — Name the table, columns, filters, units and expected checks before asking for a formula or insight.
-- Thread-to-response control — Separate facts extracted from an Outlook thread from the generated wording of a draft reply.
-- Transcript-backed actions — A Teams recap is useful only when owners, due dates and decisions agree with the meeting evidence.
-- Handoff contracts — Each app passes an approved artifact, source note, owner and verification status to the next app.
-- Permissions are the perimeter — Copilot honours the user's access; overshared content therefore remains an organisational risk.
-- Human release gate — Generated content stays in Draft or Hold until a named person checks evidence, sensitivity and audience.
-
-
-### Analysing Data and Generating Formulas in Excel
-
-Copilot in Excel can help analyse table-like data, surface summaries, trends and outliers, generate or explain formulas, and create editable workbook elements such as tables, PivotTables and charts in supported experiences. Some analytical responses may be static. The user must understand the grain, data types, filters and calculation logic before relying on the output.
-
-A plausible formula can still use the wrong denominator, sign, date boundary or blank-value rule. Excel makes generated logic inspectable, so the masterclass pairs every Copilot action with an independent control: row count, formula sample, reconciliation total and edge-case review.
-
-**How it works**
-
-- Save the workbook to an approved cloud location, keep the raw data unchanged and convert the bounded range into a named table.
-- State the row grain, business question, named columns, filters, units and required output.
-- Ask Copilot to propose or explain the formula before applying it; inspect structured references and fill behaviour.
-- Recalculate control totals using an independent method and sample normal, blank and boundary rows.
-- Label generated insights as Observed, Hypothesis or Unknown and record the checked workbook version.
-
-**Worked example**
-
-- Asteron needs confirmed attendance rate and follow-up priority for a 20-person pilot cohort.
-- Copilot proposes a rate formula, but the learner notices blank attendance values are included in the denominator.
-- The learner revises the rule, checks three edge rows and ties the summary counts to the raw table.
-
-**Decision guide**
-
-| Use when | Avoid when |
-|---|---|
-| The data is tabular, the requested calculation is explicit and the workbook can retain visible controls. | The dataset has undefined grain, mixed meanings or unresolved quality problems. |
-| The user can inspect formulas, PivotTables, charts or generated analytical logic. | A static generated visual would be mistaken for a refreshable workbook result. |
-
-**Practitioner quality lens**
-
-- Boundary: Name the table, columns, date range, filters, units and exclusions.
-- Logic: Inspect formula, aggregation and missing-value rules rather than accepting the label.
-- Tie-out: Reconcile counts and totals independently before interpreting patterns.
-
-**Authoritative references**
-
-- https://support.microsoft.com/en-us/excel/copilot/data-insights-with-copilot-in-excel
-- https://support.microsoft.com/en-us/office/edit-with-copilot-in-excel-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a
-- https://support.microsoft.com/en-us/excel/get-direct-answers-to-your-data-analysis-questions
-
----
-
-
-### Drafting Emails and Summarising Threads in Outlook
-
-Copilot in Outlook can summarise email threads, draft messages from a prompt and thread context, offer coaching on tone and clarity, and help prepare for meetings in eligible experiences. Feature availability varies by licence, client and policy. Signed, encrypted, rights-managed or some labelled messages can have additional limitations.
-
-Email combines factual history with a consequential communication act. A safe workflow first extracts decisions, requests, owners and dates from the thread, then drafts a reply that does not invent agreement. The sender verifies recipients, attachments, sensitivity, commitments and tone before sending.
-
-**How it works**
-
-- Open the bounded synthetic thread and ask for decisions, action items, open questions and conflicting statements.
-- Compare the summary with each message and correct owner, date, number and status errors.
-- Draft a response with explicit audience, purpose, tone, commitments and items that must remain unresolved.
-- Use coaching to review clarity and tone without allowing a rewrite to change factual meaning.
-- Check To, Cc, attachments, links, sensitivity and every commitment; keep the message as a draft until approved.
-
-**Worked example**
-
-- The Asteron thread contains two proposed training dates but only one confirmed room booking.
-- Copilot's first draft presents both dates as final. The learner restores the distinction and asks the facilities owner to confirm.
-- The message remains in Draft and its facts are compared with the decision log before any send action.
-
-**Decision guide**
-
-| Use when | Avoid when |
-|---|---|
-| A bounded thread needs a catch-up summary, response outline or tone review. | The thread includes highly sensitive content not suitable for the intended audience or unsupported client experience. |
-| The sender can inspect the complete thread and owns the final recipient and send decisions. | The generated draft would create a commitment that no authorised person has approved. |
-
-**Practitioner quality lens**
-
-- Facts: Separate thread evidence from generated wording and preserve unresolved items.
-- Recipients: Recheck To, Cc, attachments and audience before release.
-- Commitments: Do not turn proposals, questions or estimates into promises.
-
-**Authoritative references**
-
-- https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook
-- https://support.microsoft.com/en-us/office/frequently-asked-questions-about-copilot-in-outlook-07420c70-099e-4552-8522-7d426712917b
-
----
-
-
-### Meeting Recaps and Action Items in Teams
-
-Copilot and intelligent recap in Teams can use a meeting transcript, chat and supported event content to summarise key points, decisions and follow-up tasks. Recap features depend on the event type, licence, recording or transcription settings, language and organisational policy. A recap is generated evidence aid, not a replacement for the governing transcript or a confirmed action register.
-
-Meeting summaries compress fast-moving conversation, but transcription errors and ambiguous speech can misassign an owner or due date. A strong action register requires an action verb, deliverable, named owner, ISO date, status and a transcript reference; unresolved statements stay open.
-
-**How it works**
-
-- Obtain consent and follow organisational policy before recording or transcription; use the supplied synthetic transcript when live transcription is unavailable.
-- Ask for decisions, action items, blockers and open questions in separate sections.
-- Compare each item with the transcript or chat and correct speaker attribution, negation, numbers and dates.
-- Convert confirmed actions into a register with owner, deliverable, due date, evidence and status.
-- Share the reviewed register only with the intended participants and retain open questions visibly.
-
-**Worked example**
-
-- A speaker says the FAQ draft is due Friday, but the room booking will be confirmed next Monday.
-- The generated recap assigns both items to the same owner and date.
-- The learner checks the transcript, corrects the two records and labels the room decision Open.
-
-**Decision guide**
-
-| Use when | Avoid when |
-|---|---|
-| A permitted transcript or meeting chat exists and the participants need a faster first recap. | Recording or transcription is not permitted, participants have not been informed or sensitive discussion needs special handling. |
-| A person who attended can validate decisions, owners and due dates before circulation. | The recap will be treated as final minutes without comparison to the meeting evidence. |
-
-**Practitioner quality lens**
-
-- Consent: Follow policy and participant expectations for recording, transcription and sharing.
-- Evidence: Link actions and decisions to transcript language or chat context.
-- Ownership: Every confirmed action has one owner, one deliverable and one due date.
-
-**Authoritative references**
-
-- https://support.microsoft.com/en-us/teams/meetings-events/recap-a-teams-meeting
-- https://support.microsoft.com/en-us/teams/meetings/recap-in-microsoft-teams
-- https://support.microsoft.com/en-us/teams/copilot/how-to-use-microsoft-365-copilot-in-teams-chats-and-channels
-
----
-
-
-### Building End-to-End Copilot Workflows Across Apps
-
-An end-to-end Copilot workflow connects approved outputs across apps without losing source boundaries, ownership or review status. The key is a handoff contract: every transition names the source artifact, approved version, intended destination, required transformation, constraints, owner and verification gate.
-
-Cross-app speed can multiply an early error. If an unverified chat summary becomes a Word brief, then a deck, email and meeting plan, one wrong date appears everywhere. Checkpointed handoffs contain the blast radius: downstream apps receive only approved artifacts and changes are reconciled back to the source register.
-
-**How it works**
-
-- Map the workflow from source evidence to Chat synthesis, Word brief, PowerPoint deck, Excel analysis, Outlook draft and Teams actions.
-- Define a release state for each artifact: Draft, Reviewed, Approved or Hold.
-- At each handoff, name the file and version, destination, allowed transformation and facts that must not change.
-- Run a consistency check for titles, dates, numbers, owners, terminology and audience across every artifact.
-- Record the final owner and next action; keep links rather than duplicating uncontrolled copies where possible.
-
-**Worked example**
-
-- The approved Asteron Word brief supplies the story for PowerPoint, while Excel supplies verified attendance figures.
-- The Outlook draft and Teams action register use links to those artifacts and repeat only the minimum confirmed facts.
-- A cross-app check detects that one slide uses an earlier launch date; the learner corrects it before the pack is released.
-
-**Decision guide**
-
-| Use when | Avoid when |
-|---|---|
-| Several apps contribute distinct strengths and each handoff can be checkpointed. | The workflow copies unapproved chat text from app to app or obscures which file is authoritative. |
-| A named owner can reconcile downstream outputs to the governing sources. | Automation would send, publish or schedule consequential output without a human release gate. |
-
-**Practitioner quality lens**
-
-- Authority: Declare which artifact governs each fact, number and commitment.
-- State: Show Draft, Reviewed, Approved or Hold at every handoff.
-- Consistency: Reconcile titles, dates, owners, measures and audience across the full pack.
-
-**Authoritative references**
-
-- https://support.microsoft.com/en-us/microsoft-365-copilot/
-- https://support.microsoft.com/en-us/office/365-copilot-app/get-started-with-word-excel-and-powerpoint-agents-in-microsoft-365-copilot
-
----
-
-
-### Responsible AI, Data Privacy and Best Practices
-
-Responsible use of Microsoft 365 Copilot combines technical protections with human judgment. For organisational use, enterprise data protection applies to prompts and responses, Microsoft 365 permissions continue to govern accessible work data, and interactions can be retained for audit and compliance. These protections do not correct oversharing, weak sources or inaccurate generated content.
-
-Copilot can accelerate existing good practice and expose existing information-governance weaknesses. A user who can access an overshared file may receive it in grounded results. Responsible practice therefore uses least privilege, sensitivity and sharing controls, minimal necessary data, source verification, transparent AI use where appropriate and named human accountability.
-
-**How it works**
-
-- Confirm identity, licence, organisational policy, approved app and the minimum data necessary for the task.
-- Check file permissions, sharing links, labels and audience before referencing or publishing content.
-- Do not place credentials, secrets or unnecessary sensitive personal information in prompts.
-- Review outputs for factual error, harmful bias, privacy exposure, unsupported inference and inappropriate tone.
-- Record sources, meaningful AI assistance, reviewer, release decision and unresolved limitations.
-
-**Worked example**
-
-- A Copilot search surfaces an old broadly shared roster with personal contact details.
-- The learner does not use or reproduce the roster, reports the oversharing through the organisation's process and uses the synthetic cohort file instead.
-- The final pack records its sources, reviewer and Approved state without exposing unnecessary personal information.
-
-**Decision guide**
-
-| Use when | Avoid when |
-|---|---|
-| The task uses authorised data, proportionate controls and a reviewer who understands the decision context. | The prompt would expose secrets, bypass access controls, profile people unfairly or conceal an unsupported decision. |
-| The organisation's retention, sensitivity, sharing and acceptable-use requirements are known. | The user cannot identify who is accountable for checking and releasing the output. |
-
-**Practitioner quality lens**
-
-- Minimise: Use only the data and detail necessary for the declared purpose.
-- Protect: Apply permissions, labels, sharing and retention controls appropriate to the source.
-- Account: Name the reviewer, sources, limitations and release decision.
-
-**Authoritative references**
-
-- https://learn.microsoft.com/en-us/copilot/faq
-- https://learn.microsoft.com/en-us/microsoft-365/copilot/security-microsoft-365-copilot
-- https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing
-- https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy
-
----
-
-
-### Lab 4 — Analyse Pilot Readiness and Verify Copilot Formulas in Excel
-
-Learning outcome: LO3: analyse a bounded Excel table, generate formula columns and reconcile every headline measure to independent controls.
-
-Goal: Create a verified readiness workbook with explicit grain, inspectable formulas, control totals and a short evidence-backed management summary.
-
-You will import a 20-row synthetic pilot cohort, preserve the raw source and ask Copilot to create a priority formula and readiness summary. You will inspect the logic, correct denominator rules and reconcile counts, rates and averages before writing three decision-relevant observations.
-
-**What you'll build**
-
-work-c027/C027-Asteron-Pilot-Readiness.xlsx with Raw_Cohort, Analysis, Control and Prompt_Log sheets, a verified priority column and an Approved internal readiness summary, plus work-c027/C027-Asteron-Verified-Readiness-Summary.txt   (Tools: Excel for Microsoft 365 · Copilot in Excel · asteron-pilot-readiness.csv.)
-
-**Prerequisites**
-
-- Download labs/assets/asteron-pilot-readiness.csv and asteron-excel-controls.md.
-- Sign in to Excel with Copilot available; record the actual experience label if it differs.
-- Use the supplied synthetic cohort only and keep the original CSV unchanged.
-
-**Step-by-step**
-
-1. Open asteron-pilot-readiness.csv in Excel and save it as work-c027/C027-Asteron-Pilot-Readiness.xlsx. Rename the first sheet Raw_Cohort. Copy the sheet to Analysis, format the data as table tblReadiness and create empty Control and Prompt_Log sheets.
-
-   ```bash
-   Grain: one row = one synthetic pilot participant
-Key: Participant_ID
-Raw_Cohort must remain unchanged
-Working table: tblReadiness
-   ```
-
-2. On Control, enter these metric labels in A2:A10 and exact formulas in B2:B10. State that attendance rate uses Confirmed registrations as its denominator and counts only Attended as its numerator.
-
-   ```bash
-   B2 Rows: =ROWS(tblReadiness[Participant_ID])
-B3 Unique Participant_ID: =COUNTA(UNIQUE(tblReadiness[Participant_ID]))
-B4 Confirmed: =COUNTIF(tblReadiness[Registration_Status],"Confirmed")
-B5 Attended among Confirmed: =COUNTIFS(tblReadiness[Registration_Status],"Confirmed",tblReadiness[Attendance_Status],"Attended")
-B6 Attendance rate: =B5/B4
-B7 Training complete among Confirmed: =COUNTIFS(tblReadiness[Registration_Status],"Confirmed",tblReadiness[Training_Complete],"Yes")
-B8 Training completion rate: =B7/B4
-B9 Average readiness among Confirmed: =AVERAGEIF(tblReadiness[Registration_Status],"Confirmed",tblReadiness[Readiness_Score])
-B10 Support tickets among Confirmed: =SUMIFS(tblReadiness[Support_Tickets],tblReadiness[Registration_Status],"Confirmed")
-Expected values: 20 | 20 | 16 | 14 | 87.5% | 12 | 75.0% | 80.0625 | 9
-   ```
-
-3. Ask Copilot to add a Priority column using the rule below. Require a formula explanation before applying it. Inspect the structured references and verify rows P004, P008, P010, P015 and P017. Non-confirmed rows must be Not in cohort rather than High.
-
-   ```bash
-   GOAL: Add an editable Priority column to tblReadiness.
-CONTEXT: Asteron uses the column to plan support for confirmed pilot participants.
-SOURCE: Use Registration_Status, Training_Complete, Readiness_Score and Support_Tickets in tblReadiness only.
-EXPECTATIONS: If Registration_Status is not Confirmed, return 'Not in cohort'. Otherwise return 'High' when Training_Complete is No OR Readiness_Score is below 70 OR Support_Tickets is 2 or more; else 'Standard'. Explain the formula, then apply it without changing Raw_Cohort.
-   ```
-
-4. Ask Copilot for a summary table of confirmed participants by Department with count, attended count, training-complete count, average readiness and support tickets. Build an independent PivotTable from tblReadiness filtered to Confirmed and reconcile every department row—not only the grand total—against labs/assets/asteron-department-controls.csv. Do not accept a summary whose denominator includes Waitlist or Withdrawn rows.
-
-   ```bash
-   Summarise confirmed participants in tblReadiness by Department. Return Count, Attended, Training_Complete, Average_Readiness and Support_Tickets. Include grand totals and state the filters and denominator.
-   ```
-
-5. Write three observations in a Summary area: one about attendance, one about training completion and one about high-priority support. Label each OBSERVED and cite the control cells. Add a Limitations line noting that readiness scores are synthetic and do not prove future performance. Record prompt, formula, checks and release decision in Prompt_Log. Export the verified headline measures as plain text to work-c027/C027-Asteron-Verified-Readiness-Summary.txt for the supported Copilot Chat handoff in Lab 7.
-
-   ```bash
-   Required summary facts:
-Attendance = 14 of 16 confirmed (87.5%)
-Training complete = 12 of 16 confirmed (75.0%)
-High priority = 4 confirmed participants: P004, P008, P010, P015
-Release state = Approved for internal workflow lab
-   ```
-
-
-**Test it**
-
-Raw_Cohort must match the CSV and tblReadiness must contain 20 rows with 20 unique IDs. Control values must match asteron-excel-controls.md exactly. Priority must show High only for P004, P008, P010 and P015 among confirmed participants, and Not in cohort for P017-P020. Every department row and the grand total must tie to asteron-department-controls.csv, every summary sentence must cite a control cell, and the verified TXT export must contain the three headline measures.
-
-**Checkpoint and rejoin point**
-
-Save the approved readiness workbook and verified-readiness TXT. Lab 7 uses the supported TXT export for its three verified headline measures. If any tie-out fails, keep the workbook in REVISE and do not copy its numbers to another app.
-
-**Troubleshooting**
-
-| If this happens | Fix |
-|---|---|
-| Copilot uses all 20 rows as the attendance denominator. | Restate the Confirmed filter explicitly and compare the formula with COUNTIF(tblReadiness[Registration_Status],"Confirmed"). |
-| Priority marks waitlisted or withdrawn rows High. | Place the Registration_Status condition first so non-confirmed rows return Not in cohort before other tests. |
-| The average differs from 80.0625. | Check that AVERAGEIF uses Confirmed as the criterion and Readiness_Score as the average range; do not round before reconciliation. |
-
-**Challenge**
-
-Create a PivotTable of confirmed participants by Department and Preferred_Session. Reconcile the grand total to 16 and explain why the table supports capacity planning but not employee performance decisions.
-
-**Reflection**
-
-Which denominator choice most changed the meaning of a readiness measure, and how did you make it visible?
-
-> **Note:** The complete lab and its support-file references are in labs/lab-04-*.md. Use only the supplied synthetic Asteron Services data or information you are authorised to process. Do not paste credentials, confidential business material or unnecessary personal data into Copilot.
-
----
-
-
-### Lab 5 — Summarise the Launch Thread and Prepare a Reviewed Outlook Draft
-
-Learning outcome: LO3: summarise a bounded Outlook thread, distinguish confirmed facts from proposals and prepare a reviewed email draft without creating unsupported commitments.
-
-Goal: Produce a fact-checked launch update draft whose recipients, dates, owners, attachments and unresolved items are explicitly reviewed before any send action.
-
-You will create a private synthetic email thread in your own mailbox from the supplied messages, use Copilot to summarise decisions and open questions, then draft a concise internal update. You will verify the thread facts and leave the message unsent for the cross-app review.
-
-**What you'll build**
-
-An Outlook draft titled [DRAFT] Asteron pilot launch update - review required, plus work-c027/C027-Outlook-Thread-Review.md with the verified facts and release checklist   (Tools: Outlook for Microsoft 365 · Copilot in Outlook · asteron-email-thread.md.)
-
-**Prerequisites**
-
-- Use only your own training mailbox or a trainer-approved sandbox mailbox.
-- Open labs/assets/asteron-email-thread.md and asteron-outlook-review-template.md.
-- Copy asteron-outlook-review-template.md to work-c027/C027-Outlook-Thread-Review.md before writing into it.
-- Do not send the final update; the required outcome is a reviewed draft.
-
-**Step-by-step**
-
-1. Create the synthetic thread in your own mailbox. Send Message 1 from asteron-email-thread.md to yourself with subject Asteron pilot launch coordination - synthetic. Paste each supplied message in full, including its synthetic From and Date labels inside the message body. Reply to the same thread with Messages 2 and 3, still addressed only to yourself. Confirm the three messages appear as one thread. For project history, the embedded synthetic labels govern; your real self-send transport metadata records only when the exercise copy was created.
-
-   ```bash
-   Safety boundary:
-Recipient = your own training address only
-Subject contains 'synthetic'
-No real client, colleague or external address
-Use only the supplied message text
-   ```
-
-2. Use Summary by Copilot or Copilot Chat in Outlook on the thread. Ask for confirmed decisions, current owners and due dates, superseded information, proposals and open questions in separate sections. Copy the result into work-c027/C027-Outlook-Thread-Review.md.
-
-   ```bash
-   Summarise this synthetic thread as Confirmed decisions | Owners and current due dates | Superseded information | Proposals | Open questions. Use ISO dates and quote the message date for each item. Do not convert a proposal or pending approval into a commitment.
-   ```
-
-3. Compare the summary with all three messages. Correct the data-export due date to 2026-08-13, keep the 2026-08-19 support clinic and room as proposed, and retain the privacy sign-off dependency before any external announcement. Record VERIFIED, REVISE or HOLD beside every item.
-
-   ```bash
-   Expected distinctions:
-FAQ / Nisha Rao / 2026-08-11 = confirmed
-Data export / Leon Wu / 2026-08-13 = current; 2026-08-12 superseded
-Support clinic / 2026-08-19 14:00 = proposed; room pending
-External announcement = HOLD until privacy sign-off
-   ```
-
-4. Use Draft with Copilot to create an internal response. Address it only to yourself, prefix the subject with [DRAFT], and require sections for Confirmed, Needs confirmation and Actions. Use coaching to review clarity and tone, but reject any suggestion that changes a fact or commitment.
-
-   ```bash
-   Draft a concise internal launch update from this verified thread. Separate Confirmed, Needs confirmation and Actions. Preserve current owners and ISO dates. Ask for room confirmation; do not announce externally. Professional, neutral tone, under 180 words. Keep the message in Draft.
-   ```
-
-5. Complete the Outlook release checklist in C027-Outlook-Thread-Review.md: To, Cc, subject, facts, commitments, attachments, links, sensitivity, tone and send decision. Save the draft without sending it. Set the release state to HOLD - pending Lab 7 cross-app consistency review.
-
-   ```bash
-   Required send decision: DO NOT SEND
-Required state: HOLD - cross-app review pending
-Attachments: none
-Recipients: self only
-   ```
-
-
-**Test it**
-
-The mailbox must contain a three-message synthetic self-thread and one unsent draft. The review file must exist in work-c027, state that embedded synthetic sender/date labels govern project history, show 2026-08-13 as the current export date, keep the support clinic proposed and hold external announcement until privacy sign-off. The final draft must be under 180 words, addressed only to self, contain no attachment and remain HOLD - cross-app review pending.
-
-**Checkpoint and rejoin point**
-
-Leave the email in Draft and save C027-Outlook-Thread-Review.md. Lab 7 compares this draft with the Word brief, PowerPoint deck, Excel workbook and Teams action register.
-
-**Troubleshooting**
-
-| If this happens | Fix |
-|---|---|
-| Outlook does not group the three messages. | Use Reply on the first self-message for Messages 2 and 3 and keep the subject unchanged. |
-| Summary by Copilot is unavailable. | Use Copilot Chat in Outlook with the selected synthetic thread if supported. Otherwise use Copilot Chat with asteron-email-thread.md and record that the Outlook summary capability was unavailable. |
-| Coaching recommends stronger commitment language. | Keep the verified status. Tone advice never overrides evidence or approval state. |
-
-**Challenge**
-
-Create a second version for an executive reader in no more than 90 words. Compare which details can be removed without hiding an owner, due date, dependency or unresolved decision.
-
-**Reflection**
-
-Why must thread extraction and reply drafting be reviewed as two separate stages?
-
-> **Note:** The complete lab and its support-file references are in labs/lab-05-*.md. Use only the supplied synthetic Asteron Services data or information you are authorised to process. Do not paste credentials, confidential business material or unnecessary personal data into Copilot.
-
----
-
-
-### Lab 6 — Validate a Teams Recap and Create the Action Register
-
-Learning outcome: LO4: validate a Teams recap against transcript evidence and convert confirmed follow-up work into an action register with owners, due dates and release status.
-
-Goal: Create a transcript-backed action register that distinguishes decisions, actions, proposals and open questions.
-
-You will use a trainer-provided synthetic Teams meeting recap or the supplied transcript in Copilot Chat inside Teams. You will compare generated decisions and actions with the evidence, correct attribution and dates, and create a durable action register for the cross-app workflow.
-
-**What you'll build**
-
-work-c027/C027-Teams-Action-Register.xlsx with Decisions, Actions, Proposals and Open_Questions sheets, transcript references and a Reviewed internal coordination state, plus work-c027/C027-Asteron-Verified-Actions.txt   (Tools: Microsoft Teams · Copilot or intelligent recap · asteron-teams-transcript.md · Excel.)
-
-**Prerequisites**
-
-- Use the trainer-provided Asteron synthetic meeting if available; follow organisational policy for transcription.
-- If a live recap is unavailable, open asteron-teams-transcript.md in Copilot Chat within Teams and record the fallback.
-- Open labs/assets/asteron-action-register-template.csv and asteron-teams-register-schemas.md.
-
-**Step-by-step**
-
-1. Open the trainer-provided Asteron launch stand-up in Teams and select Recap and Copilot when available. If no permitted recap exists, upload or reference asteron-teams-transcript.md in Copilot Chat inside Teams. Record which path you used and the source date.
-
-   ```bash
-   Evidence path:
-A = Teams recap from permitted synthetic meeting
-B = Supplied synthetic transcript in Copilot Chat inside Teams
-Never claim A when you used B
-   ```
-
-2. Ask Copilot to return four separate sections: Decisions, Actions, Proposals and Open questions. For Actions require Owner, Deliverable, Due_Date and Transcript_Evidence. Do not ask for a blended summary.
-
-   ```bash
-   Using only this meeting evidence, return Decisions | Actions | Proposals | Open questions. For each action give one named owner, one deliverable, one ISO due date and the exact transcript line or timestamp. Do not infer ownership or dates.
-   ```
-
-3. Open the transcript and verify every generated row. Correct the privacy sign-off owner, distinguish the proposed support clinic from confirmed launch work, and keep the room question open. Mark any row without exact evidence HOLD.
-
-   ```bash
-   Required evidence:
-Nisha Rao - FAQ - 2026-08-11
-Leon Wu - data export - 2026-08-13
-Priya Menon - readiness dashboard - 2026-08-14 12:00
-Farah Lim - privacy sign-off - 2026-08-15
-Mei Tan - confirm support-clinic room - 2026-08-12
-Pilot launch remains 2026-08-18 subject to privacy sign-off
-   ```
-
-4. Open asteron-action-register-template.csv in Excel and save as C027-Teams-Action-Register.xlsx. Create tables tblDecisions, tblActions, tblProposals and tblOpenQuestions on the four separate sheets specified in asteron-teams-register-schemas.md. Copy only verified rows, retain the evidence reference and set Status to Confirmed, Proposed or Open.
-
-   ```bash
-   Decisions: Decision_ID | Decision | Evidence | Status | Reviewer | Release_State
-Actions: Action_ID | Deliverable | Owner | Due_Date | Evidence | Status | Reviewer | Release_State
-Proposals: Proposal_ID | Proposal | Proposed_By | Target_Date | Evidence | Resolution_Owner | Status
-Open Questions: Question_ID | Question | Resolution_Owner | Due_Date | Evidence | Status
-   ```
-
-5. Run a completeness check: every Confirmed action has one owner, one deliverable, one due date and evidence; Proposed items are not in the confirmed count; Open questions have an owner for resolution. Record reviewer, review date and state Reviewed for internal coordination. Export the confirmed action rows with owner, deliverable, due date and evidence to work-c027/C027-Asteron-Verified-Actions.txt for Lab 7.
-
-   ```bash
-   Expected confirmed work items = 5
-Expected unresolved item = support-clinic room availability
-Release state = Reviewed for internal coordination
-   ```
-
-
-**Test it**
-
-The register must contain all four required sheets/tables, the five required work items with exact owners and dates, plus one proposed clinic and one open room question. Every confirmed action must include transcript evidence, and the file must record whether the source was a Teams recap or the supplied transcript fallback. The release state must be Reviewed for internal coordination, and the verified-actions TXT export must contain only confirmed actions.
-
-**Checkpoint and rejoin point**
-
-Save the action register and verified-actions TXT in work-c027. Lab 7 uses the supported TXT export plus the open question. Do not remove the evidence column when copying information into another app.
-
-**Troubleshooting**
-
-| If this happens | Fix |
-|---|---|
-| The recap assigns an action to the wrong speaker. | Use the transcript speaker label and surrounding lines; correct the owner and record the generated attribution as REVISE. |
-| A due date is missing from the evidence. | Set the action to HOLD and create an open question for the owner instead of inventing a date. |
-| The live meeting cannot be transcribed. | Use the supplied synthetic transcript inside Teams and record the fallback. Do not change tenant policy or record without permission. |
-
-**Challenge**
-
-Ask Copilot to identify two risks implied by the action register. Label them HYPOTHESIS and state which additional evidence would be required before they could become confirmed risks.
-
-**Reflection**
-
-Which recap error would have caused the greatest coordination cost if it had entered the action register?
-
-> **Note:** The complete lab and its support-file references are in labs/lab-06-*.md. Use only the supplied synthetic Asteron Services data or information you are authorised to process. Do not paste credentials, confidential business material or unnecessary personal data into Copilot.
-
----
-
-
-### Lab 7 — Assemble and Reconcile the Cross-App Coordination Pack
-
-Learning outcome: LO4: connect approved outputs across Microsoft 365 apps using handoff contracts and reconcile repeated facts, owners, measures and release states.
-
-Goal: Create a cross-app manifest and concise coordination pack in which every repeated fact agrees with the governing artifact.
-
-You will register the Chat, Word, PowerPoint, Excel, Outlook and Teams outputs, declare which artifact governs each type of information, then use Copilot to draft a coordination update. A consistency matrix will expose any date, owner, number or status that drifted during an app handoff.
-
-**What you'll build**
-
-work-c027/C027-Asteron-Cross-App-Manifest.xlsx and C027-Asteron-Coordination-Pack.docx with authoritative-source links, a consistency matrix and an Approved internal handoff state   (Tools: Microsoft 365 Copilot Chat · Word · Excel · PowerPoint · Outlook · Teams.)
-
-**Prerequisites**
-
-- Labs 1-6 outputs are saved in work-c027 with their stated release records; if one is unavailable, use the versioned trainer-validated labs/assets/asteron-capstone-rejoin-pack.txt and record the substitution.
-- Do not use an artifact that remains REVISE; HOLD artifacts can be registered but cannot govern released facts.
-- Open the partially populated asteron-cross-app-manifest-template.csv and asteron-consistency-matrix-template.csv.
-
-**Step-by-step**
-
-1. Open asteron-cross-app-manifest-template.csv in Excel and save as C027-Asteron-Cross-App-Manifest.xlsx. Enter one row for the source register, Word brief, PowerPoint deck, Excel readiness workbook, Outlook review and draft, and Teams action register. Record file link, version, owner, purpose, source authority, state and next use. Complete Source_Coverage as Learner-created checkpoint or Trainer-validated practice fallback. Timebox: 5 minutes; fill placeholders in the six pre-populated rows rather than rebuilding the table.
-
-   ```bash
-   Required artifacts = 6
-Allowed states = Draft | Reviewed | Approved | Hold
-No blank owner, purpose or next use
-Outlook draft remains Hold
-   ```
-
-2. Create an Authority sheet. Declare that the source register governs confirmed launch facts, the Word brief governs the narrative, Excel governs cohort measures, Teams governs meeting actions and the Outlook thread governs email history. PowerPoint may communicate facts but does not replace its sources. Timebox: 5 minutes.
-
-   ```bash
-   Authority map:
-Launch facts -> Source register
-Narrative -> Approved Word brief
-Readiness measures -> Verified Excel workbook
-Meeting actions -> Teams action register
-Email history -> Outlook thread review
-   ```
-
-3. In Microsoft 365 Copilot Chat, reference the approved Word brief, C027-Asteron-Verified-Readiness-Summary.txt and C027-Asteron-Verified-Actions.txt. If any normal input is missing, reference asteron-capstone-rejoin-pack.txt instead and name only the applicable WORD BRIEF, EXCEL READINESS or TEAMS substitute section. Ask for the bounded draft below; review it, then paste the accepted text into C027-Asteron-Coordination-Pack.docx with sections Executive position, Readiness, Confirmed actions, Open questions and Artifact links. Do not ask Copilot in Word to read Excel workbooks, and do not use the held Outlook draft as a factual source. Timebox: 12 minutes.
-
-   ```bash
-   GOAL: Draft a two-page internal coordination update.
-CONTEXT: Asteron department heads need the launch position, readiness measures, actions and open questions.
-SOURCE: Use the approved Word brief and the two referenced verified TXT exports only.
-EXPECTATIONS: Preserve ISO dates and owners; cite the governing artifact after every section; distinguish Confirmed, Proposed and Open; include 14/16 attendance, 12/16 training completion and four high-priority participants.
-   ```
-
-4. Copy the nine pre-populated rows from asteron-consistency-matrix-template.csv into a Consistency sheet. Fill only the applicable artifact cells and compare the source register, Word brief, deck, Excel workbook, Outlook review, Teams register and coordination pack. Use N/A where a fact does not belong. Timebox: 15 minutes.
-
-   ```bash
-   Required consistency rows:
-Launch 2026-08-18 | Cohort 20 / five departments
-FAQ Nisha Rao / 2026-08-11 | Export Leon Wu / 2026-08-13
-Privacy sign-off before external announcement | Clinic proposed / room open
-Attendance 14/16 (87.5%) | Training 12/16 (75.0%) | High priority 4
-   ```
-
-5. Correct every mismatch in the downstream artifact, not in the governing source. Update the manifest with the reviewed version and state. In the coordination pack add a release table with Source coverage, Fact consistency, Permissions, Audience, Owner and Decision. Set the pack to Approved internal handoff only when all consistency rows agree. Timebox: 8 minutes.
-
-   ```bash
-   Final conditions:
-Consistency_Result = MATCH for every required row
-Coordination pack = Approved internal handoff
-Outlook draft = Hold until Lab 8 release review
-No artifact is marked Approved without a named reviewer
-   ```
-
-
-**Test it**
-
-The manifest must contain six artifact rows with links, owners, versions and states. The authority map must name one governing artifact for each information type. Every required consistency row must show MATCH across all artifacts where the fact appears. The coordination pack must be no more than two pages, cite its source artifacts and be Approved internal handoff; the Outlook draft must remain Hold. Any substituted prior output must be visibly marked REJOIN-PACK-v1.0 and Trainer-validated practice fallback.
-
-**Checkpoint and rejoin point**
-
-Save the manifest and coordination pack. Lab 8 applies the final responsible-use and privacy review before the workflow is considered ready for controlled internal use. If an earlier artifact is missing or still blocked, copy the relevant section from asteron-capstone-rejoin-pack.txt, set its manifest Link to REJOIN-PACK-v1.0, record Trainer-validated practice fallback as coverage and continue; replace it later when the learner-created artifact passes its checkpoint.
-
-**Troubleshooting**
-
-| If this happens | Fix |
-|---|---|
-| A downstream artifact contains an older date. | Confirm the governing source, correct the downstream file, update its version and rerun the consistency row. |
-| Copilot cannot reference all three source files at once. | Draft one section per supported Word/TXT reference in Microsoft 365 Copilot Chat, then assemble and reconcile manually. Record actual source coverage; never imply an Excel workbook was read when it was not. |
-| Two files appear to govern the same fact. | Choose the artifact closest to the approved source of that information and record the decision in the Authority sheet. |
-
-**Challenge**
-
-Draw a simple lineage diagram from source register and raw cohort through each downstream artifact. Mark where an error could propagate to three or more outputs and add one preventive check at that handoff.
-
-**Reflection**
-
-Which handoff carried the greatest risk of multiplying an early error, and which checkpoint contained it?
-
-> **Note:** The complete lab and its support-file references are in labs/lab-07-*.md. Use only the supplied synthetic Asteron Services data or information you are authorised to process. Do not paste credentials, confidential business material or unnecessary personal data into Copilot.
-
----
-
-
-### Lab 8 — Run the Responsible-Use and Privacy Release Gate
-
-Learning outcome: LO4: apply permission, minimisation, accuracy, sensitivity, transparency and accountability controls to the complete Copilot-assisted workflow.
-
-Goal: Produce a final release log that identifies unsafe sharing, records remediation and assigns a human decision to every artifact.
-
-You will inspect a simulated sharing and sensitivity scenario for every Asteron artifact, identify an overbroad readiness-data link, minimise copied personal detail and complete the C027 release gate. The default path is a tabletop review; an actual permission change is permitted only in a trainer-authorised sandbox. The exercise ends with simulation-only, Revise or Hold decisions and named owners.
-
-**What you'll build**
-
-work-c027/C027-Asteron-Responsible-Use-Release-Log.docx with artifact-level permission, data, accuracy, audience, transparency, reviewer and release decisions   (Tools: Microsoft 365 · OneDrive or SharePoint sharing controls · Copilot · asteron-sharing-simulation.md.)
-
-**Prerequisites**
-
-- Labs 1-7 artifacts and cross-app manifest are complete.
-- Open labs/assets/asteron-sharing-simulation.md and asteron-release-gate-template.md.
-- Treat every person and access setting in the simulation as synthetic; never inspect or modify real group membership unless the trainer explicitly authorises the sandbox path.
-
-**Step-by-step**
-
-1. Create a blank Word document, copy the headings and tables from asteron-release-gate-template.md into it, and save it as work-c027/C027-Asteron-Responsible-Use-Release-Log.docx. Add one row for each of the six manifest artifacts plus the coordination pack. Record intended audience, simulated current access, minimum necessary data, governing source, reviewer and current state. Record Exercise path = Tabletop by default, or Trainer-authorised sandbox only when the trainer has explicitly approved it.
-
-   ```bash
-   Required artifacts = 7
-Checks = Purpose | Access | Minimisation | Accuracy | Sensitivity | Transparency | Reviewer | Decision
-   ```
-
-2. Compare the simulated current access with the intended audience. Identify the readiness workbook's organisation-wide link as overbroad and the participant contact list as unnecessary for the coordination pack. Set affected artifacts to HOLD before proposing remediation.
-
-   ```bash
-   Required findings:
-Readiness workbook: intended pilot team; current anyone-in-organisation link -> HOLD
-Contact list: not required for stated purpose -> exclude
-Outlook draft: self only and unsent -> HOLD until recipient review
-Coordination pack: department heads group -> request owner verification
-   ```
-
-3. Write the remediation plan. On the default tabletop path, record the requested restriction, authorised owner and missing evidence; do not change a permission or inspect group membership. Remove unnecessary synthetic participant contact fields from your downstream lab copies, request department-heads membership verification from the owner and keep the external announcement blocked until privacy sign-off. Only on an explicitly trainer-authorised sandbox path may you perform and verify the actual permission change on the supplied lab copy.
-
-   ```bash
-   Remediation evidence to record:
-Exercise path and trainer authority, if any
-Requested control or actual sandbox change
-Owner
-Completion date
-Before audience
-After audience
-Evidence gap or verification method
-   ```
-
-4. Run the C027 release gate on the coordination pack and Outlook draft. Check Source, Accuracy, Sensitivity, Quality, Consistency and Accountability. In Microsoft 365 Copilot Chat, reference the completed C027-Asteron-Responsible-Use-Release-Log.docx and ask for the critique below. If file reference is unavailable, paste the completed rows into Chat or apply the same checklist manually and record the fallback. Make the final decision yourself and record any generated suggestion as a proposal.
-
-   ```bash
-   Review this release log for blank evidence, inconsistent states, overbroad audiences, unsupported claims and missing owners. Return findings only; do not change permissions, send messages or approve artifacts.
-   ```
-
-5. Record final states. On the tabletop path, the coordination pack may become Approved in simulation only after the requested control, owner and evidence gap are recorded; otherwise keep it HOLD. On a trainer-authorised sandbox path, it may become Approved for controlled sandbox use only after actual evidence is verified. Neither state approves a real organisational release. The Outlook draft may become Reviewed but remains unsent. Add a transparency note describing meaningful Copilot assistance, sources reviewed, limitations and the named human release owner.
-
-   ```bash
-   Tabletop: Pack = Approved in simulation only, or HOLD when a gate remains unresolved.
-Authorised sandbox: Pack = Approved for controlled sandbox use only after verified evidence.
-Outlook = Reviewed draft, unsent; external announcement = HOLD until privacy sign-off.
-Real organisational release = not granted; release owner = <LEARNER NAME>.
-   ```
-
-
-**Test it**
-
-The release log must contain seven artifact rows and no blank reviewer or decision. It must identify the overbroad readiness link, exclude the unnecessary contact list, record the group-verification request or trainer-authorised sandbox evidence, keep the Outlook message unsent and hold the external announcement pending privacy sign-off. The coordination pack may be Approved in simulation only on the tabletop path or Approved for controlled sandbox use only on an authorised sandbox path after the required evidence is recorded. Real organisational release must remain unapproved, and the log must include a meaningful-AI-assistance note.
-
-**Checkpoint and rejoin point**
-
-Save the responsible-use release log with the complete work-c027 folder. The package is the final C027 practice checkpoint and can be repeated with another authorised workflow after class. Preserve the exercise path and the statement that no real organisational release was granted.
-
-**Troubleshooting**
-
-| If this happens | Fix |
-|---|---|
-| You cannot change a simulated sharing setting in your environment. | Stay on the tabletop path. Do not seek extra access. Record the current setting, required owner, remediation request and evidence gap; use Approved in simulation only only when the simulation gate is complete, otherwise HOLD. |
-| Copilot's critique recommends approval without evidence. | Reject the recommendation. Only the named human reviewer can release an artifact after all gate evidence is complete. |
-| An artifact contains more personal detail than its purpose requires. | Remove or aggregate the unnecessary fields in the downstream copy, retain the governed source separately and rerun the accuracy check. |
-
-**Challenge**
-
-Create a reusable one-page release card for your own role with the six C027 gate dimensions and one escalation trigger for each. Keep the card independent of any specific Copilot interface label.
-
-**Reflection**
-
-Which control depended on organisational governance rather than prompt quality, and who owns that control?
-
-> **Note:** The complete lab and its support-file references are in labs/lab-08-*.md. Use only the supplied synthetic Asteron Services data or information you are authorised to process. Do not paste credentials, confidential business material or unnecessary personal data into Copilot.
-
----
-
-
-### Topic 02 Recap - Mapped to Learning Outcomes
-
-Use this checkpoint to explain what you can now do and identify any lab evidence you still need to repair.
-
-| Learning outcome | Evidence from this topic |
-|---|---|
-| LO3 - Analyse and Communicate | Bound Excel analysis to named data, inspect formulas and reconcile totals; in Outlook, separate thread facts from generated wording and keep the final send decision with the user. |
-| LO4 - Coordinate and Govern | Validate Teams actions against the transcript, preserve ownership and due dates across app handoffs, and use permissions, sensitivity, source checks and human approval as release gates. |
-
----
-
-
-## Wrap-Up - The Complete C027 Workflow
-
-The finished output is a traceable work system, not a collection of attractive generated files. Every artifact connects its source, prompt, proposed output, verification evidence and release owner.
-
-**Ground and create**
-
-- Use G-C-S-E to name the goal, audience, evidence boundary and output contract.
-- Verify a Chat synthesis before it becomes the factual basis of a Word document.
-- Approve the Word brief before PowerPoint turns it into a visual story.
-
-**Analyse and coordinate**
-
-- Keep Excel data grain, formula logic, denominators and control totals visible.
-- Separate Outlook thread facts from generated reply wording and review every commitment.
-- Tie Teams actions to transcript evidence, named owners and due dates.
-
-**Govern and release**
-
-- Pass only approved versions across app handoffs and reconcile repeated facts.
-- Use least privilege, minimum necessary data, sensitivity and recipient checks.
-- Choose Approved, Revise or Hold with a named human reviewer and visible limitations.
+| LO4 | Eight-slide evidence story and reviewed handoff. |
+| Verify | PDF, notes, register and actual rehearsal agree. |
 
 ---
 
 
 ## Next Steps
 
-- Repeat all eight labs from the original source pack without using your completed artifacts.
-- Adapt the G-C-S-E prompt card and release gate to one authorised recurring task in your role.
-- Create a small cross-app manifest for authoritative files, owners, versions and release states.
-- Review Microsoft Support and Learn before delivery because Copilot labels, availability and capabilities continue to change.
+- First pass: complete every lab yourself, following the steps in each lab file.
+- Second pass: redo the labs from memory until the workflow is automatic.
+- Apply the techniques to a real process or project in your own organisation.
+- Review each lab's detailed steps in this guide and re-run the labs on your own.
 
 
 ## Glossary
 
-- **Copilot Chat** — A Microsoft 365 conversational experience for asking, researching, summarising and creating from permitted context.
-- **Grounding** — Adding relevant source context to a prompt so the response is specific to the task.
-- **G-C-S-E** — Goal, Context, Source and Expectations - the C027 prompt framework.
-- **Handoff contract** — A record of source artifact, version, destination, allowed transformation, owner and verification gate.
-- **Microsoft Graph** — The service layer through which Microsoft 365 can surface work context the signed-in user is permitted to access.
-- **Observed** — A statement directly supported by the reviewed data or source.
-- **Open question** — A material point that the available evidence does not resolve.
-- **Release gate** — The source, accuracy, sensitivity, quality, consistency and accountability checks before sharing.
-- **Sensitivity label** — A Microsoft Purview label that can classify and protect organisational content according to policy.
-- **Source register** — A list of governing files or records with owner, date, purpose, status and access note.
-- **Structured reference** — An Excel formula reference that uses table and column names.
-- **Transcript** — The text record of meeting speech used as evidence for a generated recap.
+- **Grounding** — Supplying accessible evidence for the current request.
+- **Backlog** — Selected work with Status neither Closed nor Cancelled.
+- **Overdue** — Backlog due strictly before the fixed reporting date.
+- **Skill** — Reusable instructions in a matching folder and SKILL.md file.
+- **Snapshot** — A dated, scoped copy of verified evidence.
+- **Structured reference** — A formula reference to a named Excel table or its columns.
+- **Denominator** — The population used to calculate a rate.
+- **Proposed assignment** — A suggested owner awaiting a real manager decision.

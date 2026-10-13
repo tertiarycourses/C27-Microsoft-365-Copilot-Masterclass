@@ -1,7 +1,0 @@
-Artifact_ID,Artifact,App,Version,Owner,Purpose,Source_Authority,Source_Coverage,Release_State,Link,Next_Use
-ART-01,C027-Asteron-Source-Register.xlsx,Excel,v1.0,<OWNER>,Govern confirmed launch facts,Primary source register,<COVERAGE>,Reviewed,<LINK>,Word brief and reconciliation
-ART-02,C027-Asteron-Launch-Brief-v1.0.docx,Word,v1.0,<OWNER>,Govern approved narrative,Source register,<COVERAGE>,Approved,<LINK>,PowerPoint and coordination pack
-ART-03,C027-Asteron-Decision-Deck-v1.0.pptx,PowerPoint,v1.0,<OWNER>,Present internal decision story,Approved Word brief,<COVERAGE>,Reviewed,<LINK>,Internal presentation
-ART-04,C027-Asteron-Pilot-Readiness.xlsx,Excel,v1.0,<OWNER>,Govern cohort measures,Raw cohort and controls,<COVERAGE>,Approved,<LINK>,Coordination pack
-ART-05,C027-Outlook-Thread-Review.md and draft,Outlook,v1.0,<OWNER>,Record email history and proposed response,Synthetic email thread,<COVERAGE>,Hold,<LINK>,Final release review
-ART-06,C027-Teams-Action-Register.xlsx,Teams and Excel,v1.0,<OWNER>,Govern meeting actions,Synthetic transcript or recap,<COVERAGE>,Reviewed,<LINK>,Coordination pack

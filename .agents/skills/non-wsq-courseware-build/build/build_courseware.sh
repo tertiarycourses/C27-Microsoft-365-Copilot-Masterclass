@@ -69,6 +69,7 @@ python3 "$HERE/build_lesson_plan.py"
 # Labs must exist before the LG: its parser deliberately imports the detailed
 # lab Markdown so both artifacts carry identical current step text.
 python3 "$HERE/build_labs.py"
+python3 "$HERE/build_prompts_page.py"   # docs/prompts/ — GitHub Pages copy-ready prompts
 python3 "$HERE/build_learner_guide.py"
 
 PPT="$(ls -t "$CW"/*.pptx | head -1)"
@@ -85,6 +86,12 @@ python3 "$HERE/inject_toc.py" "$LP" "${LP%.docx}.pdf" 2
 python3 "$HERE/inject_toc.py" "$LG" "${LG%.docx}.pdf" 2
 
 echo "==> Render PDFs (pass 2 — with built TOC)"
+"$SOFFICE" "-env:UserInstallation=$LO_PROFILE_URI" --headless --convert-to pdf --outdir "$CW" "$LP" >/dev/null 2>&1
+"$SOFFICE" "-env:UserInstallation=$LO_PROFILE_URI" --headless --convert-to pdf --outdir "$CW" "$LG" >/dev/null 2>&1
+
+echo "==> Reconcile TOCs against actual body pages (handles multi-page TOCs)"
+python3 "$HERE/fix_toc_pages.py" "$LP" "${LP%.docx}.pdf"
+python3 "$HERE/fix_toc_pages.py" "$LG" "${LG%.docx}.pdf"
 "$SOFFICE" "-env:UserInstallation=$LO_PROFILE_URI" --headless --convert-to pdf --outdir "$CW" "$LP" >/dev/null 2>&1
 "$SOFFICE" "-env:UserInstallation=$LO_PROFILE_URI" --headless --convert-to pdf --outdir "$CW" "$LG" >/dev/null 2>&1
 

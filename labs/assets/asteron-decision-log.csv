@@ -1,8 +1,0 @@
-Decision_ID,Decision_Date,Topic,Decision,Owner,Due_Date,Status,Supersedes,Source_Note
-D001,2026-08-02,Pilot scope,"Use 20 internal participants across Operations, Sales, Finance, Human Resources and Information Technology",Mei Tan,2026-08-18,Approved,,Programme steering note
-D002,2026-08-03,Pilot launch,"Launch the controlled internal pilot on 2026-08-18",Mei Tan,2026-08-18,Approved,,Project brief v1.2
-D003,2026-08-04,Participant FAQ,"Prepare and review the participant FAQ",Nisha Rao,2026-08-11,Approved,,Content workstream note
-D004,2026-08-04,Data export,"Prepare the pilot cohort export",Leon Wu,2026-08-12,Superseded,,Initial data workstream estimate
-D005,2026-08-05,Data export,"Prepare the pilot cohort export",Leon Wu,2026-08-13,Approved,D004,Revised data workstream commitment
-D006,2026-08-06,External communication,"Do not release an external announcement before privacy sign-off",Farah Lim,2026-08-15,Approved,,Privacy workstream decision
-D007,2026-08-06,Support clinic,"Propose a support clinic for 2026-08-19 at 14:00; room remains unconfirmed",Mei Tan,2026-08-12,Proposed,,Coordination note

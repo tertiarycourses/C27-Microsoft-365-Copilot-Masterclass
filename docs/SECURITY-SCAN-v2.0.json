@@ -1,0 +1,10 @@
+{
+  "files_scanned": 234,
+  "credential_or_private_material_hits": 0,
+  "office_xml_included": true,
+  "private_dirs_excluded": [
+    "assessment",
+    "reference"
+  ],
+  "archive_excluded": true
+}

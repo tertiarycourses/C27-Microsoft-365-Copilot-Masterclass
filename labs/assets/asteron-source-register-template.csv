@@ -1,4 +1,0 @@
-Source_ID,File,Owner,Effective_Date,Purpose,Governs,Limitation,Status
-SRC-01,asteron-project-brief.md,Mei Tan,2026-08-03,Define purpose and approved scope,"launch date; cohort; departments; pilot purpose","later owner and date changes are governed by SRC-02",To review
-SRC-02,asteron-decision-log.csv,Mei Tan,2026-08-06,Record current decisions and owners,"decision status; current owners; current due dates","does not contain readiness results",To review
-SRC-03,asteron-stakeholder-notes.md,Priya Menon,2026-08-06,Capture stakeholder observations,"needs; preferences; unresolved concerns","working observations are not approvals",To review

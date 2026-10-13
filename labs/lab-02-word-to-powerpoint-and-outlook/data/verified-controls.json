@@ -1,0 +1,25 @@
+{
+  "total": 120,
+  "closed": 48,
+  "cancelled": 12,
+  "backlog": 60,
+  "overdue": 50,
+  "unassigned_backlog": 6,
+  "on_time_closed": 30,
+  "on_time_rate": 0.625,
+  "cost": 35827.5,
+  "site_counts": {
+    "Woodlands Hub": 24,
+    "Jurong Depot": 24,
+    "Tampines Centre": 24,
+    "Paya Lebar Office": 24,
+    "Changi Workshop": 24
+  },
+  "category_counts": {
+    "HVAC": 24,
+    "Electrical": 24,
+    "Plumbing": 24,
+    "Fire Safety": 24,
+    "General Repair": 24
+  }
+}

@@ -1,0 +1,1 @@
+Northstar Facilities is fictional. Reporting date: 2026-09-30. Work orders have statuses New, Assigned, In Progress, On Hold, Closed, Cancelled. Backlog excludes Closed and Cancelled. Overdue means backlog due before the reporting date. Unassigned jobs require a proposal, never an invented confirmed owner. Proposed actions need a manager decision. All sample data is synthetic.

@@ -1,845 +1,164 @@
-"""Single source of truth for the C027 non-WSQ courseware package."""
-
-TITLE = "Microsoft 365 Copilot Masterclass"
-SHORT_TITLE = "Microsoft 365 Copilot Masterclass"
-COURSE_CODE = "C027"
-COURSE_PAGE = "tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html"
-VERSION = "v1.0"
-VERSION_DATE = "29 July 2026"
-ORG = "Tertiary Infotech Academy Pte Ltd"
-UEN = "UEN: 201200696W"
-TRAINER = "Assigned Tertiary Infotech Academy Trainer"
-DAYS = 1
-DAY_MINUTES = 480
-INSTRUCTIONAL_MINUTES = 450
-MODE = "Instructor-led masterclass with connected hands-on labs"
-DAILY_TIMING = (
-    "9:30 am - 6:30 pm (1-hour lunch; two 15-minute tea breaks; "
-    "7.5 instructional hours)"
-)
-DARK_THEME = False
-
-TRAINER_TEAM = [
-    (
-        "Kesston Tang",
-        "Consultant and trainer with experience in business analysis, negotiation, corporate advisory and stakeholder communication.",
-    ),
-    (
-        "Angel Koh",
-        "Technology practitioner and trainer with extensive experience designing information systems and applying emerging digital tools.",
-    ),
-]
-
-ICE_BREAKER = [
-    "Your name, organisation and role.",
-    "One Microsoft 365 task that repeatedly consumes time.",
-    "One output you would never share without checking it first.",
-    "Which Copilot entry points you can see in Chat, Word, PowerPoint, Excel, Outlook and Teams.",
-]
-
-LEARNING_OUTCOMES = [
-    (
-        "LO1: Explain how Microsoft 365 Copilot grounds responses, apply a structured prompt method "
-        "and verify a source-backed research summary in Copilot Chat."
-    ),
-    (
-        "LO2: Draft, rewrite and validate a business document in Word, then generate and refine a "
-        "presentation in PowerPoint from the approved document."
-    ),
-    (
-        "LO3: Analyse a bounded dataset and generate formulas in Excel, then summarise a synthetic "
-        "email thread and prepare a reviewed response in Outlook."
-    ),
-    (
-        "LO4: Produce a Teams meeting recap and action register, connect outputs across Microsoft "
-        "365 apps, and apply responsible-use, privacy and human-review controls."
-    ),
-]
-
-LO_TITLES = [
-    "Ground & Prompt",
-    "Write & Present",
-    "Analyse & Communicate",
-    "Coordinate & Govern",
-]
-
-TOPIC_RECAPS = {
-    1: [
-        (
-            "LO1 - Ground and Prompt",
-            "Distinguish prompt instructions from grounding sources, use Goal-Context-Source-Expectations, "
-            "and trace every factual statement in a Copilot Chat summary to an approved source.",
-        ),
-        (
-            "LO2 - Write and Present",
-            "Use Word to draft and rewrite against an audience brief, approve the document before handoff, "
-            "and use that approved file as the source for a concise PowerPoint presentation.",
-        ),
-    ],
-    2: [
-        (
-            "LO3 - Analyse and Communicate",
-            "Bound Excel analysis to named data, inspect formulas and reconcile totals; in Outlook, separate "
-            "thread facts from generated wording and keep the final send decision with the user.",
-        ),
-        (
-            "LO4 - Coordinate and Govern",
-            "Validate Teams actions against the transcript, preserve ownership and due dates across app "
-            "handoffs, and use permissions, sensitivity, source checks and human approval as release gates.",
-        ),
-    ],
-}
-
-TOPICS = [
-    dict(
-        num=1,
-        code="01",
-        title="Getting Started with Microsoft 365 Copilot",
-        subtitle=(
-            "How Copilot works · effective prompts · Copilot Chat research · "
-            "Word drafting and rewriting · PowerPoint generation and refinement"
-        ),
-        weighting="First half · 3 connected labs",
-        concepts=[
-            (
-                "Orchestration and grounding",
-                "Copilot combines the instruction, permitted work context and app capability before a model proposes a response.",
-            ),
-            (
-                "G-C-S-E prompts",
-                "State Goal, Context, Source and Expectations so the task, evidence boundary and output contract are visible.",
-            ),
-            (
-                "Source-backed research",
-                "Treat generated summaries as claims to trace, compare and approve rather than as automatic truth.",
-            ),
-            (
-                "Word review loop",
-                "Draft, inspect, rewrite a bounded selection, compare against the brief and approve the document.",
-            ),
-            (
-                "Document-to-deck handoff",
-                "Use an approved Word file as the PowerPoint source, then check structure, facts, visuals and speaker notes.",
-            ),
-            (
-                "Availability awareness",
-                "Licensing, organisational policy, platform and update channel can change which Copilot controls are visible.",
-            ),
-        ],
-        sections=[
-            dict(
-                title="Introduction to Microsoft 365 Copilot and How It Works",
-                definition=(
-                    "Microsoft 365 Copilot is an AI-powered work assistant integrated with Microsoft 365 apps. "
-                    "For a signed-in user it can combine the prompt, permitted organisational context from "
-                    "Microsoft Graph, optional web grounding and the capabilities of the current app. The large "
-                    "language model proposes an output; Microsoft 365 then returns it to the user for review."
-                ),
-                why=(
-                    "A useful response depends on both the instruction and the information available to ground it. "
-                    "Copilot does not receive unlimited visibility into a tenant: it works within the signed-in "
-                    "user's permissions. Weak source access can produce an incomplete answer, while excessive "
-                    "sharing can expose information that the user was already allowed to find."
-                ),
-                how=[
-                    "The user states a task in Copilot Chat or inside a Microsoft 365 app.",
-                    "Copilot interprets the instruction and retrieves permitted context from named files, current app content, work data or the web when enabled.",
-                    "The model generates a proposal; the app presents the response, citations, draft or editable change for human inspection.",
-                    "The user checks source coverage, accuracy, tone, permissions and downstream consequences before keeping or sharing it.",
-                ],
-                example=[
-                    "An operations coordinator asks for a launch summary using an approved brief and a decision log.",
-                    "Copilot grounds the response only in files the coordinator can access and returns a draft with source references.",
-                    "The coordinator notices one missing decision, adds the correct source and regenerates before approving the summary.",
-                ],
-                use_when=[
-                    "The task and evidence boundary are clear, the user has legitimate access and a person can review the output.",
-                    "A draft, summary, comparison or first-pass structure will accelerate work without removing accountability.",
-                ],
-                avoid_when=[
-                    "The task would disclose information to an unintended audience or relies on content the user should not access.",
-                    "An unchecked output would trigger a high-impact financial, legal, safety, employment or customer decision.",
-                ],
-                quality=[
-                    ("Permission", "Confirm the signed-in identity and whether every referenced source is appropriate for the task."),
-                    ("Grounding", "Name the source and distinguish retrieved evidence from generated connective language."),
-                    ("Review", "Check the response against the original files before accepting, editing or sharing it."),
-                ],
-                sources=[
-                    "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture",
-                    "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview",
-                    "https://support.microsoft.com/en-US/Microsoft-365-Copilot/how-copilot-chat-works-in-microsoft-365-apps",
-                ],
-            ),
-            dict(
-                title="Writing Effective Prompts for Better Results",
-                definition=(
-                    "A prompt is the instruction and context supplied to Copilot. The C027 method uses four "
-                    "elements: Goal states the outcome; Context explains the audience and situation; Source "
-                    "sets the evidence boundary; Expectations define format, tone, constraints and review criteria. "
-                    "A clear goal is essential, while the other elements reduce ambiguity and improve control."
-                ),
-                why=(
-                    "Vague prompts shift important choices to the model. A visible prompt contract makes it easier "
-                    "to compare the result with what was requested, identify missing evidence and refine only the "
-                    "weak element. Effective prompting is iterative: ask, inspect, point to the gap and follow up."
-                ),
-                how=[
-                    "Goal: use one action verb and name the decision, artifact or change required.",
-                    "Context: state the audience, business situation, time period, terminology and intended use.",
-                    "Source: name the files, thread, meeting, table or approved web sources to use and any sources to exclude.",
-                    "Expectations: specify structure, length, tone, units, citation needs, uncertainty labels and acceptance checks.",
-                    "Review the response, then use a focused follow-up instead of restarting with another vague prompt.",
-                ],
-                example=[
-                    "Goal: create a one-page launch brief for department heads.",
-                    "Context: the Asteron client portal pilot begins on 18 August and leaders need decisions, owners and risks.",
-                    "Source: use only Project_Brief and Decision_Log; do not add market facts.",
-                    "Expectations: five headings, concise professional tone, ISO dates, a source note for every decision and an Open Questions section.",
-                ],
-                use_when=[
-                    "The task has a definable output and the user can name a trustworthy evidence boundary.",
-                    "The first response is close but needs a controlled change to scope, format, tone or source coverage.",
-                ],
-                avoid_when=[
-                    "The user cannot explain the intended decision or determine which source should govern the answer.",
-                    "The prompt contains credentials, secrets or unnecessary sensitive personal information.",
-                ],
-                quality=[
-                    ("Specific", "One task, one audience and one intended use."),
-                    ("Grounded", "Named sources and explicit exclusions."),
-                    ("Verifiable", "Acceptance checks that a reviewer can apply without guessing."),
-                ],
-                sources=[
-                    "https://support.microsoft.com/en-US/Microsoft-365-Copilot/get-started-writing-prompts-in-microsoft-365-copilot",
-                    "https://learn.microsoft.com/en-us/training/modules/get-ready-work-microsoft-365-copilot/",
-                ],
-            ),
-            dict(
-                title="Researching and Summarising with Copilot Chat",
-                definition=(
-                    "Copilot Chat is a conversational workspace for asking questions, researching and synthesising "
-                    "information. Depending on the signed-in account, licence and organisational settings, it may use "
-                    "web information, explicitly referenced files and broader work context. The response can include "
-                    "citations or source links that help the user trace statements back to evidence."
-                ),
-                why=(
-                    "Research becomes faster when Copilot can compare several permitted sources with explicit authority "
-                    "labels, but synthesis can hide "
-                    "contradictions, missing dates or weak evidence. A source register and claim ledger keep the research "
-                    "auditable: every important claim is recorded with its source, confidence and unresolved question."
-                ),
-                how=[
-                    "Define the research question and decide whether the boundary is work sources, web sources or both.",
-                    "Attach or reference only the permitted source pack, preserve each file's authority and status, and ask "
-                    "for a source-by-source inventory before synthesis.",
-                    "Request claims in a table with source, evidence, uncertainty and follow-up needed.",
-                    "Open the referenced material, compare quotations and numbers, and mark each claim Verified, Revise or Hold.",
-                    "Save the approved summary and source register for the next app rather than relying on chat history alone.",
-                ],
-                example=[
-                    "Copilot compares the Asteron project brief, stakeholder notes and decision log.",
-                    "It correctly identifies the launch date but assigns the wrong owner because two notes use similar role titles.",
-                    "The learner opens both sources, corrects the owner and records the unresolved training-room capacity question.",
-                ],
-                use_when=[
-                    "Several accessible sources must be summarised, compared or turned into questions for a reviewer.",
-                    "A human can inspect the cited sources and keep a durable record of the approved findings.",
-                ],
-                avoid_when=[
-                    "The answer would depend on inaccessible, outdated or unapproved evidence that cannot be checked.",
-                    "The user plans to paste the generated text directly into a public deliverable without source review.",
-                ],
-                quality=[
-                    ("Coverage", "List which sources were used, missing and excluded."),
-                    ("Traceability", "Link every material claim, date, number and owner to its governing source."),
-                    ("Uncertainty", "Preserve contradictions and open questions instead of smoothing them away."),
-                ],
-                sources=[
-                    "https://support.microsoft.com/en-us/microsoft-365-copilot/frequently-asked-questions-about-microsoft-365-copilot-chat",
-                    "https://support.microsoft.com/en-us/onedrive/summarize-your-files-with-copilot",
-                ],
-            ),
-            dict(
-                title="Drafting, Rewriting and Summarising Documents in Word",
-                definition=(
-                    "Copilot in Word can create a draft from a prompt or referenced file, rewrite selected text, "
-                    "summarise a document and answer questions about its contents. Chat-only work can stay in the pane, "
-                    "while editing actions propose changes in the document. The user keeps control by reviewing the "
-                    "preview, retaining accurate wording and rejecting unsupported additions."
-                ),
-                why=(
-                    "Word turns research into a governed business artifact. A good workflow separates the approved facts "
-                    "from the generated expression: the brief controls scope, the source pack controls content, the style "
-                    "guide controls voice and a release checklist controls whether the document is ready to hand off."
-                ),
-                how=[
-                    "Start from a saved Word file and state audience, purpose, length, structure and named source files.",
-                    "Generate a first draft, then compare every heading, date, owner, number and commitment with the source register.",
-                    "Select only the weak passage and request a bounded rewrite that preserves meaning and defined terms.",
-                    "Use comments or a review table to record Keep, Change or Remove decisions.",
-                    "Save an approved version before another app uses the document as a source.",
-                ],
-                example=[
-                    "The learner creates an Asteron launch brief of no more than two pages from a supported verified-claims TXT export.",
-                    "A rewrite makes the risks more concise but accidentally changes 'pilot group' to 'all customers'.",
-                    "The learner rejects that change, restores the approved scope and marks the file Approved for deck handoff.",
-                ],
-                use_when=[
-                    "A document needs a structured first draft, a bounded tone change or a source-based summary.",
-                    "The owner can review proposed changes and maintain version history in OneDrive or SharePoint.",
-                ],
-                avoid_when=[
-                    "The source brief is unresolved or the requested rewrite could alter a binding commitment without review.",
-                    "The document contains material the signed-in account is not authorised to process with the feature.",
-                ],
-                quality=[
-                    ("Fidelity", "Preserve approved meaning, scope, dates, owners and defined terms."),
-                    ("Audience", "Use the reader's decisions and questions to shape structure and tone."),
-                    ("Release", "Approve a named version before it becomes the source for another artifact."),
-                ],
-                sources=[
-                    "https://support.microsoft.com/en-us/word/welcome-to-copilot-in-word",
-                    "https://support.microsoft.com/en-us/office/create-a-summary-of-your-document-with-copilot-in-word",
-                ],
-            ),
-            dict(
-                title="Generating and Refining Presentations in PowerPoint",
-                definition=(
-                    "Copilot in PowerPoint can draft a presentation from a prompt or an existing Word or PDF file, "
-                    "create or refine slide text, add a slide grounded in a referenced file, and summarise a deck. "
-                    "The generated presentation remains a draft: layout, facts, sequence, visuals, accessibility and "
-                    "speaker notes still require expert review."
-                ),
-                why=(
-                    "A document-to-deck workflow can preserve the approved narrative while reducing assembly time. "
-                    "However, a slide is not a paragraph pasted onto a canvas. Each slide needs one message, visible "
-                    "evidence and a role in the story; decorative images must not imply facts that the source does not support."
-                ),
-                how=[
-                    "Approve and save the source document in OneDrive or SharePoint before starting the presentation.",
-                    "Ask for a bounded slide count, named audience, decision-oriented sequence and required sections.",
-                    "Compare slide titles, claims, dates, owners and numbers with the Word source and source register.",
-                    "Refine one slide at a time, replacing generic text and inappropriate imagery with accurate content.",
-                    "Check reading order, alt text, contrast, speaker notes and the final call to action before sharing.",
-                ],
-                example=[
-                    "Copilot creates a six-slide Asteron launch deck from the approved Word brief.",
-                    "The generated risks slide omits the training dependency and uses a generic image unrelated to the pilot.",
-                    "The learner restores the missing risk, replaces the image with a simple milestone diagram and adds source notes.",
-                ],
-                use_when=[
-                    "A stable source document already contains the approved narrative and the deck needs a fast first structure.",
-                    "The presenter can edit the result, check accessibility and rehearse the final story.",
-                ],
-                avoid_when=[
-                    "The source file is unapproved, contradictory or too long to support a focused presentation.",
-                    "A generated image or slide could be mistaken for real operational evidence.",
-                ],
-                quality=[
-                    ("Story", "One audience, one decision path and one message per slide."),
-                    ("Evidence", "Every factual slide traces to the approved source; visuals do not fabricate proof."),
-                    ("Accessibility", "Readable contrast, concise text, logical reading order and useful alternative text."),
-                ],
-                sources=[
-                    "https://support.microsoft.com/en-us/powerpoint/copilot/add-a-slide-from-a-file-with-copilot-in-powerpoint",
-                    "https://support.microsoft.com/en-us/powerpoint/frequently-asked-questions-about-copilot-in-powerpoint",
-                    "https://support.microsoft.com/en-us/microsoft-365-copilot/prepare-your-presentation-with-microsoft-365-copilot",
-                ],
-            ),
-        ],
-    ),
-    dict(
-        num=2,
-        code="02",
-        title="Copilot Across Your Everyday Work Apps",
-        subtitle=(
-            "Excel analysis and formulas · Outlook email work · Teams recaps · "
-            "end-to-end app workflows · responsible AI and data privacy"
-        ),
-        weighting="Second half · 5 connected labs",
-        concepts=[
-            (
-                "Bounded Excel analysis",
-                "Name the table, columns, filters, units and expected checks before asking for a formula or insight.",
-            ),
-            (
-                "Thread-to-response control",
-                "Separate facts extracted from an Outlook thread from the generated wording of a draft reply.",
-            ),
-            (
-                "Transcript-backed actions",
-                "A Teams recap is useful only when owners, due dates and decisions agree with the meeting evidence.",
-            ),
-            (
-                "Handoff contracts",
-                "Each app passes an approved artifact, source note, owner and verification status to the next app.",
-            ),
-            (
-                "Permissions are the perimeter",
-                "Copilot honours the user's access; overshared content therefore remains an organisational risk.",
-            ),
-            (
-                "Human release gate",
-                "Generated content stays in Draft or Hold until a named person checks evidence, sensitivity and audience.",
-            ),
-        ],
-        sections=[
-            dict(
-                title="Analysing Data and Generating Formulas in Excel",
-                definition=(
-                    "Copilot in Excel can help analyse table-like data, surface summaries, trends and outliers, generate "
-                    "or explain formulas, and create editable workbook elements such as tables, PivotTables and charts in "
-                    "supported experiences. Some analytical responses may be static. The user must understand the grain, "
-                    "data types, filters and calculation logic before relying on the output."
-                ),
-                why=(
-                    "A plausible formula can still use the wrong denominator, sign, date boundary or blank-value rule. "
-                    "Excel makes generated logic inspectable, so the masterclass pairs every Copilot action with an "
-                    "independent control: row count, formula sample, reconciliation total and edge-case review."
-                ),
-                how=[
-                    "Save the workbook to an approved cloud location, keep the raw data unchanged and convert the bounded range into a named table.",
-                    "State the row grain, business question, named columns, filters, units and required output.",
-                    "Ask Copilot to propose or explain the formula before applying it; inspect structured references and fill behaviour.",
-                    "Recalculate control totals using an independent method and sample normal, blank and boundary rows.",
-                    "Label generated insights as Observed, Hypothesis or Unknown and record the checked workbook version.",
-                ],
-                example=[
-                    "Asteron needs confirmed attendance rate and follow-up priority for a 20-person pilot cohort.",
-                    "Copilot proposes a rate formula, but the learner notices blank attendance values are included in the denominator.",
-                    "The learner revises the rule, checks three edge rows and ties the summary counts to the raw table.",
-                ],
-                use_when=[
-                    "The data is tabular, the requested calculation is explicit and the workbook can retain visible controls.",
-                    "The user can inspect formulas, PivotTables, charts or generated analytical logic.",
-                ],
-                avoid_when=[
-                    "The dataset has undefined grain, mixed meanings or unresolved quality problems.",
-                    "A static generated visual would be mistaken for a refreshable workbook result.",
-                ],
-                quality=[
-                    ("Boundary", "Name the table, columns, date range, filters, units and exclusions."),
-                    ("Logic", "Inspect formula, aggregation and missing-value rules rather than accepting the label."),
-                    ("Tie-out", "Reconcile counts and totals independently before interpreting patterns."),
-                ],
-                sources=[
-                    "https://support.microsoft.com/en-us/excel/copilot/data-insights-with-copilot-in-excel",
-                    "https://support.microsoft.com/en-us/office/edit-with-copilot-in-excel-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a",
-                    "https://support.microsoft.com/en-us/excel/get-direct-answers-to-your-data-analysis-questions",
-                ],
-            ),
-            dict(
-                title="Drafting Emails and Summarising Threads in Outlook",
-                definition=(
-                    "Copilot in Outlook can summarise email threads, draft messages from a prompt and thread context, "
-                    "offer coaching on tone and clarity, and help prepare for meetings in eligible experiences. Feature "
-                    "availability varies by licence, client and policy. Signed, encrypted, rights-managed or some labelled "
-                    "messages can have additional limitations."
-                ),
-                why=(
-                    "Email combines factual history with a consequential communication act. A safe workflow first extracts "
-                    "decisions, requests, owners and dates from the thread, then drafts a reply that does not invent agreement. "
-                    "The sender verifies recipients, attachments, sensitivity, commitments and tone before sending."
-                ),
-                how=[
-                    "Open the bounded synthetic thread and ask for decisions, action items, open questions and conflicting statements.",
-                    "Compare the summary with each message and correct owner, date, number and status errors.",
-                    "Draft a response with explicit audience, purpose, tone, commitments and items that must remain unresolved.",
-                    "Use coaching to review clarity and tone without allowing a rewrite to change factual meaning.",
-                    "Check To, Cc, attachments, links, sensitivity and every commitment; keep the message as a draft until approved.",
-                ],
-                example=[
-                    "The Asteron thread contains two proposed training dates but only one confirmed room booking.",
-                    "Copilot's first draft presents both dates as final. The learner restores the distinction and asks the facilities owner to confirm.",
-                    "The message remains in Draft and its facts are compared with the decision log before any send action.",
-                ],
-                use_when=[
-                    "A bounded thread needs a catch-up summary, response outline or tone review.",
-                    "The sender can inspect the complete thread and owns the final recipient and send decisions.",
-                ],
-                avoid_when=[
-                    "The thread includes highly sensitive content not suitable for the intended audience or unsupported client experience.",
-                    "The generated draft would create a commitment that no authorised person has approved.",
-                ],
-                quality=[
-                    ("Facts", "Separate thread evidence from generated wording and preserve unresolved items."),
-                    ("Recipients", "Recheck To, Cc, attachments and audience before release."),
-                    ("Commitments", "Do not turn proposals, questions or estimates into promises."),
-                ],
-                sources=[
-                    "https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook",
-                    "https://support.microsoft.com/en-us/office/frequently-asked-questions-about-copilot-in-outlook-07420c70-099e-4552-8522-7d426712917b",
-                ],
-            ),
-            dict(
-                title="Meeting Recaps and Action Items in Teams",
-                definition=(
-                    "Copilot and intelligent recap in Teams can use a meeting transcript, chat and supported event content "
-                    "to summarise key points, decisions and follow-up tasks. Recap features depend on the event type, licence, "
-                    "recording or transcription settings, language and organisational policy. A recap is generated evidence "
-                    "aid, not a replacement for the governing transcript or a confirmed action register."
-                ),
-                why=(
-                    "Meeting summaries compress fast-moving conversation, but transcription errors and ambiguous speech can "
-                    "misassign an owner or due date. A strong action register requires an action verb, deliverable, named owner, "
-                    "ISO date, status and a transcript reference; unresolved statements stay open."
-                ),
-                how=[
-                    "Obtain consent and follow organisational policy before recording or transcription; use the supplied synthetic transcript when live transcription is unavailable.",
-                    "Ask for decisions, action items, blockers and open questions in separate sections.",
-                    "Compare each item with the transcript or chat and correct speaker attribution, negation, numbers and dates.",
-                    "Convert confirmed actions into a register with owner, deliverable, due date, evidence and status.",
-                    "Share the reviewed register only with the intended participants and retain open questions visibly.",
-                ],
-                example=[
-                    "A speaker says the FAQ draft is due Friday, but the room booking will be confirmed next Monday.",
-                    "The generated recap assigns both items to the same owner and date.",
-                    "The learner checks the transcript, corrects the two records and labels the room decision Open.",
-                ],
-                use_when=[
-                    "A permitted transcript or meeting chat exists and the participants need a faster first recap.",
-                    "A person who attended can validate decisions, owners and due dates before circulation.",
-                ],
-                avoid_when=[
-                    "Recording or transcription is not permitted, participants have not been informed or sensitive discussion needs special handling.",
-                    "The recap will be treated as final minutes without comparison to the meeting evidence.",
-                ],
-                quality=[
-                    ("Consent", "Follow policy and participant expectations for recording, transcription and sharing."),
-                    ("Evidence", "Link actions and decisions to transcript language or chat context."),
-                    ("Ownership", "Every confirmed action has one owner, one deliverable and one due date."),
-                ],
-                sources=[
-                    "https://support.microsoft.com/en-us/teams/meetings-events/recap-a-teams-meeting",
-                    "https://support.microsoft.com/en-us/teams/meetings/recap-in-microsoft-teams",
-                    "https://support.microsoft.com/en-us/teams/copilot/how-to-use-microsoft-365-copilot-in-teams-chats-and-channels",
-                ],
-            ),
-            dict(
-                title="Building End-to-End Copilot Workflows Across Apps",
-                definition=(
-                    "An end-to-end Copilot workflow connects approved outputs across apps without losing source boundaries, "
-                    "ownership or review status. The key is a handoff contract: every transition names the source artifact, "
-                    "approved version, intended destination, required transformation, constraints, owner and verification gate."
-                ),
-                why=(
-                    "Cross-app speed can multiply an early error. If an unverified chat summary becomes a Word brief, then a "
-                    "deck, email and meeting plan, one wrong date appears everywhere. Checkpointed handoffs contain the blast "
-                    "radius: downstream apps receive only approved artifacts and changes are reconciled back to the source register."
-                ),
-                how=[
-                    "Map the workflow from source evidence to Chat synthesis, Word brief, PowerPoint deck, Excel analysis, Outlook draft and Teams actions.",
-                    "Define a release state for each artifact: Draft, Reviewed, Approved or Hold.",
-                    "At each handoff, name the file and version, destination, allowed transformation and facts that must not change.",
-                    "Run a consistency check for titles, dates, numbers, owners, terminology and audience across every artifact.",
-                    "Record the final owner and next action; keep links rather than duplicating uncontrolled copies where possible.",
-                ],
-                example=[
-                    "The approved Asteron Word brief supplies the story for PowerPoint, while Excel supplies verified attendance figures.",
-                    "The Outlook draft and Teams action register use links to those artifacts and repeat only the minimum confirmed facts.",
-                    "A cross-app check detects that one slide uses an earlier launch date; the learner corrects it before the pack is released.",
-                ],
-                use_when=[
-                    "Several apps contribute distinct strengths and each handoff can be checkpointed.",
-                    "A named owner can reconcile downstream outputs to the governing sources.",
-                ],
-                avoid_when=[
-                    "The workflow copies unapproved chat text from app to app or obscures which file is authoritative.",
-                    "Automation would send, publish or schedule consequential output without a human release gate.",
-                ],
-                quality=[
-                    ("Authority", "Declare which artifact governs each fact, number and commitment."),
-                    ("State", "Show Draft, Reviewed, Approved or Hold at every handoff."),
-                    ("Consistency", "Reconcile titles, dates, owners, measures and audience across the full pack."),
-                ],
-                sources=[
-                    "https://support.microsoft.com/en-us/microsoft-365-copilot/",
-                    "https://support.microsoft.com/en-us/office/365-copilot-app/get-started-with-word-excel-and-powerpoint-agents-in-microsoft-365-copilot",
-                ],
-            ),
-            dict(
-                title="Responsible AI, Data Privacy and Best Practices",
-                definition=(
-                    "Responsible use of Microsoft 365 Copilot combines technical protections with human judgment. "
-                    "For organisational use, enterprise data protection applies to prompts and responses, Microsoft 365 "
-                    "permissions continue to govern accessible work data, and interactions can be retained for audit and "
-                    "compliance. These protections do not correct oversharing, weak sources or inaccurate generated content."
-                ),
-                why=(
-                    "Copilot can accelerate existing good practice and expose existing information-governance weaknesses. "
-                    "A user who can access an overshared file may receive it in grounded results. Responsible practice therefore "
-                    "uses least privilege, sensitivity and sharing controls, minimal necessary data, source verification, "
-                    "transparent AI use where appropriate and named human accountability."
-                ),
-                how=[
-                    "Confirm identity, licence, organisational policy, approved app and the minimum data necessary for the task.",
-                    "Check file permissions, sharing links, labels and audience before referencing or publishing content.",
-                    "Do not place credentials, secrets or unnecessary sensitive personal information in prompts.",
-                    "Review outputs for factual error, harmful bias, privacy exposure, unsupported inference and inappropriate tone.",
-                    "Record sources, meaningful AI assistance, reviewer, release decision and unresolved limitations.",
-                ],
-                example=[
-                    "A Copilot search surfaces an old broadly shared roster with personal contact details.",
-                    "The learner does not use or reproduce the roster, reports the oversharing through the organisation's process and uses the synthetic cohort file instead.",
-                    "The final pack records its sources, reviewer and Approved state without exposing unnecessary personal information.",
-                ],
-                use_when=[
-                    "The task uses authorised data, proportionate controls and a reviewer who understands the decision context.",
-                    "The organisation's retention, sensitivity, sharing and acceptable-use requirements are known.",
-                ],
-                avoid_when=[
-                    "The prompt would expose secrets, bypass access controls, profile people unfairly or conceal an unsupported decision.",
-                    "The user cannot identify who is accountable for checking and releasing the output.",
-                ],
-                quality=[
-                    ("Minimise", "Use only the data and detail necessary for the declared purpose."),
-                    ("Protect", "Apply permissions, labels, sharing and retention controls appropriate to the source."),
-                    ("Account", "Name the reviewer, sources, limitations and release decision."),
-                ],
-                sources=[
-                    "https://learn.microsoft.com/en-us/copilot/faq",
-                    "https://learn.microsoft.com/en-us/microsoft-365/copilot/security-microsoft-365-copilot",
-                    "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture-data-protection-auditing",
-                    "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy",
-                ],
-            ),
-        ],
-    ),
-]
-
-DAY_THEMES = {
-    1: "Ground, create, analyse, coordinate and govern one connected Microsoft 365 Copilot workflow",
-}
-
-
+"""C27 v2.0: one connected Northstar maintenance scenario and C34 visual system."""
+TITLE=SHORT_TITLE='Microsoft 365 Copilot Masterclass'
+COURSE_CODE='C27'
+COURSE_PAGE='https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html'
+GITHUB_REPO='tertiarycourses/C27-Microsoft-365-Copilot-Masterclass'
+PROMPTS_PAGE='https://github.com/tertiarycourses/C27-Microsoft-365-Copilot-Masterclass/blob/main/docs/prompts/README.md'
+VERSION='v2.0';VERSION_DATE='13 October 2026'
+ORG='Tertiary Infotech Academy Pte Ltd';UEN='UEN: 201200696W'
+TRAINER='Assigned Tertiary Infotech Academy Trainer';DAYS=1;DAY_MINUTES=480;INSTRUCTIONAL_MINUTES=450
+MODE='Instructor-led, hands-on practical labs';DAILY_TIMING='9:30 am - 6:30 pm (1-hour lunch; two 15-minute tea breaks; 7.5 instructional hours)';DARK_THEME=False
+VERSION_HISTORY=[('1.0','30 September 2026','Previous Asteron cross-app scenario; retained in archive.','Tertiary Infotech Academy'),('2.0',VERSION_DATE,'Four maintenance topics; eight connected labs, custom Excel/PowerPoint skills, interactive dashboard and management presentation; C34 design.','Tertiary Infotech Academy')]
+LEARNING_OUTCOMES=[
+'LO1: Integrate Word, Excel, PowerPoint and Outlook Copilot in a coherent maintenance workflow with explicit source grounding and verified prompts.',
+'LO2: Create, install, apply and improve a custom maintenance-reporting skill in Excel and PowerPoint, preserving source records and testing reruns.',
+'LO3: Create an interactive maintenance dashboard with verified measures, common filter scope, meaningful charts and a demonstrated refresh test.',
+'LO4: Continue from the dashboard to a professional management presentation, with evidence-based headlines, source notes, rehearsal and a reviewed handoff draft.']
+LO_TITLES=['Connected Copilot workflow','Reusable maintenance skills','Interactive dashboard','Professional presentation']
+ICE_BREAKER=['Your name, role and one maintenance reporting task.','Which app holds the work-order source?','Which date and status definitions determine overdue work?','Check which Copilot buttons and skills menus are available in your assigned apps.']
+LAB_NOTE='Northstar Facilities, all sites, staff and work orders are fictional. Use the fixed reporting date 2026-09-30; missing facts remain UNKNOWN. Proposals do not change real assignments. Training email drafts are never sent.'
+LG_INTRO='This masterclass follows Northstar Facilities from a dirty maintenance export to a reviewed management decision pack. Work-order IDs, categories, sites, current assignments and status definitions stay consistent across every app. The purpose is to make evidence travel accurately through the workflow, while using Copilot for drafting, analysis, reusable instructions and visual communication.'
+LG_INTRO2='Study each topic’s concepts before its two labs. Each lab has its own instruction PDF, identical Markdown steps, prompts, synthetic data, templates and a deterministic checkpoint. Carry your own verified outputs forward. A supplied checkpoint allows rejoining but is not evidence that you completed the earlier task. The detailed procedures are here and in labs; the slides teach concepts and show outcomes.'
+LG_SETUP=dict(needs=['Assigned Microsoft 365 account with Copilot in Word, Excel, PowerPoint and Outlook; licence and tenant settings checked before class.','Excel desktop Windows or Mac recommended; current apps, English display language for Excel custom skills, assigned OneDrive and AutoSave.','Complete lab folder downloads and a personal work-c027 output folder; all sample data is synthetic.','Copilot skills access in both Excel and PowerPoint. If unavailable, the lab supplies a clearly labelled manual-instruction practice route.'],verify_text='Open one workbook and one Word/PowerPoint template; find each Copilot button. Confirm that the app can select the intended OneDrive reference file. Use the app-created custom skills folder rather than guessing a path. Keep Formulas > Calculation Options > Automatic. Never paste account passwords into a prompt.',conventions=['App-labelled prompts run in the named app; a prompt in one app is not automatically visible to another.','Use Chat only for inspection, Plan for reviewed proposals, and Allow editing for authorised workbook changes when these modes are available.','Log Word, Outlook, PowerPoint and web prompts manually in Prompt_Log.','All comparisons use the same source table, reporting date and filter scope. Missing values remain UNKNOWN; zero closed denominator is N/A.'])
+S_EXCEL='https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills'
+S_PPT='https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills'
+S_WORD='https://support.microsoft.com/en-gb/word/copilot/draft-and-add-content-with-copilot-in-word'
+S_FILES='https://support.microsoft.com/en-us/microsoft-365-copilot/file-formats-supported-by-microsoft-365-copilot'
+S_DASH='https://support.microsoft.com/en-us/excel/create-and-share-a-dashboard-with-excel-and-microsoft-groups'
+S_SLICER='https://support.microsoft.com/en-us/excel/get-started/use-slicers-to-filter-data'
+S_SLIDE='https://support.microsoft.com/en-us/powerpoint/copilot/add-a-slide-from-a-file-with-copilot-in-powerpoint'
+def sec(lab,title,definition,why,how,example,uses,avoids,sources):
+ return dict(lab=lab,title=title,definition=definition,why=why,how=how,example=example,use_when=uses,avoid_when=avoids,sources=sources)
+SECTIONS=[
+sec(1,'Grounding Across Microsoft 365',
+'Grounding gives an AI request the specific evidence it should use. A work-grounded Copilot experience can use permitted organisational content; a file-grounded request uses selected files or supplied text. Neither makes an inaccessible file available merely because its local path is typed into a prompt. Word, Excel, PowerPoint and Outlook have different current-document and file-reference experiences. Treat each app handoff as a new grounding task.',
+'A maintenance figure can be correct in Excel yet become wrong in an email when the source, reporting date or filter scope changes. Explicit grounding prevents unsupported owner assignments, stale reporting periods and invented approvals from entering the pack. A Copilot response is a draft or hypothesis until the underlying evidence has been checked.',
+['Identify the authoritative work-order table.','Provide goal, context, source and expected output.','Review against the named evidence.','Pass a verified snapshot to the next app.'],
+['Excel analyses tblWorkOrders; Word receives the checked summary.','PowerPoint receives the reviewed Word brief; Outlook receives the same checked values.','An Excel chat transcript is not an automatic PowerPoint data source.'],
+['The source is accessible and the output has an explicit audience.'],['The prompt assumes access to another app chat or local path.'],[S_FILES,S_WORD]),
+sec(1,'Work-Order Grain and Reporting Measures',
+'A row represents one work order, identified by Work_Order_ID. Site, job category, priority, status and current assignment are dimensions used to group or filter records. Measures are defined calculations. The source is a snapshot at 30 September 2026: current backlog excludes Closed and Cancelled; overdue backlog also has a Due_Date before that date. Closed orders are counted separately from jobs still in the queue.',
+'An exact duplicated export row changes counts and cost without representing new work. Normalising a category spelling must not change the business meaning or assign a missing owner. Named Excel tables and structured references let formulas expand when legitimate new rows are appended. Preserve the raw export so a cleaning decision can be traced.',
+['Define one ID per work order.','Find exact repeated export records.','Standardise labels without inventing facts.','Reconcile cleaned counts and cost.'],
+['122 raw rows contain 120 distinct work-order IDs.','Total = Closed + Cancelled + Backlog after exact duplicate removal.','Due on 30 September is not overdue at the 30 September snapshot.'],
+['You have consistent IDs and a fixed reporting date.'],['Duplicate IDs contain conflicting records or reporting scope is unknown.'],[S_DASH]),
+sec(2,'Prompts and Verified App Handoffs',
+'A useful prompt combines the intended goal, operational context, named source and output expectations. The handoff object is a verified artifact, such as a Word brief with a checked metric table and source links. It is not an assumption that another app can remember the preceding conversation. For maintenance, expectations should specify exact dates, status vocabulary, current versus proposed assignments and missing-value behaviour.',
+'The same number may have different meaning when a chart counts all work orders while an email calls it open backlog. A cross-app evidence register records the claim, value, source table, filter scope and date. This provides a small reproducible contract for each output and lets a reviewer identify a mismatch before it becomes a management decision.',
+['Write the goal and audience.','Attach or select the actual source.','Specify definitions and missing-value behaviour.','Reconcile the returned claims.'],
+['Goal: draft a maintenance update for the operations manager.','Source: reviewed Northstar operations brief, all filters All, 30 September.','Expectation: label assignment suggestions as proposals and leave unknown approvals UNKNOWN.'],
+['A reviewed brief can be selected or its checked text pasted.'],['Only an unverified summary is available.'],[S_WORD,S_SLIDE,S_FILES]),
+sec(2,'Outlook Drafting and Operational Decisions',
+'Copilot can help structure a draft email from supplied context. A synthetic text thread is quoted context, not a live Outlook conversation; the course explicitly uses it that way. The writer remains responsible for recipients, claims, attachments, tone and the distinction between a proposed action and an approved instruction. Saving a draft does not send it or authorise a work-order change.',
+'An apparently routine update can accidentally promise technician reassignment or imply that a manager approved a recovery plan. Current assignment is recorded data; proposed assignment is a separate planning output. Available hours are one input to planning, not evidence of approval or guaranteed productivity. The final email should request the decision rather than claim it has happened.',
+['Provide the synthetic thread and checked facts.','Draft a concise update.','Review recipients, facts and action wording.','Save the unsent draft and evidence.'],
+['Current owner blank; proposed owner Aisha remains unapproved.','A draft addressed to example.invalid is a training artifact.','The handoff says decision requested, not decision approved.'],
+['You can check the evidence and review the draft before use.'],['The task would imply a real approval or send without review.'],[S_FILES]),
+sec(3,'Skills, Prompts and Workbook Rules',
+'A prompt is one request. A custom skill is a reusable set of instructions that tells Copilot when and how to perform a recurring task. SKILL.md contains required YAML name and description followed by the instructions. Each skill needs its own folder with a matching name. Workbook-specific rules describe constraints for one workbook; a skill can carry the same maintenance process across repeated reports and supported apps.',
+'The skill makes stable definitions and review boundaries reusable: backlog excludes two terminal statuses, overdue uses a fixed date, missing owners stay missing and output reruns do not duplicate sheets. It does not supply absent work-order data or turn an unsupported app feature into an available one. Skill availability must be verified separately in the app where it will run.',
+['Identify a recurring task.','Separate stable rules from current inputs.','Write name, description and instructions.','Install, invoke and inspect the result.'],
+['maintenance-reporting contains definitions and output boundaries.','Each request still supplies this month’s source, date and scope.','Native skill use and pasted manual instructions are recorded differently.'],
+['The same reporting method recurs and can be tested.'],['Inputs or desired behaviour are still undefined.'],[S_EXCEL,S_PPT]),
+sec(3,'Custom Skill Discovery in Each App',
+'Excel uses its Manage plugins & skills interface and an app-created OneDrive skills folder. PowerPoint uses Choose skills and Manage skills with an Add skill/upload route or its own custom skills folder. The app UI resolves the supported folder; a guessed universal path is unreliable. Refresh and enable the skill, then verify the exact name in each app before invoking it by @mention or the menu.',
+'Folder-name/frontmatter mismatches, an extra .txt extension, unavailable licence features and disabled skills can all prevent discovery. A web Copilot authoring conversation can produce the complete Markdown text, but the learner still saves, installs and tests it. Excel cannot log the web chat automatically. Clear installation evidence prevents confusing a manually pasted policy with a native reusable skill.',
+['Save complete UTF-8 SKILL.md.','Use the app-created skills location.','Refresh and verify the matching name.','Run and record a smoke test.'],
+['Folder maintenance-reporting matches YAML name maintenance-reporting.','Excel and PowerPoint both show the skill before native invocation.','If a menu is absent, manual practice is labelled feature unavailable.'],
+['The app exposes its supported skill installation controls.'],['A missing menu is being treated as successful installation.'],[S_EXCEL,S_PPT]),
+sec(4,'Repeatability and Safe Skill Reruns',
+'Repeatability means the same verified inputs and method yield equivalent business measures and a controlled output structure. A safe rerun preserves source IDs, statuses, assignments and unrelated sheets. It creates or replaces only explicitly named outputs after review. The concept is similar to idempotence: rerunning should not append duplicate summaries, inflate totals or silently destroy a learner’s unrelated work.',
+'Reporting skills may be used every week or month, so uncontrolled output accumulation quickly creates conflicting summaries. An input guard asks for missing data; a replacement guard identifies the output to change. Test those guards using a copy and compare row count, sums, sheet inventory and output measures before and after, rather than relying on Copilot saying it was careful.',
+['Capture the source fingerprint and outputs.','Request a reviewed rerun plan.','Replace only named output areas.','Compare source and measures again.'],
+['120 source IDs remain 120 after rerunning Maintenance_Summary.','Missing report date causes a clarification request, not invented numbers.','A second output sheet is a defect when replacement was requested.'],
+['Named output boundaries and reconciliation checks exist.'],['The skill can overwrite source rows or unrelated sheets.'],[S_EXCEL,S_PPT]),
+sec(4,'Assignment Proposals and Capacity Evidence',
+'Assignment planning combines the work category, existing owner, estimated hours, technician primary category and available hours. These inputs help generate a proposal; they do not prove complete operational suitability, approved schedules or safety authorisation. Keep Current_Assigned_To separate from Proposed_Assigned_To and use an explicit manager-decision field. Missing evidence is UNKNOWN, not a confident allocation.',
+'The same skill can improve Excel analysis and PowerPoint wording by preserving this boundary. Excel shows category/capacity checks and assumptions in a proposals sheet; PowerPoint explains the findings and requests a decision. A polished visual must not conceal uncertain capacity or make the proposed owner look like the current owner.',
+['Identify unassigned backlog.','Compare category and available hours.','Record the proposal and assumptions.','Request the manager decision.'],
+['Unassigned work is counted only within nonterminal statuses.','Available hours minus proposed effort is a planning check.','The source Assigned_To stays unchanged until a real authorised operational update.'],
+['A manager can review the proposal and missing constraints.'],['The report claims automatic approval or verified safety qualification.'],[S_EXCEL,S_PPT]),
+sec(5,'Dashboard Measures and Denominators',
+'A dashboard measure needs a business definition, numerator, denominator where relevant, date rule and filter scope. Total orders describes the selected portfolio. Backlog is the selected nonterminal work. Overdue is a subset of backlog. On-time closure rate describes Closed rows only: closed on or before their due date divided by Closed rows. Recorded cost sums selected Cost_SGD; it is not a budget variance or inferred savings.',
+'Changing the denominator can make an attractive rate meaningless. If the selected data contains no Closed rows, the on-time rate is N/A because it is undefined; a displayed 0% would falsely suggest failed delivery. A Measures dictionary and independent control sheet make the definitions inspectable. A fixed reporting date gives reproducible comparisons, while TODAY would change the snapshot over time.',
+['Define source fields and scope.','Compute count and denominator.','Handle empty selections explicitly.','Reconcile against controls.'],
+['Closed-only rate is different from closed/total completion share.','A due-today backlog item is not overdue under a strict before-date rule.','All selected status/chart counts reconcile to total selected work orders.'],
+['Measures have agreed definitions and evidence.'],['A zero denominator is being represented as a measured 0%.'],[S_DASH]),
+sec(5,'Visual Dashboard Design for Maintenance',
+'A dashboard should make an operational decision easier. KPI cards summarise magnitude; bar charts compare sites, categories or status counts. Labels, units and source/date context define what each visual means. Site backlog and total orders by site answer different questions and must have different names. Use a line chart for a genuine ordered time series, not unordered site names.',
+'Consistent chart scales, short labels, whitespace and limited accents help a manager compare the work queue quickly. Colour alone is insufficient to distinguish statuses. A category count is evidence of frequency, not a causal diagnosis; a busy site is not necessarily performing badly. Choose the visual based on the question and include the limitation that prevents overinterpretation.',
+['Name the maintenance decision.','Choose the measure and comparison.','Use an appropriate labelled chart.','Check meaning and readability.'],
+['Status count chart shows the portfolio mix.','Site backlog chart excludes Closed and Cancelled.','A category count does not establish the root cause of overdue jobs.'],
+['The visual has a clear audience and question.'],['Decorative charts hide an ambiguous metric.'],[S_DASH]),
+sec(6,'One Filter Scope for Every Visual',
+'Interactive means a learner-controlled selection changes the evidence shown. This course’s portable route uses four dropdowns and formula measures with AND logic. All bypasses one dimension only. Every KPI and chart uses the same selected rows. Optional slicers filter connected PivotTables; they do not automatically alter unrelated formulas or every table on the sheet. PivotTables sharing a slicer need the same source.',
+'A dashboard can appear interactive while only one chart changes. Test a single-site selection, a combined category/owner selection and an empty selection. Check the displayed scope and compare every chart total with the selected total. Worksheet AutoFilter and formula-selector filters are different mechanisms; hiding source rows does not prove that formulas have changed scope.',
+['Define the selector cells.','Apply the same AND mask everywhere.','Test each control and edge case.','Reconcile selected chart and KPI totals.'],
+['Woodlands Hub plus All in other selectors isolates that site.','Status New gives zero Closed and N/A closure rate.','A slicer must connect to every intended PivotTable.'],
+['All output calculations follow the same scope.'],['A selector only changes a decorative title or one chart.'],[S_SLICER,S_DASH]),
+sec(6,'Refresh Tests and Static Snapshots',
+'A refresh test deliberately introduces known new records and verifies the expected delta. Table references should expand when rows are appended; PivotTables additionally need a refresh and valid source extent. The course adds two rows in a sandbox copy so the live baseline remains 120 rows. A Word/PDF/PowerPoint snapshot freezes evidence and does not automatically update when the Excel dashboard changes.',
+'A correct dashboard today may fail after the next export if formulas reference a fixed cell range. Known delta testing reveals that failure. Preserving a separate baseline prevents a test record from contaminating the management pack. A snapshot should record source, as-at date, filters and version so its claims remain interpretable after the workbook is refreshed.',
+['Save an isolated sandbox copy.','Append known unique test rows.','Recalculate and verify expected deltas.','Handoff the untouched baseline.'],
+['Two test rows increase total by2 and recorded cost byS$400.','Only one new row adds to backlog/overdue; the other adds to on-time Closed.','The final deck uses the untouched 120-row baseline, not the test copy.'],
+['A predictable change can be checked independently.'],['Test rows are being mixed into the report without disclosure.'],[S_DASH]),
+sec(7,'From Dashboard Evidence to a Decision Story',
+'A management presentation transforms evidence into a sequence of observations, implications, proposed actions and a decision request. Each slide needs one defensible headline and a register entry linking the claim to its measure, source, reporting date and filter scope. A chart contains data; the headline interprets it. That interpretation must stay within what the data supports.',
+'Copilot can accelerate outlines and drafting, but a persuasive invented conclusion is still wrong. Before generating the deck, use Word to organise an eight-slide brief with a supporting chart and limitation for each claim. This explicit bridge makes the Excel-to-PowerPoint handoff reliable and avoids assuming a workbook can be used by every presentation-generation mode.',
+['Freeze the verified dashboard snapshot.','Register each proposed claim.','Write a reviewed Word brief.','Generate and reconcile the deck.'],
+['Backlog by site supports prioritisation, not a proven cause.','Available-hours evidence supports a capacity discussion, not confirmed allocation.','The final slide asks management to decide on a proposed plan.'],
+['Every headline has a checked measure and clear scope.'],['The story introduces savings, causes or approvals absent from evidence.'],[S_WORD,S_SLIDE,S_FILES]),
+sec(7,'Charts, Templates and Source Provenance',
+'A template supplies slide layouts, typography and colours; it does not supply correct facts. PowerPoint Copilot can draft slides from selected supported files. Reviewed Word briefs are a reliable narrative input for this course. Excel charts may be embedded for editing or pasted as images; both are copies of a reporting state unless a separate supported link is deliberately configured and tested.',
+'Approximate AI-generated charts can contradict source values while looking plausible. Replace them with reviewed charts or verified tables and keep source/date notes. Distinguish all-work-order counts from backlog-only counts. A professional presentation uses consistent units and chart semantics, not just a consistent palette.',
+['Select the reviewed brief.','Apply the existing template.','Insert verified charts or tables.','Record source and snapshot scope.'],
+['An editable embedded chart remains a copy rather than a tested live link.','An image is labelled as a snapshot at 30 September.','All eight slides use one reviewed baseline.'],
+['The chart object or image can be verified against the register.'],['A visual is assumed accurate because Copilot produced it.'],[S_SLIDE,S_FILES]),
+sec(8,'Professional Refinement and Rehearsal',
+'Refinement improves the clarity of the existing evidence without changing its meaning. Claim-led titles, short visible text, readable axes, consistent chart styles and concise speaker notes help an audience understand the maintenance decision. Rehearsal tests whether the audience can identify the reporting scope, the key finding and the decision required. It produces observed feedback, not a fabricated checklist completion.',
+'A well-designed deck can still fail when the speaker’s notes contain different numbers or a proposal is spoken as an approved action. Review notes as part of the evidence pack and inspect the exported PDF at presentation size. Exporting can alter layout or font rendering, so the PDF must be opened and checked rather than assumed identical to the source.',
+['Audit the draft against evidence.','Apply reviewed design changes.','Rehearse and record actual feedback.','Inspect PPTX and exported PDF.'],
+['One message per slide; chart labels remain readable.','A 45-second note explains evidence and limitation.','Partner feedback leads to one recorded revision.'],
+['The message and decision can be understood quickly.'],['Polish hides an unsupported claim or unreadable chart.'],[S_PPT]),
+sec(8,'Reviewed Handoff and Artifact Lifecycle',
+'The final pack contains an interactive Excel dashboard, a fixed reporting brief, a static PowerPoint/PDF snapshot, the custom skill and a reviewed communication draft. These artifacts have different lifecycles. The dashboard may refresh; the skill defines a method; the presentation records a dated claim set. Link each file accurately and preserve the evidence register so a later reader knows what was reviewed.',
+'Updating one artifact without the others creates inconsistent communication. Reconcile the final pack and explicitly state that actions remain proposed and the email remains a draft. Versioned source and archived superseded artifacts let the team revisit an earlier report without confusing it with the current one. A missing link is UNKNOWN until an actual accessible link is supplied.',
+['Reconcile final artifacts.','Record actual filenames and links.','Review the handoff draft.','Preserve the dated snapshot and skill.'],
+['PowerPoint and PDF both show eight slides/pages from the same baseline.','Outlook does not claim a missing attachment was sent.','The next update reruns the method with new verified inputs.'],
+['Current versions and review evidence are explicit.'],['A refreshed dashboard is assumed to rewrite an old presentation.'],[S_FILES,S_PPT])]
+TOPICS=[]
+for n,title,subtitle,concepts in [
+(1,'Fundamentals of Microsoft 365 Copilot','One verified maintenance workflow across four apps',[('Grounding','Select actual sources in every app.'),('Work orders','IDs, status, category, site and current assignment.'),('Prompts','Goal, context, source and expectations.'),('Handoffs','Reconcile Word, Excel, slides and draft email.')]),
+(2,'Create Skills for Microsoft 365 Copilot','A reusable method for Excel and PowerPoint',[('SKILL.md','Matching folder/name and reusable instructions.'),('Discovery','Install and verify separately in each app.'),('Repeatability','Input guards and controlled reruns.'),('Proposals','Preserve source owners and evidence boundaries.')]),
+(3,'Create an Interactive Dashboard with Excel Copilot','From definitions to filters and refresh evidence',[('Measures','Counts, backlog, overdue, on-time rate and cost.'),('Visuals','Choose charts by maintenance question.'),('Interactions','One filter scope for every chart and KPI.'),('Refresh','Known deltas in an isolated test copy.')]),
+(4,'Create a Professional Presentation with PowerPoint Copilot','Continue the dashboard into a decision pack',[('Evidence story','Observation, implication, action and decision.'),('Charts','Reviewed values, provenance and snapshot date.'),('Refinement','Hierarchy, notes and actual rehearsal feedback.'),('Handoff','Reconciled pack and unsent communication.')])]:
+ TOPICS.append(dict(num=n,code=str(n),title=title,subtitle=subtitle,concepts=concepts,sections=[s for s in SECTIONS if (s['lab']-1)//2+1==n]))
+TOPIC_RECAPS={1:[('LO1','Same work-order evidence across four apps.'),('Verify','120 clean IDs and reconciled brief/update/draft.')],2:[('LO2','Skill authoring, discovery, use and revision proven.'),('Verify','Preserved source plus missing-input and rerun tests.')],3:[('LO3','Six measures and three charts share four filters.'),('Verify','Baseline controls and known refresh deltas.')],4:[('LO4','Eight-slide evidence story and reviewed handoff.'),('Verify','PDF, notes, register and actual rehearsal agree.')]}
+DAY_THEMES={1:'Maintenance workflow, custom skills, interactive dashboard and professional management presentation'}
 def SCHEDULE(lab_titles):
-    return {
-        1: (
-            DAY_THEMES[1],
-            [
-                (
-                    "9:30",
-                    "9:50",
-                    20,
-                    "admin",
-                    "Welcome, learning outcomes, setup and Copilot availability check",
-                ),
-                (
-                    "9:50",
-                    "10:45",
-                    55,
-                    "topic",
-                    "Topic 1 - Copilot architecture, G-C-S-E prompting, Chat, Word and PowerPoint concepts with demonstrations",
-                ),
-                ("10:45", "11:20", 35, "lab", "Hands-on: " + lab_titles([1])),
-                ("11:20", "11:35", 15, "break", "Tea break"),
-                ("11:35", "12:15", 40, "lab", "Hands-on: " + lab_titles([2])),
-                ("12:15", "12:55", 40, "lab", "Hands-on: " + lab_titles([3])),
-                ("12:55", "13:55", 60, "lunch", "Lunch break"),
-                (
-                    "13:55",
-                    "14:40",
-                    45,
-                    "topic",
-                    "Topic 2 - Excel, Outlook, Teams, cross-app handoffs, responsible use and data privacy",
-                ),
-                ("14:40", "15:25", 45, "lab", "Hands-on: " + lab_titles([4])),
-                ("15:25", "16:00", 35, "lab", "Hands-on: " + lab_titles([5])),
-                ("16:00", "16:15", 15, "break", "Tea break"),
-                ("16:15", "16:50", 35, "lab", "Hands-on: " + lab_titles([6])),
-                ("16:50", "17:35", 45, "lab", "Hands-on: " + lab_titles([7])),
-                ("17:35", "18:20", 45, "lab", "Hands-on: " + lab_titles([8])),
-                (
-                    "18:20",
-                    "18:30",
-                    10,
-                    "recap",
-                    "Topic recaps mapped to LO1-LO4, continuing-practice plan and questions",
-                ),
-            ],
-        ),
-    }
+ from datetime import datetime,timedelta
+ blocks=[(15,'admin','Welcome, learning outcomes, app access and Northstar scenario')]
+ durations=[35,35,40,40,50,50,45,45]
+ for n,d in enumerate(durations,1):
+  blocks.append((10,'topic',f'Topic {(n-1)//2+1}: concepts for Lab {n}'))
+  blocks.append((d,'lab',lab_titles([n])))
+  if n==1:blocks.append((15,'break','Tea break'))
+  if n==3:blocks.append((60,'lunch','Lunch'))
+  if n==5:blocks.append((15,'break','Tea break'))
+ blocks.append((15,'recap','LO1-LO4 recap, evidence handoff and questions'))
+ now=datetime(2026,10,13,9,30);rows=[]
+ for mins,kind,text in blocks:
+  end=now+timedelta(minutes=mins);rows.append((now.strftime('%H:%M'),end.strftime('%H:%M'),mins,kind,text));now=end
+ assert sum(m for _,_,m,k,_ in rows if k!='lunch')==480
+ assert sum(m for _,_,m,k,_ in rows if k not in ('lunch','break'))==450
+ return {1:(DAY_THEMES[1],rows)}
+GLOSSARY=[('Grounding','Supplying accessible evidence for the current request.'),('Backlog','Selected work with Status neither Closed nor Cancelled.'),('Overdue','Backlog due strictly before the fixed reporting date.'),('Skill','Reusable instructions in a matching folder and SKILL.md file.'),('Snapshot','A dated, scoped copy of verified evidence.'),('Structured reference','A formula reference to a named Excel table or its columns.'),('Denominator','The population used to calculate a rate.'),('Proposed assignment','A suggested owner awaiting a real manager decision.')]
+NEXT_STEPS=dict(title='Your Next Maintenance Report',items=['Use a copy and a new explicit reporting date.','Supply verified source/date/scope and test skill reruns.','Reconcile every claim and decision boundary.'])
+LG_GLOSSARY=GLOSSARY
+THANK_YOU=dict(title='Thank You',subtitle='Keep your maintenance evidence connected.')
 
-
-COURSE_OVERVIEW = dict(
-    section_title="The Traceable Copilot Work System",
-    concepts_title="Keep Four Layers Visible",
-    concepts=[
-        ("Source", "The approved file, table, thread, transcript or web page that governs the facts."),
-        ("Prompt", "Goal, Context, Source and Expectations, including exclusions and review criteria."),
-        ("Proposal", "The generated summary, draft, formula, slide, action or change that still needs review."),
-        ("Release", "The named reviewer, verification evidence, decision and approved destination."),
-    ],
-    framework_title="G-C-S-E Prompt Framework",
-    framework=[
-        ("Goal", "What to create, decide, explain, compare or change."),
-        ("Context", "Audience, situation, terminology, time period and intended use."),
-        ("Source", "Named evidence, permitted scope and explicit exclusions."),
-        ("Expectations", "Format, tone, constraints, citations, uncertainty and checks."),
-    ],
-    statement=dict(
-        headline="Copilot accelerates the proposal; the evidence and reviewer determine whether it is ready.",
-        body="Ground every task, inspect every handoff and keep consequential release decisions with a named person.",
-        kicker="C027 OPERATING PRINCIPLE",
-    ),
-    pillars_title="What You Will Build",
-    pillars=[
-        ("Evidence layer", ["source register", "claim ledger", "verified Excel controls"]),
-        ("Communication layer", ["approved Word brief", "refined PowerPoint deck", "reviewed Outlook draft"]),
-        ("Coordination layer", ["Teams action register", "cross-app manifest", "responsible-use review log"]),
-    ],
-    arc_title="The Learning Arc in Every Lab",
-    arc=[
-        "Open the supplied checkpoint and state the intended outcome.",
-        "Prompt Copilot with G-C-S-E and a bounded source.",
-        "Inspect the generated proposal in the current app.",
-        "Complete Test It, record the release state and save the checkpoint.",
-    ],
-    deep_dives=[
-        dict(
-            title="The C027 Release Gate",
-            kicker="BEFORE AN OUTPUT LEAVES DRAFT",
-            items=[
-                ("Source", "Are all material facts grounded in approved, current and accessible evidence?"),
-                ("Accuracy", "Do dates, numbers, owners, formulas and commitments match the governing sources?"),
-                ("Sensitivity", "Are permissions, labels, recipients and minimum-necessary data appropriate?"),
-                ("Quality", "Does the output fit the audience, format, tone and accessibility needs?"),
-                ("Consistency", "Do downstream files agree with the approved source register and each other?"),
-                ("Accountability", "Is a named reviewer choosing Approved, Revise or Hold with limitations visible?"),
-            ],
-        ),
-    ],
-)
-
-LAB_SHOTS = {}
-
-LG_INTRO = (
-    "This Learner Guide accompanies Microsoft 365 Copilot Masterclass (C027). It follows the same "
-    "two-topic sequence, eight connected labs, four learning outcomes and synthetic Asteron Services "
-    "scenario as the slide deck, Lesson Plan and standalone lab files."
-)
-
-LG_INTRO2 = (
-    "Use the guide as a self-contained study text before, during and after class. Each concept explains "
-    "what the capability is, why it matters, how it works, a worked example and when to use or avoid it. "
-    "The labs then apply the concepts across Chat, Word, PowerPoint, Excel, Outlook and Teams. Copilot "
-    "output remains a proposal until its sources, facts, audience, permissions and consequences are reviewed."
-)
-
-LG_SETUP = dict(
-    needs=[
-        "A Windows or Mac laptop with a current supported browser and Microsoft 365 apps or their web equivalents.",
-        "An eligible Microsoft 365 account with the Copilot experiences enabled by the organisation or subscription.",
-        "Access to Copilot Chat, Word, PowerPoint, Excel, Outlook and Teams; feature names can vary by licence and update channel.",
-        "A downloaded copy of this repository with the labs/assets folder intact.",
-        "Permission to use only the supplied synthetic Asteron Services material during class.",
-    ],
-    verify_text=(
-        "Sign in at microsoft365.com and record which Copilot entry points are visible. Open "
-        "labs/assets/asteron-source-register-template.csv and confirm it has the eight required headers. "
-        "Create a work-c027 folder in an approved OneDrive location. If an app capability is unavailable, "
-        "use Copilot Chat with the supplied source file and record the limitation; do not invent a result."
-    ),
-    verify_code=(
-        "Expected local structure:\n"
-        "C027---Microsoft-365-Copilot-Masterclass/\n"
-        "  labs/assets/\n"
-        "  work-c027/"
-    ),
-    conventions=[
-        "All Asteron names, messages, meeting content and numbers are synthetic training material.",
-        "Text between <ANGLE_BRACKETS> is a placeholder to replace; never paste a password, token or secret.",
-        "VERIFIED means traced to a governing source; REVISE means a correctable gap; HOLD means unresolved or unsafe to release.",
-        "Dates use yyyy-mm-dd, currency uses S$, percentages include the stated denominator and every action has one owner.",
-        "Save the prompt, source, proposal, verification and human release decision together.",
-    ],
-)
-
-LAB_NOTE = (
-    "Use only the supplied synthetic Asteron Services data or information you are authorised to process. "
-    "Do not paste credentials, confidential business material or unnecessary personal data into Copilot."
-)
-
-LG_WRAPUP = dict(
-    title="Wrap-Up - The Complete C027 Workflow",
-    intro=(
-        "The finished output is a traceable work system, not a collection of attractive generated files. "
-        "Every artifact connects its source, prompt, proposed output, verification evidence and release owner."
-    ),
-    sections=[
-        dict(
-            title="Ground and create",
-            bullets=[
-                "Use G-C-S-E to name the goal, audience, evidence boundary and output contract.",
-                "Verify a Chat synthesis before it becomes the factual basis of a Word document.",
-                "Approve the Word brief before PowerPoint turns it into a visual story.",
-            ],
-        ),
-        dict(
-            title="Analyse and coordinate",
-            bullets=[
-                "Keep Excel data grain, formula logic, denominators and control totals visible.",
-                "Separate Outlook thread facts from generated reply wording and review every commitment.",
-                "Tie Teams actions to transcript evidence, named owners and due dates.",
-            ],
-        ),
-        dict(
-            title="Govern and release",
-            bullets=[
-                "Pass only approved versions across app handoffs and reconcile repeated facts.",
-                "Use least privilege, minimum necessary data, sensitivity and recipient checks.",
-                "Choose Approved, Revise or Hold with a named human reviewer and visible limitations.",
-            ],
-        ),
-    ],
-)
-
-LG_NEXT_STEPS = [
-    "Repeat all eight labs from the original source pack without using your completed artifacts.",
-    "Adapt the G-C-S-E prompt card and release gate to one authorised recurring task in your role.",
-    "Create a small cross-app manifest for authoritative files, owners, versions and release states.",
-    "Review Microsoft Support and Learn before delivery because Copilot labels, availability and capabilities continue to change.",
-]
-
-LG_GLOSSARY = [
-    ("Copilot Chat", "A Microsoft 365 conversational experience for asking, researching, summarising and creating from permitted context."),
-    ("Grounding", "Adding relevant source context to a prompt so the response is specific to the task."),
-    ("G-C-S-E", "Goal, Context, Source and Expectations - the C027 prompt framework."),
-    ("Handoff contract", "A record of source artifact, version, destination, allowed transformation, owner and verification gate."),
-    ("Microsoft Graph", "The service layer through which Microsoft 365 can surface work context the signed-in user is permitted to access."),
-    ("Observed", "A statement directly supported by the reviewed data or source."),
-    ("Open question", "A material point that the available evidence does not resolve."),
-    ("Release gate", "The source, accuracy, sensitivity, quality, consistency and accountability checks before sharing."),
-    ("Sensitivity label", "A Microsoft Purview label that can classify and protect organisational content according to policy."),
-    ("Source register", "A list of governing files or records with owner, date, purpose, status and access note."),
-    ("Structured reference", "An Excel formula reference that uses table and column names."),
-    ("Transcript", "The text record of meeting speech used as evidence for a generated recap."),
-]
-
-NEXT_STEPS = dict(
-    title="Continue the Traceable Workflow",
-    items=[
-        "Reuse the G-C-S-E prompt card on one bounded, authorised task.",
-        "Keep source, proposal, verification and release state together.",
-        "Reconcile repeated dates, owners and numbers across every app handoff.",
-        "Review current Microsoft guidance whenever features or labels change.",
-    ],
-)
-
-THANK_YOU = dict(
-    body=(
-        "You can now ground, create, analyse, coordinate and govern Microsoft 365 Copilot work "
-        "while keeping evidence, permissions and human judgment in control."
-    ),
-    kicker="MICROSOFT 365 COPILOT MASTERCLASS · C027",
-)
-
-VERSION_HISTORY = [
-    (
-        "1.0",
-        VERSION_DATE,
-        "Initial aligned release of PPT, Learner Guide, Lesson Plan and eight connected labs.",
-        TRAINER,
-    ),
-]
+# Full explanations remain in the LG; concise concept cards keep C34 slides readable.
+for section in SECTIONS:
+    first=section['definition'].split('. ')[0]+'.'
+    why=section['why'].split('. ')[0]+'.'
+    section['brief']=dict(what=first,why=why,check=section['example'][0],flow=dict(title=section['title'],steps=section['how']),prompts=['Name the source, reporting date and selected scope.','Explain the result using checked evidence.'],verify=section['example'][1:],try_title='Apply the Concept',try_head='PROMPT PRINCIPLES',check_head='EVIDENCE TO CHECK')

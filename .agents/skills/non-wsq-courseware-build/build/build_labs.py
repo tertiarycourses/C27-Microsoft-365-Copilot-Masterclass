@@ -1,14 +1,38 @@
 #!/usr/bin/env python3
 """
-Generate labs/lab-NN-*.md and labs/README.md from the SAME single source
-(course_data.py + data_domainN.py) that drives the PPT, LP and LG — so the
-lab files can never drift out of alignment with the other artifacts.
+Generate one folder per lab from the SAME single source (course_data.py +
+data_domainN.py) that drives the PPT, LP and LG:
+
+  labs/lab-NN-<slug>/
+    Lab-NN-Instructions.pdf   the same instructions + sample prompts as a PDF
+    sample-prompts.txt        copy-ready prompts
+    data/<workbook>.xlsx      synthetic mock data (from mock_data.py)
+    <extra files>             optional: e.g. skills/<name>/SKILL.md or a rules template (lab["extra_files"])
+
+plus labs/README.md as the index. Lab files can never drift out of alignment
+with the other artifacts.
 """
 import os, re, sys, glob, importlib
+from xml.sax.saxutils import escape
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import course_data as C
+import mock_data
+from lab_prompts import prompt_rows, reflow
+from openpyxl import load_workbook
+from openpyxl.styles import Alignment
+
+from reportlab.lib import colors
+from reportlab.lib.enums import TA_LEFT
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.units import mm
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.platypus import (KeepTogether, ListFlowable, ListItem, Paragraph, SimpleDocTemplate, Spacer, Table,
+                                TableStyle)
+
 
 def find_repo(start):
     env = os.environ.get("COURSE_REPO")
@@ -21,9 +45,13 @@ def find_repo(start):
             return d
     return os.path.dirname(os.path.dirname(start))
 
+
 REPO = find_repo(HERE)
 LABS = os.path.join(REPO, "labs")
 os.makedirs(LABS, exist_ok=True)
+
+# Labs whose steps include prompts for a web chat (Copilot on the web) as well as for Excel
+WEB_LABS = set(range(1, 9))
 
 # ---- collect labs from every data_domainN.py, in domain order
 labs = []
@@ -33,92 +61,305 @@ for path in sorted(glob.glob(os.path.join(HERE, "data_domain[0-9]*.py"))):
         if re.fullmatch(r"DOMAIN\d+", name):
             labs.extend(getattr(mod, name))
 labs.sort(key=lambda l: l["num"])
-
 TOPICS = {t["num"]: t for t in C.TOPICS}
 
+
 def slug(s):
-    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", s.lower())).strip("-")
+    s = s.lower().replace("&", " and ")
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", s)).strip("-")
+
+
+def folder_name(lab):
+    # Folder named after the short lab theme (falls back to the full title).
+    return f"lab-{lab['num']:02d}-{slug(lab.get('theme') or lab['title'])}"
+
+
+def pdf_name(lab):
+    return f"Lab-{lab['num']:02d}-Instructions.pdf"
+
 
 def fence(cmd):
-    """Prompts contain no backticks; render them as a plain fenced block."""
     return "```text\n" + cmd.strip() + "\n```"
 
-written = []
-for lab in labs:
+
+# =========================================================================== PDF
+def _font(name, candidates, fallback):
+    for p in candidates:
+        if os.path.exists(p):
+            try:
+                pdfmetrics.registerFont(TTFont(name, p))
+                return name
+            except Exception:
+                pass
+    return fallback
+
+
+SANS = _font("C34Sans", ["/System/Library/Fonts/Supplemental/Arial.ttf", "C:/Windows/Fonts/arial.ttf",
+                         "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"], "Helvetica")
+SANS_B = _font("C34SansB", ["/System/Library/Fonts/Supplemental/Arial Bold.ttf", "C:/Windows/Fonts/arialbd.ttf",
+                            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"], "Helvetica-Bold")
+MONO = _font("C34Mono", ["/System/Library/Fonts/Supplemental/Courier New.ttf", "C:/Windows/Fonts/cour.ttf",
+                         "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"], "Courier")
+if SANS != "Helvetica" and SANS_B != "Helvetica-Bold":
+    from reportlab.lib.fonts import addMapping
+    addMapping(SANS, 0, 0, SANS)
+    addMapping(SANS, 1, 0, SANS_B)
+
+BLUE = colors.HexColor("#1F6FEB")
+NAVY = colors.HexColor("#0B3060")
+INK = colors.HexColor("#111827")
+GREY = colors.HexColor("#555B66")
+LIGHT = colors.HexColor("#EEF4FF")
+PROMPT_BG = colors.HexColor("#F3F6FA")
+GREEN_BG = colors.HexColor("#E8F6EE")
+GREEN = colors.HexColor("#1A7F4B")
+AMBER_BG = colors.HexColor("#FFF6E5")
+LINE = colors.HexColor("#D0D7E2")
+
+ST = {
+    "title": ParagraphStyle("t", fontName=SANS_B, fontSize=19, leading=23, textColor=INK, spaceAfter=4),
+    "kicker": ParagraphStyle("k", fontName=SANS_B, fontSize=9.5, leading=12, textColor=BLUE, spaceAfter=2),
+    "h2": ParagraphStyle("h2", fontName=SANS_B, fontSize=12.5, leading=16, textColor=NAVY, spaceBefore=10, spaceAfter=4),
+    "h3": ParagraphStyle("h3", fontName=SANS_B, fontSize=10.5, leading=14, textColor=INK, spaceBefore=6, spaceAfter=2),
+    "body": ParagraphStyle("b", fontName=SANS, fontSize=9.6, leading=13.4, textColor=INK, spaceAfter=4, alignment=TA_LEFT),
+    "small": ParagraphStyle("s", fontName=SANS, fontSize=8.6, leading=11.5, textColor=INK),
+    "smallb": ParagraphStyle("sb", fontName=SANS_B, fontSize=8.6, leading=11.5, textColor=INK),
+    "code": ParagraphStyle("c", fontName=MONO, fontSize=8.3, leading=10.6, textColor=NAVY),
+    "label": ParagraphStyle("l", fontName=SANS_B, fontSize=8, leading=10, textColor=BLUE),
+}
+
+
+def P(text, style="body"):
+    return Paragraph(escape(text), ST[style])
+
+
+def code_box(text, label=None):
+    rows = []
+    if label:
+        rows.append([Paragraph(escape(label), ST["label"])])
+    room = 170 * mm - 14  # column width minus left/right padding
+    for line in text.strip("\n").split("\n"):
+        lead = len(line) - len(line.lstrip(" "))
+        style = ST["code"]
+        # a formula has no spaces to wrap at, so a long one would split mid-token and break
+        # when copied: shrink it to fit on one line instead
+        width = pdfmetrics.stringWidth(line, MONO, style.fontSize)
+        if line.lstrip().startswith("=") and width > room:
+            size = max(6.0, style.fontSize * room / width * 0.95)  # margin: Paragraph wraps a little early
+            style = ParagraphStyle("cf", parent=style, fontSize=size, leading=max(style.leading, size + 2))
+        rows.append([Paragraph("&nbsp;" * lead + escape(line.lstrip(" ")) if line.strip() else "&nbsp;", style)])
+    t = Table(rows, colWidths=[170 * mm])
+    t.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), PROMPT_BG),
+        ("LINEBEFORE", (0, 0), (0, -1), 2.5, BLUE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8), ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+        ("TOPPADDING", (0, 0), (-1, -1), 0.6), ("BOTTOMPADDING", (0, 0), (-1, -1), 0.6),
+        ("TOPPADDING", (0, 0), (-1, 0), 5), ("BOTTOMPADDING", (0, -1), (-1, -1), 5),
+    ]))
+    return t
+
+
+def callout(title, text, bg, edge):
+    t = Table([[Paragraph(escape(title), ST["smallb"])], [Paragraph(escape(text), ST["small"])]], colWidths=[170 * mm])
+    t.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), bg), ("LINEBEFORE", (0, 0), (0, -1), 2.5, edge),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8), ("RIGHTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 4), ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+    ]))
+    return t
+
+
+def grid(header, rows, widths):
+    data = [[Paragraph(escape(h), ST["smallb"]) for h in header]]
+    data += [[Paragraph(escape(str(c)), ST["small"]) for c in r] for r in rows]
+    t = Table(data, colWidths=widths, repeatRows=1)
+    t.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), LIGHT), ("GRID", (0, 0), (-1, -1), 0.4, LINE),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 5),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 5), ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+    ]))
+    return t
+
+
+def bullets(items):
+    return ListFlowable([ListItem(P(i), leftIndent=10, value="•") for i in items], bulletType="bullet", start="•",
+                        leftIndent=12, bulletFontName=SANS, bulletFontSize=8)
+
+
+def build_pdf(lab, topic, path):
     n = lab["num"]
-    topic = TOPICS.get(lab["topic"], {})
-    fname = f"lab-{n:02d}-{slug(lab['title'])}.md"
-    written.append((n, fname, lab, topic))
 
-    L = []
-    L.append(f"# Lab {n} — {lab['title']}\n")
-    L.append(f"**Course:** {C.TITLE}  ")
-    L.append(f"**Course Code:** {C.COURSE_CODE}  ")
-    L.append(f"**Version:** {C.VERSION} ({C.VERSION_DATE})  ")
-    L.append(f"**Topic {lab['topic']}:** {topic.get('title','')}  ")
-    L.append(f"**Maps to:** {lab['objective']}  ")
-    L.append(f"**Duration:** {lab.get('duration','—')} minutes  ")
-    L.append(f"**Tools:** {lab['services']}\n")
-    L.append("---\n")
-    L.append("## Goal\n")
-    L.append(lab.get("goal", lab["desc"]) + "\n")
-    L.append("## What You Will Do\n")
-    L.append(lab["desc"] + "\n")
-    L.append("## What You Will Build\n")
-    L.append(lab["build"] + "\n")
-    L.append("## Prerequisites\n")
-    for item in lab.get("prerequisites", []):
-        L.append(f"- {item}")
-    L.append("")
-    L.append(f"> **Data note.** {C.LAB_NOTE}\n")
-    L.append("## Steps\n")
+    def on_page(canvas, doc):
+        canvas.saveState()
+        w, h = A4
+        canvas.setFillColor(BLUE)
+        canvas.rect(0, h - 9 * mm, w, 9 * mm, stroke=0, fill=1)
+        canvas.setFillColor(colors.white)
+        canvas.setFont(SANS_B, 8.5)
+        canvas.drawString(20 * mm, h - 6 * mm, f"{C.TITLE}  ·  {C.COURSE_CODE}")
+        canvas.drawRightString(w - 20 * mm, h - 6 * mm, f"Lab {n} of {len(labs)}")
+        canvas.setFillColor(GREY)
+        canvas.setFont(SANS, 7.5)
+        canvas.drawString(20 * mm, 10 * mm, f"{C.ORG}  ·  {C.VERSION} ({C.VERSION_DATE})  ·  Fictional training data")
+        canvas.drawRightString(w - 20 * mm, 10 * mm, f"Page {doc.page}")
+        canvas.restoreState()
+
+    doc = SimpleDocTemplate(path, pagesize=A4, leftMargin=20 * mm, rightMargin=20 * mm, topMargin=17 * mm,
+                            bottomMargin=17 * mm, title=f"Lab {n} — {lab['title']}", author=C.ORG,
+                            subject=f"{C.TITLE} ({C.COURSE_CODE}) lab instructions and sample prompts")
+    S = []
+    S.append(Paragraph(escape(f"TOPIC {topic.get('code', '')} · {topic.get('title', '').upper()}"), ST["kicker"]))
+    if lab.get("theme"):
+        S.append(Paragraph(escape(f"LAB {n} THEME · {lab['theme'].upper()}"), ST["kicker"]))
+    S.append(Paragraph(escape(f"Lab {n} — {lab['title']}"), ST["title"]))
+    meta = [
+        ("Maps to", lab["objective"]),
+        ("Duration", f"{lab.get('duration', '—')} minutes"),
+        ("Tools", lab["services"]),
+        ("Mock data", ", ".join(lab.get("data_files", [])) or "—"),
+    ]
+    if lab.get("extra_files"):
+        meta.append(("Lab files", "; ".join(f"{rel} ({desc})" for rel, _text, desc in lab["extra_files"])))
+    meta += [
+        ("Course", f"{C.TITLE} ({C.COURSE_CODE}) · {C.VERSION}"),
+    ]
+    rows = [[Paragraph(escape(k), ST["smallb"]), Paragraph(escape(v), ST["small"])] for k, v in meta]
+    url = f"{C.PROMPTS_PAGE}#lab-{n}"
+    rows.append([Paragraph("Prompts", ST["smallb"]),
+                 Paragraph(f'<link href="{url}" color="#1F6FEB"><u>{escape(url)}</u></link>', ST["small"])])
+    mt = Table(rows, colWidths=[26 * mm, 144 * mm])
+    mt.setStyle(TableStyle([("BACKGROUND", (0, 0), (0, -1), LIGHT), ("GRID", (0, 0), (-1, -1), 0.4, LINE),
+                            ("VALIGN", (0, 0), (-1, -1), "TOP"), ("TOPPADDING", (0, 0), (-1, -1), 3),
+                            ("BOTTOMPADDING", (0, 0), (-1, -1), 3)]))
+    S += [Spacer(1, 4), mt]
+    S += [Paragraph("Goal", ST["h2"]), P(lab.get("goal", lab["desc"]))]
+    S += [Paragraph("What You Will Do", ST["h2"]), P(lab["desc"])]
+    S += [Paragraph("What You Will Build", ST["h2"]), P(lab["build"])]
+    if lab.get("prerequisites"):
+        S += [Paragraph("Prerequisites", ST["h2"]), bullets(lab["prerequisites"])]
+    S += [Spacer(1, 6), callout("Data note", C.LAB_NOTE, AMBER_BG, colors.HexColor("#E0A100"))]
+
     for i, (instr, cmd) in enumerate(lab["steps"], 1):
-        L.append(f"### {i}. {instr}\n")
+        cmd = reflow(cmd) if cmd.strip() else cmd
+        block = [Paragraph(f"<b>Step {i}.</b> " + escape(instr), ST["body"])]
+        if i == 1:
+            block.insert(0, Paragraph("Steps", ST["h2"]))      # never strand the heading at a page foot
         if cmd.strip():
-            L.append(fence(cmd) + "\n")
-    L.append("## Test It\n")
-    L.append(lab["test"] + "\n")
+            block.append(code_box(cmd, "PROMPT / CHECK — copy and adapt"))
+        block.append(Spacer(1, 5))
+        if len(cmd) < 900:
+            S.append(KeepTogether(block))
+        else:  # long prompt box may split across pages; keep the heading and step text together
+            lead = 2 if i == 1 else 1
+            S += [KeepTogether(block[:lead])] + block[lead:]
+
+    S.append(Paragraph("Sample Prompts", ST["h2"]))
+    S.append(P(("Use the app labelled for each prompt (or adapt it). " if n in WEB_LABS else "Use these prompts in the Copilot pane (or adapt them). ")
+               + "Name the table and columns, state the output, and "
+               "always verify the result. The same prompts are in sample-prompts.txt in this lab folder."))
+    url = f"{C.PROMPTS_PAGE}#lab-{n}"
+    S.append(Paragraph(f'<b>Copy-ready prompts:</b> <link href="{url}" color="#1F6FEB"><u>{escape(url)}</u></link>',
+                       ST["body"]))
+    sp = lab.get("sample_prompts", [])
+    S.append(grid(["#", "Purpose", "Prompt"], [(str(i), lbl, pr) for i, (lbl, pr) in enumerate(sp, 1)],
+                  [8 * mm, 28 * mm, 134 * mm]))
+
+    # Keep each short closing section with its heading so no heading is orphaned.
+    if lab.get("checks"):
+        S.append(KeepTogether([Paragraph("Test It", ST["h2"]),
+                               grid(["Check", "Expected result"], lab["checks"], [62 * mm, 108 * mm])]))
+    else:
+        S.append(KeepTogether([Paragraph("Test It", ST["h2"]), callout("Expected results", lab["test"], GREEN_BG, GREEN)]))
     if lab.get("checkpoint"):
-        L.append("## Checkpoint and Rejoin Point\n")
-        L.append(lab["checkpoint"] + "\n")
+        S.append(KeepTogether([Paragraph("Checkpoint", ST["h2"]), P(lab["checkpoint"])]))
     if lab.get("troubleshooting"):
-        L.append("## Troubleshooting\n")
-        L.append("| If this happens | Fix |")
-        L.append("|---|---|")
-        for problem, fix in lab["troubleshooting"]:
-            L.append(f"| {problem} | {fix} |")
-        L.append("")
+        S.append(KeepTogether([Paragraph("Troubleshooting", ST["h2"]),
+                               grid(["If this happens", "Fix"], lab["troubleshooting"], [58 * mm, 112 * mm])]))
     if lab.get("challenge"):
-        L.append("## Challenge\n")
-        L.append(lab["challenge"] + "\n")
+        S.append(KeepTogether([Paragraph("Challenge", ST["h2"]), P(lab["challenge"])]))
     if lab.get("reflection"):
-        L.append("## Reflection\n")
-        L.append(lab["reflection"] + "\n")
-    L.append("---\n")
-    prev = f"[← Lab {n-1}](lab-{n-1:02d}-{slug(labs[n-2]['title'])}.md)" if n > 1 else "[← Labs index](README.md)"
-    nxt  = f"[Lab {n+1} →](lab-{n+1:02d}-{slug(labs[n]['title'])}.md)" if n < len(labs) else "[Labs index →](README.md)"
-    L.append(f"{prev} · {nxt}\n")
+        S.append(KeepTogether([Paragraph("Reflection", ST["h2"]), P(lab["reflection"])]))
+    doc.build(S, onFirstPage=on_page, onLaterPages=on_page)
 
-    with open(os.path.join(LABS, fname), "w", encoding="utf-8") as f:
-        f.write("\n".join(L))
 
-# ---- labs/README.md index
-R = [f"# {C.TITLE} — Hands-On Labs\n",
-     f"{len(labs)} labs across {len(C.TOPICS)} topics · {C.DAYS} day · "
-     f"{C.DAYS*getattr(C,'INSTRUCTIONAL_MINUTES',C.DAY_MINUTES)/60:g} instructional hours\n",
-     "Work through the labs in order — each one builds on the artifacts you produced "
-     "in the labs before it.\n"]
-for t in C.TOPICS:
-    R.append(f"\n## Topic {t['num']} — {t['title']}\n")
-    R.append("| # | Lab | Tools | You Build |")
-    R.append("|---|-----|-------|-----------|")
-    for n, fname, lab, _tp in written:
-        if lab["topic"] == t["num"]:
-            R.append(f"| {n} | [{lab['title']}]({fname}) | {lab['services']} | {lab['build']} |")
-R.append(f"\n---\n\n> {C.LAB_NOTE}\n")
-R.append(f"\n_{C.ORG} · {C.COURSE_CODE} · {C.VERSION} ({C.VERSION_DATE})_\n")
+def build_prompts_txt(lab):
+    out = [f"{C.TITLE} ({C.COURSE_CODE}) — Lab {lab['num']}: {lab['title']}",
+           ("Sample prompts: use the app labelled in each step. Copy one at a time, adapt it, and verify every result."
+            if lab["num"] in WEB_LABS else "Sample prompts for Copilot in Excel. Copy one at a time, adapt it, and verify every result."),
+           f"Prompts web page (one-click Copy): {C.PROMPTS_PAGE}#lab-{lab['num']}", ""]
+    for i, (lbl, pr) in enumerate(lab.get("sample_prompts", []), 1):
+        out += [f"[{i}] {lbl}", pr, ""]
+    out += ["-" * 60, "Step prompts used in this lab", "-" * 60, ""]
+    for i, (_instr, cmd) in enumerate(lab["steps"], 1):
+        if cmd.strip():
+            out += [f"[Step {i}]", reflow(cmd).strip(), ""]
+    return "\n".join(out)
 
-with open(os.path.join(LABS, "README.md"), "w", encoding="utf-8") as f:
-    f.write("\n".join(R))
 
-print(f"Saved {len(labs)} lab files + README.md to {LABS}")
+# =========================================================================== Prompt_Log
+def fill_prompt_log(path, lab):
+    """Pre-fill the workbook's Prompt_Log with every prompt of the lab, in order (Step, Mode, Prompt).
+    The learner asks Copilot to fill in What Copilot did, How I verified and Decision."""
+    wb = load_workbook(path)
+    if "Prompt_Log" not in wb.sheetnames:
+        return
+    ws = wb["Prompt_Log"]
+    if lab["num"] in WEB_LABS:
+        ws.cell(row=1, column=2, value="App / mode")
+    rows = [(f"{r['step']} · {r['letter']}", r["mode"], r["text"]) for r in prompt_rows(lab)]
+    rows += [(f"Extra {i}", "Any", pr) for i, (_lbl, pr) in enumerate(lab.get("sample_prompts", []), 1)]
+    top = Alignment(wrap_text=True, vertical="top")
+    for r, vals in enumerate(rows, 2):
+        for c, v in enumerate(vals, 1):
+            ws.cell(row=r, column=c, value=v).alignment = top
+    ws.column_dimensions["A"].width = 10
+    ws.column_dimensions["B"].width = 16
+    ws.column_dimensions["C"].width = 80
+    wb.save(path)
+
+
+# Course-specific export: one source for PDF, README, TXT, prompt links and workbooks.
+from pathlib import Path
+import csv,json,html
+written=[];prompt_md=[f'# {C.TITLE} - Prompt Library\n', 'Each prompt states its app. Copy one block at a time. Provide the actual selected file or pasted verified evidence; another app chat is not shared context.\n']
+html_parts=['<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Northstar maintenance prompts</title><style>body{font:17px Arial;max-width:1000px;margin:40px auto;padding:20px;color:#111827}h1,h2{color:#0b3060}pre{white-space:pre-wrap;background:#eef4ff;padding:20px;border-radius:10px}button{padding:8px 18px;cursor:pointer}a{color:#1f6feb}</style><h1>Northstar maintenance prompt library</h1><p>C27 v2.0. Open this local HTML in a browser; Copy buttons use the clipboard when allowed. Otherwise select and copy the text.</p>']
+for lab in labs:
+ n=lab['num'];fname=folder_name(lab);folder=Path(LABS)/fname
+ mock_data.build_lab_data(n,folder)
+ if n==5:mock_data.workbook(folder/'templates/Northstar_Dashboard_Starter.xlsx',dashboard=True,blank=True)
+ for rel,body,_ in lab.get('extra_files',[]):
+  p=folder/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(body)
+ if n==6:
+  rows=[['WO-2026-0121','Woodlands Hub','HVAC','High','Assigned','Aisha Tan','2026-09-25','2026-09-29','',3,0,150,'Sandbox overdue test'],['WO-2026-0122','Woodlands Hub','Electrical','Medium','Closed','Ben Lim','2026-09-20','2026-09-30','2026-09-29',2,2,250,'Sandbox on-time test']]
+  with (folder/'data/Refresh_Test_Rows.csv').open('w',newline='') as f: w=csv.writer(f);w.writerow(mock_data.HEADERS);w.writerows(rows)
+ for name,headers in [('Filter_Test_Log.csv',['Test','Site','Category','Status','Owner','Expected','Observed','Evidence']),('Slide_Evidence_Register.csv',['Slide','Claim','Value','Source','Scope','As_At','Limitation','Verified']),('Rehearsal_Log.csv',['Feedback','Evidence','Change','Retested']),('Final_Handoff_Checklist.csv',['Artifact','Filename_or_Link','Check','Actual_Result'])]:
+  with (folder/'templates'/name).open('w',newline='') as f:csv.writer(f).writerow(headers)
+ text=[f'# Lab {n} - {lab["title"]}\n',f'**C27 | {C.VERSION} | Topic {lab["topic"]} | {lab["duration"]} minutes**\n',f'[Instruction PDF](Lab-{n:02d}-Instructions.pdf) · [Copy-ready prompts](sample-prompts.txt) · [Linked prompt library]({C.PROMPTS_PAGE}#lab-{n})\n','## Goal\n',lab['goal'],'\n## What you will build\n',lab['build'],'\n'+lab['desc'],'\n## Prerequisites\n']+['- '+p for p in lab['prerequisites']]+['\n## Files\n','- [Mock workbook](data/Northstar_Work_Orders.xlsx): raw 122-row input in Lab 1, clean 120-row input elsewhere.','- [Clean CSV reference](data/Northstar_Work_Orders.csv) and [expected controls](data/verified-controls.json).','- [Rejoin workbook](checkpoints/Northstar_Verified_Checkpoint.xlsx) and [snapshot](checkpoints/Northstar_Verified_Snapshot.docx).','- [Templates](templates/) for the brief, slide deck, evidence and handoff.','\n## Steps\n']
+ prompt_md += [f'\n## Lab {n}\n',f'**{lab["title"]}** · [Lab folder](../../labs/{fname}/README.md)\n']
+ html_parts += [f'<h2 id="lab-{n}">Lab {n}: {html.escape(lab["title"])}</h2>']
+ log=[]
+ for i,(instr,cmd) in enumerate(lab['steps'],1):
+  text += [f'### {i}. Step {i}\n',instr]
+  if cmd:
+   text+=['\n```text\n'+cmd+'\n```\n'];prompt_md += [f'### Step {i}\n','```text\n'+cmd+'\n```\n'];pid=f'p{n}_{i}';html_parts += [f'<h3>Step {i}</h3><button onclick="copyPrompt(\'{pid}\',this)">Copy</button><pre id="{pid}">{html.escape(cmd)}</pre>'];log.append((f'Step {i}',cmd.split(':',1)[0],cmd))
+ for heading,body in [('Test it','\n'.join('- '+a+': '+b for a,b in lab['checks'])),('Checkpoint',lab['checkpoint']),('Troubleshooting','\n'.join('- '+a+': '+b for a,b in lab['troubleshooting'])),('Challenge',lab['challenge']),('Reflection',lab['reflection'])]:text += [f'\n## {heading}\n',body]
+ text += [f'\n{C.LAB_NOTE}\n'];(folder/'README.md').write_text('\n'.join(text))
+ (folder/'sample-prompts.txt').write_text(build_prompts_txt(lab))
+ (folder/'prompts.md').write_text(f'# Lab {n} prompts\n\n'+ '\n\n'.join(f'## Step {i}\n\n```text\n{cmd}\n```' for i,(_instr,cmd) in enumerate(lab['steps'],1) if cmd))
+ for x in [folder/'data/Northstar_Work_Orders.xlsx',folder/'checkpoints/Northstar_Verified_Checkpoint.xlsx']:
+  wb=load_workbook(x);ws=wb['Prompt_Log']
+  for row,values in enumerate(log,2):
+   for col,value in enumerate(values,1):ws.cell(row,col,value).alignment=Alignment(wrap_text=True,vertical='top')
+  ws.column_dimensions['C'].width=90;wb.save(x)
+ build_pdf(lab,TOPICS[n//3] if False else TOPICS[lab['topic']],str(folder/pdf_name(lab)))
+ written.append((n,fname,lab))
+root=Path(REPO);docs=root/'docs/prompts';docs.mkdir(parents=True,exist_ok=True)
+(docs/'README.md').write_text('\n'.join(prompt_md))
+html_parts+=['<script>async function copyPrompt(id,b){const s=document.getElementById(id).textContent;try{await navigator.clipboard.writeText(s);b.textContent="Copied"}catch(e){const range=document.createRange();range.selectNodeContents(document.getElementById(id));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);b.textContent="Select and copy"}}</script></html>'];(docs/'index.html').write_text('\n'.join(html_parts))
+R=[f'# {C.TITLE} - Eight Connected Maintenance Labs\n',f'One day, 7.5 instructional hours. {C.VERSION}, {C.VERSION_DATE}.\n','Northstar Facilities is fictional. Start with 122 raw export rows in Lab 1, clean to 120 unique work orders, and carry the checked 30 September 2026 baseline through the other labs. Two refresh-test rows are used only in a sandbox copy.\n',f'[Linked prompt library]({C.PROMPTS_PAGE}) · [Local copy-button prompt page](../docs/prompts/index.html)\n']
+for topic in C.TOPICS:
+ R += [f'\n## Topic {topic["num"]}: {topic["title"]}\n']
+ for n,fname,a in written:
+  if a['topic']==topic['num']: R += [f'### Lab {n}: {a["title"]}\n',a['desc'],f'\n**You build:** {a["build"]}\n',f'[Instructions](<./{fname}/README.md>) · [PDF](<./{fname}/Lab-{n:02d}-Instructions.pdf>) · [Prompts](<./{fname}/prompts.md>) · [Data](<./{fname}/data/>) · [Templates](<./{fname}/templates/>) · [Checkpoint](<./{fname}/checkpoints/>)\n']
+R += ['\n'+C.LAB_NOTE];(root/'labs/README.md').write_text('\n'.join(R))
+print(f'Saved {len(written)} lab folders with aligned PDFs, README, prompts, mock data, templates and checkpoints.')

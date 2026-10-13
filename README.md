@@ -1,182 +1,70 @@
-<div align="center">
-
 # Microsoft 365 Copilot Masterclass
 
-[![Course](https://img.shields.io/badge/Course-C027-1f6feb?style=for-the-badge)](https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html)
-[![Duration](https://img.shields.io/badge/Duration-1_day_7_5_instructional_hours-5E5E5E?style=for-the-badge)](#course-toolkit)
-[![Labs](https://img.shields.io/badge/Labs-8-34d399?style=for-the-badge)](labs/README.md)
-[![License](https://img.shields.io/badge/License-Educational-fbbf24?style=for-the-badge)](#license)
+Use one coherent facilities-maintenance scenario to connect Word, Excel, PowerPoint and Outlook Copilot, create reusable skills, build an interactive dashboard and present verified findings.
 
-**A connected, hands-on course in Microsoft 365 Copilot Masterclass — progress through 8 practical labs from Research the Asteron Launch and Build a Verified Source Register to Run the Responsible-Use and Privacy Release Gate.**
+| Course detail | Information |
+|---|---|
+| Course code | `C27` |
+| Programme | Non-WSQ commercial short course |
+| Duration | 1 day, 7.5 instructional hours |
+| Registration | [View course details and register](https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html) |
+| Current package | v2.0, 13 October 2026; 8 connected labs |
 
-[📘 Course Page](https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html) · [🧪 Hands-On Labs](labs/README.md) · [📖 Learner Guide](<LG-Microsoft 365 Copilot Masterclass.md>) · [🐛 Report Bug](https://github.com/tertiarycourses/C027---Microsoft-365-Copilot-Masterclass/issues) · [💡 Request Feature](https://github.com/tertiarycourses/C027---Microsoft-365-Copilot-Masterclass/issues)
+## About the course
 
-</div>
+You are the maintenance coordinator for **Northstar Facilities**, a fictional operator of five sites. The same work orders, job categories, statuses and current assignments flow through an operations brief, reusable reporting skill, dashboard and management decision presentation. All data is synthetic. The fixed reporting date is **30 September 2026**.
 
-> [!NOTE]
-> **These are the official hands-on lab materials for the commercial course:**
-> ### 🎓 Microsoft 365 Copilot Masterclass
-> **Course Code:** `C027` · by Tertiary Courses / Tertiary Infotech<br>
-> **Duration:** 1 day · 7.5 instructional hours<br>
-> **Course page:** https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html
+The workbook starts with 122 export rows and is cleaned to 120 unique work orders. Dashboard refresh tests use a separate sandbox copy, so the final presentation remains grounded in the verified 120-row baseline. Proposed assignments remain separate from current owners.
 
----
+## Learning outcomes
 
-## Lab Activities
+- Integrate Word, Excel, PowerPoint and Outlook Copilot in a coherent maintenance workflow with explicit source grounding and verified prompts.
+- Create, install, apply and improve a custom maintenance-reporting skill in Excel and PowerPoint, preserving source records and testing reruns.
+- Create an interactive maintenance dashboard with verified measures, common filter scope, meaningful charts and a demonstrated refresh test.
+- Continue from the dashboard to a professional management presentation, with evidence-based headlines, source notes, rehearsal and a reviewed handoff draft.
 
-The 8 labs form one connected practical journey. Complete them in order so each verified output can support the activities that follow.
+## Topics covered
 
-### Topic 1 — Getting Started with Microsoft 365 Copilot
+1. **Fundamentals of Microsoft 365 Copilot** - One verified maintenance workflow across four apps.
+2. **Create Skills for Microsoft 365 Copilot** - A reusable method for Excel and PowerPoint.
+3. **Create an Interactive Dashboard with Excel Copilot** - From definitions to filters and refresh evidence.
+4. **Create a Professional Presentation with PowerPoint Copilot** - Continue the dashboard into a decision pack.
 
-| # | Activity | Outcome |
-|---:|----------|---------|
-| **1** | [Research the Asteron Launch and Build a Verified Source Register](labs/lab-01-research-the-asteron-launch-and-build-a-verified-source-register.md) | work-c027/C027-Asteron-Source-Register.xlsx with Sources, Claim_Ledger and Review_Log tables, plus work-c027/C027-Asteron-Verified-Claims.txt and a Reviewed release record |
-| **2** | [Draft and Approve the Asteron Launch Brief in Word](labs/lab-02-draft-and-approve-the-asteron-launch-brief-in-word.md) | work-c027/C027-Asteron-Launch-Brief-v1.0.docx with five required sections, source notes, an Open Questions box and an Approved for deck handoff record |
-| **3** | [Generate and Refine the Asteron Decision Deck in PowerPoint](labs/lab-03-generate-and-refine-the-asteron-decision-deck-in-powerpoint.md) | work-c027/C027-Asteron-Decision-Deck-v1.0.pptx with six decision-oriented slides, concise speaker notes, source notes and a Reviewed for internal presentation status |
+## Labs
 
-### Topic 2 — Copilot Across Your Everyday Work Apps
+Every lab has its own README, instruction PDF, TXT/Markdown prompts, mock data, templates and checkpoints. Detailed procedures belong in the labs and Learner Guide.
 
-| # | Activity | Outcome |
-|---:|----------|---------|
-| **4** | [Analyse Pilot Readiness and Verify Copilot Formulas in Excel](labs/lab-04-analyse-pilot-readiness-and-verify-copilot-formulas-in-excel.md) | work-c027/C027-Asteron-Pilot-Readiness.xlsx with Raw_Cohort, Analysis, Control and Prompt_Log sheets, a verified priority column and an Approved internal readiness summary, plus… |
-| **5** | [Summarise the Launch Thread and Prepare a Reviewed Outlook Draft](labs/lab-05-summarise-the-launch-thread-and-prepare-a-reviewed-outlook-draft.md) | An Outlook draft titled DRAFT Asteron pilot launch update - review required, plus work-c027/C027-Outlook-Thread-Review.md with the verified facts and release checklist |
-| **6** | [Validate a Teams Recap and Create the Action Register](labs/lab-06-validate-a-teams-recap-and-create-the-action-register.md) | work-c027/C027-Teams-Action-Register.xlsx with Decisions, Actions, Proposals and Open_Questions sheets, transcript references and a Reviewed internal coordination state, plus work-c027/C027-Asteron-Verified-Actions.txt |
-| **7** | [Assemble and Reconcile the Cross-App Coordination Pack](labs/lab-07-assemble-and-reconcile-the-cross-app-coordination-pack.md) | work-c027/C027-Asteron-Cross-App-Manifest.xlsx and C027-Asteron-Coordination-Pack.docx with authoritative-source links, a consistency matrix and an Approved internal handoff state |
-| **8** | [Run the Responsible-Use and Privacy Release Gate](labs/lab-08-run-the-responsible-use-and-privacy-release-gate.md) | work-c027/C027-Asteron-Responsible-Use-Release-Log.docx with artifact-level permission, data, accuracy, audience, transparency, reviewer and release decisions |
+| Lab | Practical outcome |
+|---|---|
+| [1. Prepare Work Orders and Draft the Operations Brief](labs/lab-01-excel-to-word/README.md) | Northstar_Clean_Work_Orders.xlsx and Northstar_Operations_Brief.docx, with reconciled counts, reporting scope and a source register. |
+| [2. Create the Cross-App Maintenance Update](labs/lab-02-word-to-powerpoint-and-outlook/README.md) | Northstar_Initial_Update.pptx, an unsent Outlook draft and Northstar_Cross_App_Evidence.csv with Excel, Word, PowerPoint and Outlook figures reconciled. |
+| [3. Create a Custom Maintenance Reporting Skill](labs/lab-03-author-skill-md/README.md) | A reviewed maintenance-reporting/SKILL.md v1, a smoke-test record, and a native-skill or explicitly labelled manual-practice route for each app. |
+| [4. Use and Improve the Skill in Excel and PowerPoint](labs/lab-04-repeatable-reporting/README.md) | Northstar_Skill_Report.xlsx with Maintenance_Summary and Assignment_Proposals, Northstar_Skill_Update.pptx, SKILL.md v2 and a before/after improvement log. |
+| [5. Build Maintenance Dashboard Measures and Charts](labs/lab-05-design-and-build/README.md) | Northstar_Dashboard.xlsx with a Dashboard layout, six verified measures, three labelled charts and a measure dictionary ready for Lab 6 filters. |
+| [6. Make the Dashboard Interactive and Prove Refresh](labs/lab-06-filters-and-refresh/README.md) | Northstar_Dashboard.xlsx with four working filters plus Northstar_Dashboard_Refresh_Test.xlsx, filter evidence and a verified baseline snapshot for PowerPoint. |
+| [7. Turn Dashboard Evidence into a Management Story](labs/lab-07-dashboard-to-presentation/README.md) | Northstar_Presentation_Brief.docx, Northstar_Management_Draft.pptx and a slide-by-slide evidence register tied to the 120-row dashboard snapshot. |
+| [8. Refine and Present the Maintenance Decision Deck](labs/lab-08-professional-handoff/README.md) | Northstar_Management_Final.pptx/PDF, a rehearsal record, final evidence register and unsent Outlook handoff draft with accurate artifact links. |
 
----
+## Public package
 
-## About
+The slide deck follows the C34 Copilot for Excel design: charcoal covers, cream content slides, Cambria/Calibri typography, coloured cards and editable diagrams/charts. Fine-grained procedures are in the guides and labs.
 
-This repository contains the complete lab and courseware package for **Microsoft 365 Copilot Masterclass** (**C027**) by Tertiary Courses / Tertiary Infotech. The practical activities build progressively from **Research the Asteron Launch and Build a Verified Source Register** to **Run the Responsible-Use and Privacy Release Gate**, with explicit checks that help learners verify each result before moving on.
+- Trainer slides: [PowerPoint](<courseware/Microsoft 365 Copilot Masterclass-v2.0.pptx>) · [PDF](<courseware/Microsoft 365 Copilot Masterclass-v2.0.pdf>).
+- Lesson Plan: [Word](<courseware/LP-Microsoft 365 Copilot Masterclass.docx>) · [PDF](<courseware/LP-Microsoft 365 Copilot Masterclass.pdf>).
+- Learner Guide: [Word](<courseware/LG-Microsoft 365 Copilot Masterclass.docx>) · [PDF](<courseware/LG-Microsoft 365 Copilot Masterclass.pdf>) · [Markdown](<LG-Microsoft 365 Copilot Masterclass.md>).
+- [Eight lab folders](labs/README.md) with instruction PDFs, data and templates.
+- [Linked prompt library](docs/prompts/README.md); [downloadable local HTML with Copy buttons](docs/prompts/index.html). Download the HTML and open it in a browser; GitHub file view displays source.
 
-### What you'll learn
+## Usage and checkpoints
 
-- Complete **8 connected hands-on activities** and carry their outputs through one coherent learning journey.
-- Practise with **Microsoft 365 Copilot · Microsoft SharePoint · Microsoft Excel · Microsoft Word · Microsoft PowerPoint · Microsoft Outlook · Microsoft Teams** and the supporting resources supplied in the repository.
-- Begin with **Research the Asteron Launch and Build a Verified Source Register** and finish with **Run the Responsible-Use and Privacy Release Gate**.
-- Apply safe data handling, evidence checks and named human review before using AI-generated or automated outputs.
+Use current Microsoft 365 apps and the assigned OneDrive account. Check Copilot access in Word, Excel, PowerPoint and Outlook before class. Desktop Excel on Windows or Mac is recommended. Confirm custom skills separately in Excel and PowerPoint; feature availability depends on licence and tenant settings. A labelled manual-instruction route is supplied when native skill menus are unavailable.
 
-> 📖 **Full walkthrough:** see the [Learner Guide](<LG-Microsoft 365 Copilot Masterclass.md>) for the complete course narrative, and [labs/README.md](labs/README.md) for the lab index. Slides, the Learner Guide and the Lesson Plan are in [courseware/](courseware/).
+Download the full lab folders. Carry your own verified outputs forward; supplied checkpoints are rejoin examples, not proof of learner or Copilot execution. Open the local prompt HTML for Copy buttons, or copy prompts directly from Markdown/TXT. Excel cannot read another app’s chat; log cross-app prompts manually.
 
----
+## Distribution boundary
 
-## Course Toolkit
+Current slides, guides, Lesson Plan, labs and build sources are public courseware. `assessment/` and `reference/` remain private. Credentials, environments, dependencies and superseded archives are excluded. This non-WSQ course has no formal assessment package. Never replace synthetic inputs with real learner, employee or maintenance records in the public repository.
 
-| Category | Details |
-|----------|---------|
-| **Duration** | 1 day · 7.5 instructional hours |
-| **Delivery** | Instructor-led, hands-on practical labs |
-| **Core tools** | Microsoft 365 Copilot · Microsoft SharePoint · Microsoft Excel · Microsoft Word · Microsoft PowerPoint · Microsoft Outlook · Microsoft Teams |
-| **Practical work** | 8 connected labs with verification steps |
-| **Courseware** | PowerPoint and PDF slides, Word and PDF guides, Markdown lab instructions |
+## Provider
 
----
-
-## Learning Journey
-
-```text
-START
-  Lab 1    Research the Asteron Launch and Build a Verified Source Register
-     │
-     ▼
-  Topic 1 — Getting Started with Microsoft 365 Copilot
-  Labs 1–3
-     │
-     ▼
-  Topic 2 — Copilot Across Your Everyday Work Apps
-  Labs 4–8
-     │
-     ▼
-FINISH
-  Lab 8   Run the Responsible-Use and Privacy Release Gate
-```
-
----
-
-## Project Structure
-
-```text
-C027---Microsoft-365-Copilot-Masterclass/
-├── README.md
-├── LG-Microsoft 365 Copilot Masterclass.md
-│
-├── labs/
-│   ├── README.md                 # Start here: complete lab index
-│   └── lab-*.md                    # 8 connected practical activities
-│
-└── courseware/
-    ├── *.pptx / *.pdf             # Trainer and learner slides
-    ├── LG-*.docx / LG-*.pdf       # Learner Guide
-    └── LP-*.docx / LP-*.pdf       # Lesson Plan
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- The accounts and software required for **Microsoft 365 Copilot · Microsoft SharePoint · Microsoft Excel · Microsoft Word · Microsoft PowerPoint · Microsoft Outlook · Microsoft Teams**. Follow the setup and access notes in each lab.
-- A modern web browser and Git for cloning the materials.
-- Synthetic or authorised data only. Do not place secrets, personal data or confidential material into an unapproved service.
-- A named human reviewer for facts, calculations, decisions and any externally released output.
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/tertiarycourses/C027---Microsoft-365-Copilot-Masterclass.git
-cd C027---Microsoft-365-Copilot-Masterclass
-```
-
-### 2. Open the lab index
-
-Start with [labs/README.md](labs/README.md), then complete Labs 1–8 in order. Each lab provides the activity context, practical steps and a way to verify the result.
-
-### 3. Keep your connected outputs
-
-Store each lab output in the suggested working folder and retain the evidence or review notes requested by the lab. Later activities depend on these approved outputs.
-
----
-
-## Contributing
-
-Contributions, corrections and improvements are welcome:
-
-1. **Fork** the repository.
-2. Create a feature branch: `git checkout -b feature/my-improvement`.
-3. Commit your changes: `git commit -m "Add my improvement"`.
-4. Push the branch: `git push origin feature/my-improvement`.
-5. Open a **Pull Request**.
-
-Found a bug or have an idea? Open an [issue](https://github.com/tertiarycourses/C027---Microsoft-365-Copilot-Masterclass/issues).
-
----
-
-## License
-
-This material is provided for **educational use** as part of the commercial course **Microsoft 365 Copilot Masterclass (C027)**. © Tertiary Infotech Pte. Ltd. All rights reserved.
-
----
-
-## Developed By
-
-**Tertiary Infotech Pte. Ltd.** — [Tertiary Courses](https://www.tertiarycourses.com.sg)<br>
-Course: [Microsoft 365 Copilot Masterclass (C027)](https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html)
-
-## Acknowledgements
-
-- The teams behind Microsoft 365 Copilot · Microsoft SharePoint · Microsoft Excel · Microsoft Word · Microsoft PowerPoint · Microsoft Outlook · Microsoft Teams.
-- Course trainers and learners of C027.
-
----
-
-<div align="center">
-
-⭐ **If these materials helped you learn Microsoft 365 Copilot Masterclass, star the repository!**
-
-Powered by [Tertiary Infotech Academy Pte Ltd](https://www.tertiaryinfotech.com/)
-
-[📘 Course Page](https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html) · [🧪 Hands-On Labs](labs/README.md) · [📖 Learner Guide](<LG-Microsoft 365 Copilot Masterclass.md>)
-
-</div>
+Tertiary Infotech Academy Pte Ltd · [Tertiary Courses](https://www.tertiarycourses.com.sg/microsoft-365-copilot-masterclass.html). Educational course materials; all rights reserved.

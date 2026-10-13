@@ -1,0 +1,85 @@
+{
+  "course": "C27",
+  "version": "v2.0",
+  "slides": 110,
+  "concept_slides_at_least": 52,
+  "instructional_minutes": 450,
+  "scheduled_minutes_excluding_lunch": 480,
+  "baseline_controls": {
+    "total": 120,
+    "closed": 48,
+    "cancelled": 12,
+    "backlog": 60,
+    "overdue": 50,
+    "unassigned_backlog": 6,
+    "on_time_closed": 30,
+    "on_time_rate": 0.625,
+    "cost": 35827.5,
+    "site_counts": {
+      "Woodlands Hub": 24,
+      "Jurong Depot": 24,
+      "Tampines Centre": 24,
+      "Paya Lebar Office": 24,
+      "Changi Workshop": 24
+    },
+    "category_counts": {
+      "HVAC": 24,
+      "Electrical": 24,
+      "Plumbing": 24,
+      "Fire Safety": 24,
+      "General Repair": 24
+    }
+  },
+  "labs": [
+    {
+      "lab": 1,
+      "instruction_pdf_pages": 3,
+      "step_prompt_blocks": 4,
+      "files": 21
+    },
+    {
+      "lab": 2,
+      "instruction_pdf_pages": 3,
+      "step_prompt_blocks": 3,
+      "files": 21
+    },
+    {
+      "lab": 3,
+      "instruction_pdf_pages": 3,
+      "step_prompt_blocks": 3,
+      "files": 22
+    },
+    {
+      "lab": 4,
+      "instruction_pdf_pages": 3,
+      "step_prompt_blocks": 3,
+      "files": 23
+    },
+    {
+      "lab": 5,
+      "instruction_pdf_pages": 3,
+      "step_prompt_blocks": 4,
+      "files": 22
+    },
+    {
+      "lab": 6,
+      "instruction_pdf_pages": 3,
+      "step_prompt_blocks": 3,
+      "files": 22
+    },
+    {
+      "lab": 7,
+      "instruction_pdf_pages": 3,
+      "step_prompt_blocks": 2,
+      "files": 22
+    },
+    {
+      "lab": 8,
+      "instruction_pdf_pages": 3,
+      "step_prompt_blocks": 3,
+      "files": 22
+    }
+  ],
+  "dashboard_engine": "LibreOffice recalculation of actual XLSX formulas; all/site/empty/no-closed/append scopes verified",
+  "native_copilot_execution": "Not claimed; tenant access and skill availability must be confirmed by trainer."
+}
